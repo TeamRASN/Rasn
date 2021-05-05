@@ -1,0 +1,65 @@
+#barra_navegacion nav ul li:hover,
+#barra_navegacion nav ul li ul li a:hover,
+#barra_navegacion nav ul li a:hover {
+    color: var(--var-elements-hover);
+}
+
+#barra_navegacion {
+    background: var(--var-navbar) !important;
+    box-shadow: 0px -5px 15px 0px black !important;
+}
+
+#barra_navegacion nav ul li,
+#barra_navegacion nav ul li ul li a,
+#barra_navegacion nav ul li a {
+    color: var(--var-elements) !important;
+}
+
+#barra_navegacion nav ul {
+    margin-bottom: 0px !important;
+}
+
+input {
+    outline: none;
+    background-color: var(--var-inputs) !important;
+    border-color: var(--var-inputs-border) !important;
+    color: var(--var-primary-color) !important;
+    transition: all 200ms ease-in-out !important;
+}
+
+textarea{
+    color: var(--var-primary-color) !important;
+    background-color: var(--var-inputs) !important;
+    border-color: var(--var-inputs-border) !important;
+    transition: all 200ms ease-in-out !important;
+}
+
+#title1 {
+    display: inline-block;
+    color: var(--var-primary-color);
+    transition: all 200ms ease-in-out !important;
+}
+
+#title1 > b{
+    color: var(--var-dropdown);    
+    transition: all 200ms ease-in-out !important;
+}
+
+#pata{
+    font-size: 50px;
+    color: var(--var-dropdown);
+    transition: all 200ms ease-in-out !important;
+}
+
+#caja-principal{
+    margin-top: 60px;
+    background-color: var(--var-background) !important;
+    transition: all 200ms ease-in-out !important;
+}
+
+.btn{
+    transition: all 200ms ease-in-out !important;
+    background-color: var(--var-dropdown) !important;
+    color: var(--var-primary-color) !important;
+    border-color: var(--var-dropdown-radius) !important;
+}

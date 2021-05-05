@@ -1,0 +1,25 @@
+
+/*------------------------------------------------------------------------------------------*/
+/*-------------------------------------- ORGANIZACION --------------------------------------*/
+/*------------------------------------------------------------------------------------------*/
+
+.primer-titulo{
+    padding-top: 150px;
+}
+
+.pregunta{
+    margin: 0px 50px 50px 50px;
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--var-titulo);
+}
+
+.respuesta{
+    margin: 0px 50px 0px 50px;
+    margin: 50px;
+    font-size: 20px;
+    line-height: 1.3em;
+    word-wrap: break-word;
+    color: var(--var-primary-color);
+}
+

@@ -1,0 +1,101 @@
+$primary: rgb(242, 242, 242);
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "fonts";
+
+/* .sticky {
+	padding: -50px;
+} */
+/* NavBar */
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Raleway", sans-serif;
+}
+.active {
+	color: #c2c2c2;
+	cursor: default;
+}
+.gris {
+	background: rgba(0, 0, 0, 0.213);
+	behavior: smooth;
+}
+.nav-item {
+	font-weight: 500;
+}
+
+.navbar-brand::content {
+	padding-left: 5px;
+}
+
+.dropdown-item > i {
+	padding-right: 10px;
+}
+
+#navbar {
+	transition: all 200ms ease;
+	box-shadow: 0px 1px 3px 0px #0000003d;
+}
+
+.navbar-brand {
+	img {
+		width: 50px;
+		height: auto;
+	}
+}
+
+.jumpboton {
+	height: 500px;
+	overflow: hidden;
+
+	text-align: center;
+
+	.contenedor-img {
+		width: 105%;
+		height: inherit;
+		margin-top: -10px;
+
+		background-image: url("../assets/organizacion.jpg");
+		background-position: center;
+		background-size: cover;
+		filter: blur(3px) brightness(75%);
+	}
+
+	/* img:focus {
+		-webkit-backdrop-filter: blur(4px);
+		//imagen
+		transition: 0.5s;
+	} */
+}
+
+.hero-title {
+	font-size: 4em;
+	color: rgb(255, 251, 240);
+	text-shadow: 1px 1px 5px rgb(39, 39, 39);
+	padding-bottom: 19px;
+
+	span {
+		color: rgb(243, 166, 0);
+	}
+}
+
+.title-hd {
+	position: absolute;
+}
+
+.sticky {
+	position: fixed;
+}
+
+@media screen and (max-width: 770px) {
+	.hero-title {
+		font-size: 2.75em;
+	}
+}
+
+@media screen and (max-width: 445px) {
+	.hero-title {
+		font-size: 2em;
+	}
+}
