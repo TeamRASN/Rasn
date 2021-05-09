@@ -17,16 +17,17 @@ $primary: rgb(242, 242, 242);
 	color: #c2c2c2;
 	cursor: default;
 }
-.gris {
-	background: rgba(0, 0, 0, 0.213);
-	behavior: smooth;
-}
+
 .nav-item {
 	font-weight: 500;
 }
 
-.navbar-brand::content {
-	padding-left: 5px;
+.navbar-brand {
+	margin-left: 4rem;
+
+	&::content {
+		padding-left: 5px;
+	}
 }
 
 .dropdown-item > i {
@@ -34,8 +35,29 @@ $primary: rgb(242, 242, 242);
 }
 
 #navbar {
+	background: rgba(0, 0, 0, 0.213);
 	transition: all 200ms ease;
 	box-shadow: 0px 1px 3px 0px #0000003d;
+}
+
+.navbar-toggler {
+	padding: 0.5rem 0.5rem !important;
+	border: 0 !important;
+	transition: all 200ms ease-in-out;
+
+	&:active {
+		transition-delay: -75ms;
+		background-color: #51565c6e;
+	}
+
+	&:focus {
+		outline: none;
+		box-shadow: 0 0 !important;
+	}
+}
+
+.navbar-collapse {
+	margin-right: 4rem;
 }
 
 .navbar-brand {
@@ -88,6 +110,15 @@ $primary: rgb(242, 242, 242);
 	position: fixed;
 }
 
+@media screen and (max-width: 992px) {
+	.navbar-brand {
+		margin-left: 1.5rem;
+	}
+	.navbar-collapse {
+		margin-left: 1.25rem;
+	}
+}
+
 @media screen and (max-width: 770px) {
 	.hero-title {
 		font-size: 2.75em;
@@ -97,5 +128,11 @@ $primary: rgb(242, 242, 242);
 @media screen and (max-width: 445px) {
 	.hero-title {
 		font-size: 2em;
+	}
+}
+
+@media screen and (max-width: 378px) {
+	//Eliminar el contenido del brand para que no se rompa la estructura del navbar
+	.navbar-brand {
 	}
 }

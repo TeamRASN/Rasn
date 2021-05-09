@@ -6,34 +6,33 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Refugio de Animales</title>
 		<link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
-		<link
+		<!-- <link
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
 			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
 			crossorigin="anon
 		transition: 0.5s;ymous"
-		/>
+		/> -->
 		<link rel="stylesheet" href="./css/index.css" />
 		<!--SCROLL EFFECT-->
 		<script src="https://unpkg.com/scrollreveal"></script>
 
 		<!--FONT AWESOME-->
 		<script src="https://kit.fontawesome.com/f17d5951be.js" crossorigin="anonymous"></script>
-		<script src="./js/navbar.js"></script>
-
+		
 	</head>
 	<body>
 		<header>
-			<nav id="navbar" class="navbar navbar-expand-lg navbar-dark gris scrolling-navbar fixed-top">
-				<a href="#" class="navbar-brand ml-5  d-flex align-items-center"><img class="mr-3" src="./assets/logo.svg" alt=""> Refugio San Nicolas</a>
-				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse1">
+			<nav id="navbar" class="navbar navbar-expand-lg navbar-dark gris fixed-top">
+				<a href="#" class="navbar-brand d-flex align-items-center"><img class="me-3" src="./assets/logo.svg" alt=""> Refugio San Nicolas</a>
+				<button id="nav-btn" type="button" class="navbar-toggler me-4 rounded-circle" data-toggle="collapse" data-target="#navbarCollapse1">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse justify-content-end mr-5" id="navbarCollapse1">
 					<a href="#" class="nav-item nav-link active disable">INICIO</a>
 					
-				
-
+					
+					
 					<div class="btn-group">
 						<a class="nav-item btn text-light dropdown-toggle"  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							MASCOTAS
@@ -51,10 +50,10 @@
 							<a href="#" class="dropdown-item"><i class="fas fa-at"></i>Consultanos </a>
 							<a href="#"class="dropdown-item"><i class="fa fa-hashtag" aria-hidden="true"></i>Redes sociales </a>
 							<a href="#" class="dropdown-item"><i class="fa fa-question" aria-hidden="true"></i>Preguntas frecuentes</a>
-
+							
 						</div>
 					</div>
-
+					
 					<div class="btn-group">
 						<a class="nav-item btn text-light dropdown-toggle"  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							INVOLUCRATE
@@ -63,64 +62,66 @@
 							<a href="#" class="dropdown-item"><i class="fa fa-handshake-o" aria-hidden="true"></i>Esfuerzos </a>
 							<a href="#"class="dropdown-item"><i class="fa fa-money" aria-hidden="true"></i>Donativos </a>
 							<a href="#" class="dropdown-item"><i class="fa fa-users" aria-hidden="true"></i>Voluntarios y asociados </a>
-
+							
 						</div>
 					</div>
-
-		
+					
+					
 				</div>
 			</nav>
 			<div class="view">
-
+				
 			</div>
 		</header>
 		<main>
 			<div
-				class="jumpboton d-flex flex-column justify-content-center align-items-center"
-				data-bs-parallax-bg="true"
+			class="jumpboton d-flex flex-column justify-content-center align-items-center"
+			data-bs-parallax-bg="true"
 			>
-				<div class="contenedor-img"></div> 
-				<div class="title-hd">
-					<div class="contenedor-items">
-						<h1 class="hero-title">Refugio <span>San Nicolas</span></h1>
-					</div>
+			<div class="contenedor-img"></div> 
+			<div class="title-hd">
+				<div class="contenedor-items">
+					<h1 class="hero-title">Refugio <span>San Nicolas</span></h1>
 				</div>
 			</div>
+		</div>
 		</main>
-
-
-
+		
+		
+		
 		<div class="container mt-5">
 			<h1>Nuestra misión </h1>
 			<div class="row">
 				<div class="col-sm-6">
-				  <div class="card">
-					  
-					<div class="card-body text-white bg-dark">
-					  <h5 class="card-title">Special title treatment</h5>
-					  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-					  <a href="#" class="btn btn-primary">Go somewhere</a>
+					<div class="card">
+						
+						<div class="card-body text-white bg-dark">
+							<h5 class="card-title">Special title treatment</h5>
+							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+							<a href="#" class="btn btn-primary">Go somewhere</a>
+						</div>
 					</div>
-				  </div>
 				</div>
 				<div class="col-sm-6 ">
-				  <div class="card">
-					<div class="card-body text-white bg-dark">
-					  <h5 class="card-title">Special title treatment</h5>
-					  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-					  <a href="#" class="btn btn-primary">Go somewhere</a>
+					<div class="card">
+						<div class="card-body text-white bg-dark">
+							<h5 class="card-title">Special title treatment</h5>
+							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+							<a href="#" class="btn btn-primary">Go somewhere</a>
+						</div>
 					</div>
-				  </div>
 				</div>
-			  </div>  
-			</div>
-
-			
+			</div>  
 		</div>
-		<footer></footer>
-	</body>
-		<!--CARDS EFFECT-->
-		<script src="./js/scroll.js"></script>
+		
+		
+	</div>
+	<footer></footer>
+</body>
+<script src="./js/navbar.js"></script>
+	
+	<!--CARDS EFFECT-->
+	<script src="./js/scroll.js"></script>
 	<script
 		src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
