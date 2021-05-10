@@ -3,3 +3,9 @@ window.addEventListener("scroll", function () {
 
 	header.classList.toggle("bg-dark", window.scrollY > 0);
 });
+
+/* function btnAnimation() {
+	const button = document.getElementById("nav-btn");
+
+}
+ */

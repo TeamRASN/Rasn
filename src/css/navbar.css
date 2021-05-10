@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  background-color: #f6fafd;
+}
+
+.active {
+  color: #c2c2c2;
+  cursor: default;
+}
+
+.nav-item {
+  font-weight: 500;
+}
+
+.navbar-brand {
+  margin-left: 4rem;
+}
+.navbar-brand::content {
+  padding-left: 5px;
+}
+
+.dropdown-item > i {
+  padding-right: 10px;
+}
+
+#navbar {
+  background: rgba(0, 0, 0, 0.213);
+  transition: all 200ms ease;
+  box-shadow: 0px 1px 3px 0px #0000003d;
+}
+
+.navbar-toggler {
+  padding: 0.5rem 0.5rem !important;
+  border: 0 !important;
+  transition: all 200ms ease-in-out;
+}
+.navbar-toggler:active {
+  transition-delay: -75ms;
+  background-color: #51565c6e;
+}
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: 0 0 !important;
+}
+
+#navbarCollapse1 {
+  margin-right: 7em;
+}
+
+.navbar-brand img {
+  width: 50px;
+  height: auto;
+}
+
+.sticky {
+  position: fixed;
+}
+
+@media screen and (max-width: 992px) {
+  .navbar-brand {
+    margin-left: 1.5rem;
+  }
+
+  .navbar-collapse {
+    margin-left: 1.25rem;
+  }
+}
+@media screen and (max-width: 378px) {
+  /* .navbar-brand {
+  } */
+}
+
+/*# sourceMappingURL=navbar.css.map */

@@ -1,87 +1,39 @@
-$primary: rgb(242, 242, 242);
-
-@import "../../node_modules/bootstrap/scss/bootstrap";
 @import "fonts";
+@import "mixins";
 
 /* .sticky {
 	padding: -50px;
 } */
-/* NavBar */
+/*particles*/
+#particles-js {
+	position: fixed;
 
-* {
-	margin: 0;
-	padding: 0;
-	font-family: "Raleway", sans-serif;
+	height: 100%;
+	width: 100%;
 }
-.active {
-	color: #c2c2c2;
-	cursor: default;
-}
-
-.nav-item {
-	font-weight: 500;
+canvas {
+	display: block;
+	vertical-align: bottom;
 }
 
-.navbar-brand {
-	margin-left: 4rem;
-
-	&::content {
-		padding-left: 5px;
-	}
-}
-
-.dropdown-item > i {
-	padding-right: 10px;
-}
-
-#navbar {
-	background: rgba(0, 0, 0, 0.213);
-	transition: all 200ms ease;
-	box-shadow: 0px 1px 3px 0px #0000003d;
-}
-
-.navbar-toggler {
-	padding: 0.5rem 0.5rem !important;
-	border: 0 !important;
-	transition: all 200ms ease-in-out;
-
-	&:active {
-		transition-delay: -75ms;
-		background-color: #51565c6e;
-	}
-
-	&:focus {
-		outline: none;
-		box-shadow: 0 0 !important;
-	}
-}
-
-.navbar-collapse {
-	margin-right: 4rem;
-}
-
-.navbar-brand {
-	img {
-		width: 50px;
-		height: auto;
-	}
-}
-
+/*FIN PARTICLES*/
 .jumpboton {
-	height: 500px;
+	height: 100vh;
 	overflow: hidden;
+	background: rgb(255, 127, 0);
+	background: linear-gradient(86deg, rgba(244, 121, 0, 1) 0%, rgba(237, 143, 0, 1) 100%);
 
-	text-align: center;
+	@include displayFlex(column, center, center);
 
 	.contenedor-img {
-		width: 105%;
+		width: 100%;
 		height: inherit;
-		margin-top: -10px;
 
-		background-image: url("../assets/organizacion.jpg");
+		position: absolute;
+		background-image: url("../assets/banner.png");
 		background-position: center;
 		background-size: cover;
-		filter: blur(3px) brightness(75%);
+		/* filter: blur(3px) brightness(75%); */
 	}
 
 	/* img:focus {
@@ -91,48 +43,107 @@ $primary: rgb(242, 242, 242);
 	} */
 }
 
-.hero-title {
-	font-size: 4em;
-	color: rgb(255, 251, 240);
-	text-shadow: 1px 1px 5px rgb(39, 39, 39);
-	padding-bottom: 19px;
-
-	span {
-		color: rgb(243, 166, 0);
-	}
-}
-
-.title-hd {
+.banner-container {
+	width: 80%;
+	height: 60%;
+	@include displayFlex(row, space-around, center);
 	position: absolute;
-}
+	z-index: 2;
+	margin-bottom: 50px;
 
-.sticky {
-	position: fixed;
-}
+	.information {
+		@include displayFlex(column, flex-start, center);
+		width: 600px;
+		height: auto;
+		text-align: left;
+		padding-right: 30px;
 
-@media screen and (max-width: 992px) {
-	.navbar-brand {
-		margin-left: 1.5rem;
+		.hero-title {
+			color: rgb(255, 251, 240);
+			text-shadow: 1px 1px 5px rgb(39, 39, 39);
+
+			/* span {
+				white-space: nowrap;
+			} */
+		}
+
+		p {
+			@extend .hero-title;
+			font-weight: 300;
+			margin-top: 50px;
+		}
 	}
-	.navbar-collapse {
-		margin-left: 1.25rem;
+
+	.isometric-ill {
+		height: auto;
+		filter: drop-shadow(0px 5px 3px #862b0123);
 	}
 }
 
-@media screen and (max-width: 770px) {
-	.hero-title {
-		font-size: 2.75em;
+.bottome-wave {
+	background-image: url("../assets/wave.svg");
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: inherit;
+	z-index: 1;
+}
+
+.mission {
+	position: relative;
+	width: 100%;
+	height: 80vh;
+}
+
+@media screen and (min-width: 1030px) {
+	.information {
+		p {
+			font-size: 1.75em;
+		}
+	}
+	.isometric-ill {
+		width: 400px;
 	}
 }
 
-@media screen and (max-width: 445px) {
+@media screen and (max-width: 1029px) {
+	.banner-container {
+		flex-direction: column-reverse;
+
+		.information {
+			width: 100%;
+
+			.hero-title {
+				margin-top: 50px;
+			}
+			p {
+				margin-top: 0px;
+				font-size: 1.75em;
+			}
+		}
+
+		.isometric-ill {
+			width: 300px;
+		}
+	}
+}
+
+@media screen and (max-width: 771px) {
 	.hero-title {
 		font-size: 2em;
 	}
+	p {
+		margin-top: 10px !important;
+		font-size: 1.25em !important;
+	}
+	.isometric-ill {
+		width: 250px !important;
+	}
 }
 
-@media screen and (max-width: 378px) {
-	//Eliminar el contenido del brand para que no se rompa la estructura del navbar
-	.navbar-brand {
+@media screen and (max-width: 700px) {
+	.hero-title {
+		font-size: 1.75em;
 	}
 }
