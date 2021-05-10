@@ -1,22 +1,14 @@
 @import "fonts";
 @import "mixins";
 
-/* .sticky {
-	padding: -50px;
-} */
-/*particles*/
 #particles-js {
-	position: fixed;
-
+	position: absolute;
 	height: 100%;
 	width: 100%;
 }
-canvas {
-	display: block;
-	vertical-align: bottom;
-}
 
 /*FIN PARTICLES*/
+
 .jumpboton {
 	height: 100vh;
 	overflow: hidden;

@@ -27,138 +27,135 @@
 	<script src="js/particles/particles.js"></script>
 	<script src="js/particles/app.js"></script>
 	<body>
+		<header>
+			<div class="container">
+				<nav id="navbar" class="navbar navbar-expand-lg navbar-dark gris fixed-top">
+					<a href="#" class="navbar-brand d-flex align-items-center"
+						><img class="me-3" id="logo" src="./assets/logo.svg" alt="" /> Refugio San Nicolas</a
+					>
 
-			<header>
-				<div class="container">
-					<nav id="navbar" class="navbar navbar-expand-lg navbar-dark gris fixed-top">
-						<a href="#" class="navbar-brand d-flex align-items-center"
-							><img class="me-3" id="logo" src="./assets/logo.svg" alt="" /> Refugio San Nicolas</a
-						>
-
-						<button
-							id="nav-btn"
-							type="button"
-							class="navbar-toggler me-4 rounded-circle"
-							data-toggle="collapse"
-							data-target="#navbarCollapse1"
-						>
-							<span class="navbar-toggler-icon"></span>
-						</button>
-						<div class="collapse navbar-collapse justify-content-end" id="navbarCollapse1">
-							<div class="btn-group">
-								<a href="#" class="nav-item nav-link active disable">INICIO</a>
-							</div>
-							<div class="btn-group">
-								<a
-									class="nav-item btn text-light dropdown-toggle"
-									type="button"
-									data-toggle="dropdown"
-									aria-haspopup="true"
-									aria-expanded="false"
-								>
-									MASCOTAS
-								</a>
-								<div class="dropdown-menu">
-									<a href="#" class="dropdown-item"><i class="fas fa-paw"></i>Adopciones </a>
-									<a href="#" class="dropdown-item"><i class="fas fa-medal"></i>Logros </a>
-								</div>
-							</div>
-							<div class="btn-group">
-								<a
-									class="nav-item btn text-light dropdown-toggle"
-									type="button"
-									data-toggle="dropdown"
-									aria-haspopup="true"
-									aria-expanded="false"
-								>
-									CONTACTANOS
-								</a>
-								<div class="dropdown-menu">
-									<a href="#" class="dropdown-item"><i class="fas fa-at"></i>Consultanos </a>
-									<a href="#" class="dropdown-item"
-										><i class="fa fa-hashtag" aria-hidden="true"></i>Redes sociales
-									</a>
-									<a href="#" class="dropdown-item"
-										><i class="fa fa-question" aria-hidden="true"></i>Preguntas frecuentes</a
-									>
-								</div>
-							</div>
-
-							<div class="btn-group ml-5">
-								<a
-									class="nav-item btn text-light dropdown-toggle"
-									type="button"
-									data-toggle="dropdown"
-									aria-haspopup="true"
-									aria-expanded="false"
-								>
-									INVOLUCRATE
-								</a>
-								<div class="dropdown-menu">
-									<a href="#" class="dropdown-item"
-										><i class="fa fa-handshake-o" aria-hidden="true"></i>Esfuerzos
-									</a>
-									<a href="#" class="dropdown-item"
-										><i class="fa fa-money" aria-hidden="true"></i>Donativos
-									</a>
-									<a href="#" class="dropdown-item"
-										><i class="fa fa-users" aria-hidden="true"></i>Voluntarios y asociados
-									</a>
-								</div>
+					<button
+						id="nav-btn"
+						type="button"
+						class="navbar-toggler me-4 rounded-circle"
+						data-toggle="collapse"
+						data-target="#navbarCollapse1"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse justify-content-end" id="navbarCollapse1">
+						<div class="btn-group">
+							<a href="#" class="nav-item nav-link active disable">INICIO</a>
+						</div>
+						<div class="btn-group">
+							<a
+								class="nav-item btn text-light dropdown-toggle"
+								type="button"
+								data-toggle="dropdown"
+								aria-haspopup="true"
+								aria-expanded="false"
+							>
+								MASCOTAS
+							</a>
+							<div class="dropdown-menu">
+								<a href="#" class="dropdown-item"><i class="fas fa-paw"></i>Adopciones </a>
+								<a href="#" class="dropdown-item"><i class="fas fa-medal"></i>Logros </a>
 							</div>
 						</div>
-					</nav>
-				</div>
-
-				<div class="jumpboton">
-					<div class="banner-container">
-						<div class="information">
-							<h1 class="hero-title">Refugio de Animales San Nicolas <span>Lomaz de Zamora</span></h1>
-							<p>El amor por todas las criaturas vivientes es el más noble atributo del ser humano.</p>
+						<div class="btn-group">
+							<a
+								class="nav-item btn text-light dropdown-toggle"
+								type="button"
+								data-toggle="dropdown"
+								aria-haspopup="true"
+								aria-expanded="false"
+							>
+								CONTACTANOS
+							</a>
+							<div class="dropdown-menu">
+								<a href="#" class="dropdown-item"><i class="fas fa-at"></i>Consultanos </a>
+								<a href="#" class="dropdown-item"
+									><i class="fa fa-hashtag" aria-hidden="true"></i>Redes sociales
+								</a>
+								<a href="#" class="dropdown-item"
+									><i class="fa fa-question" aria-hidden="true"></i>Preguntas frecuentes</a
+								>
+							</div>
 						</div>
 
-						<img class="isometric-ill" src="./assets/illustration.png" alt="" />
+						<div class="btn-group ml-5">
+							<a
+								class="nav-item btn text-light dropdown-toggle"
+								type="button"
+								data-toggle="dropdown"
+								aria-haspopup="true"
+								aria-expanded="false"
+							>
+								INVOLUCRATE
+							</a>
+							<div class="dropdown-menu">
+								<a href="#" class="dropdown-item"
+									><i class="fa fa-handshake-o" aria-hidden="true"></i>Esfuerzos
+								</a>
+								<a href="#" class="dropdown-item"
+									><i class="fa fa-money" aria-hidden="true"></i>Donativos
+								</a>
+								<a href="#" class="dropdown-item"
+									><i class="fa fa-users" aria-hidden="true"></i>Voluntarios y asociados
+								</a>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</div>
+
+			<div class="jumpboton">
+				<div class="banner-container">
+					<div class="information">
+						<h1 class="hero-title">Refugio de Animales San Nicolas <span>Lomaz de Zamora</span></h1>
+						<p>El amor por todas las criaturas vivientes es el más noble atributo del ser humano.</p>
 					</div>
 
-					<div class="contenedor-img"></div>
-					<div class="bottome-wave"></div>
+					<img class="isometric-ill" src="./assets/illustration.svg" alt="" />
 				</div>
 
+				<div class="contenedor-img"></div>
+				<div class="bottome-wave"></div>
 				<!-- particles.js container -->
 				<div id="particles-js"></div>
-			</header>
+			</div>
+		</header>
 
-			<main>
-				<div class="mission container mt-5">
-					<h1>Nuestra misión</h1>
-					<div class="row">
-						<div class="col-sm-6">
-							<div class="card">
-								<div class="card-body text-white bg-dark">
-									<h5 class="card-title">Special title treatment</h5>
-									<p class="card-text">
-										With supporting text below as a natural lead-in to additional content.
-									</p>
-									<a href="#" class="btn btn-primary">Go somewhere</a>
-								</div>
+		<main>
+			<div class="mission container mt-5">
+				<h1>Nuestra misión</h1>
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="card">
+							<div class="card-body text-white bg-dark">
+								<h5 class="card-title">Special title treatment</h5>
+								<p class="card-text">
+									With supporting text below as a natural lead-in to additional content.
+								</p>
+								<a href="#" class="btn btn-primary">Go somewhere</a>
 							</div>
 						</div>
-						<div class="col-sm-6">
-							<div class="card">
-								<div class="card-body text-white bg-dark">
-									<h5 class="card-title">Special title treatment</h5>
-									<p class="card-text">
-										With supporting text below as a natural lead-in to additional content.
-									</p>
-									<a href="#" class="btn btn-primary">Go somewhere</a>
-								</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="card">
+							<div class="card-body text-white bg-dark">
+								<h5 class="card-title">Special title treatment</h5>
+								<p class="card-text">
+									With supporting text below as a natural lead-in to additional content.
+								</p>
+								<a href="#" class="btn btn-primary">Go somewhere</a>
 							</div>
 						</div>
 					</div>
 				</div>
-			</main>
-			<footer></footer>
-		</section>
+			</div>
+		</main>
+		<footer></footer>
 	</body>
 
 	<script src="./js/navbar.js"></script>

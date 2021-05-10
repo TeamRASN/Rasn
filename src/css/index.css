@@ -1,17 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
-/* .sticky {
-	padding: -50px;
-} */
-/*particles*/
 #particles-js {
-  position: fixed;
+  position: absolute;
   height: 100%;
   width: 100%;
-}
-
-canvas {
-  display: block;
-  vertical-align: bottom;
 }
 
 /*FIN PARTICLES*/
