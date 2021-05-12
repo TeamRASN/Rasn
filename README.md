@@ -2,6 +2,14 @@
 
 _Acá va un párrafo que describa lo que es el proyecto_
 
+Stack - MERN
+Estandar - Custom bootstrap
+Github versionados - Intentar no crear mounstro
+Projects - Issues
+
+Pasaje a React App
+Investigación del Stack
+
 ## Comenzando 🚀
 
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
