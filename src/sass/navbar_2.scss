@@ -1,0 +1,237 @@
+@import "fonts";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Raleway", sans-serif;
+}
+
+#Navbar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+#navbar {
+	position: fixed;
+	width: 100%;
+	height: 80px;
+	top: 0px;
+	display: flex;
+	justify-content: center;
+	z-index: 12;
+	transition: all 150ms ease-in-out;
+
+	.principal_list {
+		width: 100%;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		flex-direction: row;
+		list-style: none;
+
+		margin-bottom: 0px;
+		padding-left: 0px;
+
+		li {
+			display: inline;
+
+			.nav-brand {
+				img {
+					width: 50px;
+					height: auto;
+				}
+			}
+
+			ul {
+				position: absolute;
+				visibility: hidden;
+				opacity: 0;
+				display: flex;
+				flex-direction: column;
+				background-color: white;
+				border-radius: 5px;
+				transform: translateX(-30px);
+			}
+
+			div {
+				cursor: pointer;
+			}
+
+			a,
+			div {
+				display: block;
+				position: relative;
+				color: #303030;
+				border-radius: 5px;
+				font-weight: 600;
+				text-transform: uppercase;
+				text-decoration: none;
+				white-space: nowrap;
+				text-align: left;
+				transition: all 150ms ease-in-out;
+
+				#menu-arrow {
+					margin-right: 7.5px;
+					transition: all 150ms ease-in-out;
+				}
+
+				&:hover {
+					color: #2196f3;
+				}
+			}
+		}
+	}
+
+	&:not(.navbar-toggle) > #deploy-navbar-btn > .line {
+		background-color: white !important;
+	}
+
+	&:not(.navbar-toggle) {
+		height: 100px;
+	}
+
+	&:not(.navbar-toggle) > .principal_list > li > .nav-brand > img {
+		filter: drop-shadow(0px 1px 3px rgba(141, 45, 0, 0.159));
+	}
+
+	&:not(.navbar-toggle) > .principal_list > li > a,
+	&:not(.navbar-toggle) > .principal_list > li > div {
+		color: white;
+		text-shadow: 0px 0px 3px #692a006b;
+
+		&:hover {
+			color: #dddddd !important;
+		}
+	}
+}
+
+#second_nav {
+	transition: all 100ms ease-in-out;
+}
+
+.submenu-element {
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+
+	i {
+		margin-right: 10px;
+	}
+
+	&:last-child {
+		color: #2196f3;
+		margin-bottom: 20px;
+	}
+}
+
+.navbar-toggle {
+	background-color: white;
+	box-shadow: 0px -1px 6px 0px #00000085;
+}
+
+@media screen and (min-width: 700px) {
+	.principal_list {
+		transform: translateX(0) !important;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	#deploy-navbar-btn {
+		position: absolute;
+		left: 5%;
+		top: 50%;
+		width: 60px;
+		height: 60px;
+		cursor: pointer;
+		transform: translate(-5%, -50%);
+		border-radius: 50%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		transition: all 100ms ease-in-out;
+
+		.line {
+			width: 30px;
+			height: 3px;
+			background-color: #4d4d4d;
+			margin: 4px;
+			border-radius: 25px;
+		}
+
+		&:active {
+			background-color: #4d4d4d20;
+		}
+	}
+
+	.principal_list li div,
+	.submenu-element {
+		text-align: center !important;
+	}
+
+	.principal_list {
+		position: fixed;
+		left: 0;
+		top: 79px;
+		width: 60% !important;
+		height: calc(100vh - 79px);
+		flex-direction: column !important;
+		background-color: white;
+		/* box-shadow: 0px -1px 6px 0px #00000085; */
+		transition: all 300ms ease-in-out !important;
+
+		li {
+			a,
+			div {
+				text-shadow: 0px 1px 2px #00000029;
+			}
+
+			.secondary_list {
+				li a,
+				li div {
+					color: #2196f3 !important;
+				}
+			}
+		}
+	}
+}
+
+.responsive_secondary_list {
+	position: relative !important;
+	display: inline !important;
+	visibility: visible !important;
+	opacity: 1 !important;
+}
+
+.show_secondary_list {
+	margin-top: 20px;
+	display: flex !important;
+	visibility: visible !important;
+	opacity: 1 !important;
+	padding-left: 0rem;
+}
+
+.toggle_arrow {
+	transform: rotate(90deg);
+}
+
+.li_toggle_color {
+	color: #2196f3 !important;
+}
+
+#responsive-mask {
+	transition: all 300ms ease-in-out;
+}
+
+.toggle_responsive_mask {
+	position: fixed;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	background-color: #26424bb9;
+}
+
+/*# sourceMappingURL=navbar.css.map */

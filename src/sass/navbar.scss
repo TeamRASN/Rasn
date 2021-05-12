@@ -32,9 +32,9 @@ body {
 }
 
 #navbar {
-	background: rgba(0, 0, 0, 0.213);
 	transition: all 200ms ease;
-	box-shadow: 0px 1px 3px 0px #0000003d;
+	/* background: rgba(0, 0, 0, 0.213);
+	box-shadow: 0px 1px 3px 0px #0000003d; */
 }
 
 .navbar-toggler {
@@ -54,13 +54,6 @@ body {
 }
 #navbarCollapse1 {
 	margin-right: 7em;
-}
-
-.navbar-brand {
-	img {
-		width: 50px;
-		height: auto;
-	}
 }
 
 .sticky {

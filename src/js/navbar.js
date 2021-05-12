@@ -1,11 +1,8 @@
 window.addEventListener("scroll", function () {
-	var header = document.getElementById("navbar");
+	const navbar = document.getElementById("navbar");
+	/* const element = document.getElementsByClassName("nav-element"); */
+	/* console.log(element); */
 
-	header.classList.toggle("bg-dark", window.scrollY > 0);
+	navbar.classList.toggle("navbar-toggle", window.scrollY > 0);
+	/* element.classList.toggle("text-white", window.scrollY > 0); */
 });
-
-/* function btnAnimation() {
-	const button = document.getElementById("nav-btn");
-
-}
- */

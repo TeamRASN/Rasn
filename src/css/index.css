@@ -99,6 +99,7 @@
   }
   .banner-container .information {
     width: 100%;
+    padding-right: 0px;
   }
   .banner-container .information .hero-title, .banner-container .information p {
     margin-top: 50px;
