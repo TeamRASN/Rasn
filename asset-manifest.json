@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Rasn/static/css/main.88602766.chunk.css",
+    "main.js": "/Rasn/static/js/main.5136e94d.chunk.js",
+    "main.js.map": "/Rasn/static/js/main.5136e94d.chunk.js.map",
+    "runtime-main.js": "/Rasn/static/js/runtime-main.21952d23.js",
+    "runtime-main.js.map": "/Rasn/static/js/runtime-main.21952d23.js.map",
+    "static/js/2.c375b27b.chunk.js": "/Rasn/static/js/2.c375b27b.chunk.js",
+    "static/js/2.c375b27b.chunk.js.map": "/Rasn/static/js/2.c375b27b.chunk.js.map",
+    "index.html": "/Rasn/index.html",
+    "static/css/main.88602766.chunk.css.map": "/Rasn/static/css/main.88602766.chunk.css.map",
+    "static/js/2.c375b27b.chunk.js.LICENSE.txt": "/Rasn/static/js/2.c375b27b.chunk.js.LICENSE.txt",
+    "static/js/main.5136e94d.chunk.js.LICENSE.txt": "/Rasn/static/js/main.5136e94d.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/Rasn/static/media/wave.6fc0900b.svg",
+    "static/media/illustration.acbb817b.svg": "/Rasn/static/media/illustration.acbb817b.svg",
+    "static/media/logo.49647bfe.svg": "/Rasn/static/media/logo.49647bfe.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.21952d23.js",
+    "static/js/2.c375b27b.chunk.js",
+    "static/css/main.88602766.chunk.css",
+    "static/js/main.5136e94d.chunk.js"
+  ]
+}
