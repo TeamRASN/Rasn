@@ -1,53 +1,31 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+//Rutas de Páginas
+import Index from "./pages/Index";
+import Mascotas from "./pages/Mascotas";
 
 //Componenetes
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 
 //Estilos
-import "./css/index.css";
+import "./css/header.css";
 import "./css/customBts.css";
 
 export default class App extends Component {
 	render() {
 		return (
 			<div>
-				<Navbar />
 				<Header />
 
-				<main>
-					<div className="mission container mt-5">
-						<h1>Nuestra misión</h1>
-						<div className="row">
-							<div className="col-sm-6">
-								<div className="card">
-									<div className="card-body text-white bg-dark">
-										<h5 className="card-title">Special title treatment</h5>
-										<p className="card-text">
-											With supporting text below as a natural lead-in to additional content.
-										</p>
-										<a href="/" className="btn btn-primary">
-											Go somewhere
-										</a>
-									</div>
-								</div>
-							</div>
-							<div className="col-sm-6">
-								<div className="card">
-									<div className="card-body text-white bg-dark">
-										<h5 className="card-title">Special title treatment</h5>
-										<p className="card-text">
-											With supporting text below as a natural lead-in to additional content.
-										</p>
-										<a href="/" className="btn btn-primary">
-											Go somewhere
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</main>
+				<Router>
+					<Navbar />
+					<Switch>
+						<Route path="/mascotas" component={Mascotas} />
+						<Route path="/" exact component={Index} />
+					</Switch>
+				</Router>
 			</div>
 		);
 	}

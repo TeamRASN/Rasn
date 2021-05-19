@@ -1,8 +1,12 @@
 import React from "react";
 import { useEffect, useState } from "react";
+// eslint-disable-next-line no-unused-vars
+import { Link, useLocation } from "react-router-dom";
 
+//Componentes
 import Logo from "../assets/logo.svg";
 
+//Estilos
 import "../css/navbar.css";
 
 export default function Navbar() {
@@ -101,24 +105,24 @@ export default function Navbar() {
 			</div>
 			<ul className="principal_list" style={responsiveNavState()}>
 				<li>
-					<a href="/" className="nav-brand">
+					<Link to="/" className="nav-brand">
 						<img id="logo" src={Logo} alt="Refugio_San_Nicolas_logo" />
-					</a>
+					</Link>
 				</li>
 				<li>
-					<a className="nav-element" href="algo.html">
+					<Link to="/" className="nav-element">
 						Inicio
-					</a>
+					</Link>
 				</li>
 				<li>
-					<a className="nav-element" href="algo.html">
+					<Link to="/mascotas" className="nav-element">
 						Mascotas
-					</a>
+					</Link>
 				</li>
 				<li>
-					<a className="nav-element" href="algo.html">
+					<Link to="/contacto" className="nav-element">
 						Contactanos
-					</a>
+					</Link>
 				</li>
 				<li>
 					<div id="li-secondnav" className="nav-element" onClick={activeSecondList}>
@@ -127,22 +131,22 @@ export default function Navbar() {
 					</div>
 					<ul id="second_nav">
 						<li>
-							<a href="algo.html" className="submenu-element">
+							<Link to="/esfuerzos" className="submenu-element">
 								<i className="fab-icon fa fa-handshake-o" aria-hidden="true"></i>
 								Esfuerzos
-							</a>
+							</Link>
 						</li>
 						<li>
-							<a href="algo.html" className="submenu-element">
+							<Link to="/donativos" className="submenu-element">
 								<i className="fab-icon fa fa-money" aria-hidden="true"></i>
 								Donativos
-							</a>
+							</Link>
 						</li>
 						<li>
-							<a href="algo.html" className="submenu-element">
+							<Link to="/voluntarios" className="submenu-element">
 								<i className="fab-icon fa fa-users" aria-hidden="true"></i>
 								Voluntarios y asociados
-							</a>
+							</Link>
 						</li>
 					</ul>
 				</li>

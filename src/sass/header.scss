@@ -1,0 +1,132 @@
+@import "fonts";
+@import "mixins";
+
+#tsparticles {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
+/*FIN PARTICLES*/
+
+.jumpboton {
+	height: 100vh;
+	overflow: hidden;
+	background: rgb(255, 127, 0);
+	background: linear-gradient(86deg, rgba(244, 121, 0, 1) 0%, rgba(237, 143, 0, 1) 100%);
+
+	@include displayFlex(column, center, center);
+
+	.contenedor-img {
+		width: 100%;
+		height: inherit;
+
+		position: absolute;
+		background-image: url("../assets/banner.svg");
+		background-position: center;
+		background-size: cover;
+	}
+}
+
+.banner-container {
+	width: 80%;
+	height: 60%;
+	@include displayFlex(row, space-around, center);
+	position: absolute;
+	z-index: 2;
+	margin-bottom: 50px;
+
+	.information {
+		@include displayFlex(column, flex-start, center);
+		width: 600px;
+		height: auto;
+		text-align: left;
+		padding-right: 30px;
+
+		.hero-title {
+			color: rgb(255, 251, 240);
+			text-shadow: 1px 1px 5px rgb(39, 39, 39);
+		}
+
+		p {
+			@extend .hero-title;
+			font-weight: 300;
+			margin-top: 50px;
+		}
+	}
+
+	.isometric-ill {
+		height: auto;
+		filter: drop-shadow(0px 5px 3px #862b0123);
+		transition: all 200ms ease-in-out !important;
+	}
+}
+
+.bottome-wave {
+	background-image: url("../assets/wave.svg");
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: inherit;
+	z-index: 1;
+}
+
+@media screen and (min-width: 1030px) {
+	.information {
+		p {
+			font-size: 1.75em;
+		}
+	}
+	.isometric-ill {
+		width: 400px;
+	}
+}
+
+@media screen and (max-width: 1029px) {
+	.banner-container {
+		flex-direction: column-reverse;
+
+		.information {
+			width: 100%;
+			padding-right: 0px;
+
+			.hero-title {
+				margin-top: 50px;
+			}
+			p {
+				margin-top: 0px;
+				font-size: 1.75em;
+			}
+		}
+
+		.isometric-ill {
+			width: 300px;
+		}
+	}
+}
+
+@media screen and (max-width: 771px) {
+	.hero-title {
+		font-size: 2em;
+	}
+	p {
+		margin-top: 10px !important;
+		font-size: 1.25em !important;
+	}
+	.isometric-ill {
+		width: 250px !important;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.hero-title {
+		font-size: 1.75em;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.isometric-ill {
+		width: 220px !important;
+	}
+}
