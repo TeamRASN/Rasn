@@ -1,34 +1,49 @@
 import React from "react";
 import Card from "./Card";
 
-import Photo from "../../assets/Mia.jpg";
+//Componenetes
+import Mia from "../../assets/Mia.jpg";
+import Dog from "../../assets/Dog.jpg";
+import Dog2 from "../../assets/organizacion.jpg";
+
+//Estilos
+import "../../css/eccomerce.css";
 
 const cards = [
 	{
 		id: 1,
-		title: "Mia",
-		image: Photo,
+		name: "Mia",
+		image: Mia,
 	},
 	{
 		id: 2,
-		title: "Mia",
-		image: Photo,
+		name: "Carlos",
+		image: Dog,
 	},
 	{
 		id: 3,
-		title: "Mia",
-		image: Photo,
+		name: "Mia",
+		image: Mia,
+	},
+	{
+		id: 4,
+		name: "Sushee",
+		image: Dog2,
+	},
+	{
+		id: 5,
+		name: "Coqui",
+		image: Dog,
 	},
 ];
 
 function Cards() {
 	return (
-		<div className="container d-flex justify-content-center align-items-center h-100">
-			<div className="row">
-				{cards.map(({ title, image, url, id }) => (
-					<div className="col-md-4" key={id}>
-						<Card imageSource={image} title={title} url={url} />
-					</div>
+		<div className="container">
+			<h1>MASCOTAS RESCATADAS</h1>
+			<div className="row animals-box-top animals-top">
+				{cards.map(({ name, image, url, id }) => (
+					<Card imageSource={image} name={name} key={id} />
 				))}
 			</div>
 		</div>

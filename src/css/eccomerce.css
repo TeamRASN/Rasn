@@ -1,0 +1,93 @@
+.animals-box-top {
+  margin-top: 1;
+}
+
+.animals-top {
+  padding: 5% 0;
+}
+
+.clear {
+  clear: both;
+}
+
+.location {
+  text-decoration: none;
+}
+
+.card_box {
+  background-color: white;
+  position: relative;
+  border-radius: 0.3rem;
+  margin-bottom: 20px;
+}
+
+.img-responsive {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+  display: flex;
+  justify-content: center;
+}
+.img-responsive img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card_desc {
+  padding: 5%;
+  border: 1px solid #e0e0e0;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card_desc h3 {
+  text-decoration: none;
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.card_btn {
+  list-style: none;
+}
+.card_btn a {
+  color: #000;
+  font-size: 0.8125em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.card_btn a:hover {
+  color: #e92546;
+}
+
+@media (max-width: 800px) {
+  .card_box {
+    width: 100%;
+  }
+
+  .card_desc {
+    padding: 10px;
+  }
+}
+@media (max-width: 575px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .animals-box-top {
+    width: 80%;
+  }
+}
+
+/*# sourceMappingURL=eccomerce.css.map */

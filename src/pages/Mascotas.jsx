@@ -2,8 +2,6 @@ import React, { Component } from "react";
 
 //Componenetes
 import Cards from "../components/Mascotas/Cards";
-// eslint-disable-next-line no-unused-vars
-import Mia from "../assets/Mia.jpg";
 
 //Estilos
 import "../css/mascotas.css";
@@ -12,8 +10,6 @@ export default class Mascotas extends Component {
 	render() {
 		return (
 			<div>
-				<h1>MASCOTAS RESCATADAS</h1>
-
 				<Cards />
 
 				{/* <div className="grid-container">

@@ -1,18 +1,31 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "../../css/mascotas.css";
+//Componenetes
 
-export default function Card({ imageSource, title, text, url }) {
+//Estilos
+/* import "../../css/mascotas.css"; */
+import "../../css/eccomerce.css";
+
+export default function Card({ imageSource, name, text }) {
+	/* const currentLocation = () => {
+		console.log(window.location.href);
+	}; */
+
 	return (
-		<div className="card text-center bg-dark animate__animated animate__fadeInUp">
-			<div className="overflow">
-				<img src={imageSource} alt="a wallpaper" className="card-img-top" />
-			</div>
-			<div className="card-body text-light">
-				<h4 className="card-title">{title}</h4>
-				<a href="#" className="btn btn-outline-secondary border-0" rel="noreferrer">
-					Go to {title}
+		<div className="col-12 col-lg-3 col-md-4 col-sm-6 animal-card">
+			<div className="card_box">
+				<a className="location" href="single.html">
+					<div className="img-responsive">
+						<img src={imageSource} alt="" />
+					</div>
+					<div className="card_desc">
+						<h3 className="">{name}</h3>
+						<li className="card_btn">
+							<a href="/hola.html">Read More</a>
+						</li>
+						<div className="clear"></div>
+					</div>
 				</a>
 			</div>
 		</div>
@@ -20,8 +33,7 @@ export default function Card({ imageSource, title, text, url }) {
 }
 
 Card.propTypes = {
-	title: PropTypes.string.isRequired,
-	text: PropTypes.string,
-	url: PropTypes.string,
 	imageSource: PropTypes.string,
+	name: PropTypes.string.isRequired,
+	text: PropTypes.string,
 };
