@@ -1,117 +1,201 @@
+@import "_mixins";
+
+$radius: 0.3rem;
+
+.Mascotas {
+	padding-top: 15px;
+}
+
 /*------------------------------------------------------------------------------------------*/
-/*----------------------------------- TARJETA DE MASCOTA -----------------------------------*/
+/*--------------------------------- CONTENEDOR DE ANIMALES ---------------------------------*/
 /*------------------------------------------------------------------------------------------*/
 
-.grid-container {
-	width: 85%;
-	height: 100%;
-	margin: 50px auto 50px auto;
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	grid-auto-columns: minmax(auto, 240px);
-	grid-auto-rows: minmax(auto, 260px);
-	grid-auto-flow: dense;
-	grid-gap: 20px;
+.secciones {
+	@include displayFlex(row, space-between, center);
 
-	.item_equipo {
-		width: auto;
-		height: auto;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		border: 1px solid var(--var-inputs-border);
-		border-radius: 5px;
-		font-size: 30px;
-		text-align: center;
-		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+	a {
+		text-decoration: none;
+		transition: all 150ms ease-in-out;
 
-		.foto_integrante {
-			width: 100%;
-			height: 65%;
-			overflow: hidden;
-			border-top-left-radius: 5px;
-			border-top-right-radius: 5px;
-			background-position: center;
-			background-size: cover;
+		h1 {
+			color: #333;
+			transition: all 150ms ease-in-out;
+			text-align: center;
 
-			img {
-				width: 100%;
-				height: auto;
+			padding: 15px 20px;
+			border-radius: 1rem;
+			background: #f3f4f5;
+			box-shadow: 0 0 18px 2px #e2e6e9;
+
+			&:hover {
+				color: rgb(92, 76, 63);
 			}
+		}
+		.activeHead {
+			color: #b1b1b1 !important;
 		}
 	}
 }
 
-.cartas {
-	font-family: sans-serif;
+/*------------------------------------------------------------------------------------------*/
+/*----------------------------------- TARJETA DE MASCOTA -----------------------------------*/
+/*------------------------------------------------------------------------------------------*/
+
+.animals-top {
+	padding: 5% 0;
+}
+
+.clear {
+	clear: both;
+}
+
+.location {
+	text-decoration: none;
+	border: 0px;
+	background-color: transparent;
+}
+
+.card_box {
 	background-color: rgb(255, 255, 255);
-	border: rgb(228, 228, 228) solid 1px;
-	color: black;
-	font-family: "Questrial", sans-serif;
-	margin: 10px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	transition: all 0.2s;
 	position: relative;
-	display: flex;
-	justify-content: flex-start;
-	flex-direction: column;
+	border-radius: $radius;
+	margin-bottom: 20px;
 }
 
-.texto_integrante {
+.img-responsive {
 	width: 100%;
-	height: 35%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-	box-shadow: 0px -15px 20px -15px black;
+	height: 200px;
+	overflow: hidden;
+	border-top-left-radius: $radius;
+	border-top-right-radius: $radius;
+	@include displayFlex(null, center, null);
+
+	img {
+		width: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
 }
 
-.nombre_integrante {
-	font-weight: 300;
-	font-size: 60%;
-	border-radius: 5px;
-	color: var(--var-primary-color);
+.card_desc {
+	padding: 5%;
+	border: 1px solid #e0e0e0;
+	border-bottom-left-radius: $radius;
+	border-bottom-right-radius: $radius;
+	@include displayFlex(column, center, center);
+
+	h3 {
+		text-decoration: none;
+		margin-bottom: 5px;
+		color: #333;
+		font-size: 1.25rem;
+		font-weight: 500;
+		text-decoration: none;
+	}
 }
 
-.informacion_mascota {
-	width: 100%;
-	height: 35%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	background-color: var(--var-inputs-border);
+.card_btn {
+	list-style: none;
+	a {
+		color: #000;
+		font-size: 0.8125em;
+		text-transform: uppercase;
+		font-weight: 600;
+	}
 }
 
-/*------------------------------------------------------------------------------------------*/
-/*-------------------------------------- BOTÓN POP-UP --------------------------------------*/
-/*------------------------------------------------------------------------------------------*/
+.card_btn a:hover {
+	color: #e92546;
+}
 
-.btn-abrir-popup {
-	padding: 0 20px;
-	height: 40px;
-	line-height: 40px;
-	border: none;
-	color: #fff;
-	background: #fc990b;
-	margin-top: 10px;
-	font-size: 16px;
-	cursor: pointer;
-	transition: 0.3s ease all;
+@media (max-width: 800px) {
+	.card_box {
+		width: 100%;
+	}
 
-	&:hover {
-		background: #d07d0b;
+	.card_desc {
+		padding: 10px;
+	}
+}
+
+@media (max-width: 575px) {
+	.container {
+		@include displayFlex(column, center, center);
+	}
+	.animals-top {
+		@include displayFlex(null, center, center);
 	}
 }
 
 /*------------------------------------------------------------------------------------------*/
 /*----------------------------------------- POP-UP -----------------------------------------*/
 /*------------------------------------------------------------------------------------------*/
+
+.overlay {
+	background: rgba(0, 0, 0, 0.3);
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	visibility: visible;
+	opacity: 1;
+	transition: all 200ms ease-in-out;
+	z-index: 10;
+
+	&:not(.active) {
+		visibility: hidden;
+		opacity: 0;
+	}
+}
+
+.popup {
+	margin-top: 75px;
+	background: #f8f8f8;
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+	border-radius: 3px;
+	font-family: "Montserrat", sans-serif;
+	width: 80%;
+	height: 80%;
+	transition: 0.3s ease all;
+	transform: scale(0.7);
+	display: flex;
+	flex-direction: row;
+	visibility: visible;
+	opacity: 1;
+
+	&:not(.active) {
+		visibility: hidden;
+		opacity: 0;
+	}
+
+	.btn-cerrar-popup {
+		font-size: 20px;
+		position: absolute;
+		right: 15px;
+		top: 15px;
+		display: block;
+		text-align: right;
+		transition: 0.3s ease all;
+		color: #000;
+
+		&:hover {
+			color: #212121;
+		}
+	}
+
+	h1 {
+		font-size: 30px;
+		opacity: 0;
+	}
+
+	p {
+		opacity: 0;
+	}
+}
 
 .img {
 	width: 40%;
@@ -121,7 +205,7 @@
 	background-origin: content-box;
 }
 
-.descripcion {
+/* .descripcion {
 	width: 100%;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
@@ -134,95 +218,59 @@
 .aptitud {
 	grid-row: span 2;
 	grid-column: span 2;
-}
+} */
 
-.container-text {
+.info-section {
 	width: 60%;
-	padding: 50px;
-	overflow-y: auto;
+
+	.container-text {
+		height: 100%;
+		@include displayFlex(column, space-evenly, null);
+
+		padding: 20px;
+		h1 {
+			font-size: 30px;
+		}
+
+		.descripcion {
+			height: 65%;
+		}
+	}
 }
 
 .renglon {
 	display: flex;
+	justify-content: space-around;
+	align-items: center;
 
-	> p {
-		margin-top: -4px;
+	h4 {
+		width: 50%;
+		justify-self: flex-end;
+		font-size: 18px;
+		margin: 0;
+	}
+
+	p {
+		width: 50%;
+		margin-bottom: 5px;
 		margin-left: 10px;
 		line-height: 1.7;
 	}
 }
 
-.container-text {
-	h1 {
-		font-size: 30px;
-		padding-bottom: 30px;
+.aptitud {
+	h4 {
+		width: 20% !important;
 	}
 
 	p {
-		font-size: 16px;
-	}
-}
-
-.overlay {
-	background: rgba(0, 0, 0, 0.3);
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	align-items: center;
-	justify-content: center;
-	display: flex;
-	visibility: hidden;
-	z-index: 2;
-
-	&.active {
-		visibility: visible;
-	}
-}
-
-.popup {
-	background: #f8f8f8;
-	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
-	border-radius: 3px;
-	font-family: "Montserrat", sans-serif;
-	width: 60%;
-	height: 80%;
-	transition: 0.3s ease all;
-	transform: scale(0.7);
-	opacity: 0;
-	display: flex;
-	flex-direction: row;
-
-	.btn-cerrar-popup {
-		font-size: 20px;
-		position: absolute;
-		right: 15px;
-		top: 15px;
-		display: block;
-		text-align: right;
-		transition: 0.3s ease all;
-		color: #bbbbbb;
-
-		&:hover {
-			color: #000;
-		}
-	}
-
-	h1 {
-		font-size: 30px;
-		opacity: 0;
-	}
-
-	p {
-		font-size: 16px;
-		opacity: 0;
+		width: 80% !important;
 	}
 }
 
 .btn-adoptar {
 	height: 30px;
-	margin-top: 35px;
+	margin-top: 10px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -235,7 +283,64 @@
 	transition: all 300ms ease-in-out;
 
 	&:hover {
-		background-color: #e88f14;
+		background-color: #ffa82f;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.popup {
+		flex-direction: column;
+
+		.img {
+			width: 100%;
+			height: 50%;
+		}
+
+		.info-section {
+			width: 100%;
+			height: 40%;
+
+			.container-text {
+				height: auto;
+
+				.renglon {
+					h4 {
+						width: 50%;
+					}
+					p {
+						width: 60%;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 772px) {
+	.img {
+		height: 40% !important;
+	}
+
+	.info-section {
+		height: 60% !important;
+
+		.container-text {
+			height: 100% !important;
+
+			.descripcion {
+				overflow-y: scroll;
+			}
+
+			.renglon {
+				h4 {
+					width: 50%;
+				}
+				p {
+					width: 60%;
+					font-size: 16px !important;
+				}
+			}
+		}
 	}
 }
 
@@ -292,55 +397,4 @@
 	to {
 		opacity: 1;
 	}
-}
-
-/*------------------------------------------------------------------------------------------*/
-/*-------------------------------- CONFIGURACION RESPONSIVE --------------------------------*/
-/*------------------------------------------------------------------------------------------*/
-
-@media screen and (max-width: 991px) {
-	/*---------------- Equipo ----------------*/
-
-	.contenedor_equipo {
-		grid-template-columns: repeat(3, 1fr);
-	}
-
-	@media screen and (max-width: 767px) {
-		/*---------------- Equipo ----------------*/
-
-		.contenedor_equipo {
-			grid-template-columns: repeat(2, 1fr);
-		}
-	}
-
-	@media screen and (max-width: 650px) {
-		/*---------------- Páginas hermanas ----------------*/
-	}
-}
-
-.card:hover {
-	box-shadow: 5px 10px 20px 1px rgba(255, 255, 255, 0.273) !important;
-	transition: all 0.7s linear;
-}
-
-.card-body {
-	padding: 2rem 0 !important;
-}
-
-.card-text {
-	padding: 0.3rem 1rem;
-	font-size: 1rem;
-}
-
-.overflow {
-	overflow: hidden;
-}
-
-.card-img-top {
-	transform: scale(1);
-	transition: all 300ms ease-in-out;
-}
-
-.card:hover > .overflow > .card-img-top {
-	transform: scale(1.1);
 }

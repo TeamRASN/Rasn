@@ -4,29 +4,20 @@ import PropTypes from "prop-types";
 //Componenetes
 
 //Estilos
-/* import "../../css/mascotas.css"; */
-import "../../css/eccomerce.css";
+import "../../css/mascotas.css";
 
-export default function Card({ imageSource, name, text }) {
-	/* const currentLocation = () => {
-		console.log(window.location.href);
-	}; */
-
+export default function Card({ imageSource, name, text, popup }) {
 	return (
-		<div className="col-12 col-lg-3 col-md-4 col-sm-6 animal-card">
+		<div className="col-11 col-lg-3 col-md-4 col-sm-6 animal-card">
 			<div className="card_box">
-				<a className="location" href="single.html">
+				<button className="location" onClick={() => popup}>
 					<div className="img-responsive">
 						<img src={imageSource} alt="" />
 					</div>
 					<div className="card_desc">
 						<h3 className="">{name}</h3>
-						<li className="card_btn">
-							<a href="/hola.html">Read More</a>
-						</li>
-						<div className="clear"></div>
 					</div>
-				</a>
+				</button>
 			</div>
 		</div>
 	);

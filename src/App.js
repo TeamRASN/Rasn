@@ -22,7 +22,7 @@ export default class App extends Component {
 				<Router>
 					<Navbar />
 					<Switch>
-						<Route path="/mascotas" component={Mascotas} />
+						<Route path="/mascotas" exact component={Mascotas} />
 						<Route path="/" exact component={Index} />
 					</Switch>
 				</Router>
