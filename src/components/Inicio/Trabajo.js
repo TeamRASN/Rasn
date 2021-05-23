@@ -1,7 +1,7 @@
 import React from "react";
 
 //Componentes
-import Card from "./TrabajoCard";
+import Card from "./Tarjetas/TrabajoCard";
 import HouseIcon from "../../assets/dog-house.svg";
 import VaccineIcon from "../../assets/syringe.svg";
 import LicenseIcon from "../../assets/license.svg";

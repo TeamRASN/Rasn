@@ -8,7 +8,7 @@ import Logo from "../../assets/logo.svg";
 export default class Index extends Component {
 	render() {
 		return (
-			<div className="container ms-container">
+			<section className="container ms-container">
 				<div className="mision">
 					<div className="informacion">
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ea inventore nesciunt
@@ -19,7 +19,7 @@ export default class Index extends Component {
 						<img src={Logo} alt="" />
 					</div>
 				</div>
-			</div>
+			</section>
 		);
 	}
 }
