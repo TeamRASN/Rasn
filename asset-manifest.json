@@ -1,24 +1,33 @@
 {
   "files": {
-    "main.css": "/Rasn/static/css/main.984e1d56.chunk.css",
-    "main.js": "/Rasn/static/js/main.0f0f1145.chunk.js",
-    "main.js.map": "/Rasn/static/js/main.0f0f1145.chunk.js.map",
+    "main.css": "/Rasn/static/css/main.6c530f48.chunk.css",
+    "main.js": "/Rasn/static/js/main.64912a18.chunk.js",
+    "main.js.map": "/Rasn/static/js/main.64912a18.chunk.js.map",
     "runtime-main.js": "/Rasn/static/js/runtime-main.21952d23.js",
     "runtime-main.js.map": "/Rasn/static/js/runtime-main.21952d23.js.map",
-    "static/js/2.6b7908da.chunk.js": "/Rasn/static/js/2.6b7908da.chunk.js",
-    "static/js/2.6b7908da.chunk.js.map": "/Rasn/static/js/2.6b7908da.chunk.js.map",
+    "static/js/2.72508b98.chunk.js": "/Rasn/static/js/2.72508b98.chunk.js",
+    "static/js/2.72508b98.chunk.js.map": "/Rasn/static/js/2.72508b98.chunk.js.map",
     "index.html": "/Rasn/index.html",
-    "static/css/main.984e1d56.chunk.css.map": "/Rasn/static/css/main.984e1d56.chunk.css.map",
-    "static/js/2.6b7908da.chunk.js.LICENSE.txt": "/Rasn/static/js/2.6b7908da.chunk.js.LICENSE.txt",
-    "static/js/main.0f0f1145.chunk.js.LICENSE.txt": "/Rasn/static/js/main.0f0f1145.chunk.js.LICENSE.txt",
+    "static/css/main.6c530f48.chunk.css.map": "/Rasn/static/css/main.6c530f48.chunk.css.map",
+    "static/js/2.72508b98.chunk.js.LICENSE.txt": "/Rasn/static/js/2.72508b98.chunk.js.LICENSE.txt",
+    "static/js/main.64912a18.chunk.js.LICENSE.txt": "/Rasn/static/js/main.64912a18.chunk.js.LICENSE.txt",
+    "static/media/Cat.ae4815a1.jpg": "/Rasn/static/media/Cat.ae4815a1.jpg",
+    "static/media/Cat2.c64e9ede.jpg": "/Rasn/static/media/Cat2.c64e9ede.jpg",
+    "static/media/Dog.9f4ee7bf.jpg": "/Rasn/static/media/Dog.9f4ee7bf.jpg",
+    "static/media/Mia.484dd013.jpg": "/Rasn/static/media/Mia.484dd013.jpg",
     "static/media/header.css": "/Rasn/static/media/wave.6fc0900b.svg",
+    "static/media/dog-house.a4b33d8d.svg": "/Rasn/static/media/dog-house.a4b33d8d.svg",
     "static/media/illustration.acbb817b.svg": "/Rasn/static/media/illustration.acbb817b.svg",
-    "static/media/logo.49647bfe.svg": "/Rasn/static/media/logo.49647bfe.svg"
+    "static/media/license.9e592b8a.svg": "/Rasn/static/media/license.9e592b8a.svg",
+    "static/media/logo.49647bfe.svg": "/Rasn/static/media/logo.49647bfe.svg",
+    "static/media/mascotas.css": "/Rasn/static/media/organizacion.a167293e.jpg",
+    "static/media/perraco.ec139c49.jpg": "/Rasn/static/media/perraco.ec139c49.jpg",
+    "static/media/syringe.7a7749eb.svg": "/Rasn/static/media/syringe.7a7749eb.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.21952d23.js",
-    "static/js/2.6b7908da.chunk.js",
-    "static/css/main.984e1d56.chunk.css",
-    "static/js/main.0f0f1145.chunk.js"
+    "static/js/2.72508b98.chunk.js",
+    "static/css/main.6c530f48.chunk.css",
+    "static/js/main.64912a18.chunk.js"
   ]
 }
