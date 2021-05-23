@@ -105,24 +105,24 @@ export default function Navbar() {
 			</div>
 			<ul className="principal_list" style={responsiveNavState()}>
 				<li>
-					<Link to="/" className="nav-brand">
+					<a href="/" className="nav-brand">
 						<img id="logo" src={Logo} alt="Refugio_San_Nicolas_logo" />
-					</Link>
+					</a>
 				</li>
 				<li>
-					<Link to="/" className="nav-element">
+					<a href="/" className="nav-element">
 						Inicio
-					</Link>
+					</a>
 				</li>
 				<li>
-					<Link to="/mascotas" className="nav-element">
+					<a href="/mascotas" className="nav-element">
 						Mascotas
-					</Link>
+					</a>
 				</li>
 				<li>
-					<Link to="/contacto" className="nav-element">
+					<a href="/contacto" className="nav-element">
 						Contactanos
-					</Link>
+					</a>
 				</li>
 				<li>
 					<div id="li-secondnav" className="nav-element" onClick={activeSecondList}>
@@ -131,22 +131,22 @@ export default function Navbar() {
 					</div>
 					<ul id="second_nav">
 						<li>
-							<Link to="/esfuerzos" className="submenu-element">
+							<a href="/esfuerzos" className="submenu-element">
 								<i className="fab-icon fa fa-handshake-o" aria-hidden="true"></i>
 								Esfuerzos
-							</Link>
+							</a>
 						</li>
 						<li>
-							<Link to="/donativos" className="submenu-element">
+							<a href="/donativos" className="submenu-element">
 								<i className="fab-icon fa fa-money" aria-hidden="true"></i>
 								Donativos
-							</Link>
+							</a>
 						</li>
 						<li>
-							<Link to="/voluntarios" className="submenu-element">
+							<a href="/voluntarios" className="submenu-element">
 								<i className="fab-icon fa fa-users" aria-hidden="true"></i>
 								Voluntarios y asociados
-							</Link>
+							</a>
 						</li>
 					</ul>
 				</li>
