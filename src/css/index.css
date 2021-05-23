@@ -1,8 +1,91 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
-.mission {
-  position: relative;
+/*------------------------------------------------------------------------------------------*/
+/*----------------------------------------- MISION -----------------------------------------*/
+/*------------------------------------------------------------------------------------------*/
+.ms-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.ms-container .mision {
+  width: 90%;
+  height: 45vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.ms-container .mision .logo-img {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.ms-container .mision .logo-img img {
+  width: 60%;
+  height: auto;
+}
+.ms-container .mision .informacion {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 50%;
+  line-height: 2em;
+  font-size: 1.5rem;
+  text-align: justify;
+}
+
+/*------------------------------------------------------------------------------------------*/
+/*--------------------------------------- OBJETIVOS ----------------------------------------*/
+/*------------------------------------------------------------------------------------------*/
+.trabajo {
   width: 100%;
-  height: 80vh;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin-top: 40px;
+}
+.trabajo .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.trabajo .container .element-list {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.trabajo .container .element-list .work-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.trabajo .container .element-list .work-card .icon {
+  border-radius: 50%;
+  background-color: #eceef3;
+}
+.trabajo .container .element-list .work-card .icon img {
+  width: 100px;
+  filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.213));
+}
+.trabajo .container .element-list .work-card .media-body {
+  /* width: 60%; */
+}
+.trabajo .container .element-list .work-card .media-body .heading {
+  font-size: 1.3rem;
+}
+.trabajo .container .element-list .work-card .media-body p {
+  font-size: 1rem !important;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -43,7 +43,7 @@ export default function Mascotas() {
 	let SecondHeadColor = rescatadosPage ? "" : "activeHead";
 
 	return (
-		<div className="Mascotas">
+		<main className="Mascotas">
 			<div className="container">
 				<Router>
 					<div className="secciones">
@@ -204,6 +204,6 @@ export default function Mascotas() {
 
 					
 				</div>*/}
-		</div>
+		</main>
 	);
 }
