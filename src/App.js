@@ -8,6 +8,7 @@ import Animales from "./pages/Animales";
 //Componenetes
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 //Estilos
 import "./css/header.css";
@@ -26,6 +27,7 @@ export default class App extends Component {
 						<Route path="/" exact component={Index} />
 					</Switch>
 				</Router>
+				<Footer />
 			</div>
 		);
 	}

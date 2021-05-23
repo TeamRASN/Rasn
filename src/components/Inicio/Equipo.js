@@ -9,7 +9,7 @@ import Integrante from "./Tarjetas/Integrante";
 export default function Equipo() {
 	return (
 		<section className="team-section">
-			<div className="container mb-4 mt-5">
+			<div className="container pb-5 mt-5">
 				<div className="row justify-content-center">
 					<div className="col-12 heading-section">
 						<h2 className="">Nuestro equipo</h2>

@@ -115,7 +115,7 @@ export default function Navbar() {
 					</a>
 				</li>
 				<li>
-					<a href="/animales" className="nav-element">
+					<a href="/animales#/rescatados" className="nav-element">
 						Animales
 					</a>
 				</li>
