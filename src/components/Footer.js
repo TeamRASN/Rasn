@@ -46,29 +46,34 @@ export default function Footer() {
 								<nav>
 									<ul className="useful-links">
 										<li>
-											<a href=".">Inicio</a>
+											<a href="/Rasn">
+												<i class="fas fa-chevron-right"></i>Inicio
+											</a>
 										</li>
 										<li>
-											<p>Animales</p>
-											<ul>
-												<li>
-													<a href=".">Rescatados</a>
-												</li>
-											</ul>
+											<a href="/Rasn/animales#/rescatados">
+												<i class="fas fa-chevron-right"></i>Rescatados
+											</a>
 										</li>
 										<li>
-											<a href=".">Contactanos</a>
+											<a href="/Rasn/contacto">
+												<i class="fas fa-chevron-right"></i>Contactanos
+											</a>
 										</li>
 										<li>
-											<p>Involucrate</p>
-											<ul>
-												<li>
-													<a href=".">Donativos</a>
-												</li>
-												<li>
-													<a href=".">Voluntarios y asociados</a>
-												</li>
-											</ul>
+											<a href="/Rasn/faq">
+												<i class="fas fa-chevron-right"></i>Preguntas frecuentes
+											</a>
+										</li>
+										<li>
+											<a href="/Rasn/donativos">
+												<i class="fas fa-chevron-right"></i>Donativos
+											</a>
+										</li>
+										<li>
+											<a href="/Rasn/colaboradores">
+												<i class="fas fa-chevron-right"></i>Colaboradores
+											</a>
 										</li>
 									</ul>
 								</nav>
@@ -80,26 +85,26 @@ export default function Footer() {
 								<div className="widget-title">
 									<h6>Últimas noticias</h6>
 								</div>
-								<div className="footer-blog block-21 mb-4">
-									<div className="text">
-										<h3 className="heading">
-											<a href=".">Even the all-powerful Pointing has no control about</a>
-										</h3>
-										<div className="meta">
-											<div>
-												<a href=".">
-													<span className="icon-calendar"></span> July 12, 2018
-												</a>
+								<div className="center-content">
+									<div className="widget-content">
+										<div className="footer-blog block-21 mb-4">
+											<div className="text">
+												<h3 className="heading">
+													<a href=".">Recolección de tapas por CABA</a>
+												</h3>
+												<div className="meta">
+													<div>Mayo 24, 2021</div>
+												</div>
 											</div>
-											<div>
-												<a href=".">
-													<span className="icon-person"></span> Admin
-												</a>
-											</div>
-											<div>
-												<a href=".">
-													<span className="icon-chat"></span> 19
-												</a>
+										</div>
+										<div className="footer-blog block-21 mb-4">
+											<div className="text">
+												<h3 className="heading">
+													<a href=".">Sumate a la feria americana</a>
+												</h3>
+												<div className="meta">
+													<div>Mayo 18, 2021</div>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -109,23 +114,27 @@ export default function Footer() {
 						{/* <!-- Footer Widget Area --> */}
 						<div className="columns col-12 col-sm-6 col-lg-3">
 							<div className="footer-widget">
-								<div className="widget-title">
-									<h6>Contactanos</h6>
-								</div>
-								<div className="single-contact d-flex mb-30">
-									<i className="icon-placeholder"></i>
-									<p>4127/ 5B-C Mislane Road, Gibraltar, UK</p>
-								</div>
-								<div className="single-contact d-flex mb-30">
-									<i className="icon-telephone-1"></i>
-									<p>
-										Main: 203-808-8613 <br />
-										Office: 203-808-8648
-									</p>
-								</div>
-								<div className="single-contact d-flex">
-									<i className="icon-contract"></i>
-									<p>office@yourbusiness.com</p>
+								<div className="center-content">
+									<div className="widget-content">
+										<div className="widget-title">
+											<h6>Contactanos</h6>
+										</div>
+										<div className="single-contact d-flex mb-30">
+											<i class="fas fa-map-marker-alt"></i>
+											<p>4127/ 5B-C Mislane Road, Gibraltar, UK</p>
+										</div>
+										<div className="single-contact d-flex mb-30">
+											<i class="fas fa-phone-alt"></i>
+											<p>
+												Main: 203-808-8613 <br />
+												Office: 203-808-8648
+											</p>
+										</div>
+										<div className="single-contact d-flex">
+											<i class="fas fa-envelope-open-text"></i>
+											<p>office@yourbusiness.com</p>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
