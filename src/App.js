@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //Rutas de Páginas
 import Index from "./pages/Index";
 import Mascotas from "./pages/Mascotas";
+import Contacto from "./pages/Contacto";
 
 //Componenetes
 import Header from "./components/Header";
@@ -22,6 +23,7 @@ export default class App extends Component {
 				<Router>
 					<Navbar />
 					<Switch>
+						<Route path="/contacto" component={Contacto} />
 						<Route path="/mascotas" component={Mascotas} />
 						<Route path="/" exact component={Index} />
 					</Switch>

@@ -1,0 +1,42 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400);
+body {
+  background-color: sandybrown;
+}
+
+.form {
+  max-width: 50%;
+  background-color: #E7E7E7;
+  margin: 0 auto;
+  text-align: center;
+  padding: 50px;
+  border-radius: 50px;
+}
+
+.titulo {
+  padding: 50px;
+}
+
+form input, form textarea {
+  margin-bottom: 15px;
+  font-family: "Roboto", sans-serif;
+  width: 70%;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 20px;
+  color: #525c66;
+  font-size: 1em;
+}
+
+.send {
+  display: inline-block;
+  background-color: #ff7f00;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+
+.email_cont {
+  text-align: center;
+}
+/*# sourceMappingURL=contacto.css.map */
