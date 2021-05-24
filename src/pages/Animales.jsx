@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 //Componenetes
 import Rescatados from "../components/Mascotas/Rescatados";
@@ -47,22 +47,22 @@ export default function Mascotas() {
 			<div className="container">
 				<Router>
 					<div className="secciones">
-						<Link to="/rescatados">
+						<Link to="/Rasn/animales/rescatados">
 							<h1 onClick={() => toggleHeadColor("AR")} className={FirstHeadColor}>
 								RESCATADOS
 							</h1>
 						</Link>
-						<Link to="/adoptados">
+						<Link to="/Rasn/animales/adoptados">
 							<h1 onClick={() => toggleHeadColor("AD")} className={SecondHeadColor}>
 								ADOPTADOS
 							</h1>
 						</Link>
 					</div>
-					<Route path="/rescatados">
+					<Route path="/Rasn/animales/rescatados">
 						<Rescatados />
 					</Route>
 					<Switch>
-						<Route path="/adoptados" component={Adoptados} />
+						<Route path="/Rasn/animales/adoptados" component={Adoptados} />
 					</Switch>
 				</Router>
 				{/* <Rescatados popup={changePopup} /> */}
