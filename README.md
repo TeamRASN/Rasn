@@ -3,8 +3,8 @@
 _Acá va un párrafo que describa lo que es el proyecto_
 
 Stack - MERN
-Estandar - Custom bootstrap
-Github versionados - Intentar no crear mounstro
+Estándar - Custom bootstrap
+Github versionados - Intentar no crear monstruo
 Projects - Issues
 
 Pasaje a React App
