@@ -1,1 +1,0 @@
-//!Remover los hidden al resize de de la pantalla
