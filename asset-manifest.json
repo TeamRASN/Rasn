@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Rasn/static/css/main.5c3dca1c.chunk.css",
-    "main.js": "/Rasn/static/js/main.c7b95e4f.chunk.js",
-    "main.js.map": "/Rasn/static/js/main.c7b95e4f.chunk.js.map",
+    "main.js": "/Rasn/static/js/main.e1f188b3.chunk.js",
+    "main.js.map": "/Rasn/static/js/main.e1f188b3.chunk.js.map",
     "runtime-main.js": "/Rasn/static/js/runtime-main.21952d23.js",
     "runtime-main.js.map": "/Rasn/static/js/runtime-main.21952d23.js.map",
     "static/js/2.940fa746.chunk.js": "/Rasn/static/js/2.940fa746.chunk.js",
@@ -27,6 +27,6 @@
     "static/js/runtime-main.21952d23.js",
     "static/js/2.940fa746.chunk.js",
     "static/css/main.5c3dca1c.chunk.css",
-    "static/js/main.c7b95e4f.chunk.js"
+    "static/js/main.e1f188b3.chunk.js"
   ]
 }
