@@ -24,7 +24,7 @@ export default function Navbar() {
 	useEffect(() => {
 		window.addEventListener("resize", changeDisplay);
 
-		let secondnav = document.getElementById("second_nav");
+		let secondnav = document.getElementById("involucrate-submenu");
 		if (displayWidth < 700) {
 			secondnav.classList.remove("show_secondary_list");
 		} else {
@@ -66,22 +66,6 @@ export default function Navbar() {
 		};
 	};
 
-	function activeSecondList() {
-		//Selectores de elementos y submenus
-		const secondnav = document.getElementById("second_nav");
-		const menuArrow = document.getElementById("menu-arrow");
-		const liSecondnav = document.getElementById("li-secondnav");
-
-		menuArrow.classList.toggle("toggle_arrow");
-		liSecondnav.classList.toggle("li_toggle_color");
-
-		if (displayWidth < 700 && responsiveNav === true) {
-			secondnav.classList.toggle("responsive_secondary_list");
-		} else {
-			secondnav.classList.toggle("show_secondary_list");
-		}
-	}
-
 	//!Remover los hidden al resize de de la pantalla
 	const bodyTag = document.getElementsByTagName("body")[0];
 	if (document.getElementById("responsive-mask").classList.contains("toggle_responsive_mask")) {
@@ -96,6 +80,13 @@ export default function Navbar() {
 		navbar.classList.toggle("navbar-toggle", window.scrollY > 0);
 	});
 
+	document.getElementById("responsive-mask").addEventListener("click", function () {
+		setResponsiveNav(false);
+		setResponsiveOverflow(false);
+		document.getElementById("responsive-mask").classList.remove("toggle_responsive_mask");
+		document.getElementById("navbar").classList.toggle("navbar-toggle");
+	});
+
 	return (
 		<nav id="navbar" className="">
 			<div id="deploy-navbar-btn" onClick={showResponsiveNav}>
@@ -105,50 +96,86 @@ export default function Navbar() {
 			</div>
 			<ul className="principal_list" style={responsiveNavState()}>
 				<li>
-					<a href="/" className="nav-brand">
+					<a href="/Rasn" className="nav-brand">
 						<img id="logo" src={Logo} alt="Refugio_San_Nicolas_logo" />
 					</a>
 				</li>
 				<li>
-					<a href="/" className="nav-element">
+					<a href="/Rasn" className="nav-element">
 						Inicio
 					</a>
 				</li>
 				<li>
-					<a href="/animales#/rescatados" className="nav-element">
+					<div id="animales-li" className="nav-element">
+						<i id="menu-arrow" className="fab-icon fa fa-chevron-down" aria-hidden="true"></i>
 						Animales
-					</a>
-				</li>
-				<li>
-					<a href="/contacto" className="nav-element">
-						Contactanos
-					</a>
-				</li>
-				<li>
-					<div id="li-secondnav" className="nav-element" onClick={activeSecondList}>
-						<i id="menu-arrow" className="fab-icon fa fa-chevron-right" aria-hidden="true"></i>
-						Involucrate
+						<ul id="animales-submenu">
+							<li>
+								<a href="/Rasn/animales#/rescatados" className="submenu-element">
+									<i className="fas fa-paw"></i>
+									Rescatados
+								</a>
+							</li>
+							<li>
+								<a href="/Rasn/animales#/adoptados" className="submenu-element">
+									<i className="fas fa-medal"></i>
+									Logros
+								</a>
+							</li>
+						</ul>
 					</div>
-					<ul id="second_nav">
-						<li>
-							<a href="/esfuerzos" className="submenu-element">
-								<i className="fab-icon fa fa-handshake-o" aria-hidden="true"></i>
-								Esfuerzos
-							</a>
-						</li>
-						<li>
-							<a href="/donativos" className="submenu-element">
-								<i className="fab-icon fa fa-money" aria-hidden="true"></i>
-								Donativos
-							</a>
-						</li>
-						<li>
-							<a href="/voluntarios" className="submenu-element">
-								<i className="fab-icon fa fa-users" aria-hidden="true"></i>
-								Voluntarios y asociados
-							</a>
-						</li>
-					</ul>
+				</li>
+				<li>
+					<div id="contacto-li" className="nav-element">
+						<i id="menu-arrow" className="fab-icon fa fa-chevron-down" aria-hidden="true"></i>
+						Contactanos
+						<ul id="contacto-submenu">
+							<li>
+								<a href="/Rasn/contacto" className="submenu-element">
+									<i className="fas fa-at"></i>
+									Consultanos
+								</a>
+							</li>
+							<li>
+								<a href="/Rasn/redes-sociales" className="submenu-element">
+									<i className="fa fa-hashtag" aria-hidden="true"></i>
+									Redes sociales
+								</a>
+							</li>
+							<li>
+								<a href="/Rasn/faq" className="submenu-element">
+									<i className="fa fa-question" aria-hidden="true"></i>
+									Preguntas frecuentes
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<div id="involucrate-li" className="nav-element">
+						<i id="menu-arrow" className="fab-icon fa fa-chevron-down" aria-hidden="true"></i>
+						Involucrate
+						<ul id="involucrate-submenu">
+							<li>
+								<a href="/Rasn/esfuerzos" className="submenu-element">
+									<i className="fab-icon fa fa-handshake-o" aria-hidden="true"></i>
+									Esfuerzos
+								</a>
+							</li>
+							<li>
+								<a href="/Rasn/donativos" className="submenu-element">
+									<i className="fab-icon fa fa-money" aria-hidden="true"></i>
+									Donativos
+								</a>
+							</li>
+							<li>
+								<a href="/Rasn/colaboradores" className="submenu-element">
+									<i className="fab-icon fa fa-users" aria-hidden="true"></i>
+									Colaboradores
+								</a>
+							</li>
+						</ul>
+					</div>
 				</li>
 			</ul>
 		</nav>

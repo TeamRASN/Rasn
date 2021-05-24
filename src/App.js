@@ -23,8 +23,8 @@ export default class App extends Component {
 				<Router>
 					<Navbar />
 					<Switch>
-						<Route path="/animales" component={Animales} />
-						<Route path="/" exact component={Index} />
+						<Route path="/Rasn/animales" component={Animales} />
+						<Route path="/Rasn" exact component={Index} />
 					</Switch>
 				</Router>
 				<Footer />

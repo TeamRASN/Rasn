@@ -2,7 +2,6 @@ import React from "react";
 
 //Componentes
 import Logo from "../assets/logo.svg";
-import Imagen from "../assets/perraco.jpg";
 
 //Estilos
 import "../css/footer.css";
