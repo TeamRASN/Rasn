@@ -9,7 +9,7 @@ import Logo from "../assets/logo.svg";
 //Estilos
 import "../css/navbar.css";
 
-export default function Navbar() {
+export default function Navbar(props) {
 	const [responsiveNav, setResponsiveNav] = useState(false);
 	const [responsiveOverflow, setResponsiveOverflow] = useState(false);
 
@@ -77,7 +77,9 @@ export default function Navbar() {
 	window.addEventListener("scroll", function () {
 		const navbar = document.getElementById("navbar");
 
-		navbar.classList.toggle("navbar-toggle", window.scrollY > 0);
+		if (navbar !== null) {
+			navbar.classList.toggle("navbar-toggle", window.scrollY > 0);
+		}
 	});
 
 	document.getElementById("responsive-mask").addEventListener("click", function () {
@@ -104,7 +106,14 @@ export default function Navbar() {
 			</div>
 			<ul className="principal_list" style={responsiveNavState()}>
 				<li>
-					<Link to="/Rasn" className="nav-brand" onClick={reload}>
+					<Link
+						to="/Rasn/admin/graficos"
+						className="nav-brand"
+						onClick={() => {
+							props.admin();
+							reload();
+						}}
+					>
 						<img id="logo" src={Logo} alt="Refugio_San_Nicolas_logo" />
 					</Link>
 				</li>
