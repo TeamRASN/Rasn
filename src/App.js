@@ -10,9 +10,9 @@ import Admin from "./pages/Admin";
 import Esfuerzos from "./pages/Esfuerzos";
 /* import Contacto from "./pages/Contacto";
 import RedesSociales from "./pages/RedesSociales";
-import FAQ from "./pages/PreguntasFrecuentes";
+import FAQ from "./pages/PreguntasFrecuentes";*/
 import Donativos from "./pages/Donativos";
-import Colaboradores from "./pages/Colaboradores"; */
+/* import Colaboradores from "./pages/Colaboradores";  */
 
 //Componenetes
 import Header from "./components/Header";
@@ -37,10 +37,11 @@ export default function App() {
 				{adminView ? null : <Navbar admin={() => authorizeAdmin()} />}
 				{adminView ? null : <Header />}
 				<Switch>
-					{/* <Route path="/Rasn/colaboradores" component={Colaboradores} />
+					{/* 
 						<Route path="/Rasn/donativos" component={Donativos} />
 						<Route path="/Rasn/faq" component={FAQ} />
 						<Route path="/Rasn/contacto" component={Contacto} /> */}
+					<Route path="/Rasn/donativos" component={Donativos} />
 					<Route path="/Rasn/esfuerzos" component={Esfuerzos} />
 					<Route path="/Rasn/rescatados" component={AnimalesR} />
 					<Route path="/Rasn/adoptados" component={AnimalesA} />
