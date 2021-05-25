@@ -13,6 +13,7 @@ import Navbar from "./components/Navbar";
 //Estilos
 import "./css/header.css";
 import "./css/customBts.css";
+import Faq from"./pages/Faq";
 
 export default class App extends Component {
 	render() {
@@ -24,6 +25,7 @@ export default class App extends Component {
 					<Navbar />
 					<Switch>
 						<Route path="/contacto" component={Contacto} />
+						<Route path="/faq" component={Faq} />
 						<Route path="/mascotas" component={Mascotas} />
 						<Route path="/" exact component={Index} />
 					</Switch>

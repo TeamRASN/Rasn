@@ -125,6 +125,11 @@ export default function Navbar() {
 					</a>
 				</li>
 				<li>
+					<a href="/faq" className="nav-element">
+						Faq
+					</a>
+				</li>
+				<li>
 					<div id="li-secondnav" className="nav-element" onClick={activeSecondList}>
 						<i id="menu-arrow" className="fab-icon fa fa-chevron-right" aria-hidden="true"></i>
 						Involucrate
