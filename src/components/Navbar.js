@@ -87,6 +87,14 @@ export default function Navbar() {
 		document.getElementById("navbar").classList.toggle("navbar-toggle");
 	});
 
+	function reload() {
+		setResponsiveNav(false);
+		setResponsiveOverflow(false);
+		document.getElementById("responsive-mask").classList.remove("toggle_responsive_mask");
+		document.getElementById("navbar").classList.toggle("navbar-toggle");
+		window.scrollTo(0, 0);
+	}
+
 	return (
 		<nav id="navbar" className="">
 			<div id="deploy-navbar-btn" onClick={showResponsiveNav}>
@@ -96,14 +104,14 @@ export default function Navbar() {
 			</div>
 			<ul className="principal_list" style={responsiveNavState()}>
 				<li>
-					<a href="/Rasn" className="nav-brand">
+					<Link to="/Rasn" className="nav-brand" onClick={reload}>
 						<img id="logo" src={Logo} alt="Refugio_San_Nicolas_logo" />
-					</a>
+					</Link>
 				</li>
 				<li>
-					<a href="/Rasn" className="nav-element">
+					<Link to="/Rasn" className="nav-element">
 						Inicio
-					</a>
+					</Link>
 				</li>
 				<li>
 					<div id="animales-li" className="nav-element">
@@ -111,16 +119,16 @@ export default function Navbar() {
 						Animales
 						<ul id="animales-submenu">
 							<li>
-								<a href="/Rasn/rescatados" className="submenu-element">
+								<Link to="/Rasn/rescatados" className="submenu-element" onClick={reload}>
 									<i className="fas fa-paw"></i>
 									Rescatados
-								</a>
+								</Link>
 							</li>
 							<li>
-								<a href="/Rasn/adoptados" className="submenu-element">
+								<Link to="/Rasn/adoptados" className="submenu-element" onClick={reload}>
 									<i className="fas fa-medal"></i>
 									Logros
-								</a>
+								</Link>
 							</li>
 						</ul>
 					</div>
@@ -131,22 +139,22 @@ export default function Navbar() {
 						Contactanos
 						<ul id="contacto-submenu">
 							<li>
-								<a href="/Rasn/contacto" className="submenu-element">
+								<Link to="/Rasn/contacto" className="submenu-element" onClick={reload}>
 									<i className="fas fa-at"></i>
 									Consultanos
-								</a>
+								</Link>
 							</li>
 							<li>
-								<a href="/Rasn/redes-sociales" className="submenu-element">
+								<Link to="/Rasn/redes-sociales" className="submenu-element" onClick={reload}>
 									<i className="fa fa-hashtag" aria-hidden="true"></i>
 									Redes sociales
-								</a>
+								</Link>
 							</li>
 							<li>
-								<a href="/Rasn/faq" className="submenu-element">
+								<Link to="/Rasn/faq" className="submenu-element" onClick={reload}>
 									<i className="fa fa-question" aria-hidden="true"></i>
 									Preguntas frecuentes
-								</a>
+								</Link>
 							</li>
 						</ul>
 					</div>
@@ -157,22 +165,22 @@ export default function Navbar() {
 						Involucrate
 						<ul id="involucrate-submenu">
 							<li>
-								<a href="/Rasn/esfuerzos" className="submenu-element">
+								<Link to="/Rasn/esfuerzos" className="submenu-element" onClick={reload}>
 									<i className="fab-icon fa fa-handshake-o" aria-hidden="true"></i>
 									Esfuerzos
-								</a>
+								</Link>
 							</li>
 							<li>
-								<a href="/Rasn/donativos" className="submenu-element">
+								<Link to="/Rasn/donativos" className="submenu-element" onClick={reload}>
 									<i className="fab-icon fa fa-money" aria-hidden="true"></i>
 									Donativos
-								</a>
+								</Link>
 							</li>
 							<li>
-								<a href="/Rasn/colaboradores" className="submenu-element">
+								<Link to="/Rasn/colaboradores" className="submenu-element" onClick={reload}>
 									<i className="fab-icon fa fa-users" aria-hidden="true"></i>
 									Colaboradores
-								</a>
+								</Link>
 							</li>
 						</ul>
 					</div>
