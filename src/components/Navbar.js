@@ -111,13 +111,13 @@ export default function Navbar() {
 						Animales
 						<ul id="animales-submenu">
 							<li>
-								<a href="/Rasn/animales/rescatados" className="submenu-element">
+								<a href="/Rasn/rescatados" className="submenu-element">
 									<i className="fas fa-paw"></i>
 									Rescatados
 								</a>
 							</li>
 							<li>
-								<a href="/Rasn/animales/adoptados" className="submenu-element">
+								<a href="/Rasn/adoptados" className="submenu-element">
 									<i className="fas fa-medal"></i>
 									Logros
 								</a>
