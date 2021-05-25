@@ -47,32 +47,32 @@ export default function Footer() {
 									<ul className="useful-links">
 										<li>
 											<a href="/Rasn">
-												<i class="fas fa-chevron-right"></i>Inicio
+												<i className="fas fa-chevron-right"></i>Inicio
 											</a>
 										</li>
 										<li>
 											<a href="/Rasn/animales#/rescatados">
-												<i class="fas fa-chevron-right"></i>Rescatados
+												<i className="fas fa-chevron-right"></i>Rescatados
 											</a>
 										</li>
 										<li>
 											<a href="/Rasn/contacto">
-												<i class="fas fa-chevron-right"></i>Contactanos
+												<i className="fas fa-chevron-right"></i>Contactanos
 											</a>
 										</li>
 										<li>
 											<a href="/Rasn/faq">
-												<i class="fas fa-chevron-right"></i>Preguntas frecuentes
+												<i className="fas fa-chevron-right"></i>Preguntas frecuentes
 											</a>
 										</li>
 										<li>
 											<a href="/Rasn/donativos">
-												<i class="fas fa-chevron-right"></i>Donativos
+												<i className="fas fa-chevron-right"></i>Donativos
 											</a>
 										</li>
 										<li>
 											<a href="/Rasn/colaboradores">
-												<i class="fas fa-chevron-right"></i>Colaboradores
+												<i className="fas fa-chevron-right"></i>Colaboradores
 											</a>
 										</li>
 									</ul>
@@ -120,18 +120,18 @@ export default function Footer() {
 											<h6>Contactanos</h6>
 										</div>
 										<div className="single-contact d-flex mb-30">
-											<i class="fas fa-map-marker-alt"></i>
+											<i className="fas fa-map-marker-alt"></i>
 											<p>4127/ 5B-C Mislane Road, Gibraltar, UK</p>
 										</div>
 										<div className="single-contact d-flex mb-30">
-											<i class="fas fa-phone-alt"></i>
+											<i className="fas fa-phone-alt"></i>
 											<p>
 												Main: 203-808-8613 <br />
 												Office: 203-808-8648
 											</p>
 										</div>
 										<div className="single-contact d-flex">
-											<i class="fas fa-envelope-open-text"></i>
+											<i className="fas fa-envelope-open-text"></i>
 											<p>office@yourbusiness.com</p>
 										</div>
 									</div>

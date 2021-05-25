@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 //Rutas de Páginas
 import Index from "./pages/Index";
-import Animales from "./pages/Animales";
+import AnimalesR from "./pages/AnimalesRescatados";
+import AnimalesA from "./pages/AnimalesAdoptados";
 /* import Contacto from "./pages/Contacto";
 import RedesSociales from "./pages/RedesSociales";
 import FAQ from "./pages/PreguntasFrecuentes";
@@ -33,7 +34,8 @@ export default class App extends Component {
 						<Route path="/Rasn/faq" component={FAQ} />
 						<Route path="/Rasn/redes-sociales" component={RedesSociales} />
 						<Route path="/Rasn/contacto" component={Contacto} /> */}
-						<Route path="/Rasn/animales" component={Animales} />
+						<Route path="/Rasn/animales/rescatados" component={AnimalesR} />
+						<Route path="/Rasn/animales/adoptados" component={AnimalesA} />
 						<Route path="/Rasn" exact component={Index} />
 					</Switch>
 				</Router>

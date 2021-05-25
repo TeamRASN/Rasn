@@ -6,11 +6,11 @@ import PropTypes from "prop-types";
 //Estilos
 import "../../css/mascotas.css";
 
-export default function Card({ imageSource, name, text, popup }) {
+export default function Card({ imageSource, name, popup }) {
 	return (
 		<div className="col-11 col-lg-3 col-md-4 col-sm-6 animal-card">
 			<div className="card_box">
-				<button className="location" onClick={() => popup}>
+				<button className="location" onClick={popup}>
 					<div className="img-responsive">
 						<img src={imageSource} alt="" />
 					</div>
