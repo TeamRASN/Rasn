@@ -26,7 +26,7 @@ p {
   background-color: #ffbb3d;
   border-radius: 20px;
   color: white;
-  text-shadow: 5px 5px 5px black;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.849);
 }
 
 .second {
