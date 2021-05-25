@@ -1,6 +1,8 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // Componentes
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import Card from "../CartaAnimal";
 import Cat from "../../../assets/Cat.jpg";
 import Cat2 from "../../../assets/Cat2.jpg";
@@ -12,6 +14,13 @@ export default function Animales() {
 	return (
 		<div className="graphs row">
 			<h1 className="col-12">Animales</h1>
+			<div className="admin-animal-card col-12">
+				<div className="new-animal desc-card">
+					<div className="new-content">
+						<FontAwesomeIcon icon={faPlus} /> Agregar animal
+					</div>
+				</div>
+			</div>
 			<Card imagen={Cat} />
 			<Card imagen={Cat2} />
 			<Card imagen={Dog} />

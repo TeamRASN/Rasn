@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // Componentes
@@ -36,7 +35,7 @@ export default function Navbar() {
 			case "/animales":
 				animales.classList.add("active-page");
 				break;
-			case "/general":
+			case "/general/equipo":
 				general.classList.add("active-page");
 				break;
 			case "/cuenta":
@@ -65,7 +64,7 @@ export default function Navbar() {
 					</Link>
 				</li>
 				<li id="general">
-					<Link to="/general">
+					<Link to="/general/equipo">
 						<FontAwesomeIcon className="icon" icon={faCog} />
 					</Link>
 				</li>
