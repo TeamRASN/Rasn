@@ -1,21 +1,25 @@
 {
   "files": {
-    "main.css": "/Rasn/static/css/main.6614ad26.chunk.css",
-    "main.js": "/Rasn/static/js/main.ca73feb0.chunk.js",
-    "main.js.map": "/Rasn/static/js/main.ca73feb0.chunk.js.map",
+    "main.css": "/Rasn/static/css/main.0aea30bb.chunk.css",
+    "main.js": "/Rasn/static/js/main.bc00bd83.chunk.js",
+    "main.js.map": "/Rasn/static/js/main.bc00bd83.chunk.js.map",
     "runtime-main.js": "/Rasn/static/js/runtime-main.21952d23.js",
     "runtime-main.js.map": "/Rasn/static/js/runtime-main.21952d23.js.map",
-    "static/js/2.07175c53.chunk.js": "/Rasn/static/js/2.07175c53.chunk.js",
-    "static/js/2.07175c53.chunk.js.map": "/Rasn/static/js/2.07175c53.chunk.js.map",
+    "static/js/2.1f5ac22a.chunk.js": "/Rasn/static/js/2.1f5ac22a.chunk.js",
+    "static/js/2.1f5ac22a.chunk.js.map": "/Rasn/static/js/2.1f5ac22a.chunk.js.map",
     "index.html": "/Rasn/index.html",
-    "static/css/main.6614ad26.chunk.css.map": "/Rasn/static/css/main.6614ad26.chunk.css.map",
-    "static/js/2.07175c53.chunk.js.LICENSE.txt": "/Rasn/static/js/2.07175c53.chunk.js.LICENSE.txt",
+    "static/css/main.0aea30bb.chunk.css.map": "/Rasn/static/css/main.0aea30bb.chunk.css.map",
+    "static/js/2.1f5ac22a.chunk.js.LICENSE.txt": "/Rasn/static/js/2.1f5ac22a.chunk.js.LICENSE.txt",
+    "static/js/main.bc00bd83.chunk.js.LICENSE.txt": "/Rasn/static/js/main.bc00bd83.chunk.js.LICENSE.txt",
     "static/media/Cat.ae4815a1.jpg": "/Rasn/static/media/Cat.ae4815a1.jpg",
     "static/media/Cat2.c64e9ede.jpg": "/Rasn/static/media/Cat2.c64e9ede.jpg",
     "static/media/Dog.9f4ee7bf.jpg": "/Rasn/static/media/Dog.9f4ee7bf.jpg",
     "static/media/Mia.484dd013.jpg": "/Rasn/static/media/Mia.484dd013.jpg",
     "static/media/header.css": "/Rasn/static/media/wave.6fc0900b.svg",
     "static/media/dog-house.a4b33d8d.svg": "/Rasn/static/media/dog-house.a4b33d8d.svg",
+    "static/media/graph1.55a7f93d.png": "/Rasn/static/media/graph1.55a7f93d.png",
+    "static/media/graph3.4959bd09.png": "/Rasn/static/media/graph3.4959bd09.png",
+    "static/media/graph4.a158f0c3.jpg": "/Rasn/static/media/graph4.a158f0c3.jpg",
     "static/media/illustration.acbb817b.svg": "/Rasn/static/media/illustration.acbb817b.svg",
     "static/media/license.9e592b8a.svg": "/Rasn/static/media/license.9e592b8a.svg",
     "static/media/logo.49647bfe.svg": "/Rasn/static/media/logo.49647bfe.svg",
@@ -25,8 +29,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.21952d23.js",
-    "static/js/2.07175c53.chunk.js",
-    "static/css/main.6614ad26.chunk.css",
-    "static/js/main.ca73feb0.chunk.js"
+    "static/js/2.1f5ac22a.chunk.js",
+    "static/css/main.0aea30bb.chunk.css",
+    "static/js/main.bc00bd83.chunk.js"
   ]
 }

@@ -1,0 +1,1 @@
+//! Elimina el borde izquierdo de todas las secciones
