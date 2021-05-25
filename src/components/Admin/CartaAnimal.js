@@ -6,7 +6,7 @@ import { faTimes, faDotCircle } from "@fortawesome/free-solid-svg-icons";
 
 export default function CartaAnimal({ imagen }) {
 	return (
-		<div className="animal-card col-12 col-md-6">
+		<div className="admin-animal-card col-12 col-md-6">
 			<div className="img-card" style={{ backgroundImage: `url(${imagen})` }}></div>
 			<div className="desc-card">
 				<div className="body-card">

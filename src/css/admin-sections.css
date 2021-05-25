@@ -46,7 +46,7 @@
 /*------------------------------------------------------------------------------------------*/
 /*---------------------------------------- ANIMALES ----------------------------------------*/
 /*------------------------------------------------------------------------------------------*/
-.animal-card {
+.admin-animal-card {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -55,7 +55,7 @@
   height: 80px;
   margin: 10px 0px 10px 0px !important;
 }
-.animal-card .img-card {
+.admin-animal-card .img-card {
   border-radius: 5px;
   width: 200px;
   height: 100%;
@@ -63,7 +63,7 @@
   background-size: cover;
   box-shadow: 0px 0px 10px 0px #ccd9e252;
 }
-.animal-card .desc-card {
+.admin-animal-card .desc-card {
   border-radius: 5px;
   width: 90%;
   height: 100%;
@@ -71,47 +71,47 @@
   margin-left: 10px;
   box-shadow: 0px 0px 10px 0px #ccd9e252;
 }
-.animal-card .desc-card .body-card {
+.admin-animal-card .desc-card .body-card {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   height: 100%;
   padding: 10px;
 }
-.animal-card .desc-card .body-card .info-card {
+.admin-animal-card .desc-card .body-card .info-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.animal-card .desc-card .body-card .info-card .name-prop {
+.admin-animal-card .desc-card .body-card .info-card .name-prop {
   font-size: 20px;
   font-weight: 700;
   color: #d36601;
 }
-.animal-card .desc-card .body-card .info-card .section-prop {
+.admin-animal-card .desc-card .body-card .info-card .section-prop {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.animal-card .desc-card .body-card .info-card .section-prop div {
+.admin-animal-card .desc-card .body-card .info-card .section-prop div {
   display: flex;
   flex-direction: row;
 }
-.animal-card .desc-card .body-card .info-card .section-prop div span {
+.admin-animal-card .desc-card .body-card .info-card .section-prop div span {
   font-size: 16px;
   font-weight: 500;
   color: #000000;
 }
-.animal-card .desc-card .body-card .info-card .section-prop div p {
+.admin-animal-card .desc-card .body-card .info-card .section-prop div p {
   margin: 0px 7px;
 }
-.animal-card .desc-card .crud-card {
+.admin-animal-card .desc-card .crud-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
-.animal-card .desc-card .crud-card a {
+.admin-animal-card .desc-card .crud-card a {
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
@@ -124,7 +124,7 @@
   font-size: 15px;
   background-color: #fff;
 }
-.animal-card .desc-card .crud-card a p {
+.admin-animal-card .desc-card .crud-card a p {
   transition: all 150ms ease-out;
   position: absolute;
   visibility: hidden;
@@ -132,28 +132,28 @@
   border-radius: 7.5px;
   margin-bottom: 0;
 }
-.animal-card .desc-card .crud-card a[href$=borrar] {
+.admin-animal-card .desc-card .crud-card a[href$=borrar] {
   background-color: transparent;
   border-radius: 50%;
 }
-.animal-card .desc-card .crud-card a[href$=borrar]:hover > p {
+.admin-animal-card .desc-card .crud-card a[href$=borrar]:hover > p {
   background-color: #c70a0a;
 }
-.animal-card .desc-card .crud-card a[href$=editar] {
+.admin-animal-card .desc-card .crud-card a[href$=editar] {
   background-color: transparent;
   border-radius: 50%;
 }
-.animal-card .desc-card .crud-card a[href$=editar]:hover > p {
+.admin-animal-card .desc-card .crud-card a[href$=editar]:hover > p {
   background-color: #eb8d00;
 }
-.animal-card .desc-card .crud-card a:hover > p {
+.admin-animal-card .desc-card .crud-card a:hover > p {
   visibility: visible;
   color: #fff;
   opacity: 1;
   transform: translateX(-45px);
   padding: 2.5px 10px;
 }
-.animal-card .desc-card .crud-card a:hover > .modifyP {
+.admin-animal-card .desc-card .crud-card a:hover > .modifyP {
   visibility: visible;
   color: #fff;
   opacity: 1;
