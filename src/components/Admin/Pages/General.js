@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // Componentes
 import Equipo from "./Equipo";
+import Blog from "./Blog";
 import Navbar from "./GeneralNavbar";
 
 export default function Animales() {
@@ -14,6 +15,7 @@ export default function Animales() {
 				<section className="general">
 					<div className="general-sections">
 						<Switch>
+							<Route path="/blogs" component={Blog} />
 							<Route path="/equipo" component={Equipo} />
 						</Switch>
 					</div>
