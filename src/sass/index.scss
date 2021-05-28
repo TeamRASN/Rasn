@@ -162,7 +162,9 @@
 
 	.testimony-wrap {
 		@include displayFlex(column, space-evenly, center);
+		width: 100%;
 		height: 100%;
+
 		.user-img {
 			width: 100px;
 			height: 100px;

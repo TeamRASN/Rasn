@@ -37,15 +37,21 @@ export default function GeneralNavbar() {
 
 	return (
 		<nav className="general-navbar col-12">
-			<ul>
-				<li id="equipo">
-					<Link to="/equipo">Equipo</Link>
+			<ul className="row">
+				<li className="col-12 col-md-4">
+					<Link to="/equipo" id="equipo">
+						Equipo
+					</Link>
 				</li>
-				<li id="faq">
-					<Link to="/faq">Preguntas y respuestas</Link>
+				<li className="col-12 col-md-4">
+					<Link to="/faq" id="faq">
+						Preguntas y respuestas
+					</Link>
 				</li>
-				<li id="blogs">
-					<Link to="/blogs">Blogs</Link>
+				<li className="col-12 col-md-4">
+					<Link to="/blogs" id="blogs">
+						Blogs
+					</Link>
 				</li>
 			</ul>
 		</nav>

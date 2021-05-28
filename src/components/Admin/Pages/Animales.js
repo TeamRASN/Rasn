@@ -14,10 +14,13 @@ export default function Animales() {
 	return (
 		<div className="graphs row">
 			<h1 className="col-12">Animales</h1>
-			<div className="admin-animal-card col-12">
-				<div className="new-animal desc-card">
-					<div className="new-content">
-						<FontAwesomeIcon icon={faPlus} /> Agregar animal
+			<div className="add-new-register-row add-new-register col-12">
+				<div className="new-register">
+					<div className="new-content ">
+						<div>
+							<FontAwesomeIcon icon={faPlus} />
+							Agregar animal
+						</div>
 					</div>
 				</div>
 			</div>

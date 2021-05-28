@@ -76,15 +76,17 @@
   color: #000000;
 }
 
-.admin-animal-card {
+.admin-animal-card,
+.add-new-register-row {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 80px;
+  height: 80px !important;
   margin: 10px 0px 10px 0px !important;
 }
-.admin-animal-card .img-card {
+.admin-animal-card .img-card,
+.add-new-register-row .img-card {
   border-radius: 5px;
   width: 200px;
   height: 100%;
@@ -92,7 +94,10 @@
   background-size: cover;
   box-shadow: 0px 0px 10px 0px #ccd9e252;
 }
-.admin-animal-card .desc-card {
+.admin-animal-card .desc-card,
+.admin-animal-card .faq-space,
+.add-new-register-row .desc-card,
+.add-new-register-row .faq-space {
   border-radius: 5px;
   width: 90%;
   height: 100%;
@@ -100,47 +105,74 @@
   margin-left: 10px;
   box-shadow: 0px 0px 10px 0px #ccd9e252;
 }
-.admin-animal-card .desc-card .body-card {
+.admin-animal-card .desc-card .body-card,
+.admin-animal-card .faq-space .body-card,
+.add-new-register-row .desc-card .body-card,
+.add-new-register-row .faq-space .body-card {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   height: 100%;
   padding: 10px;
 }
-.admin-animal-card .desc-card .body-card .info-card {
+.admin-animal-card .desc-card .body-card .info-card,
+.admin-animal-card .faq-space .body-card .info-card,
+.add-new-register-row .desc-card .body-card .info-card,
+.add-new-register-row .faq-space .body-card .info-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.admin-animal-card .desc-card .body-card .info-card .name-prop {
+.admin-animal-card .desc-card .body-card .info-card .name-prop,
+.admin-animal-card .faq-space .body-card .info-card .name-prop,
+.add-new-register-row .desc-card .body-card .info-card .name-prop,
+.add-new-register-row .faq-space .body-card .info-card .name-prop {
   font-size: 20px;
   font-weight: 700;
   color: #d36601;
 }
-.admin-animal-card .desc-card .body-card .info-card .section-prop {
+.admin-animal-card .desc-card .body-card .info-card .section-prop,
+.admin-animal-card .faq-space .body-card .info-card .section-prop,
+.add-new-register-row .desc-card .body-card .info-card .section-prop,
+.add-new-register-row .faq-space .body-card .info-card .section-prop {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.admin-animal-card .desc-card .body-card .info-card .section-prop div {
+.admin-animal-card .desc-card .body-card .info-card .section-prop div,
+.admin-animal-card .faq-space .body-card .info-card .section-prop div,
+.add-new-register-row .desc-card .body-card .info-card .section-prop div,
+.add-new-register-row .faq-space .body-card .info-card .section-prop div {
   display: flex;
   flex-direction: row;
 }
-.admin-animal-card .desc-card .body-card .info-card .section-prop div span {
+.admin-animal-card .desc-card .body-card .info-card .section-prop div span,
+.admin-animal-card .faq-space .body-card .info-card .section-prop div span,
+.add-new-register-row .desc-card .body-card .info-card .section-prop div span,
+.add-new-register-row .faq-space .body-card .info-card .section-prop div span {
   font-size: 16px;
   font-weight: 500;
   color: #000000;
 }
-.admin-animal-card .desc-card .body-card .info-card .section-prop div p {
+.admin-animal-card .desc-card .body-card .info-card .section-prop div p,
+.admin-animal-card .faq-space .body-card .info-card .section-prop div p,
+.add-new-register-row .desc-card .body-card .info-card .section-prop div p,
+.add-new-register-row .faq-space .body-card .info-card .section-prop div p {
   margin: 0px 7px;
 }
-.admin-animal-card .desc-card .crud-card {
+.admin-animal-card .desc-card .crud-card,
+.admin-animal-card .faq-space .crud-card,
+.add-new-register-row .desc-card .crud-card,
+.add-new-register-row .faq-space .crud-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
-.admin-animal-card .desc-card .crud-card a {
+.admin-animal-card .desc-card .crud-card a,
+.admin-animal-card .faq-space .crud-card a,
+.add-new-register-row .desc-card .crud-card a,
+.add-new-register-row .faq-space .crud-card a {
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
@@ -153,7 +185,10 @@
   font-size: 15px;
   background-color: #fff;
 }
-.admin-animal-card .desc-card .crud-card a p {
+.admin-animal-card .desc-card .crud-card a p,
+.admin-animal-card .faq-space .crud-card a p,
+.add-new-register-row .desc-card .crud-card a p,
+.add-new-register-row .faq-space .crud-card a p {
   transition: all 150ms ease-out;
   position: absolute;
   visibility: hidden;
@@ -161,28 +196,46 @@
   border-radius: 7.5px;
   margin-bottom: 0;
 }
-.admin-animal-card .desc-card .crud-card a[href$=borrar] {
+.admin-animal-card .desc-card .crud-card a[href$=borrar],
+.admin-animal-card .faq-space .crud-card a[href$=borrar],
+.add-new-register-row .desc-card .crud-card a[href$=borrar],
+.add-new-register-row .faq-space .crud-card a[href$=borrar] {
   background-color: transparent;
   border-radius: 50%;
 }
-.admin-animal-card .desc-card .crud-card a[href$=borrar]:hover > p {
+.admin-animal-card .desc-card .crud-card a[href$=borrar]:hover > p,
+.admin-animal-card .faq-space .crud-card a[href$=borrar]:hover > p,
+.add-new-register-row .desc-card .crud-card a[href$=borrar]:hover > p,
+.add-new-register-row .faq-space .crud-card a[href$=borrar]:hover > p {
   background-color: #c70a0a;
 }
-.admin-animal-card .desc-card .crud-card a[href$=editar] {
+.admin-animal-card .desc-card .crud-card a[href$=editar],
+.admin-animal-card .faq-space .crud-card a[href$=editar],
+.add-new-register-row .desc-card .crud-card a[href$=editar],
+.add-new-register-row .faq-space .crud-card a[href$=editar] {
   background-color: transparent;
   border-radius: 50%;
 }
-.admin-animal-card .desc-card .crud-card a[href$=editar]:hover > p {
+.admin-animal-card .desc-card .crud-card a[href$=editar]:hover > p,
+.admin-animal-card .faq-space .crud-card a[href$=editar]:hover > p,
+.add-new-register-row .desc-card .crud-card a[href$=editar]:hover > p,
+.add-new-register-row .faq-space .crud-card a[href$=editar]:hover > p {
   background-color: #eb8d00;
 }
-.admin-animal-card .desc-card .crud-card a:hover > p {
+.admin-animal-card .desc-card .crud-card a:hover > p,
+.admin-animal-card .faq-space .crud-card a:hover > p,
+.add-new-register-row .desc-card .crud-card a:hover > p,
+.add-new-register-row .faq-space .crud-card a:hover > p {
   visibility: visible;
   color: #fff;
   opacity: 1;
   transform: translateX(-45px);
   padding: 2.5px 10px;
 }
-.admin-animal-card .desc-card .crud-card a:hover > .modifyP {
+.admin-animal-card .desc-card .crud-card a:hover > .modifyP,
+.admin-animal-card .faq-space .crud-card a:hover > .modifyP,
+.add-new-register-row .desc-card .crud-card a:hover > .modifyP,
+.add-new-register-row .faq-space .crud-card a:hover > .modifyP {
   visibility: visible;
   color: #fff;
   opacity: 1;
@@ -197,10 +250,9 @@
   }
 }
 /*------------------------------------------------------------------------------------------*/
-/*----------------------------------------- GENERAL ----------------------------------------*/
+/*------------------------------------- GENERAL NAVBAR -------------------------------------*/
 /*------------------------------------------------------------------------------------------*/
 .general-navbar {
-  height: 60px;
   padding: 0px 10px;
 }
 .general-navbar ul {
@@ -212,13 +264,9 @@
   padding-left: 0;
 }
 .general-navbar ul li {
-  width: 250px;
   list-style-type: none;
-  background-color: #fff;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 100ms ease-in-out;
-  box-shadow: 0px 0px 10px 0px #ccd9e252;
+  background-color: transparent;
+  padding: 10px;
 }
 .general-navbar ul li a {
   display: flex;
@@ -229,12 +277,21 @@
   padding: 15px 30px;
   color: #899099;
   font-weight: 500;
+  white-space: nowrap;
   text-decoration: none;
+  background-color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 100ms ease-in-out;
+  box-shadow: 0px 0px 10px 0px #ccd9e25f;
 }
-.general-navbar ul li:hover {
+.general-navbar ul li a:hover {
   background-color: #dde3e6;
 }
 
+/*------------------------------------------------------------------------------------------*/
+/*----------------------------------------- GENERAL ----------------------------------------*/
+/*------------------------------------------------------------------------------------------*/
 .general {
   height: 100%;
   border-radius: 12px;
@@ -243,7 +300,6 @@
   width: 100%;
   height: 100%;
   margin: 20px 0px;
-  background-color: #cdd6da;
   border-radius: 12px;
   padding: 10px;
   overflow: auto;
@@ -252,22 +308,83 @@
   margin: 0;
 }
 
-.new-card-container {
-  height: 300px !important;
+.add-new-register {
+  box-shadow: 0px 0px 0px !important;
+}
+.add-new-register .new-register .new-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  background-color: transparent !important;
+  border: 2.5px dashed #657480 !important;
+  box-shadow: 0px 0px 10px 0px #ccd9e264;
+  transition: all 150ms ease-in-out;
+  cursor: pointer;
+}
+.add-new-register .new-register .new-content:hover {
+  color: #657480 !important;
+  background-color: rgba(200, 209, 218, 0.57) !important;
+}
+
+/*------------------------------------------------------------------------------------------*/
+/*---------------------------------- PREGUNTAS FRECUENTES ----------------------------------*/
+/*------------------------------------------------------------------------------------------*/
+.faq-space {
+  width: 100% !important;
+  margin-left: 0 !important;
+}
+.faq-space .body-card .info-card {
+  width: calc(100% - 25px);
+}
+.faq-space .body-card .info-card .pregunta,
+.faq-space .body-card .info-card .respuesta {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 18px;
+  font-weight: 600;
+}
+.faq-space .body-card .info-card .respuesta {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/*------------------------------------------------------------------------------------------*/
+/*----------------------------------------- EQUIPO -----------------------------------------*/
+/*------------------------------------------------------------------------------------------*/
+.new-card-container,
+.add-new-register {
+  height: 300px;
   padding: 10px !important;
   background-color: transparent;
+  border-radius: 5px;
+  overflow: hidden;
+  /*------------------------------------------------------------------------------------------*/
+  /*------------------------------------------ BLOGS -----------------------------------------*/
+  /*------------------------------------------------------------------------------------------*/
 }
-.new-card-container .new-member {
+.new-card-container .new-member,
+.new-card-container .new-register,
+.add-new-register .new-member,
+.add-new-register .new-register {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   width: 100% !important;
   height: 100%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px #ccd9e279;
 }
-.new-card-container .new-member .new-content {
+.new-card-container .new-member .new-content,
+.new-card-container .new-register .new-content,
+.add-new-register .new-member .new-content,
+.add-new-register .new-register .new-content {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
@@ -276,37 +393,128 @@
   color: #657480;
   cursor: pointer;
   transition: all 200ms ease-out;
+  border-radius: 5px;
 }
-.new-card-container .new-member .new-content svg {
+.new-card-container .new-member .new-content svg,
+.new-card-container .new-register .new-content svg,
+.add-new-register .new-member .new-content svg,
+.add-new-register .new-register .new-content svg {
   margin-right: 7.5px;
 }
-.new-card-container .new-member .new-content:hover {
+.new-card-container .new-member .new-content:hover,
+.new-card-container .new-register .new-content:hover,
+.add-new-register .new-member .new-content:hover,
+.add-new-register .new-register .new-content:hover {
   background-color: #dee5eb;
   color: #000000;
 }
-
-.blog-card {
+.new-card-container .blog-card,
+.add-new-register .blog-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100% !important;
   height: 100%;
+  box-shadow: 0px 0px 10px 0px #ccd9e279;
 }
-.blog-card .blog-img {
+.new-card-container .blog-card .img-container,
+.add-new-register .blog-card .img-container {
   width: 100%;
   height: 40%;
-  background-position: center;
-  background-size: cover;
+  position: relative;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  overflow: hidden;
 }
-.blog-card .blog-desc {
+.new-card-container .blog-card .img-container .layer,
+.add-new-register .blog-card .img-container .layer {
+  position: absolute;
+  background-color: #793f1360;
+  width: 100%;
+  height: 100%;
+}
+.new-card-container .blog-card .img-container .delete-btn,
+.add-new-register .blog-card .img-container .delete-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  color: #000;
+  right: 0px;
+  top: 0px;
+  border-bottom-left-radius: 50%;
+  transition: all 150ms ease-in-out;
+}
+.new-card-container .blog-card .img-container .delete-btn:hover,
+.add-new-register .blog-card .img-container .delete-btn:hover {
+  color: #2e2e2e;
+  background-color: rgba(255, 255, 255, 0.152);
+}
+.new-card-container .blog-card .img-container .delete-btn svg,
+.add-new-register .blog-card .img-container .delete-btn svg {
+  margin: 0px 0px 4px 4px;
+}
+.new-card-container .blog-card .img-container .blog-img,
+.add-new-register .blog-card .img-container .blog-img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.new-card-container .blog-card .blog-content,
+.add-new-register .blog-card .blog-content {
   width: 100%;
   height: 60%;
+  padding: 0.75em;
   background-color: #fff;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+.new-card-container .blog-card .blog-content .blog-desc,
+.add-new-register .blog-card .blog-content .blog-desc {
+  width: 100%;
+  height: 80%;
+}
+.new-card-container .blog-card .blog-content .blog-desc h4,
+.add-new-register .blog-card .blog-content .blog-desc h4 {
+  text-align: center;
+}
+.new-card-container .blog-card .blog-content .blog-desc p,
+.add-new-register .blog-card .blog-content .blog-desc p {
+  margin-bottom: 0;
+}
+.new-card-container .blog-card .blog-content .modify-container,
+.add-new-register .blog-card .blog-content .modify-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 20%;
+}
+.new-card-container .blog-card .blog-content .modify-container a,
+.add-new-register .blog-card .blog-content .modify-container a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #eb8d00;
+  color: #ffffff;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid transparent;
+  transition: all 250ms ease-out;
+}
+.new-card-container .blog-card .blog-content .modify-container a:hover,
+.add-new-register .blog-card .blog-content .modify-container a:hover {
+  background-color: transparent;
+  color: #eb8d00;
+  border: 1px solid #eb8d00;
 }
 
 .active-general-nav {

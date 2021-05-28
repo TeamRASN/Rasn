@@ -9,13 +9,11 @@ import Integrante from "../CartaIntegrante";
 export default function Equipo() {
 	return (
 		<div className="row">
-			<div className="item integrante new-card-container col-12 col-md-4 col-lg-3">
-				<div className="new-member desc-card">
+			<div className="add-new-register col-12 col-md-4 col-lg-3">
+				<div className="new-register">
 					<div className="new-content ">
-						<div>
-							<FontAwesomeIcon icon={faPlus} />
-							Agregar miembro
-						</div>
+						<FontAwesomeIcon icon={faPlus} />
+						Agregar miembro
 					</div>
 				</div>
 			</div>

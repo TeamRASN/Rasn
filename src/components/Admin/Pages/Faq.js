@@ -4,25 +4,25 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // Componentes
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import Portada from "../../../assets/Cat.jpg";
-import Blog from "../CartaBlog";
+import Faq from "../CartaFaq";
 
 export default function Equipo() {
 	return (
 		<div className="row">
-			<div className="add-new-register item new-card-container col-12 col-md-4 col-lg-3">
+			<div className="add-new-register-row add-new-register col-12">
 				<div className="new-register">
-					<div className="new-content ">
+					<div className="new-content">
 						<div>
 							<FontAwesomeIcon icon={faPlus} />
-							Agregar blog
+							Agregar pregunta
 						</div>
 					</div>
 				</div>
 			</div>
-			<Blog portada={Portada} />
-			<Blog portada={Portada} />
-			<Blog portada={Portada} />
-			<Blog portada={Portada} />
+			<Faq portada={Portada} />
+			<Faq portada={Portada} />
+			<Faq portada={Portada} />
+			<Faq portada={Portada} />
 		</div>
 	);
 }

@@ -1,6 +1,9 @@
 @import "fonts";
 @import "mixins";
 
+$delete-color: #c70a0a;
+$modify-color: #eb8d00;
+
 .admin {
 	margin-left: 90px;
 	height: 100vh;
@@ -87,10 +90,11 @@ $radius: 12px;
 	}
 }
 
-.admin-animal-card {
+.admin-animal-card,
+.add-new-register-row {
 	@include displayFlex(row, center, center);
 
-	height: 80px;
+	height: 80px !important;
 	margin: 10px 0px 10px 0px !important;
 
 	.img-card {
@@ -103,7 +107,8 @@ $radius: 12px;
 		box-shadow: 0px 0px 10px 0px #ccd9e252;
 	}
 
-	.desc-card {
+	.desc-card,
+	.faq-space {
 		border-radius: 5px;
 		width: 90%;
 		height: 100%;
@@ -171,7 +176,7 @@ $radius: 12px;
 					border-radius: 50%;
 
 					&:hover > p {
-						background-color: #c70a0a;
+						background-color: $delete-color;
 					}
 				}
 
@@ -180,7 +185,7 @@ $radius: 12px;
 					border-radius: 50%;
 
 					&:hover > p {
-						background-color: #eb8d00;
+						background-color: $modify-color;
 					}
 				}
 
@@ -212,11 +217,10 @@ $radius: 12px;
 }
 
 /*------------------------------------------------------------------------------------------*/
-/*----------------------------------------- GENERAL ----------------------------------------*/
+/*------------------------------------- GENERAL NAVBAR -------------------------------------*/
 /*------------------------------------------------------------------------------------------*/
 
 .general-navbar {
-	height: 60px;
 	padding: 0px 10px;
 
 	ul {
@@ -225,13 +229,9 @@ $radius: 12px;
 		padding-left: 0;
 
 		li {
-			width: 250px;
 			list-style-type: none;
-			background-color: #fff;
-			border-radius: 10px;
-			cursor: pointer;
-			transition: 100ms ease-in-out;
-			box-shadow: 0px 0px 10px 0px #ccd9e252;
+			background-color: transparent;
+			padding: 10px;
 
 			a {
 				@include displayFlex(null, center, center);
@@ -240,15 +240,25 @@ $radius: 12px;
 				padding: 15px 30px;
 				color: #899099;
 				font-weight: 500;
+				white-space: nowrap;
 				text-decoration: none;
-			}
+				background-color: #fff;
+				border-radius: 10px;
+				cursor: pointer;
+				transition: 100ms ease-in-out;
+				box-shadow: 0px 0px 10px 0px #ccd9e25f;
 
-			&:hover {
-				background-color: #dde3e6;
+				&:hover {
+					background-color: #dde3e6;
+				}
 			}
 		}
 	}
 }
+
+/*------------------------------------------------------------------------------------------*/
+/*----------------------------------------- GENERAL ----------------------------------------*/
+/*------------------------------------------------------------------------------------------*/
 
 .general {
 	height: 100%;
@@ -258,7 +268,6 @@ $radius: 12px;
 		width: 100%;
 		height: 100%;
 		margin: 20px 0px;
-		background-color: #cdd6da;
 		border-radius: $radius;
 		padding: 10px;
 		overflow: auto;
@@ -269,25 +278,87 @@ $radius: 12px;
 	}
 }
 
-.new-card-container {
-	height: 300px !important;
+.add-new-register {
+	box-shadow: 0px 0px 0px !important;
+	.new-register {
+		.new-content {
+			@include displayFlex(null, center, center);
+			border-radius: 5px;
+			width: 100%;
+			height: 100%;
+			background-color: transparent !important;
+			border: 2.5px dashed #657480 !important;
+			box-shadow: 0px 0px 10px 0px #ccd9e264;
+			transition: all 150ms ease-in-out;
+			cursor: pointer;
+
+			&:hover {
+				color: #657480 !important;
+				background-color: rgba(200, 209, 218, 0.57) !important;
+			}
+		}
+	}
+}
+
+/*------------------------------------------------------------------------------------------*/
+/*---------------------------------- PREGUNTAS FRECUENTES ----------------------------------*/
+/*------------------------------------------------------------------------------------------*/
+
+.faq-space {
+	width: 100% !important;
+	margin-left: 0 !important;
+
+	.body-card {
+		.info-card {
+			width: calc(100% - 25px);
+			.pregunta,
+			.respuesta {
+				text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;
+				font-size: 18px;
+				font-weight: 600;
+			}
+
+			.respuesta {
+				font-size: 16px;
+				font-weight: 400;
+			}
+		}
+	}
+}
+
+/*------------------------------------------------------------------------------------------*/
+/*----------------------------------------- EQUIPO -----------------------------------------*/
+/*------------------------------------------------------------------------------------------*/
+
+.new-card-container,
+.add-new-register {
+	height: 300px;
 	padding: 10px !important;
 	background-color: transparent;
+	border-radius: 5px;
+	overflow: hidden;
 
-	.new-member {
+	.new-member,
+	.new-register {
 		@include displayFlex(row, flex-start, center);
 		width: 100% !important;
 		height: 100%;
+		border-radius: 5px;
+		box-shadow: 0px 0px 10px 0px #ccd9e279;
 
 		.new-content {
-			@include displayFlex(null, space-evenly, center);
+			@include displayFlex(null, center, center);
 			width: 100%;
+
 			height: 100%;
 			border-radius: 5px;
 			background-color: #ffffff;
 			color: #657480;
 			cursor: pointer;
 			transition: all 200ms ease-out;
+			border-radius: 5px;
 
 			svg {
 				margin-right: 7.5px;
@@ -299,30 +370,109 @@ $radius: 12px;
 			}
 		}
 	}
-}
 
-.blog-card {
-	@include displayFlex(column, center, center);
-	width: 100% !important;
-	height: 100%;
+	/*------------------------------------------------------------------------------------------*/
+	/*------------------------------------------ BLOGS -----------------------------------------*/
+	/*------------------------------------------------------------------------------------------*/
 
-	.blog-img {
-		width: 100%;
-		height: 40%;
+	.blog-card {
+		@include displayFlex(column, center, center);
+		width: 100% !important;
+		height: 100%;
+		box-shadow: 0px 0px 10px 0px #ccd9e279;
 
-		background-position: center;
-		background-size: cover;
-		border-top-left-radius: 5px;
-		border-top-right-radius: 5px;
-	}
+		.img-container {
+			width: 100%;
+			height: 40%;
+			position: relative;
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+			overflow: hidden;
 
-	.blog-desc {
-		width: 100%;
-		height: 60%;
+			.layer {
+				position: absolute;
+				background-color: #793f1360;
+				width: 100%;
+				height: 100%;
+			}
 
-		background-color: #fff;
-		border-bottom-left-radius: 5px;
-		border-bottom-right-radius: 5px;
+			.delete-btn {
+				@include displayFlex(null, center, center);
+				position: absolute;
+				width: 50px;
+				height: 50px;
+				color: #000;
+				right: 0px;
+				top: 0px;
+				border-bottom-left-radius: 50%;
+				transition: all 150ms ease-in-out;
+
+				&:hover {
+					color: rgb(46, 46, 46);
+					background-color: rgba(255, 255, 255, 0.152);
+				}
+
+				svg {
+					margin: 0px 0px 4px 4px;
+				}
+			}
+
+			.blog-img {
+				width: 100%;
+				height: 100%;
+				background-position: center;
+				background-size: cover;
+			}
+		}
+
+		.blog-content {
+			width: 100%;
+			height: 60%;
+			padding: 0.75em;
+
+			background-color: #fff;
+			border-bottom-left-radius: 5px;
+			border-bottom-right-radius: 5px;
+
+			.blog-desc {
+				width: 100%;
+				height: 80%;
+
+				h4 {
+					text-align: center;
+				}
+
+				p {
+					margin-bottom: 0;
+				}
+			}
+
+			.modify-container {
+				@include displayFlex(null, center, center);
+				width: 100%;
+				height: 20%;
+
+				a {
+					@include displayFlex(null, center, center);
+					width: 100%;
+					height: 100%;
+					border-radius: 5px;
+					background-color: $modify-color;
+					color: #ffffff;
+					cursor: pointer;
+					text-decoration: none;
+					text-align: center;
+					border: 1px solid transparent;
+					transition: all 250ms ease-out;
+
+					&:hover {
+						background-color: transparent;
+						color: $modify-color;
+						border: 1px solid $modify-color;
+					}
+				}
+			}
+		}
 	}
 }
 

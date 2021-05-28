@@ -2,9 +2,10 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // Componentes
+import Navbar from "./GeneralNavbar";
 import Equipo from "./Equipo";
 import Blog from "./Blog";
-import Navbar from "./GeneralNavbar";
+import Faq from "./Faq";
 
 export default function Animales() {
 	return (
@@ -15,6 +16,7 @@ export default function Animales() {
 				<section className="general">
 					<div className="general-sections">
 						<Switch>
+							<Route path="/faq" component={Faq} />
 							<Route path="/blogs" component={Blog} />
 							<Route path="/equipo" component={Equipo} />
 						</Switch>
