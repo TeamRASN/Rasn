@@ -6,6 +6,7 @@ import Navbar from "../components/Admin/Navbar";
 import Graficos from "../components/Admin/Pages/Graficos";
 import Animales from "../components/Admin/Pages/Animales";
 import Generales from "../components/Admin/Pages/General";
+import Cuenta from "../components/Admin/Pages/Cuenta";
 
 //Estilos
 import "../css/admin-sections.css";
@@ -18,6 +19,7 @@ export default function Admin() {
 				<section className="admin">
 					<div className="admin-sections">
 						<Switch>
+							<Route path="/cuenta" component={Cuenta} />
 							<Route path="/general" component={Generales} />
 							<Route path="/animales" component={Animales} />
 							<Route path="/graficos" component={Graficos} />
