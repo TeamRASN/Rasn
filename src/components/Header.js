@@ -10,7 +10,7 @@ export default function Header() {
 				<div className="banner-container">
 					<div className="information">
 						<h1 className="hero-title">
-							Refugio de Animales San Nicolas <span>Lomaz de Zamora</span>
+							Refugio de Animales San Nicolas <span>Lomas de Zamora</span>
 						</h1>
 						<p>El amor por todas las criaturas vivientes es el más noble atributo del ser humano.</p>
 					</div>
