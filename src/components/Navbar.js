@@ -154,12 +154,6 @@ export default function Navbar(props) {
 								</Link>
 							</li>
 							<li>
-								<Link to="/Rasn/redes-sociales" className="submenu-element" onClick={reload}>
-									<i className="fa fa-hashtag" aria-hidden="true"></i>
-									Redes sociales
-								</Link>
-							</li>
-							<li>
 								<Link to="/Rasn/faq" className="submenu-element" onClick={reload}>
 									<i className="fa fa-question" aria-hidden="true"></i>
 									Preguntas frecuentes

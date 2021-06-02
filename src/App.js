@@ -21,6 +21,7 @@ import Footer from "./components/Footer";
 //Estilos
 import "./css/header.css";
 import "./css/customBts.css";
+import "./css/index.css";
 
 export default function App() {
 	// Autorización simple en renderizado
@@ -39,8 +40,8 @@ export default function App() {
 					{/* 
 						<Route path="/Rasn/donativos" component={Donativos} />
 						<Route path="/Rasn/faq" component={FAQ} />*/}
-					<Route path="/contacto" component={Contacto} />
-					<Route path="/faq" component={Faq} />
+					<Route path="/Rasn/contacto" component={Contacto} />
+					<Route path="/Rasn/faq" component={Faq} />
 					<Route path="/Rasn/donativos" component={Donativos} />
 					<Route path="/Rasn/esfuerzos" component={Esfuerzos} />
 					<Route path="/Rasn/rescatados" component={AnimalesR} />

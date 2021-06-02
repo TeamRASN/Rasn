@@ -79,9 +79,6 @@
   width: 100px;
   filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.213));
 }
-.trabajo .container .element-list .work-card .media-body {
-  /* width: 60%; */
-}
 .trabajo .container .element-list .work-card .media-body .heading {
   font-size: 1.3rem;
 }
