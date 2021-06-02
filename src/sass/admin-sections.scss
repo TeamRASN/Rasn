@@ -1,0 +1,557 @@
+@import "fonts";
+@import "mixins";
+
+$delete-color: #c70a0a;
+$modify-color: #eb8d00;
+
+.admin {
+	margin-left: 90px;
+	height: 100vh;
+	overflow-y: hidden;
+
+	div {
+		h1 {
+			padding-top: 15px;
+			padding-bottom: 15px;
+			font-size: 2.5rem;
+			font-weight: 400;
+			color: rgb(35, 40, 54);
+		}
+	}
+}
+
+.admin-sections {
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+
+	overflow: auto;
+
+	.row {
+		margin: 0;
+	}
+}
+
+/*------------------------------------------------------------------------------------------*/
+/*---------------------------------------- GRAFICOS ----------------------------------------*/
+/*------------------------------------------------------------------------------------------*/
+
+$radius: 12px;
+
+.graphs,
+.cuenta {
+	.graficos-ind,
+	.cuenta-sec {
+		padding: 10px;
+		height: 400px;
+		border-radius: $radius;
+
+		.graph-container,
+		.sec-content {
+			@include displayFlex(null, center, center);
+			width: 100%;
+			height: 100%;
+			background-color: #fff;
+			border-radius: $radius;
+			box-shadow: 0px 0px 10px 0px #ccd9e24b;
+
+			background-position: center;
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+	}
+}
+
+/*------------------------------------------------------------------------------------------*/
+/*---------------------------------------- ANIMALES ----------------------------------------*/
+/*------------------------------------------------------------------------------------------*/
+
+.new-animal {
+	@include displayFlex(row, flex-start, center);
+	width: 100% !important;
+	height: 100%;
+	margin: 10px 0px 10px 0px !important;
+
+	.new-content {
+		@include displayFlex(null, center, center);
+		width: 100%;
+		height: 100%;
+		border-radius: 5px;
+		background-color: #ffffff;
+		color: #657480;
+		cursor: pointer;
+		transition: all 200ms ease-out;
+
+		svg {
+			margin-right: 7.5px;
+		}
+
+		&:hover {
+			background-color: #dee5eb;
+			color: #000000;
+		}
+	}
+}
+
+.admin-animal-card,
+.add-new-register-row {
+	@include displayFlex(row, center, center);
+
+	height: 80px !important;
+	margin: 10px 0px 10px 0px !important;
+
+	.img-card {
+		border-radius: 5px;
+		width: 200px;
+		height: 100%;
+
+		background-position: center;
+		background-size: cover;
+		box-shadow: 0px 0px 10px 0px #ccd9e252;
+	}
+
+	.desc-card,
+	.faq-space {
+		border-radius: 5px;
+		width: 90%;
+		height: 100%;
+		background-color: #fff;
+		margin-left: 10px;
+		box-shadow: 0px 0px 10px 0px #ccd9e252;
+
+		.body-card {
+			@include displayFlex(row, space-between, null);
+			height: 100%;
+			padding: 10px;
+
+			.info-card {
+				@include displayFlex(column, space-between, null);
+
+				.name-prop {
+					font-size: 20px;
+					font-weight: 700;
+					color: #d36601;
+				}
+
+				.section-prop {
+					@include displayFlex(row, space-between, null);
+
+					div {
+						@include displayFlex(row, null, null);
+						span {
+							font-size: 16px;
+							font-weight: 500;
+							color: #000000;
+						}
+
+						p {
+							margin: 0px 7px;
+						}
+					}
+				}
+			}
+		}
+
+		.crud-card {
+			@include displayFlex(column, space-between, center);
+
+			a {
+				@include displayFlex(row-reverse, center, center);
+				color: #37383a;
+				text-decoration: none;
+				transition: all 150ms ease-out;
+				width: 25px;
+				height: 25px;
+				font-size: 15px;
+				background-color: #fff;
+
+				p {
+					transition: all 150ms ease-out;
+					position: absolute;
+					visibility: hidden;
+					opacity: 0;
+					border-radius: 7.5px;
+					margin-bottom: 0;
+				}
+
+				&[href$="borrar"] {
+					background-color: transparent;
+					border-radius: 50%;
+
+					&:hover > p {
+						background-color: $delete-color;
+					}
+				}
+
+				&[href$="editar"] {
+					background-color: transparent;
+					border-radius: 50%;
+
+					&:hover > p {
+						background-color: $modify-color;
+					}
+				}
+
+				&:hover > p {
+					visibility: visible;
+					color: #fff;
+					opacity: 1;
+					transform: translateX(-45px);
+					padding: 2.5px 10px;
+				}
+
+				&:hover > .modifyP {
+					visibility: visible;
+					color: #fff;
+					opacity: 1;
+					transform: translateX(-56px);
+					padding: 2.5px 10px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 771px) {
+	p {
+		margin-top: 0 !important;
+		font-size: 1rem !important;
+	}
+}
+
+/*------------------------------------------------------------------------------------------*/
+/*------------------------------------- GENERAL NAVBAR -------------------------------------*/
+/*------------------------------------------------------------------------------------------*/
+
+.general-navbar {
+	padding: 0px 10px;
+
+	ul {
+		@include displayFlex(row, space-around, center);
+		height: 100%;
+		padding-left: 0;
+
+		li {
+			list-style-type: none;
+			background-color: transparent;
+			padding: 10px;
+
+			a {
+				@include displayFlex(null, center, center);
+				width: 100%;
+				height: 100%;
+				padding: 15px 30px;
+				color: #899099;
+				font-weight: 500;
+				white-space: nowrap;
+				text-decoration: none;
+				background-color: #fff;
+				border-radius: 10px;
+				cursor: pointer;
+				transition: 100ms ease-in-out;
+				box-shadow: 0px 0px 10px 0px #ccd9e25f;
+
+				&:hover {
+					background-color: #dde3e6;
+				}
+			}
+		}
+	}
+}
+
+/*------------------------------------------------------------------------------------------*/
+/*----------------------------------------- GENERAL ----------------------------------------*/
+/*------------------------------------------------------------------------------------------*/
+
+.general {
+	height: 100%;
+	border-radius: $radius;
+
+	.general-sections {
+		width: 100%;
+		height: 100%;
+		margin: 20px 0px;
+		border-radius: $radius;
+		padding: 10px;
+		overflow: auto;
+
+		.row {
+			margin: 0;
+		}
+	}
+}
+
+.add-new-register {
+	box-shadow: 0px 0px 0px !important;
+	.new-register {
+		.new-content {
+			@include displayFlex(null, center, center);
+			border-radius: 5px;
+			width: 100%;
+			height: 100%;
+			background-color: transparent !important;
+			border: 2.5px dashed #657480 !important;
+			box-shadow: 0px 0px 10px 0px #ccd9e264;
+			transition: all 150ms ease-in-out;
+			cursor: pointer;
+
+			&:hover {
+				color: #657480 !important;
+				background-color: rgba(200, 209, 218, 0.57) !important;
+			}
+		}
+	}
+}
+
+/*------------------------------------------------------------------------------------------*/
+/*---------------------------------- PREGUNTAS FRECUENTES ----------------------------------*/
+/*------------------------------------------------------------------------------------------*/
+
+.faq-space {
+	width: 100% !important;
+	margin-left: 0 !important;
+
+	.body-card {
+		.info-card {
+			width: calc(100% - 25px);
+			.pregunta,
+			.respuesta {
+				text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;
+				font-size: 18px;
+				font-weight: 600;
+			}
+
+			.respuesta {
+				font-size: 16px;
+				font-weight: 400;
+			}
+		}
+	}
+}
+
+/*------------------------------------------------------------------------------------------*/
+/*----------------------------------------- EQUIPO -----------------------------------------*/
+/*------------------------------------------------------------------------------------------*/
+
+.new-card-container,
+.add-new-register {
+	height: 300px;
+	padding: 10px !important;
+	background-color: transparent;
+	border-radius: 5px;
+	overflow: hidden;
+
+	.new-member,
+	.new-register {
+		@include displayFlex(row, flex-start, center);
+		width: 100% !important;
+		height: 100%;
+		border-radius: 5px;
+		box-shadow: 0px 0px 10px 0px #ccd9e279;
+
+		.new-content {
+			@include displayFlex(null, center, center);
+			width: 100%;
+
+			height: 100%;
+			border-radius: 5px;
+			background-color: #ffffff;
+			color: #657480;
+			cursor: pointer;
+			transition: all 200ms ease-out;
+			border-radius: 5px;
+
+			svg {
+				margin-right: 7.5px;
+			}
+
+			&:hover {
+				background-color: #dee5eb;
+				color: #000000;
+			}
+		}
+	}
+
+	/*------------------------------------------------------------------------------------------*/
+	/*------------------------------------------ BLOGS -----------------------------------------*/
+	/*------------------------------------------------------------------------------------------*/
+
+	.blog-card {
+		@include displayFlex(column, center, center);
+		width: 100% !important;
+		height: 100%;
+		box-shadow: 0px 0px 10px 0px #ccd9e279;
+
+		.img-container {
+			width: 100%;
+			height: 40%;
+			position: relative;
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+			overflow: hidden;
+
+			.layer {
+				position: absolute;
+				background-color: #793f1360;
+				width: 100%;
+				height: 100%;
+			}
+
+			.delete-btn {
+				@include displayFlex(null, center, center);
+				position: absolute;
+				width: 50px;
+				height: 50px;
+				color: #000;
+				right: 0px;
+				top: 0px;
+				border-bottom-left-radius: 50%;
+				transition: all 150ms ease-in-out;
+
+				&:hover {
+					color: rgb(46, 46, 46);
+					background-color: rgba(255, 255, 255, 0.152);
+				}
+
+				svg {
+					margin: 0px 0px 4px 4px;
+				}
+			}
+
+			.blog-img {
+				width: 100%;
+				height: 100%;
+				background-position: center;
+				background-size: cover;
+			}
+		}
+
+		.blog-content {
+			width: 100%;
+			height: 60%;
+			padding: 0.75em;
+
+			background-color: #fff;
+			border-bottom-left-radius: 5px;
+			border-bottom-right-radius: 5px;
+
+			.blog-desc {
+				width: 100%;
+				height: 80%;
+
+				h4 {
+					text-align: center;
+				}
+
+				p {
+					margin-bottom: 0;
+				}
+			}
+
+			.modify-container {
+				@include displayFlex(null, center, center);
+				width: 100%;
+				height: 20%;
+
+				a {
+					@include displayFlex(null, center, center);
+					width: 100%;
+					height: 100%;
+					border-radius: 5px;
+					background-color: $modify-color;
+					color: #ffffff;
+					cursor: pointer;
+					text-decoration: none;
+					text-align: center;
+					border: 1px solid transparent;
+					transition: all 250ms ease-out;
+
+					&:hover {
+						background-color: transparent;
+						color: $modify-color;
+						border: 1px solid $modify-color;
+					}
+				}
+			}
+		}
+	}
+}
+
+/*------------------------------------------------------------------------------------------*/
+/*----------------------------------------- CUENTA -----------------------------------------*/
+/*------------------------------------------------------------------------------------------*/
+
+.cuenta {
+	@include displayFlex(column, center, center);
+
+	.cuenta-sec {
+		height: auto !important;
+		.sec-content {
+			@include displayFlex(column, center, flex-start);
+			height: auto !important;
+			padding: 20px;
+
+			.section-name {
+				color: #657480;
+				font-size: 0.9em;
+				margin-bottom: 12px;
+			}
+
+			.pass-container {
+				@include displayFlex(row, space-between, null);
+				width: 100%;
+				min-height: 50px;
+				border-radius: 10px;
+
+				.input-email {
+					width: 100%;
+					height: 50px;
+					padding: 10px 15px;
+					border-radius: 10px;
+					border: 1px solid #657480a1;
+					margin-bottom: 10px;
+					transition: all 150ms ease-out;
+
+					&::placeholder {
+						font-size: 1em;
+						color: #71777c9f;
+					}
+
+					&:focus-visible {
+						border-radius: 10px;
+						border: 1px solid #e86e1c;
+						outline: 0;
+					}
+
+					&:focus-visible + &::placeholder {
+						color: #c70a0a;
+					}
+				}
+			}
+
+			.send-btn {
+				@include displayFlex(null, center, center);
+				width: 100%;
+				min-height: 50px;
+				border-radius: 10px;
+				background-color: #e86e1c;
+				border: 0;
+				transition: all 150ms ease-out;
+				color: #fff;
+				font-weight: 600;
+				letter-spacing: 0.2px;
+
+				&:hover {
+					background-color: #fc8a3e;
+				}
+			}
+		}
+	}
+}
+
+.active-general-nav {
+	background-color: #dae2e6 !important;
+	box-shadow: inset 0px 0px 5px #9ca6aa52 !important;
+}

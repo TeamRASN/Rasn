@@ -1,0 +1,364 @@
+@charset "UTF-8";
+.Mascotas {
+  padding-top: 15px;
+}
+
+/*------------------------------------------------------------------------------------------*/
+/*--------------------------------- CONTENEDOR DE ANIMALES ---------------------------------*/
+/*------------------------------------------------------------------------------------------*/
+.secciones {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.secciones a {
+  text-decoration: none;
+  transition: all 150ms ease-in-out;
+}
+.secciones a h1 {
+  color: #333;
+  transition: all 150ms ease-in-out;
+  text-align: center;
+  padding: 15px 20px;
+  border-radius: 1rem;
+  background: #f3f4f5;
+  box-shadow: 0 0 18px 2px #e2e6e9;
+}
+.secciones a h1:hover {
+  color: #5c4c3f;
+}
+.secciones a .activeHead {
+  color: #b1b1b1 !important;
+}
+
+/*------------------------------------------------------------------------------------------*/
+/*----------------------------------- TARJETA DE MASCOTA -----------------------------------*/
+/*------------------------------------------------------------------------------------------*/
+.animals-top {
+  padding: 5% 0;
+}
+
+.clear {
+  clear: both;
+}
+
+.location {
+  text-decoration: none;
+  border: 0px;
+  background-color: transparent;
+}
+
+.card_box {
+  background-color: white;
+  position: relative;
+  border-radius: 0.3rem;
+  margin-bottom: 20px;
+}
+
+.img-responsive {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+  display: flex;
+  justify-content: center;
+}
+.img-responsive img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card_desc {
+  padding: 5%;
+  border: 1px solid #e0e0e0;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card_desc h3 {
+  text-decoration: none;
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.card_btn {
+  list-style: none;
+}
+.card_btn a {
+  color: #000;
+  font-size: 0.8125em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.card_btn a:hover {
+  color: #e92546;
+}
+
+@media (max-width: 800px) {
+  .card_box {
+    width: 100%;
+  }
+
+  .card_desc {
+    padding: 10px;
+  }
+}
+@media (max-width: 575px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .animals-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+/*------------------------------------------------------------------------------------------*/
+/*----------------------------------------- POP-UP -----------------------------------------*/
+/*------------------------------------------------------------------------------------------*/
+.overlay {
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+  transition: all 200ms ease-in-out;
+  z-index: 10;
+}
+.overlay:not(.active) {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.popup {
+  margin-top: 75px;
+  background: #f8f8f8;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 0.3rem;
+  font-family: "Montserrat", sans-serif;
+  width: 80%;
+  height: 80%;
+  transition: 0.3s ease all;
+  transform: scale(0.7);
+  display: flex;
+  flex-direction: row;
+  visibility: visible;
+  opacity: 1;
+}
+.popup .img {
+  width: 40%;
+  background-image: url(../assets/organizacion.jpg);
+  background-size: cover;
+  background-position: center;
+  background-origin: content-box;
+  border-top-left-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem;
+}
+.popup:not(.active) + .overlay {
+  visibility: visible;
+  opacity: 1;
+}
+.popup:not(.active) {
+  visibility: hidden;
+  opacity: 0;
+}
+.popup .btn-cerrar-popup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 50%;
+  color: #000;
+  font-size: 20px;
+  transition: 200ms ease all;
+}
+.popup .btn-cerrar-popup:hover {
+  color: #313131;
+  background-color: #8585851e;
+}
+.popup h1 {
+  font-size: 30px;
+  opacity: 0;
+}
+.popup p {
+  opacity: 0;
+}
+
+.info-section {
+  width: 60%;
+}
+.info-section .container-text {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+.info-section .container-text h1 {
+  font-size: 30px;
+}
+.info-section .container-text .descripcion {
+  height: 65%;
+}
+
+.renglon {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.renglon h4 {
+  width: 50%;
+  justify-self: flex-end;
+  font-size: 18px;
+  margin: 0;
+}
+.renglon p {
+  width: 50%;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  line-height: 1.7;
+}
+
+.aptitud h4 {
+  width: 20% !important;
+}
+.aptitud p {
+  width: 80% !important;
+}
+
+.btn-adoptar {
+  height: 30px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #ff9e16;
+  border-radius: 3px;
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  transition: all 300ms ease-in-out;
+}
+.btn-adoptar:hover {
+  background-color: #ffa82f;
+}
+
+@media screen and (max-width: 991px) {
+  .popup {
+    flex-direction: column;
+  }
+  .popup .img {
+    width: 100%;
+    height: 50%;
+    border-top-right-radius: 0.3rem;
+    border-bottom-left-radius: 0;
+  }
+  .popup .info-section {
+    width: 100%;
+    height: 40%;
+  }
+  .popup .info-section .container-text {
+    height: auto;
+  }
+  .popup .info-section .container-text .renglon h4 {
+    width: 50%;
+  }
+  .popup .info-section .container-text .renglon p {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 772px) {
+  .img {
+    height: 40% !important;
+  }
+
+  .info-section {
+    height: 60% !important;
+  }
+  .info-section .container-text {
+    height: 100% !important;
+  }
+  .info-section .container-text .descripcion {
+    overflow-y: scroll;
+  }
+  .info-section .container-text .renglon h4 {
+    width: 30% !important;
+  }
+  .info-section .container-text .renglon p {
+    width: 70% !important;
+    font-size: 16px !important;
+  }
+}
+/*------------------------------------------------------------------------------------------*/
+/*------------------------------------ ANIMACIÓN POP-UP ------------------------------------*/
+/*------------------------------------------------------------------------------------------*/
+.popup.active {
+  transform: scale(1);
+  opacity: 1;
+}
+.popup.active h1 {
+  animation: entradaTitulo 0.2s ease 0.2s forwards;
+}
+.popup.active p {
+  animation: entradaSubtitulo 0.2s ease 0.2s forwards;
+}
+.popup.active .contenedor-inputs {
+  animation: entradaInputs 0.4s linear 0.4s forwards;
+}
+
+@keyframes entradaTitulo {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes entradaSubtitulo {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes entradaInputs {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=mascotas.css.map */

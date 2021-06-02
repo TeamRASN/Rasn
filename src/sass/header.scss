@@ -20,6 +20,7 @@
 	.contenedor-img {
 		width: 100%;
 		height: inherit;
+		margin-top: 5px;
 
 		position: absolute;
 		background-image: url("../assets/banner.svg");
@@ -70,6 +71,7 @@
 	width: 100%;
 	height: inherit;
 	z-index: 1;
+	margin-top: 5px;
 }
 
 @media screen and (min-width: 1030px) {

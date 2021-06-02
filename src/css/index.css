@@ -1,8 +1,188 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
-.mission {
-  position: relative;
+/*------------------------------------------------------------------------------------------*/
+/*----------------------------------------- MISION -----------------------------------------*/
+/*------------------------------------------------------------------------------------------*/
+.ms-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.ms-container .mision {
+  width: 90%;
+  height: 45%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 75px auto;
+}
+.ms-container .mision .logo-img {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.ms-container .mision .logo-img img {
+  width: 60%;
+  height: auto;
+}
+.ms-container .mision .informacion {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 50%;
+  line-height: 2em;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/*------------------------------------------------------------------------------------------*/
+/*--------------------------------------- OBJETIVOS ----------------------------------------*/
+/*------------------------------------------------------------------------------------------*/
+.trabajo {
   width: 100%;
-  height: 80vh;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin-top: 40px;
+}
+.trabajo .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.trabajo .container .element-list {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.trabajo .container .element-list .work-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.trabajo .container .element-list .work-card .icon {
+  border-radius: 50%;
+  background-color: #eceef3;
+}
+.trabajo .container .element-list .work-card .icon img {
+  width: 100px;
+  filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.213));
+}
+.trabajo .container .element-list .work-card .media-body {
+  /* width: 60%; */
+}
+.trabajo .container .element-list .work-card .media-body .heading {
+  font-size: 1.3rem;
+}
+.trabajo .container .element-list .work-card .media-body p {
+  font-size: 1rem !important;
+}
+
+@media screen and (min-width: 768px) {
+  .trabajo {
+    height: 70vh !important;
+  }
+}
+/*------------------------------------------------------------------------------------------*/
+/*---------------------------------------- EQUIPO ------------------------------------------*/
+/*------------------------------------------------------------------------------------------*/
+.team-section {
+  width: 100%;
+  height: 70vh;
+}
+.team-section .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.team-section .container .row .heading-section h2 {
+  font-size: 30px;
+  font-weight: 400;
+}
+.team-section .container .carousel {
+  height: 80%;
+}
+.team-section .container .carousel .rec-carousel {
+  height: 100% !important;
+}
+.team-section .container .carousel .rec-carousel:hover > .rec-arrow {
+  visibility: visible;
+  opacity: 1;
+}
+.team-section .container .carousel .rec-carousel .rec-arrow {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 100ms ease-in-out;
+}
+.team-section .container .carousel .rec-carousel .rec-arrow:hover {
+  color: #fff;
+  background-color: #ffd063;
+  box-shadow: 0 0 1px 1px #41360030;
+}
+.team-section .container .carousel .rec-carousel .rec-arrow:hover:enabled, .team-section .container .carousel .rec-carousel .rec-arrow:focus:enabled {
+  color: #fff;
+  background-color: #ffd063;
+  box-shadow: 0 0 1px 1px #41360030;
+}
+.team-section .container .carousel .rec-carousel .rec-slider {
+  height: 100%;
+}
+.team-section .container .carousel .rec-carousel .rec-slider .rec-carousel-item {
+  height: 100%;
+}
+.team-section .container .carousel .rec-carousel .rec-slider .rec-carousel-item .rec-item-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.team-section .container .carousel .rec-pagination .rec-dot_active {
+  background-color: #b78b3a80;
+  box-shadow: 0 0 1px 3px #b7813a;
+}
+
+.integrante {
+  background-color: #fff;
+  border-radius: 10px;
+  height: 80%;
+}
+.integrante .testimony-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.integrante .testimony-wrap .user-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+.integrante .testimony-wrap .text .name {
+  font-weight: 600;
+  font-size: 17px;
+  margin-bottom: 0;
+  color: #167ce9;
+}
+.integrante .testimony-wrap .text .position {
+  font-size: 13px;
+  color: #8d9db9;
 }
 
 /*# sourceMappingURL=index.css.map */

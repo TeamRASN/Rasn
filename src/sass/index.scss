@@ -1,8 +1,193 @@
 @import "fonts";
 @import "mixins";
 
-.mission {
-	position: relative;
+/*------------------------------------------------------------------------------------------*/
+/*----------------------------------------- MISION -----------------------------------------*/
+/*------------------------------------------------------------------------------------------*/
+
+.ms-container {
+	@include displayFlex(row, center, center);
+	.mision {
+		width: 90%;
+		height: 45%;
+		@include displayFlex(row, center, center);
+
+		margin: 75px auto;
+		.logo-img {
+			width: 30%;
+			@include displayFlex(row, center, center);
+
+			img {
+				width: 60%;
+				height: auto;
+			}
+		}
+		.informacion {
+			@include displayFlex(row, center, center);
+			width: 70%;
+			height: 50%;
+
+			line-height: 2em;
+			font-size: 1.5rem;
+			text-align: center;
+		}
+	}
+}
+
+/*------------------------------------------------------------------------------------------*/
+/*--------------------------------------- OBJETIVOS ----------------------------------------*/
+/*------------------------------------------------------------------------------------------*/
+
+.trabajo {
 	width: 100%;
-	height: 80vh;
+	height: 60%;
+	@include displayFlex(null, center, center);
+	background-color: white;
+	margin-top: 40px;
+
+	.container {
+		@include displayFlex(row, center, center);
+		.element-list {
+			width: 90%;
+			@include displayFlex(row, space-evenly, center);
+
+			.work-card {
+				@include displayFlex(column, space-between, center);
+				.icon {
+					border-radius: 50%;
+					background-color: #eceef3;
+
+					img {
+						width: 100px;
+						filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.213));
+					}
+				}
+
+				.media-body {
+					/* width: 60%; */
+
+					.heading {
+						font-size: 1.3rem;
+					}
+					p {
+						font-size: 1rem !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.trabajo {
+		height: 70vh !important;
+	}
+}
+
+/*------------------------------------------------------------------------------------------*/
+/*---------------------------------------- EQUIPO ------------------------------------------*/
+/*------------------------------------------------------------------------------------------*/
+
+.team-section {
+	width: 100%;
+	height: 70vh;
+
+	.container {
+		@include displayFlex(column, center, center);
+		height: 100%;
+
+		.row .heading-section h2 {
+			font-size: 30px;
+			font-weight: 400;
+		}
+
+		.carousel {
+			height: 80%;
+
+			.rec-carousel {
+				height: 100% !important;
+
+				&:hover > .rec-arrow {
+					visibility: visible;
+					opacity: 1;
+				}
+
+				.rec-arrow {
+					visibility: hidden;
+					opacity: 0;
+					transition: all 100ms ease-in-out;
+
+					&:hover {
+						color: #fff;
+						background-color: #ffd063;
+						box-shadow: 0 0 1px 1px #41360030;
+					}
+
+					&:hover:enabled,
+					&:focus:enabled {
+						color: #fff;
+						background-color: #ffd063;
+						box-shadow: 0 0 1px 1px #41360030;
+					}
+				}
+
+				.rec-slider {
+					height: 100%;
+
+					.rec-carousel-item {
+						height: 100%;
+
+						.rec-item-wrapper {
+							height: 100%;
+							@include displayFlex(null, center, center);
+						}
+					}
+				}
+			}
+
+			.rec-pagination {
+				.rec-dot_active {
+					background-color: #b78b3a80;
+					box-shadow: 0 0 1px 3px #b7813a;
+				}
+			}
+		}
+	}
+}
+
+.integrante {
+	background-color: #fff;
+	border-radius: 10px;
+	height: 80%;
+
+	.testimony-wrap {
+		@include displayFlex(column, space-evenly, center);
+		width: 100%;
+		height: 100%;
+
+		.user-img {
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+
+			background-size: cover;
+			background-position: center;
+		}
+		.text {
+			.name {
+				font-weight: 600;
+				font-size: 17px;
+				margin-bottom: 0;
+				color: #167ce9;
+			}
+
+			.position {
+				font-size: 13px;
+				color: #8d9db9;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
 }
