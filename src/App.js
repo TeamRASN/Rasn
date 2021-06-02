@@ -8,9 +8,8 @@ import AnimalesR from "./pages/AnimalesRescatados";
 import AnimalesA from "./pages/AnimalesAdoptados";
 import Admin from "./pages/Admin";
 import Esfuerzos from "./pages/Esfuerzos";
-/* import Contacto from "./pages/Contacto";
-import RedesSociales from "./pages/RedesSociales";
-import FAQ from "./pages/PreguntasFrecuentes";*/
+import Contacto from "./pages/Contacto";
+import Faq from "./pages/Faq";
 import Donativos from "./pages/Donativos";
 /* import Colaboradores from "./pages/Colaboradores";  */
 
@@ -39,8 +38,9 @@ export default function App() {
 				<Switch>
 					{/* 
 						<Route path="/Rasn/donativos" component={Donativos} />
-						<Route path="/Rasn/faq" component={FAQ} />
-						<Route path="/Rasn/contacto" component={Contacto} /> */}
+						<Route path="/Rasn/faq" component={FAQ} />*/}
+					<Route path="/contacto" component={Contacto} />
+					<Route path="/faq" component={Faq} />
 					<Route path="/Rasn/donativos" component={Donativos} />
 					<Route path="/Rasn/esfuerzos" component={Esfuerzos} />
 					<Route path="/Rasn/rescatados" component={AnimalesR} />
