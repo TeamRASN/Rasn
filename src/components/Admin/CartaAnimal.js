@@ -22,9 +22,9 @@ export default function CartaAnimal({ imagen }) {
 					<div className="crud-card">
 						<a href="/borrar" title="eliminar">
 							<FontAwesomeIcon icon={faTimes} />
-							<p>borrar</p>
+							<p className="deleteP">borrar</p>
 						</a>
-						<a href="/editar">
+						<a href="/editar" title="editar">
 							<FontAwesomeIcon icon={faDotCircle} />
 							<p className="modifyP">modificar</p>
 						</a>

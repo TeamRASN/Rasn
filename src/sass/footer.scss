@@ -72,7 +72,7 @@
 					@include displayFlex(column, center, center);
 
 					.widget-content {
-						width: max-content;
+						width: 100%;
 
 						.footer-blog {
 							display: flex;

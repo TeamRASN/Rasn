@@ -12,7 +12,9 @@ export default function Header() {
 						<h1 className="hero-title">
 							Refugio de Animales San Nicolas <span>Lomas de Zamora</span>
 						</h1>
-						<p>El amor por todas las criaturas vivientes es el más noble atributo del ser humano.</p>
+						<p className="title-paragraph">
+							El amor por todas las criaturas vivientes es el más noble atributo del ser humano.
+						</p>
 					</div>
 
 					<img className="isometric-ill" src={Illustration} alt="" />

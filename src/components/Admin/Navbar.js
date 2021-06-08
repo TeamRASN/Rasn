@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -11,7 +11,50 @@ import "../../css/admin-nav.css";
 
 export default function Navbar() {
 	let location = useLocation();
+
+	const [responsiveNav, setResponsiveNav] = useState(false);
+	const [displayWidth, setDisplayWidth] = useState(window.innerWidth);
+	/* const [displayHeight, setDisplayHeight] = useState(window.innerHeight); */
+
+	const changeDisplay = () => {
+		setDisplayWidth(window.innerWidth);
+		/* setDisplayHeight(window.innerHeight); */
+	};
+
 	useEffect(() => {
+		// Resize
+
+		window.addEventListener("resize", changeDisplay);
+
+		displayWidth <= 768 && setResponsiveNav(true);
+		displayWidth > 768 && setResponsiveNav(false);
+
+		const nav = document.getElementById("navbar-admin");
+		const lista = document.getElementById("element-list");
+		const logo = document.getElementById("admin-logo");
+
+		function addAndDeleteLogo(arrayDelete, arrayInsert) {
+			if (arrayDelete.childNodes.length > 0) {
+				arrayDelete.childNodes.forEach((e) => {
+					if (e.id.includes("admin-logo")) {
+						arrayDelete.removeChild(logo);
+					}
+				});
+				if (!arrayDelete.id.includes("navbar")) {
+					arrayInsert.insertBefore(logo, arrayInsert.firstChild);
+				} else {
+					arrayInsert.insertBefore(logo, arrayInsert.children[2]);
+				}
+			}
+		}
+
+		if (responsiveNav) {
+			addAndDeleteLogo(nav, lista);
+		} else {
+			addAndDeleteLogo(lista, nav);
+		}
+
+		// Elementos
 		const graficos = document.getElementById("graficos");
 		const animales = document.getElementById("animales");
 		const general = document.getElementById("general");
@@ -45,14 +88,21 @@ export default function Navbar() {
 			default:
 				break;
 		}
-	});
+
+		return () => {
+			//Remueve el evento al desmontar la función
+			window.removeEventListener("resize", changeDisplay);
+		};
+	}, [displayWidth, location.pathname, responsiveNav]);
 
 	return (
-		<nav className="vertical">
-			<a href="/Rasn">
-				<img src={Logo} alt="brand-logo" />
-			</a>
-			<ul>
+		<nav className="navbar-admin" id="navbar-admin">
+			<li id="admin-logo">
+				<a href="/Rasn">
+					<img src={Logo} alt="brand-logo" />
+				</a>
+			</li>
+			<ul id="element-list">
 				<li id="graficos">
 					<Link to="/graficos">
 						<FontAwesomeIcon className="icon" icon={faChartPie} />

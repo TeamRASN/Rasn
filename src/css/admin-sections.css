@@ -22,6 +22,12 @@
   margin: 0;
 }
 
+@media (max-width: 768px) {
+  .admin {
+    padding-bottom: 90px;
+    margin-left: 0;
+  }
+}
 /*------------------------------------------------------------------------------------------*/
 /*---------------------------------------- GRAFICOS ----------------------------------------*/
 /*------------------------------------------------------------------------------------------*/
@@ -200,8 +206,8 @@
 .add-new-register-row .desc-card .crud-card a p,
 .add-new-register-row .faq-space .crud-card a p {
   transition: all 150ms ease-out;
-  position: absolute;
   visibility: hidden;
+  position: absolute;
   opacity: 0;
   border-radius: 7.5px;
   margin-bottom: 0;
@@ -232,31 +238,57 @@
 .add-new-register-row .faq-space .crud-card a[href$=editar]:hover > p {
   background-color: #eb8d00;
 }
-.admin-animal-card .desc-card .crud-card a:hover > p,
-.admin-animal-card .faq-space .crud-card a:hover > p,
-.add-new-register-row .desc-card .crud-card a:hover > p,
-.add-new-register-row .faq-space .crud-card a:hover > p {
+.admin-animal-card .desc-card .crud-card a .btn-props, .admin-animal-card .desc-card .crud-card a:hover > .modifyP, .admin-animal-card .desc-card .crud-card a:hover > .deleteP,
+.admin-animal-card .faq-space .crud-card a .btn-props,
+.admin-animal-card .faq-space .crud-card a:hover > .modifyP,
+.admin-animal-card .faq-space .crud-card a:hover > .deleteP,
+.add-new-register-row .desc-card .crud-card a .btn-props,
+.add-new-register-row .desc-card .crud-card a:hover > .modifyP,
+.add-new-register-row .desc-card .crud-card a:hover > .deleteP,
+.add-new-register-row .faq-space .crud-card a .btn-props,
+.add-new-register-row .faq-space .crud-card a:hover > .modifyP,
+.add-new-register-row .faq-space .crud-card a:hover > .deleteP {
   visibility: visible;
   color: #fff;
   opacity: 1;
-  transform: translateX(-45px);
   padding: 2.5px 10px;
+}
+.admin-animal-card .desc-card .crud-card a:hover > .deleteP,
+.admin-animal-card .faq-space .crud-card a:hover > .deleteP,
+.add-new-register-row .desc-card .crud-card a:hover > .deleteP,
+.add-new-register-row .faq-space .crud-card a:hover > .deleteP {
+  transform: translateX(-45px);
 }
 .admin-animal-card .desc-card .crud-card a:hover > .modifyP,
 .admin-animal-card .faq-space .crud-card a:hover > .modifyP,
 .add-new-register-row .desc-card .crud-card a:hover > .modifyP,
 .add-new-register-row .faq-space .crud-card a:hover > .modifyP {
-  visibility: visible;
-  color: #fff;
-  opacity: 1;
   transform: translateX(-56px);
-  padding: 2.5px 10px;
 }
 
 @media screen and (max-width: 771px) {
   p {
     margin-top: 0 !important;
     font-size: 1rem !important;
+  }
+}
+@media screen and (max-width: 767px) {
+  .crud-card a .btn-props-hide, .crud-card a:hover > .modifyP, .crud-card a:hover > .deleteP {
+    display: none;
+    visibility: hidden;
+    position: fixed !important;
+  }
+  .crud-card a .modifyP,
+.crud-card a .deleteP {
+    position: fixed !important;
+  }
+  .crud-card a[href$=borrar]:hover {
+    background-color: #c70a0a !important;
+    color: #fdfdfd;
+  }
+  .crud-card a[href$=editar]:hover {
+    background-color: #eb8d00 !important;
+    color: #fdfdfd;
   }
 }
 /*------------------------------------------------------------------------------------------*/

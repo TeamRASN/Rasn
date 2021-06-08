@@ -118,7 +118,7 @@ export default function Navbar(props) {
 					</Link>
 				</li>
 				<li>
-					<Link to="/Rasn" className="nav-element">
+					<Link to="/Rasn" className="nav-element" onClick={reload}>
 						Inicio
 					</Link>
 				</li>

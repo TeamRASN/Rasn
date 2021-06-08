@@ -37,9 +37,6 @@ export default function App() {
 				{adminView ? null : <Navbar admin={() => authorizeAdmin()} />}
 				{adminView ? null : <Header />}
 				<Switch>
-					{/* 
-						<Route path="/Rasn/donativos" component={Donativos} />
-						<Route path="/Rasn/faq" component={FAQ} />*/}
 					<Route path="/Rasn/contacto" component={Contacto} />
 					<Route path="/Rasn/faq" component={Faq} />
 					<Route path="/Rasn/donativos" component={Donativos} />

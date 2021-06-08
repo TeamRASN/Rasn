@@ -9,7 +9,7 @@ import Blog from "../CartaBlog";
 export default function Equipo() {
 	return (
 		<div className="row">
-			<div className="add-new-register item new-card-container col-12 col-md-4 col-lg-3">
+			<div className="add-new-register item new-card-container col-12 col-sm-6 col-md-4 col-lg-3">
 				<div className="new-register">
 					<div className="new-content ">
 						<div>

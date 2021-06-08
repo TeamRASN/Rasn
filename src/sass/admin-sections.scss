@@ -32,6 +32,13 @@ $modify-color: #eb8d00;
 	}
 }
 
+@media (max-width: 768px) {
+	.admin {
+		padding-bottom: 90px;
+		margin-left: 0;
+	}
+}
+
 /*------------------------------------------------------------------------------------------*/
 /*---------------------------------------- GRAFICOS ----------------------------------------*/
 /*------------------------------------------------------------------------------------------*/
@@ -167,8 +174,8 @@ $radius: 12px;
 
 				p {
 					transition: all 150ms ease-out;
-					position: absolute;
 					visibility: hidden;
+					position: absolute;
 					opacity: 0;
 					border-radius: 7.5px;
 					margin-bottom: 0;
@@ -192,20 +199,21 @@ $radius: 12px;
 					}
 				}
 
-				&:hover > p {
+				.btn-props {
 					visibility: visible;
 					color: #fff;
 					opacity: 1;
-					transform: translateX(-45px);
 					padding: 2.5px 10px;
 				}
 
+				&:hover > .deleteP {
+					@extend .btn-props;
+					transform: translateX(-45px);
+				}
+
 				&:hover > .modifyP {
-					visibility: visible;
-					color: #fff;
-					opacity: 1;
+					@extend .btn-props;
 					transform: translateX(-56px);
-					padding: 2.5px 10px;
 				}
 			}
 		}
@@ -216,6 +224,43 @@ $radius: 12px;
 	p {
 		margin-top: 0 !important;
 		font-size: 1rem !important;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.crud-card {
+		a {
+			.btn-props-hide {
+				display: none;
+				visibility: hidden;
+				position: fixed !important;
+			}
+
+			.modifyP,
+			.deleteP {
+				position: fixed !important;
+			}
+
+			//Ocultar ventanas
+			&:hover > .deleteP {
+				@extend .btn-props-hide;
+			}
+
+			&:hover > .modifyP {
+				@extend .btn-props-hide;
+			}
+
+			//Cambios de los iconos
+			&[href$="borrar"]:hover {
+				background-color: $delete-color !important;
+				color: #fdfdfd;
+			}
+
+			&[href$="editar"]:hover {
+				background-color: $modify-color !important;
+				color: #fdfdfd;
+			}
+		}
 	}
 }
 

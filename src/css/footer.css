@@ -69,7 +69,7 @@
   align-items: center;
 }
 .footer-area .main-footer-area .container .row .columns .footer-widget .center-content .widget-content {
-  width: max-content;
+  width: 100%;
 }
 .footer-area .main-footer-area .container .row .columns .footer-widget .center-content .widget-content .footer-blog {
   display: flex;
