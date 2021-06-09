@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Rasn/static/css/main.0787cbb2.chunk.css",
-    "main.js": "/Rasn/static/js/main.368adaac.chunk.js",
-    "main.js.map": "/Rasn/static/js/main.368adaac.chunk.js.map",
+    "main.js": "/Rasn/static/js/main.2faa0f9d.chunk.js",
+    "main.js.map": "/Rasn/static/js/main.2faa0f9d.chunk.js.map",
     "runtime-main.js": "/Rasn/static/js/runtime-main.21952d23.js",
     "runtime-main.js.map": "/Rasn/static/js/runtime-main.21952d23.js.map",
     "static/js/2.01d13328.chunk.js": "/Rasn/static/js/2.01d13328.chunk.js",
@@ -10,7 +10,7 @@
     "index.html": "/Rasn/index.html",
     "static/css/main.0787cbb2.chunk.css.map": "/Rasn/static/css/main.0787cbb2.chunk.css.map",
     "static/js/2.01d13328.chunk.js.LICENSE.txt": "/Rasn/static/js/2.01d13328.chunk.js.LICENSE.txt",
-    "static/js/main.368adaac.chunk.js.LICENSE.txt": "/Rasn/static/js/main.368adaac.chunk.js.LICENSE.txt",
+    "static/js/main.2faa0f9d.chunk.js.LICENSE.txt": "/Rasn/static/js/main.2faa0f9d.chunk.js.LICENSE.txt",
     "static/media/Cat.ae4815a1.jpg": "/Rasn/static/media/Cat.ae4815a1.jpg",
     "static/media/Cat2.c64e9ede.jpg": "/Rasn/static/media/Cat2.c64e9ede.jpg",
     "static/media/Dog.9f4ee7bf.jpg": "/Rasn/static/media/Dog.9f4ee7bf.jpg",
@@ -28,6 +28,6 @@
     "static/js/runtime-main.21952d23.js",
     "static/js/2.01d13328.chunk.js",
     "static/css/main.0787cbb2.chunk.css",
-    "static/js/main.368adaac.chunk.js"
+    "static/js/main.2faa0f9d.chunk.js"
   ]
 }
