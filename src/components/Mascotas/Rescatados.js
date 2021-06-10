@@ -63,11 +63,10 @@ const cards = [
 ];
 
 export default function Cards(props) {
-	/* console.log(props.popup); */
 	return (
 		<div className="row animals-box-top animals-top">
-			{cards.map(({ name, image, url, id }) => (
-				<Card imageSource={image} name={name} key={id} /* popup={() => popup} */ popup={props.popup} />
+			{cards.map(({ name, image, id }) => (
+				<Card imageSource={image} name={name} key={id} popup={props.popup} />
 			))}
 		</div>
 	);

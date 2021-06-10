@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 //Componenetes
-import Rescatados from "../components/Mascotas/Rescatados";
+import Rescatados from "../components/mascotas/Rescatados";
 import Dog from "../assets/Dog.jpg";
 
 //Estilos
@@ -14,13 +14,22 @@ export default function AnimalesRescatados() {
 	const changePopup = () => {
 		const overlay = document.getElementById("overlay");
 		const popup = document.getElementById("popup");
+		const bodyTag = document.getElementsByTagName("body")[0];
 		setShowPopup(!showPopup);
+
 		if (showPopup) {
 			overlay.classList.add("active");
 			popup.classList.add("active");
 		} else {
 			overlay.classList.remove("active");
 			popup.classList.remove("active");
+		}
+
+		//!Remover los hidden al resize de de la pantalla
+		if (overlay.classList.contains("active")) {
+			bodyTag.style.overflowY = "hidden";
+		} else {
+			bodyTag.style.overflowY = null; //remover los hidden al resize de la pantalla
 		}
 	};
 
@@ -30,7 +39,7 @@ export default function AnimalesRescatados() {
 				<Rescatados popup={() => changePopup()} />
 			</div>
 
-			<div className="overlay" id="overlay">
+			<div className="overlay" id="overlay" onClick={() => changePopup()}>
 				<div className="popup" id="popup">
 					<div className="img" style={{ backgroundImage: { Dog } }}></div>
 					<div className="info-section">

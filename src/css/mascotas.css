@@ -43,17 +43,12 @@
   clear: both;
 }
 
-.location {
-  text-decoration: none;
-  border: 0px;
-  background-color: transparent;
-}
-
 .card_box {
   background-color: white;
   position: relative;
   border-radius: 0.3rem;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .img-responsive {
@@ -131,19 +126,19 @@
 /*----------------------------------------- POP-UP -----------------------------------------*/
 /*------------------------------------------------------------------------------------------*/
 .overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: rgba(0, 0, 0, 0.3);
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  align-items: center;
-  justify-content: center;
-  display: flex;
   visibility: visible;
   opacity: 1;
   transition: all 200ms ease-in-out;
-  z-index: 10;
+  z-index: 13;
 }
 .overlay:not(.active) {
   visibility: hidden;
@@ -151,7 +146,6 @@
 }
 
 .popup {
-  margin-top: 75px;
   background: #f8f8f8;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
   border-radius: 0.3rem;
@@ -229,19 +223,17 @@
 .renglon {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  margin-bottom: 3px;
 }
 .renglon h4 {
   width: 50%;
-  justify-self: flex-end;
   font-size: 18px;
   margin: 0;
 }
 .renglon p {
   width: 50%;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
   margin-left: 10px;
-  line-height: 1.7;
 }
 
 .aptitud h4 {

@@ -55,11 +55,11 @@ export default function Navbar() {
 		}
 
 		// Elementos
-		const graficos = document.getElementById("graficos");
+		const estadisticas = document.getElementById("estadisticas");
 		const animales = document.getElementById("animales");
 		const general = document.getElementById("general");
 		const cuenta = document.getElementById("cuenta");
-		let elements = [graficos, animales, general, cuenta];
+		let elements = [estadisticas, animales, general, cuenta];
 
 		//! Elimina el borde izquierdo de todas las secciones
 		elements.map((e) => {
@@ -72,8 +72,8 @@ export default function Navbar() {
 
 		//* Añade el borde izquierdo a la sección que coincida con la ruta
 		switch (location.pathname) {
-			case "/graficos":
-				graficos.classList.add("active-page");
+			case "/estadisticas":
+				estadisticas.classList.add("active-page");
 				break;
 			case "/animales":
 				animales.classList.add("active-page");
@@ -103,8 +103,8 @@ export default function Navbar() {
 				</a>
 			</li>
 			<ul id="element-list">
-				<li id="graficos">
-					<Link to="/graficos">
+				<li id="estadisticas">
+					<Link to="/estadisticas">
 						<FontAwesomeIcon className="icon" icon={faChartPie} />
 					</Link>
 				</li>

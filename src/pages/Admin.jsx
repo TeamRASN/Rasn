@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // Componentes
 import Navbar from "../components/Admin/Navbar";
-import Graficos from "../components/Admin/Pages/Graficos";
-import Animales from "../components/Admin/Pages/Animales";
-import Generales from "../components/Admin/Pages/General";
-import Cuenta from "../components/Admin/Pages/Cuenta";
+import Estadisticas from "../components/Admin/pages/Estadisticas";
+import Animales from "../components/Admin/pages/Animales";
+import Generales from "../components/Admin/pages/General";
+import Cuenta from "../components/Admin/pages/Cuenta";
 
 //Estilos
 import "../css/admin-sections.css";
@@ -22,7 +22,7 @@ export default function Admin() {
 							<Route path="/cuenta" component={Cuenta} />
 							<Route path="/general" component={Generales} />
 							<Route path="/animales" component={Animales} />
-							<Route path="/graficos" component={Graficos} />
+							<Route path="/estadisticas" component={Estadisticas} />
 						</Switch>
 					</div>
 				</section>

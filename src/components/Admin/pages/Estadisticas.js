@@ -1,10 +1,11 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 
 // Componentes
-import { Line } from "react-chartjs-2";
-import { Doughnut } from "react-chartjs-2";
-import { Radar } from "react-chartjs-2";
-import { PolarArea } from "react-chartjs-2";
+import AreaGraph from "../graphics/AreaGraph";
+import DonutGraph from "../graphics/DonutGraph";
+import BarGraph from "../graphics/BarGraph";
+import RadarGraph from "../graphics/RadarGraph";
 
 //Datos
 const dataLine = {
@@ -92,32 +93,32 @@ const dataRadar = {
 export default function Graficos() {
 	return (
 		<div className="graphs row">
-			<h1 className="col-12">Gráficos</h1>
+			<h1 className="col-12">Estadísticas</h1>
 			<div className="graficos-ind col-12 col-md-6">
 				<div className="graph-container">
-					<div className="lineGraph">
-						<Line data={dataLine} type={dataLine.type} />
+					<div className="graph-content">
+						<BarGraph />
 					</div>
 				</div>
 			</div>
 			<div className="graficos-ind col-12 col-md-6">
 				<div className="graph-container">
-					<div>
-						<Doughnut data={dataDoughnut} type={dataDoughnut.type} />
+					<div className="graph-content">
+						<DonutGraph />
 					</div>
 				</div>
 			</div>
 			<div className="graficos-ind col-12 col-md-6">
 				<div className="graph-container">
-					<div>
-						<PolarArea data={dataArea} type={dataArea.type} />
+					<div className="graph-content">
+						<AreaGraph />
 					</div>
 				</div>
 			</div>
 			<div className="graficos-ind col-12 col-md-6">
 				<div className="graph-container">
-					<div>
-						<Radar data={dataRadar} type={dataRadar.type} />
+					<div className="graph-content">
+						<RadarGraph />
 					</div>
 				</div>
 			</div>

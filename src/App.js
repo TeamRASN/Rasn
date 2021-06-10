@@ -33,18 +33,18 @@ export default function App() {
 
 	return (
 		<div>
-			<Router>
+			<Router basename="/Rasn">
 				{adminView ? null : <Navbar admin={() => authorizeAdmin()} />}
 				{adminView ? null : <Header />}
 				<Switch>
-					<Route path="/Rasn/contacto" component={Contacto} />
-					<Route path="/Rasn/faq" component={Faq} />
-					<Route path="/Rasn/donativos" component={Donativos} />
-					<Route path="/Rasn/esfuerzos" component={Esfuerzos} />
-					<Route path="/Rasn/rescatados" component={AnimalesR} />
-					<Route path="/Rasn/adoptados" component={AnimalesA} />
-					<Route path="/Rasn/admin/graficos" component={Admin} />
-					<Route path="/Rasn" exact component={Index} />
+					<Route path="/contacto" component={Contacto} />
+					<Route path="/faq" component={Faq} />
+					<Route path="/donativos" component={Donativos} />
+					<Route path="/esfuerzos" component={Esfuerzos} />
+					<Route path="/rescatados" component={AnimalesR} />
+					<Route path="/adoptados" component={AnimalesA} />
+					<Route path="/admin/estadisticas" component={Admin} />
+					<Route path="/" exact component={Index} />
 				</Switch>
 				{adminView ? null : <Footer />}
 			</Router>
