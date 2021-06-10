@@ -11,7 +11,7 @@ import Esfuerzos from "./pages/Esfuerzos";
 import Contacto from "./pages/Contacto";
 import Faq from "./pages/Faq";
 import Donativos from "./pages/Donativos";
-/* import Colaboradores from "./pages/Colaboradores";  */
+import Colaboradores from "./pages/Colaboradores";
 
 //Componenetes
 import Header from "./components/Header";
@@ -39,6 +39,7 @@ export default function App() {
 				<Switch>
 					<Route path="/contacto" component={Contacto} />
 					<Route path="/faq" component={Faq} />
+					<Route path="/colaboradores" component={Colaboradores} />
 					<Route path="/donativos" component={Donativos} />
 					<Route path="/esfuerzos" component={Esfuerzos} />
 					<Route path="/rescatados" component={AnimalesR} />

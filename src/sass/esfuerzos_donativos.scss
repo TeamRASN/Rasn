@@ -1,8 +1,11 @@
-.titulo {
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap");
+
+.tituloEfecto {
 	color: #ff7043;
 	-webkit-transition: 0.4s;
 	transition: 0.4s;
 	display: inline-block;
+	cursor: default;
 
 	&:hover {
 		-webkit-transition: 0.4s;
@@ -11,9 +14,41 @@
 	}
 }
 
+.tituloEstilo {
+	font-family: "Raleway", sans-serif;
+	font-weight: bold;
+	line-height: 0.9em;
+	text-align: center;
+	font-size: 3em;
+}
+
+.howTo {
+	background-color: #fff;
+	width: 80%;
+	margin: 0 auto;
+
+	.parrafo {
+		width: 80%;
+		margin: 0 auto;
+		font-weight: bold;
+		line-height: 1.8em;
+		text-align: center;
+		font-size: 1rem;
+	}
+
+	h4 {
+		color: #802b20;
+		font-weight: 500;
+	}
+}
+
 .contenedor-carta {
 	display: flex;
 	flex-direction: column;
+}
+
+.seccion {
+	background-color: rgba(0, 0, 0, 0.05);
 }
 
 .carta {
@@ -123,4 +158,13 @@
 		text-overflow: ellipsis;
 		color: rgba(32, 41, 28, 0.8);
 	}
+}
+
+/*DONATIVOS*/
+
+.imgLogo {
+	width: 100px;
+	height: 100px;
+	background-size: cover;
+	background-position: center;
 }

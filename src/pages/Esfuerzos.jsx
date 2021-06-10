@@ -10,7 +10,7 @@ export default function Esfuerzos() {
 		<div className="rounded mb-5">
 			<div className="container-fluid">
 				<div className="p-3">
-					<h1 className="font-weight-bold titulo mb-3">
+					<h1 className="tituloEstilo tituloEfecto mb-3">
 						Nuestros esfuerzos{" "}
 						<small>
 							<i className="fab-icon fa fa-handshake-o text-dark"></i>
