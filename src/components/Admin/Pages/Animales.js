@@ -1,5 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 // Componentes
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
@@ -14,7 +15,7 @@ export default function Animales() {
 	return (
 		<div className="graphs row">
 			<h1 className="col-12">Animales</h1>
-			<div className="add-new-register-row add-new-register col-12">
+			<Link to="/animales/nuevo-animal" className="add-new-register-row add-new-register col-12">
 				<div className="new-register">
 					<div className="new-content ">
 						<div>
@@ -23,7 +24,7 @@ export default function Animales() {
 						</div>
 					</div>
 				</div>
-			</div>
+			</Link>
 			<Card imagen={Cat} />
 			<Card imagen={Cat2} />
 			<Card imagen={Dog} />

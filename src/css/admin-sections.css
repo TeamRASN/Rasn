@@ -5,8 +5,7 @@
   overflow-y: hidden;
 }
 .admin div h1 {
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding: 15px 12px;
   font-size: 2.5rem;
   font-weight: 400;
   color: #232836;
@@ -375,7 +374,6 @@
   height: 100%;
   margin: 20px 0px;
   border-radius: 12px;
-  padding: 10px;
   overflow: auto;
 }
 .general .general-sections .row {
@@ -413,15 +411,15 @@
 .faq-space .body-card .info-card {
   width: calc(100% - 25px);
 }
-.faq-space .body-card .info-card .pregunta,
-.faq-space .body-card .info-card .respuesta {
+.faq-space .body-card .info-card .pregunta-faq-admin,
+.faq-space .body-card .info-card .respuesta-faq-admin {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
   font-size: 18px;
   font-weight: 600;
 }
-.faq-space .body-card .info-card .respuesta {
+.faq-space .body-card .info-card .respuesta-faq-admin {
   font-size: 16px;
   font-weight: 400;
 }
@@ -436,6 +434,7 @@
   background-color: transparent;
   border-radius: 5px;
   overflow: hidden;
+  text-decoration: none !important;
   /*------------------------------------------------------------------------------------------*/
   /*------------------------------------------ BLOGS -----------------------------------------*/
   /*------------------------------------------------------------------------------------------*/
@@ -480,7 +479,63 @@
 .add-new-register .new-member .new-content:hover,
 .add-new-register .new-register .new-content:hover {
   background-color: #dee5eb;
-  color: #000000;
+}
+.new-card-container .new-member .new-content .integrante-delete-btn,
+.new-card-container .new-register .new-content .integrante-delete-btn,
+.add-new-register .new-member .new-content .integrante-delete-btn,
+.add-new-register .new-register .new-content .integrante-delete-btn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+}
+.new-card-container .new-member .new-content .integrante-delete-btn i,
+.new-card-container .new-register .new-content .integrante-delete-btn i,
+.add-new-register .new-member .new-content .integrante-delete-btn i,
+.add-new-register .new-register .new-content .integrante-delete-btn i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 13px;
+  margin-right: 7.5px;
+  transition: all 0.2s ease;
+  height: 100%;
+  width: 30px;
+  border-radius: 50%;
+}
+.new-card-container .new-member .new-content .integrante-delete-btn i:hover,
+.new-card-container .new-register .new-content .integrante-delete-btn i:hover,
+.add-new-register .new-member .new-content .integrante-delete-btn i:hover,
+.add-new-register .new-register .new-content .integrante-delete-btn i:hover {
+  color: #3d4348;
+  background-color: #3f474d2a;
+}
+.new-card-container .new-member .new-content .member-card-container,
+.new-card-container .new-register .new-content .member-card-container,
+.add-new-register .new-member .new-content .member-card-container,
+.add-new-register .new-register .new-content .member-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 90%;
+}
+.new-card-container .new-member .new-content .member-card-container .member-card-content,
+.new-card-container .new-register .new-content .member-card-container .member-card-content,
+.add-new-register .new-member .new-content .member-card-container .member-card-content,
+.add-new-register .new-register .new-content .member-card-container .member-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 80%;
+}
+.new-card-container .new-member .new-content .member-card-container .member-card-content .user-img,
+.new-card-container .new-register .new-content .member-card-container .member-card-content .user-img,
+.add-new-register .new-member .new-content .member-card-container .member-card-content .user-img,
+.add-new-register .new-register .new-content .member-card-container .member-card-content .user-img {
+  margin-bottom: 1.5rem;
 }
 .new-card-container .blog-card,
 .add-new-register .blog-card {

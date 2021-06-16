@@ -4,6 +4,8 @@
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
+		"@ckeditor/ckeditor5-build-classic": "^28.0.0",
+		"@ckeditor/ckeditor5-react": "^3.0.2",
 		"@fortawesome/fontawesome-svg-core": "^1.2.35",
 		"@fortawesome/free-brands-svg-icons": "^5.15.3",
 		"@fortawesome/free-solid-svg-icons": "^5.15.3",
@@ -21,6 +23,7 @@
 		"react-particles-js": "^3.4.1",
 		"react-router-dom": "^5.2.0",
 		"react-scripts": "4.0.3",
+		"react-scroll-parallax": "^2.4.0",
 		"sass": "^1.32.13"
 	},
 	"scripts": {

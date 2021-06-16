@@ -6,6 +6,7 @@ import Navbar from "./GeneralNavbar";
 import Equipo from "./Equipo";
 import Blog from "./Blog";
 import Faq from "./Faq";
+import NuevoRegistro from "./NuevoRegistro";
 
 export default function Animales() {
 	return (
@@ -16,6 +17,10 @@ export default function Animales() {
 				<section className="general">
 					<div className="general-sections">
 						<Switch>
+							<Route
+								path={["/equipo/nuevo-miembro", "/blogs/nuevo-post", "/faq/nueva-pregunta"]}
+								component={NuevoRegistro}
+							/>
 							<Route path="/faq" component={Faq} />
 							<Route path="/blogs" component={Blog} />
 							<Route path="/equipo" component={Equipo} />

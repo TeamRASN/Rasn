@@ -10,10 +10,10 @@ export default function CartaAnimal({ imagen }) {
 			<div className="faq-space">
 				<div className="body-card">
 					<div className="info-card">
-						<div className="pregunta" title="Quiero ayudar como voluntario, ¿qué debo hacer?">
+						<div className="pregunta-faq-admin" title="Quiero ayudar como voluntario, ¿qué debo hacer?">
 							Quiero ayudar como voluntario, ¿qué debo hacer?
 						</div>
-						<div className="respuesta">
+						<div className="respuesta-faq-admin">
 							<span>
 								Si querés formar parte de nuestro equipo, contactate con nosostros usan la opcion
 								"Contacto Directo" de este sitio web o enviándonos un mensaje a nuestras redes sociales.

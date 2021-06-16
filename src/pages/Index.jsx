@@ -3,6 +3,7 @@ import React, { Component } from "react";
 //Componentes
 import Mision from "../components/Inicio/Mision";
 import Trabajo from "../components/Inicio/Trabajo";
+import Adopciones from "../components/Inicio/Adopciones";
 import Equipo from "../components/Inicio/Equipo";
 
 //Estilos
@@ -14,6 +15,7 @@ export default class Index extends Component {
 			<main>
 				<Mision />
 				<Trabajo />
+				<Adopciones />
 				<Equipo />
 			</main>
 		);

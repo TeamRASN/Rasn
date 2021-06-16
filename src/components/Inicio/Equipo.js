@@ -12,7 +12,7 @@ export default function Equipo() {
 			<div className="container pb-5 mt-5">
 				<div className="row justify-content-center">
 					<div className="col-12 heading-section">
-						<h2 className="">Nuestro equipo</h2>
+						<h2>Sumate a nuestro equipo!</h2>
 					</div>
 				</div>
 				<Carousel className="carousel">

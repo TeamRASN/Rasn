@@ -9,16 +9,14 @@
   align-items: center;
 }
 .ms-container .mision {
-  width: 90%;
+  width: 95%;
   height: 45%;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   margin: 75px auto;
 }
 .ms-container .mision .logo-img {
-  width: 30%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -33,13 +31,44 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 70%;
   height: 50%;
   line-height: 2em;
-  font-size: 1.5rem;
   text-align: center;
 }
 
+@media screen and (min-width: 991px) {
+  .mision {
+    flex-direction: row;
+  }
+  .mision .logo-img {
+    width: 30%;
+  }
+  .mision .informacion {
+    font-size: 1.5rem;
+    width: 70%;
+  }
+}
+@media screen and (max-width: 991px) {
+  .mision {
+    flex-direction: column-reverse;
+  }
+  .mision .logo-img {
+    margin-bottom: 1.75rem;
+    width: 50%;
+  }
+  .mision .informacion {
+    width: 100%;
+    font-size: 1.25rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .mision .logo-img {
+    width: 60%;
+  }
+  .mision .informacion {
+    font-size: 1rem;
+  }
+}
 /*------------------------------------------------------------------------------------------*/
 /*--------------------------------------- OBJETIVOS ----------------------------------------*/
 /*------------------------------------------------------------------------------------------*/
@@ -91,6 +120,23 @@
     height: 70vh !important;
   }
 }
+/*------------------------------------------------------------------------------------------*/
+/*-------------------------------------- ADOPCIONES ----------------------------------------*/
+/*------------------------------------------------------------------------------------------*/
+.parallax-banner-layer-0 {
+  background-repeat: no-repeat !important;
+}
+
+.adopciones-banner-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.4);
+  filter: blur(0px) saturate(2);
+}
+
 /*------------------------------------------------------------------------------------------*/
 /*---------------------------------------- EQUIPO ------------------------------------------*/
 /*------------------------------------------------------------------------------------------*/

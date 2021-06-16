@@ -14,16 +14,13 @@ export default function Navbar() {
 
 	const [responsiveNav, setResponsiveNav] = useState(false);
 	const [displayWidth, setDisplayWidth] = useState(window.innerWidth);
-	/* const [displayHeight, setDisplayHeight] = useState(window.innerHeight); */
 
 	const changeDisplay = () => {
 		setDisplayWidth(window.innerWidth);
-		/* setDisplayHeight(window.innerHeight); */
 	};
 
 	useEffect(() => {
 		// Resize
-
 		window.addEventListener("resize", changeDisplay);
 
 		displayWidth <= 768 && setResponsiveNav(true);

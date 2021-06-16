@@ -11,8 +11,7 @@ $modify-color: #eb8d00;
 
 	div {
 		h1 {
-			padding-top: 15px;
-			padding-bottom: 15px;
+			padding: 15px 12px;
 			font-size: 2.5rem;
 			font-weight: 400;
 			color: rgb(35, 40, 54);
@@ -327,7 +326,6 @@ $radius: 12px;
 		height: 100%;
 		margin: 20px 0px;
 		border-radius: $radius;
-		padding: 10px;
 		overflow: auto;
 
 		.row {
@@ -369,8 +367,8 @@ $radius: 12px;
 	.body-card {
 		.info-card {
 			width: calc(100% - 25px);
-			.pregunta,
-			.respuesta {
+			.pregunta-faq-admin,
+			.respuesta-faq-admin {
 				text-overflow: ellipsis;
 				overflow: hidden;
 				white-space: nowrap;
@@ -378,7 +376,7 @@ $radius: 12px;
 				font-weight: 600;
 			}
 
-			.respuesta {
+			.respuesta-faq-admin {
 				font-size: 16px;
 				font-weight: 400;
 			}
@@ -397,6 +395,7 @@ $radius: 12px;
 	background-color: transparent;
 	border-radius: 5px;
 	overflow: hidden;
+	text-decoration: none !important;
 
 	.new-member,
 	.new-register {
@@ -409,7 +408,6 @@ $radius: 12px;
 		.new-content {
 			@include displayFlex(null, center, center);
 			width: 100%;
-
 			height: 100%;
 			border-radius: 5px;
 			background-color: #ffffff;
@@ -424,7 +422,42 @@ $radius: 12px;
 
 			&:hover {
 				background-color: #dee5eb;
-				color: #000000;
+			}
+
+			.integrante-delete-btn {
+				@include displayFlex(null, flex-end, center);
+				width: 100%;
+				height: 10%;
+
+				i {
+					@include displayFlex(null, center, center);
+
+					margin-top: 13px;
+					margin-right: 7.5px;
+					transition: all 0.2s ease;
+					height: 100%;
+					width: 30px;
+					border-radius: 50%;
+
+					&:hover {
+						color: #3d4348;
+						background-color: #3f474d2a;
+					}
+				}
+			}
+
+			.member-card-container {
+				@include displayFlex(column, flex-start, center);
+				height: 90%;
+
+				.member-card-content {
+					@include displayFlex(column, flex-start, center);
+					height: 80%;
+
+					.user-img {
+						margin-bottom: 1.5rem;
+					}
+				}
 			}
 		}
 	}

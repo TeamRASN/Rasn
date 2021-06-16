@@ -172,3 +172,18 @@
 		}
 	}
 }
+
+@media screen and (max-width: 575px) {
+	.columns {
+		@include displayFlex(null, center, center);
+		.footer-widget {
+			width: 70%;
+
+			.center-content {
+				.widget-content {
+					width: fit-content !important;
+				}
+			}
+		}
+	}
+}

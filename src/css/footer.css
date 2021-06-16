@@ -148,4 +148,18 @@
   color: #505050;
 }
 
+@media screen and (max-width: 575px) {
+  .columns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .columns .footer-widget {
+    width: 70%;
+  }
+  .columns .footer-widget .center-content .widget-content {
+    width: fit-content !important;
+  }
+}
+
 /*# sourceMappingURL=footer.css.map */

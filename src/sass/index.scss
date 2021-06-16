@@ -8,13 +8,12 @@
 .ms-container {
 	@include displayFlex(row, center, center);
 	.mision {
-		width: 90%;
+		width: 95%;
 		height: 45%;
-		@include displayFlex(row, center, center);
+		@include displayFlex(null, center, center);
 
 		margin: 75px auto;
 		.logo-img {
-			width: 30%;
 			@include displayFlex(row, center, center);
 
 			img {
@@ -24,12 +23,50 @@
 		}
 		.informacion {
 			@include displayFlex(row, center, center);
-			width: 70%;
 			height: 50%;
 
 			line-height: 2em;
-			font-size: 1.5rem;
 			text-align: center;
+		}
+	}
+}
+
+@media screen and (min-width: 991px) {
+	.mision {
+		flex-direction: row;
+
+		.logo-img {
+			width: 30%;
+		}
+		.informacion {
+			font-size: 1.5rem;
+			width: 70%;
+		}
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.mision {
+		flex-direction: column-reverse;
+
+		.logo-img {
+			margin-bottom: 1.75rem;
+			width: 50%;
+		}
+		.informacion {
+			width: 100%;
+			font-size: 1.25rem;
+		}
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.mision {
+		.logo-img {
+			width: 60%;
+		}
+		.informacion {
+			font-size: 1rem;
 		}
 	}
 }
@@ -80,6 +117,22 @@
 	.trabajo {
 		height: 70vh !important;
 	}
+}
+
+/*------------------------------------------------------------------------------------------*/
+/*-------------------------------------- ADOPCIONES ----------------------------------------*/
+/*------------------------------------------------------------------------------------------*/
+
+.parallax-banner-layer-0 {
+	background-repeat: no-repeat !important;
+}
+
+.adopciones-banner-content {
+	@include displayFlex(null, center, center);
+	height: 100%;
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.4);
+	filter: blur(0px) saturate(2);
 }
 
 /*------------------------------------------------------------------------------------------*/
