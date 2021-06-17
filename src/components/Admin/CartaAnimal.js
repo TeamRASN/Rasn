@@ -1,21 +1,22 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // Componentes
 import { faTimes, faDotCircle } from "@fortawesome/free-solid-svg-icons";
 
-export default function CartaAnimal({ imagen }) {
+export default function CartaAnimal({ image, name, status }) {
 	return (
 		<div className="admin-animal-card col-12 col-md-6">
-			<div className="img-card" style={{ backgroundImage: `url(${imagen})` }}></div>
+			<div className="img-card" style={{ backgroundImage: `url(${image})` }}></div>
 			<div className="desc-card">
 				<div className="body-card">
 					<div className="info-card">
-						<div className="name-prop">Miguel</div>
+						<div className="name-prop">{name}</div>
 						<div className="section-prop">
 							<div>
-								<span>Sección: </span>
-								<p>Rescatados</p>
+								<span>Estado: </span>
+								<p>{status}</p>
 							</div>
 						</div>
 					</div>
@@ -24,7 +25,7 @@ export default function CartaAnimal({ imagen }) {
 							<FontAwesomeIcon icon={faTimes} />
 							<p className="deleteP">borrar</p>
 						</a>
-						<a href="/editar" title="editar">
+						<a href="/editar" title="modificar">
 							<FontAwesomeIcon icon={faDotCircle} />
 							<p className="modifyP">modificar</p>
 						</a>
@@ -34,3 +35,9 @@ export default function CartaAnimal({ imagen }) {
 		</div>
 	);
 }
+
+CartaAnimal.propTypes = {
+	image: PropTypes.string,
+	name: PropTypes.string,
+	status: PropTypes.string,
+};

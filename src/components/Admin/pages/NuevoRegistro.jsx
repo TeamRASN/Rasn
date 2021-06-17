@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
 // Componentes
 import { CKEditor } from "@ckeditor/ckeditor5-react";
@@ -18,10 +18,11 @@ function animalesForm() {
 					type="url"
 					name="imagen_mascota"
 					placeholder="Ingresar URL de la imagen"
+					required
 				/>
 			</div>
 			<div className="register-input-field col-12 col-sm-6">
-				<input className="input col-12 col-sm-6" type="text" name="nombre" placeholder="Nombre" />
+				<input className="input col-12 col-sm-6" type="text" name="nombre" placeholder="Nombre" required />
 			</div>
 			<div className="register-input-field col-12 col-sm-6">
 				<input
@@ -35,7 +36,7 @@ function animalesForm() {
 				/>
 			</div>
 			<div className="register-input-field col-12 col-sm-6">
-				<input className="input col-12 col-sm-6" list="sexo" name="sexo" placeholder="Sexo" />
+				<input className="input col-12 col-sm-6" list="sexo" name="sexo" placeholder="Sexo" required />
 			</div>
 			<datalist id="sexo">
 				<option value="Macho" />
@@ -51,10 +52,17 @@ function animalesForm() {
 					id="pesoVar"
 					name="peso"
 					placeholder="Peso en kilogramos"
+					required
 				/>
 			</div>
 			<div className="register-input-field col-12 col-sm-6">
-				<input className="input col-12 col-sm-6" type="text" name="color" placeholder="Color de pelaje" />
+				<input
+					className="input col-12 col-sm-6"
+					type="text"
+					name="color"
+					placeholder="Color de pelaje"
+					required
+				/>
 			</div>
 			<div className="register-input-field col-12 col-sm-6">
 				<input className="input col-12 col-sm-6" type="text" name="aptitud" placeholder="Aptitud" />
@@ -76,6 +84,14 @@ function animalesForm() {
 function equipoForm() {
 	return (
 		<div className="row" style={{ padding: 0 }}>
+			<div className="register-input-field col-12 col-sm-6">
+				<input
+					className="input col-12 col-sm-6"
+					type="url"
+					name="imagen_mascota"
+					placeholder="Ingresar URL de la foto"
+				/>
+			</div>
 			<div className="register-input-field col-12 col-sm-6">
 				<input className="input col-12 col-sm-6" type="text" name="nombre" placeholder="Nombre" />
 			</div>
@@ -122,6 +138,14 @@ function blogsForm() {
 	return (
 		<div className="row" style={{ padding: 0 }}>
 			<div className="register-input-field col-12 col-sm-6">
+				<input
+					className="input col-12 col-sm-6"
+					type="url"
+					name="imagen_mascota"
+					placeholder="Ingresar URL de la portada"
+				/>
+			</div>
+			<div className="register-input-field col-12 col-sm-6">
 				<input className="input col-12 col-sm-6" type="text" name="titulto" placeholder="Titulo" required />
 			</div>
 			<div className="register-input-field col-12 col-sm-6">
@@ -155,10 +179,10 @@ export default function NuevoRegistro() {
 	const [paquete, setPaquete] = useState(null);
 	const [paqueteHeader, setPaqueteHeader] = useState(null);
 	let location = useLocation();
+	const history = useHistory();
 
 	useEffect(() => {
 		//* Asigna el paquete de inputs correspondiente a la ventana
-		console.log(location.pathname);
 		switch (location.pathname) {
 			case "/equipo/nuevo-miembro":
 				setPaquete(equipoForm());
@@ -204,7 +228,11 @@ export default function NuevoRegistro() {
 			<form method="post" className="row new-register-form">
 				{paquete}
 				<div className="form-btn-container row" style={{ padding: 0 }}>
-					<div className="register-btn-field col-6 col-sm-3">
+					{/* Al presionar el botón vuelve a la página anterior */}
+					<div
+						className="register-btn-field col-6 col-sm-3"
+						onClick={() => history.push(`/${location.pathname.split("/")[1]}`)}
+					>
 						<div className="btn-danger">Cancelar</div>
 					</div>
 					<div className="register-btn-field col-6 col-sm-3">

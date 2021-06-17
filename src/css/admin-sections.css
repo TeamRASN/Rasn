@@ -559,7 +559,7 @@
 .new-card-container .blog-card .img-container .layer,
 .add-new-register .blog-card .img-container .layer {
   position: absolute;
-  background-color: #793f1360;
+  background-color: #793f133a;
   width: 100%;
   height: 100%;
 }
@@ -597,7 +597,7 @@
 .add-new-register .blog-card .blog-content {
   width: 100%;
   height: 60%;
-  padding: 0.75em;
+  padding: 1em;
   background-color: #fff;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -607,13 +607,18 @@
   width: 100%;
   height: 80%;
 }
-.new-card-container .blog-card .blog-content .blog-desc h4,
-.add-new-register .blog-card .blog-content .blog-desc h4 {
-  text-align: center;
+.new-card-container .blog-card .blog-content .blog-desc h5,
+.add-new-register .blog-card .blog-content .blog-desc h5 {
+  text-align: left;
+  height: 45%;
+  overflow: hidden;
+  margin-bottom: 0.25rem;
 }
 .new-card-container .blog-card .blog-content .blog-desc p,
 .add-new-register .blog-card .blog-content .blog-desc p {
+  height: 45%;
   margin-bottom: 0;
+  overflow: hidden;
 }
 .new-card-container .blog-card .blog-content .modify-container,
 .add-new-register .blog-card .blog-content .modify-container {
