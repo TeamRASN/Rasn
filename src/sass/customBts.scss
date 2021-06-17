@@ -1,4 +1,8 @@
 $white: #f6fafd;
 $primary: rgb(245, 248, 250);
 
+p {
+	margin-bottom: 0 !important;
+}
+
 @import "../../node_modules/bootstrap/scss/bootstrap";

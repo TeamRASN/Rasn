@@ -61,6 +61,8 @@
   color: #bcb15f;
   font-size: 20px;
   margin-right: 15px;
+  align-self: flex-start;
+  line-height: 1.5;
 }
 .footer-area .main-footer-area .container .row .columns .footer-widget .center-content {
   display: flex;

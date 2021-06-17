@@ -15,7 +15,7 @@ function animalesForm() {
 			<div className="register-input-field col-12 col-sm-6">
 				<input
 					className="input col-12 col-sm-6"
-					type="text"
+					type="url"
 					name="imagen_mascota"
 					placeholder="Ingresar URL de la imagen"
 				/>
@@ -26,8 +26,11 @@ function animalesForm() {
 			<div className="register-input-field col-12 col-sm-6">
 				<input
 					className="input col-12 col-sm-6"
-					type="date"
-					name="fecha_nacimiento"
+					type="text"
+					onFocus={(e) => {
+						e.currentTarget.type = "date";
+						e.currentTarget.focus();
+					}}
 					placeholder="Fecha de nacimiento"
 				/>
 			</div>
@@ -42,20 +45,30 @@ function animalesForm() {
 				<input className="input col-12 col-sm-6" type="text" name="raza" placeholder="Raza" />
 			</div>
 			<div className="register-input-field col-12 col-sm-6">
-				<input className="input col-12 col-sm-6" type="number" id="pesoVar" name="peso" placeholder="Peso" />
+				<input
+					className="input col-12 col-sm-6"
+					type="number"
+					id="pesoVar"
+					name="peso"
+					placeholder="Peso en kilogramos"
+				/>
 			</div>
 			<div className="register-input-field col-12 col-sm-6">
-				<input className="input col-12 col-sm-6" type="text" name="color" placeholder="Color" />
-			</div>
-			<div className="register-input-field col-12 col-sm-6">
-				<input className="input col-12 col-sm-6" type="text" name="edad" placeholder="Edad" />
+				<input className="input col-12 col-sm-6" type="text" name="color" placeholder="Color de pelaje" />
 			</div>
 			<div className="register-input-field col-12 col-sm-6">
 				<input className="input col-12 col-sm-6" type="text" name="aptitud" placeholder="Aptitud" />
 			</div>
 			<div className="register-input-field col-12 col-sm-6">
-				<input className="input col-12 col-sm-6" type="text" name="tamaño" placeholder="Tamaño" />
+				<input className="input col-12 col-sm-6" list="tamaño" name="tamaño" placeholder="Tamaño" />
 			</div>
+			<datalist id="tamaño">
+				<option value="Muy pequeño" />
+				<option value="Pequeño" />
+				<option value="Mediano" />
+				<option value="Grande" />
+				<option value="Muy grande" />
+			</datalist>
 		</div>
 	);
 }
@@ -70,8 +83,12 @@ function equipoForm() {
 				<input className="input col-12 col-sm-6" type="text" name="apellido" placeholder="Apellido" />
 			</div>
 			<div className="register-input-field col-12 col-sm-6">
-				<input className="input col-12 col-sm-6" type="text" name="rol" placeholder="Rol" />
+				<input className="input col-12 col-sm-6" list="rol" name="rol" placeholder="Rol" />
 			</div>
+			<datalist id="rol">
+				<option value="Organizador" />
+				<option value="Voluntario" />
+			</datalist>
 		</div>
 	);
 }
@@ -105,7 +122,7 @@ function blogsForm() {
 	return (
 		<div className="row" style={{ padding: 0 }}>
 			<div className="register-input-field col-12 col-sm-6">
-				<input className="input col-12 col-sm-6" type="text" name="titulto" placeholder="Titulo" />
+				<input className="input col-12 col-sm-6" type="text" name="titulto" placeholder="Titulo" required />
 			</div>
 			<div className="register-input-field col-12 col-sm-6">
 				<input className="input col-12 col-sm-6" type="text" name="descripcion" placeholder="Descripcion" />
@@ -114,7 +131,7 @@ function blogsForm() {
 				<input className="input col-12 col-sm-6" type="text" name="autor" placeholder="Autor (Opcional)" />
 			</div>
 			<div className="register-input-field col-12 col-sm-6">
-				<input className="input col-12 col-sm-6" type="date" name="fecha" value={formatedDate} />
+				<input className="input col-12 col-sm-6" type="date" name="fecha" value={formatedDate} disabled />
 			</div>
 			<CKEditor
 				style={{ width: "100%" }}
