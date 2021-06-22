@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../sass/contacto.scss"],"names":[],"mappings":"AAAQ;AAER;EACC;EACA;EACA;EACA;EACA;EACA;;;AAGD;EACC;;;AAGD;AAAA;AAAA;EAGC;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGD;EACC;EACA;EACA;EACA;;;AAGD;EACC","file":"contacto.css"}
+{"version":3,"sourceRoot":"","sources":["../sass/contacto.scss","../sass/_mixins.scss"],"names":[],"mappings":"AAAQ;AAGR;ECFC;EACA,gBDEqB;ECDrB,iBDC6B;ECA7B;EDCA;;AAEA;EACC;EACA;;AAIA;AAAA;AAAA;EAGC;;AAGD;EACC;EACA;;AAEA;EACC;;;AAMJ;EACC;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC","file":"contacto.css"}

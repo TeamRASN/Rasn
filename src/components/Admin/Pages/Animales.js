@@ -44,7 +44,7 @@ export default function Animales() {
 	return (
 		<div className="graphs row">
 			<h1 className="col-12">Animales</h1>
-			<Link to="/animales/nuevo-animal" className="add-new-register-row add-new-register col-12">
+			<Link to="animales/nuevo-animal" className="add-new-register-row add-new-register col-12">
 				<div className="new-register">
 					<div className="new-content ">
 						<div>

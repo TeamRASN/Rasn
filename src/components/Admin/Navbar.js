@@ -72,6 +72,9 @@ export default function Navbar() {
 			case "/estadisticas":
 				estadisticas.classList.add("active-page");
 				break;
+			case "/animales/nuevo-animal":
+				animales.classList.add("active-page");
+				break;
 			case "/animales":
 				animales.classList.add("active-page");
 				break;
