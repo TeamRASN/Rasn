@@ -45,7 +45,7 @@ export default class Contacto extends Component {
 					width="100%"
 					height="300px"
 					style={{ marginBottom: "-7.5px" }}
-					frameborder="0px"
+					frameBorder="0px"
 				/>
 			</div>
 		);
