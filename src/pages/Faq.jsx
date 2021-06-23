@@ -57,10 +57,12 @@ export default function Faq() {
 		const preguntas = document.querySelectorAll(".faq-card");
 
 		preguntas.forEach((pregunta) => {
+			//* Espera el evento click a cada una de las preguntas para añadir o eliminar las clases que permiten la expansión de la respuesta
 			pregunta.addEventListener("click", (e) => {
 				e.currentTarget.classList.toggle("show");
 				e.currentTarget.classList.toggle("hidden");
 
+				//* Obtiene la altura de la respuesta y se la aplica o remueve como estilo al contenedor de la respuesta
 				pregunta.querySelectorAll(".respuesta").forEach((e) => {
 					const realHeight = e.scrollHeight;
 
@@ -74,14 +76,17 @@ export default function Faq() {
 		});
 	});
 
+	//? Variables para la separación de preguntas
 	const halfContent = Math.round(faqCards.length / 2);
 	let faqCardsFirst = [];
 	let faqCardsSecond = [];
 
+	//* Se asigna la primera mitad de las preguntas a esta coleccion
 	for (let index = 0; index < halfContent; index++) {
 		faqCardsFirst.push(faqCards[index]);
 	}
 
+	//* Se asigna la segunda mitad de las preguntas a esta coleccion
 	for (let index = halfContent; index < faqCards.length; index++) {
 		faqCardsSecond.push(faqCards[index]);
 	}
