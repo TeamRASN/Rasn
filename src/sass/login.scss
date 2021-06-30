@@ -1,0 +1,189 @@
+@import "customBts.scss";
+@import "_mixins";
+
+$border-radius-logincards: 3px;
+$brand-color: #f47900;
+
+body {
+	overflow-x: hidden;
+}
+
+.login-page {
+	width: 100%;
+	height: 100vh;
+	background-color: $white;
+
+	.hidder-layout {
+		z-index: 10;
+	}
+
+	.jumpboton {
+		& > .container {
+			@include displayFlex(column, center, center);
+			height: 75%;
+
+			.login-card-container {
+				background-color: $white;
+				height: 100%;
+				padding-right: 0px !important;
+				padding-left: 0px !important;
+				border-radius: $border-radius-logincards;
+
+				.image-login-container {
+					width: 100%;
+					height: 45%;
+					background-color: #8be0ff;
+					border-top-left-radius: $border-radius-logincards;
+					border-top-right-radius: $border-radius-logincards;
+					@include displayFlex(column, space-between, center);
+
+					.illustration-container {
+						@include displayFlex(column, center, center);
+						width: 100%;
+						height: calc(100% - 30px);
+						/* overflow: hidden; */
+
+						.animated-image {
+							@include displayFlex(row, center, center);
+							width: 100px;
+							height: 100px;
+							margin-top: 30px;
+
+							img {
+								width: 100px;
+								height: auto;
+								/* position: absolute; */
+							}
+
+							.dogIcon {
+								animation: IconAnimation 4s forwards -3s ease-in-out infinite;
+							}
+							.manteinmentIcon {
+								animation: IconAnimation 4s forwards -2s ease-in-out infinite;
+							}
+							.statsIcon {
+								animation: IconAnimation 4s forwards -1s ease-in-out infinite;
+							}
+							.writingIcon {
+								animation: IconAnimation 4s forwards 0s ease-in-out infinite;
+							}
+						}
+					}
+
+					.arrow-separator {
+						width: 30px;
+						height: 18px;
+						filter: drop-shadow(0px -2px 2px rgba(100, 100, 100, 0.068));
+					}
+				}
+
+				.inputs-container {
+					height: 55%;
+					@include displayFlex(null, center, center);
+					box-shadow: 0px -2px 2px rgba(100, 100, 100, 0.068);
+
+					.login-form {
+						height: auto;
+						padding: 0px 40px;
+						margin: 0;
+
+						.register-input-field {
+							padding-bottom: 0px;
+						}
+
+						label {
+							@include displayFlex(row, flex-start, center);
+							margin-top: 10px;
+							color: grey;
+							font-size: 0.9rem;
+							white-space: nowrap;
+
+							.remember-login {
+								margin-right: 7.5px;
+							}
+						}
+
+						.exepctional-btn {
+							@include displayFlex(null, center, center);
+							width: 100%;
+							padding: 10px;
+
+							a {
+								@include displayFlex(null, center, center);
+								width: 100%;
+								padding: 10px;
+								border-radius: 5px;
+								text-decoration: none;
+								transition: all 150ms ease-in-out;
+
+								&:hover {
+									color: #fff;
+								}
+							}
+						}
+
+						.submit-btn {
+							@extend .exepctional-btn;
+							padding-bottom: 0px;
+
+							a {
+								background-color: $brand-color;
+
+								&:hover {
+									background-color: #fd9731;
+								}
+							}
+						}
+
+						.cancel-btn {
+							@extend .exepctional-btn;
+
+							a {
+								background-color: #008ffb;
+
+								&:hover {
+									background-color: #1d9cfd;
+								}
+							}
+						}
+
+						.register-advice {
+							font-size: 0.6rem !important;
+							@include displayFlex(null, center, center);
+							white-space: nowrap;
+
+							span {
+								white-space: nowrap;
+								margin-left: 3px;
+								a {
+									text-decoration: none;
+									font-weight: 800;
+									color: $brand-color;
+									transition: all 150ms ease-in-out;
+
+									&:hover {
+										color: #fd9731;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* @keyframes IconAnimation {
+	0% {
+		transform: translateX(500px);
+	}
+
+	50% {
+		transform: translateX(0px);
+	}
+
+	100% {
+		transform: translateX(-500px);
+	}
+} */

@@ -2,9 +2,9 @@ import React from "react";
 
 //Componentes
 import Card from "./Tarjetas/TrabajoCard";
-import HouseIcon from "../../assets/dog-house.svg";
-import VaccineIcon from "../../assets/syringe.svg";
-import LicenseIcon from "../../assets/license.svg";
+import HouseIcon from "../../assets/iconos/dog-house.svg";
+import VaccineIcon from "../../assets/iconos/syringe.svg";
+import LicenseIcon from "../../assets/iconos/license.svg";
 
 //Estilos
 

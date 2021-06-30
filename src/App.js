@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useState } from "react";
 
 //Rutas de Páginas
 import Index from "./pages/Index";
 import AnimalesR from "./pages/AnimalesRescatados";
 import AnimalesA from "./pages/AnimalesAdoptados";
+import Login from "./pages/Login";
 import Admin from "./pages/Admin";
 import Esfuerzos from "./pages/Esfuerzos";
 import Contacto from "./pages/Contacto";
@@ -32,23 +32,22 @@ export default function App() {
 	};
 
 	return (
-		<div>
-			<Router basename="/Rasn">
-				{adminView ? null : <Navbar admin={() => authorizeAdmin()} />}
-				{adminView ? null : <Header />}
-				<Switch>
-					<Route path="/contacto" component={Contacto} />
-					<Route path="/faq" component={Faq} />
-					<Route path="/colaboradores" component={Colaboradores} />
-					<Route path="/donativos" component={Donativos} />
-					<Route path="/esfuerzos" component={Esfuerzos} />
-					<Route path="/rescatados" component={AnimalesR} />
-					<Route path="/adoptados" component={AnimalesA} />
-					<Route path="/admin/estadisticas" component={Admin} />
-					<Route path="/" exact component={Index} />
-				</Switch>
-				{adminView ? null : <Footer />}
-			</Router>
-		</div>
+		<Router basename="/Rasn">
+			{adminView ? null : <Navbar admin={() => authorizeAdmin()} />}
+			{adminView ? null : <Header />}
+			<Switch>
+				<Route path="/contacto" component={Contacto} />
+				<Route path="/faq" component={Faq} />
+				<Route path="/colaboradores" component={Colaboradores} />
+				<Route path="/donativos" component={Donativos} />
+				<Route path="/esfuerzos" component={Esfuerzos} />
+				<Route path="/rescatados" component={AnimalesR} />
+				<Route path="/adoptados" component={AnimalesA} />
+				<Route path="/login" component={Login} />
+				<Route path="/admin/estadisticas" component={Admin} />
+				<Route path="/" exact component={Index} />
+			</Switch>
+			{adminView ? null : <Footer />}
+		</Router>
 	);
 }

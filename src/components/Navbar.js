@@ -107,7 +107,7 @@ export default function Navbar(props) {
 			<ul className="principal_list" style={responsiveNavState()}>
 				<li>
 					<Link
-						to="/admin/estadisticas"
+						to="/login"
 						className="nav-brand"
 						onClick={() => {
 							props.admin();
