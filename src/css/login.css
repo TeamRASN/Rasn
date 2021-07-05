@@ -10740,90 +10740,80 @@ body {
   height: 100vh;
   background-color: #f6fafd;
 }
-.login-page .hidder-layout {
-  z-index: 10;
+.login-page .login-content {
+  height: 100%;
+  overflow: hidden;
+  background: #432e2e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.login-page .jumpboton > .container {
+.login-page .login-content > .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 75%;
 }
-.login-page .jumpboton > .container .login-card-container {
+.login-page .login-content > .container .login-card-container {
   background-color: #f6fafd;
   height: 100%;
   padding-right: 0px !important;
   padding-left: 0px !important;
-  border-radius: 3px;
+  border-radius: 5px;
 }
-.login-page .jumpboton > .container .login-card-container .image-login-container {
+.login-page .login-content > .container .login-card-container .image-login-container {
   width: 100%;
   height: 45%;
   background-color: #8be0ff;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
-.login-page .jumpboton > .container .login-card-container .image-login-container .illustration-container {
+.login-page .login-content > .container .login-card-container .image-login-container .illustration-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   width: 100%;
   height: calc(100% - 30px);
-  /* overflow: hidden; */
+  overflow: hidden;
 }
-.login-page .jumpboton > .container .login-card-container .image-login-container .illustration-container .animated-image {
+.login-page .login-content > .container .login-card-container .image-login-container .illustration-container .animated-image {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
-  width: 100px;
-  height: 100px;
   margin-top: 30px;
+  transition: all ease-in-out;
 }
-.login-page .jumpboton > .container .login-card-container .image-login-container .illustration-container .animated-image img {
+.login-page .login-content > .container .login-card-container .image-login-container .illustration-container .animated-image .animation-icon {
   width: 100px;
   height: auto;
-  /* position: absolute; */
 }
-.login-page .jumpboton > .container .login-card-container .image-login-container .illustration-container .animated-image .dogIcon {
-  animation: IconAnimation 4s forwards -3s ease-in-out infinite;
-}
-.login-page .jumpboton > .container .login-card-container .image-login-container .illustration-container .animated-image .manteinmentIcon {
-  animation: IconAnimation 4s forwards -2s ease-in-out infinite;
-}
-.login-page .jumpboton > .container .login-card-container .image-login-container .illustration-container .animated-image .statsIcon {
-  animation: IconAnimation 4s forwards -1s ease-in-out infinite;
-}
-.login-page .jumpboton > .container .login-card-container .image-login-container .illustration-container .animated-image .writingIcon {
-  animation: IconAnimation 4s forwards 0s ease-in-out infinite;
-}
-.login-page .jumpboton > .container .login-card-container .image-login-container .arrow-separator {
+.login-page .login-content > .container .login-card-container .image-login-container .arrow-separator {
   width: 30px;
   height: 18px;
   filter: drop-shadow(0px -2px 2px rgba(100, 100, 100, 0.068));
 }
-.login-page .jumpboton > .container .login-card-container .inputs-container {
+.login-page .login-content > .container .login-card-container .inputs-container {
   height: 55%;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0px -2px 2px rgba(100, 100, 100, 0.068);
 }
-.login-page .jumpboton > .container .login-card-container .inputs-container .login-form {
+.login-page .login-content > .container .login-card-container .inputs-container .login-form {
   height: auto;
   padding: 0px 40px;
   margin: 0;
 }
-.login-page .jumpboton > .container .login-card-container .inputs-container .login-form .register-input-field {
+.login-page .login-content > .container .login-card-container .inputs-container .login-form .register-input-field {
   padding-bottom: 0px;
 }
-.login-page .jumpboton > .container .login-card-container .inputs-container .login-form label {
+.login-page .login-content > .container .login-card-container .inputs-container .login-form label {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -10833,17 +10823,18 @@ body {
   font-size: 0.9rem;
   white-space: nowrap;
 }
-.login-page .jumpboton > .container .login-card-container .inputs-container .login-form label .remember-login {
+.login-page .login-content > .container .login-card-container .inputs-container .login-form label .remember-login {
   margin-right: 7.5px;
 }
-.login-page .jumpboton > .container .login-card-container .inputs-container .login-form .exepctional-btn, .login-page .jumpboton > .container .login-card-container .inputs-container .login-form .cancel-btn, .login-page .jumpboton > .container .login-card-container .inputs-container .login-form .submit-btn {
+.login-page .login-content > .container .login-card-container .inputs-container .login-form .exepctional-btn, .login-page .login-content > .container .login-card-container .inputs-container .login-form .cancel-btn, .login-page .login-content > .container .login-card-container .inputs-container .login-form .submit-btn {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   padding: 10px;
+  padding-bottom: 0px;
 }
-.login-page .jumpboton > .container .login-card-container .inputs-container .login-form .exepctional-btn a, .login-page .jumpboton > .container .login-card-container .inputs-container .login-form .cancel-btn a, .login-page .jumpboton > .container .login-card-container .inputs-container .login-form .submit-btn a {
+.login-page .login-content > .container .login-card-container .inputs-container .login-form .exepctional-btn a, .login-page .login-content > .container .login-card-container .inputs-container .login-form .cancel-btn a, .login-page .login-content > .container .login-card-container .inputs-container .login-form .submit-btn a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10853,57 +10844,60 @@ body {
   text-decoration: none;
   transition: all 150ms ease-in-out;
 }
-.login-page .jumpboton > .container .login-card-container .inputs-container .login-form .exepctional-btn a:hover, .login-page .jumpboton > .container .login-card-container .inputs-container .login-form .cancel-btn a:hover, .login-page .jumpboton > .container .login-card-container .inputs-container .login-form .submit-btn a:hover {
+.login-page .login-content > .container .login-card-container .inputs-container .login-form .exepctional-btn a:hover, .login-page .login-content > .container .login-card-container .inputs-container .login-form .cancel-btn a:hover, .login-page .login-content > .container .login-card-container .inputs-container .login-form .submit-btn a:hover {
   color: #fff;
 }
-.login-page .jumpboton > .container .login-card-container .inputs-container .login-form .submit-btn {
-  padding-bottom: 0px;
-}
-.login-page .jumpboton > .container .login-card-container .inputs-container .login-form .submit-btn a {
-  background-color: #f47900;
-}
-.login-page .jumpboton > .container .login-card-container .inputs-container .login-form .submit-btn a:hover {
+.login-page .login-content > .container .login-card-container .inputs-container .login-form .submit-btn a {
   background-color: #fd9731;
 }
-.login-page .jumpboton > .container .login-card-container .inputs-container .login-form .cancel-btn a {
+.login-page .login-content > .container .login-card-container .inputs-container .login-form .submit-btn a:hover {
+  background-color: #432e2e;
+}
+.login-page .login-content > .container .login-card-container .inputs-container .login-form .cancel-btn a {
   background-color: #008ffb;
 }
-.login-page .jumpboton > .container .login-card-container .inputs-container .login-form .cancel-btn a:hover {
+.login-page .login-content > .container .login-card-container .inputs-container .login-form .cancel-btn a:hover {
   background-color: #1d9cfd;
 }
-.login-page .jumpboton > .container .login-card-container .inputs-container .login-form .register-advice {
+.login-page .login-content > .container .login-card-container .inputs-container .login-form .register-advice {
   font-size: 0.6rem !important;
   display: flex;
   justify-content: center;
   align-items: center;
   white-space: nowrap;
+  padding-top: 10px;
 }
-.login-page .jumpboton > .container .login-card-container .inputs-container .login-form .register-advice span {
+.login-page .login-content > .container .login-card-container .inputs-container .login-form .register-advice span {
   white-space: nowrap;
   margin-left: 3px;
 }
-.login-page .jumpboton > .container .login-card-container .inputs-container .login-form .register-advice span a {
+.login-page .login-content > .container .login-card-container .inputs-container .login-form .register-advice span a {
   text-decoration: none;
   font-weight: 800;
-  color: #f47900;
+  color: #fd9731;
   transition: all 150ms ease-in-out;
 }
-.login-page .jumpboton > .container .login-card-container .inputs-container .login-form .register-advice span a:hover {
-  color: #fd9731;
+.login-page .login-content > .container .login-card-container .inputs-container .login-form .register-advice span a:hover {
+  color: #432e2e;
 }
 
-/* @keyframes IconAnimation {
-	0% {
-		transform: translateX(500px);
-	}
+@media screen and (max-height: 750px) {
+  .image-login-container {
+    height: 40% !important;
+  }
 
-	50% {
-		transform: translateX(0px);
-	}
+  .inputs-container {
+    height: 60% !important;
+  }
+}
+@media screen and (max-height: 650px) {
+  .image-login-container {
+    height: 30% !important;
+  }
 
-	100% {
-		transform: translateX(-500px);
-	}
-} */
+  .inputs-container {
+    height: 70% !important;
+  }
+}
 
 /*# sourceMappingURL=login.css.map */

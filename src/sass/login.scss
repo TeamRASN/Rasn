@@ -1,8 +1,8 @@
 @import "customBts.scss";
 @import "_mixins";
 
-$border-radius-logincards: 3px;
-$brand-color: #f47900;
+$border-radius-logincards: 5px;
+$brand-color: #432e2e;
 
 body {
 	overflow-x: hidden;
@@ -13,11 +13,15 @@ body {
 	height: 100vh;
 	background-color: $white;
 
-	.hidder-layout {
-		z-index: 10;
-	}
+	.login-content {
+		height: 100%;
+		overflow: hidden;
+		background: $brand-color;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 
-	.jumpboton {
 		& > .container {
 			@include displayFlex(column, center, center);
 			height: 75%;
@@ -38,34 +42,19 @@ body {
 					@include displayFlex(column, space-between, center);
 
 					.illustration-container {
-						@include displayFlex(column, center, center);
+						@include displayFlex(column, center, null);
 						width: 100%;
 						height: calc(100% - 30px);
-						/* overflow: hidden; */
+						overflow: hidden;
 
 						.animated-image {
-							@include displayFlex(row, center, center);
-							width: 100px;
-							height: 100px;
+							@include displayFlex(row, null, center);
 							margin-top: 30px;
+							transition: all ease-in-out;
 
-							img {
+							.animation-icon {
 								width: 100px;
 								height: auto;
-								/* position: absolute; */
-							}
-
-							.dogIcon {
-								animation: IconAnimation 4s forwards -3s ease-in-out infinite;
-							}
-							.manteinmentIcon {
-								animation: IconAnimation 4s forwards -2s ease-in-out infinite;
-							}
-							.statsIcon {
-								animation: IconAnimation 4s forwards -1s ease-in-out infinite;
-							}
-							.writingIcon {
-								animation: IconAnimation 4s forwards 0s ease-in-out infinite;
 							}
 						}
 					}
@@ -107,6 +96,7 @@ body {
 							@include displayFlex(null, center, center);
 							width: 100%;
 							padding: 10px;
+							padding-bottom: 0px;
 
 							a {
 								@include displayFlex(null, center, center);
@@ -124,13 +114,12 @@ body {
 
 						.submit-btn {
 							@extend .exepctional-btn;
-							padding-bottom: 0px;
 
 							a {
-								background-color: $brand-color;
+								background-color: #fd9731;
 
 								&:hover {
-									background-color: #fd9731;
+									background-color: $brand-color;
 								}
 							}
 						}
@@ -151,6 +140,7 @@ body {
 							font-size: 0.6rem !important;
 							@include displayFlex(null, center, center);
 							white-space: nowrap;
+							padding-top: 10px;
 
 							span {
 								white-space: nowrap;
@@ -158,11 +148,11 @@ body {
 								a {
 									text-decoration: none;
 									font-weight: 800;
-									color: $brand-color;
+									color: #fd9731;
 									transition: all 150ms ease-in-out;
 
 									&:hover {
-										color: #fd9731;
+										color: $brand-color;
 									}
 								}
 							}
@@ -174,16 +164,20 @@ body {
 	}
 }
 
-/* @keyframes IconAnimation {
-	0% {
-		transform: translateX(500px);
+@media screen and (max-height: 750px) {
+	.image-login-container {
+		height: 40% !important;
 	}
+	.inputs-container {
+		height: 60% !important;
+	}
+}
 
-	50% {
-		transform: translateX(0px);
+@media screen and (max-height: 650px) {
+	.image-login-container {
+		height: 30% !important;
 	}
-
-	100% {
-		transform: translateX(-500px);
+	.inputs-container {
+		height: 70% !important;
 	}
-} */
+}
