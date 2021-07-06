@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
 
-// Componentes
-import Notice from "../components/Inicio/Tarjetas/NoticeCard";
+//Componentes
+import Notice from "./Tarjetas/NoticeCard";
 
-// Estilos
-import "../css/esfuerzos_donativos.css";
+//Estilos
 
-// Objetos
+//Objetos
 const noticeCards = [
 	{
 		id: 1,
@@ -36,23 +35,9 @@ const noticeCards = [
 		description:
 			"Un documental de Victor Kossakovsky se acerca con una mirada inédita y muchos gruñidos a la aciaga vida de los animales de granja. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, pariatur tenetur voluptatem dolorum dignissimos repudiandae quam alias hic amet quod eum.",
 	},
-	{
-		id: 5,
-		banner: "https://estaticos-cdn.elperiodico.com/clip/9c5217ce-3532-4185-85d9-75c9923ed6bf_alta-libre-aspect-ratio_default_0.jpg",
-		title: "Decenas de personas exigen en Barcelona la liberación de animales de Vivotecnia.",
-		description:
-			"Gobierno, fiscalía y policía han abierto una investigación contra este laboratorio de experimentación con animales en Madrid.",
-	},
-	{
-		id: 6,
-		banner: "https://estaticos-cdn.elperiodico.com/clip/979c971d-13d5-4f91-9e41-1ebcb95f94e9_alta-libre-aspect-ratio_default_0.jpg",
-		title: "La Fiscalía abre diligencias por el presunto maltrato animal en el laboratorio Vivotecnia.",
-		description:
-			"La Fiscalía de Medio Ambiente ha abierto diligencias para investigar el presunto caso de maltrato animal en el laboratorio Vivotecnia, situado en Tres Cantos, tras la difusión de un vídeo que muestra cómo el personal presuntamente maltrata y humilla a los animales, han confirmado fuentes fiscales.",
-	},
 ];
 
-export default function Esfuerzos() {
+export default function Noticias() {
 	useEffect(() => {
 		const contenedores = document.querySelectorAll(".carta-content");
 
@@ -92,14 +77,17 @@ export default function Esfuerzos() {
 	});
 
 	return (
-		<div className="rounded mb-5">
+		<section className="noticias-container">
 			<div className="container">
-				<div className="row">
+				<div className="col-12 heading-section">
+					<h2>Últimas noticias</h2>
+				</div>
+				<div className="row element-list">
 					{noticeCards.map(({ id, banner, title, description }) => (
 						<Notice key={id} banner={banner} title={title} description={description} />
 					))}
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 }
