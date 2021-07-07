@@ -1,5 +1,0 @@
-//! Elimina el borde izquierdo de todas las secciones
-
-//! Quita el efecto de presión
-
-//!Remover los hidden al resize de de la pantalla
