@@ -13,25 +13,31 @@ import "../css/login.css";
 import { useState } from "react";
 
 export default function Login() {
+	//* Estado correspondiente al tamaño de la lista de la animación
 	const [iconListWidth, setIconListWidth] = useState(0);
 
+	//? Cambia el estado de iconListWidth por el tamaño del ancho de la lista que contiene los iconos de la animación
 	const changeIconListWidth = () => {
 		const listIcons = document.getElementById("icon-list");
 		setIconListWidth(listIcons.clientWidth);
 	};
 
 	useEffect(() => {
-		//* Se encarga de aplicar la animacióon slideshow a la lista de iconos
+		//* changeIconListWidth() Se encarga de aplicar la animacióon slideshow a la lista de iconos
 		changeIconListWidth();
 
-		let realWidth = iconListWidth - 100;
-		let realMargin = realWidth / 2;
-
+		//* Consigue el ancho restante del contenedor para centrar el icono y que ocupe todo el espacio de la lista, creando un contenedor con 4
+		//* iconos que cuadripliquen el espacio original del contenedor original.
+		let totalWidth = iconListWidth - 100;
+		let realWidth = totalWidth / 2;
 		const iconos = document.querySelectorAll(".animation-icon");
+
+		//? Aplica el espacio restante como márgenes a cada uno de los elementos de la animación
 		iconos.forEach((e) => {
-			e.style.margin = `0px ${realMargin}px`;
+			e.style.margin = `0px ${realWidth}px`;
 		});
 
+		//? Aplica al contenedor una animación con keyframes para que se mueva de izquierda a derecha alternando entre cada extremo
 		const listIcons = document.getElementById("icon-list");
 		listIcons.animate(
 			[
@@ -67,7 +73,6 @@ export default function Login() {
 				direction: "alternate",
 				easing: "ease-in-out",
 				iterations: Infinity,
-				spacing: "",
 			}
 		);
 

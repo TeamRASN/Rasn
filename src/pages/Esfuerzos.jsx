@@ -69,7 +69,7 @@ export default function Esfuerzos() {
 				descResults.push(containerHeight - title.offsetHeight - 16);
 			});
 
-			//* Establece y limita la altura de la descripción (solo aplica a cuando el ancho de la pantalla es de 738px)
+			//* Establece y limita la altura de la descripción (solo aplica a cuando el ancho de la pantalla es de / mayor de 738px)
 			contenedor.querySelectorAll(".notice-card-desc").forEach((desc) => {
 				const descHeight = parseInt(descResults);
 				desc.style.height = descHeight + "px";
