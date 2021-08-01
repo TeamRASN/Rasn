@@ -180,9 +180,18 @@ export default function Navbar(props) {
 								</Link>
 							</li>
 							<li>
-								<Link to="/colaboradores" className="submenu-element" onClick={reload}>
+								<Link
+									to={{
+										pathname: "/contacto",
+										categoryProps: {
+											name: "Colaboración Voluntaria",
+										},
+									}}
+									className="submenu-element"
+									onClick={reload}
+								>
 									<i className="fab-icon fa fa-users" aria-hidden="true"></i>
-									Colaboradores
+									Sumate
 								</Link>
 							</li>
 						</ul>

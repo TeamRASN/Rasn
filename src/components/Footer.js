@@ -72,7 +72,7 @@ export default function Footer() {
 										</li>
 										<li>
 											<a href="/Rasn/colaboradores">
-												<i className="fas fa-chevron-right"></i>Colaboradores
+												<i className="fas fa-chevron-right"></i>Sumate
 											</a>
 										</li>
 									</ul>
