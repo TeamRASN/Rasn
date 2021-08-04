@@ -8,7 +8,7 @@ import "../css/mascotas.css";
 
 export default function AnimalesA() {
 	return (
-		<main className="Mascotas">
+		<main className="mascotas-page">
 			<div className="container">
 				<Adoptados />
 			</div>

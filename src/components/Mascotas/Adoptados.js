@@ -45,12 +45,10 @@ const cards = [
 export default function Cards(popup) {
 	/* console.log(popup.changePopup); */
 	return (
-		<div>
-			<div className="row animals-box-top animals-top">
-				{cards.map(({ name, image, url, id }) => (
-					<Card imageSource={image} name={name} key={id} popup={() => popup} />
-				))}
-			</div>
+		<div className="row animals-box-top animals-top">
+			{cards.map(({ name, image, url, id }) => (
+				<Card imageSource={image} name={name} key={id} popup={() => popup} />
+			))}
 		</div>
 	);
 }

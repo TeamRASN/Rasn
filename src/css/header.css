@@ -4,14 +4,18 @@
   position: absolute;
   height: 100%;
   width: 100%;
+  overflow: hidden;
+}
+#tsparticles .tsparticles-canvas-el {
+  height: 100vh !important;
 }
 
 /*FIN PARTICLES*/
 .jumpboton {
-  height: 100vh;
   overflow: hidden;
   background: #ff7f00;
   background: linear-gradient(86deg, #f47900 0%, #ed8f00 100%);
+  transition: all 400ms ease-out;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,6 +28,10 @@
   background-image: url("../assets/banner.svg");
   background-position: center;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .banner-container {
@@ -61,14 +69,22 @@
   transition: all 200ms ease-in-out !important;
 }
 
+.cls-1 {
+  position: relative;
+  bottom: -1px;
+  fill: #f6fafd;
+  transition: all 250ms ease-in-out;
+}
+
 .bottome-wave {
-  background-image: url("../assets/wave.svg");
+  position: relative;
+  bottom: -1px;
+  /* background-image: url("../assets/wave.svg");
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100%;
   height: inherit;
-  z-index: 1;
+  z-index: 1; */
 }
 
 @media screen and (min-width: 1030px) {

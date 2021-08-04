@@ -34,7 +34,7 @@ export default function AnimalesRescatados() {
 	};
 
 	return (
-		<main className="Mascotas">
+		<main className="mascotas-page">
 			<div className="container">
 				<Rescatados popup={() => changePopup()} />
 			</div>

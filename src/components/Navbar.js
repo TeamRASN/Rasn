@@ -110,7 +110,7 @@ export default function Navbar(props) {
 						to="/login"
 						className="nav-brand"
 						onClick={() => {
-							props.admin();
+							props.adminLogin();
 							reload();
 						}}
 					>
@@ -118,7 +118,14 @@ export default function Navbar(props) {
 					</Link>
 				</li>
 				<li>
-					<Link to="/" className="nav-element" onClick={reload}>
+					<Link
+						to="/"
+						className="nav-element"
+						onClick={() => {
+							props.maxHeader();
+							reload();
+						}}
+					>
 						Inicio
 					</Link>
 				</li>
@@ -128,13 +135,27 @@ export default function Navbar(props) {
 						Animales
 						<ul id="animales-submenu">
 							<li>
-								<Link to="/rescatados" className="submenu-element" onClick={reload}>
+								<Link
+									to="/rescatados"
+									className="submenu-element"
+									onClick={() => {
+										props.minHeader();
+										reload();
+									}}
+								>
 									<i className="fas fa-paw"></i>
 									Rescatados
 								</Link>
 							</li>
 							<li>
-								<Link to="/adoptados" className="submenu-element" onClick={reload}>
+								<Link
+									to="/adoptados"
+									className="submenu-element"
+									onClick={() => {
+										props.minHeader();
+										reload();
+									}}
+								>
 									<i className="fas fa-medal"></i>
 									Logros
 								</Link>
@@ -148,13 +169,30 @@ export default function Navbar(props) {
 						Contactanos
 						<ul id="contacto-submenu">
 							<li>
-								<Link to="/contacto" className="submenu-element" onClick={reload}>
+								<Link
+									to={{
+										pathname: "/contacto",
+										categoryProps: "Category",
+									}}
+									className="submenu-element"
+									onClick={() => {
+										props.minHeader();
+										reload();
+									}}
+								>
 									<i className="fas fa-at"></i>
 									Consultanos
 								</Link>
 							</li>
 							<li>
-								<Link to="/faq" className="submenu-element" onClick={reload}>
+								<Link
+									to="/faq"
+									className="submenu-element"
+									onClick={() => {
+										props.minHeader();
+										reload();
+									}}
+								>
 									<i className="fa fa-question" aria-hidden="true"></i>
 									Preguntas frecuentes
 								</Link>
@@ -168,13 +206,27 @@ export default function Navbar(props) {
 						Involucrate
 						<ul id="involucrate-submenu">
 							<li>
-								<Link to="/esfuerzos" className="submenu-element" onClick={reload}>
+								<Link
+									to="/esfuerzos"
+									className="submenu-element"
+									onClick={() => {
+										props.minHeader();
+										reload();
+									}}
+								>
 									<i className="fab-icon fa fa-handshake-o" aria-hidden="true"></i>
 									Esfuerzos
 								</Link>
 							</li>
 							<li>
-								<Link to="/donativos" className="submenu-element" onClick={reload}>
+								<Link
+									to="/donativos"
+									className="submenu-element"
+									onClick={() => {
+										props.minHeader();
+										reload();
+									}}
+								>
 									<i className="fab-icon fa fa-money" aria-hidden="true"></i>
 									Donativos
 								</Link>
@@ -183,12 +235,13 @@ export default function Navbar(props) {
 								<Link
 									to={{
 										pathname: "/contacto",
-										categoryProps: {
-											name: "Colaboración Voluntaria",
-										},
+										categoryProps: "Colaboración Voluntaria",
 									}}
 									className="submenu-element"
-									onClick={reload}
+									onClick={() => {
+										props.minHeader();
+										reload();
+									}}
 								>
 									<i className="fab-icon fa fa-users" aria-hidden="true"></i>
 									Sumate

@@ -9,6 +9,9 @@
   padding-left: 10px;
   align-self: flex-start;
 }
+.contact-container .contact-form {
+  margin: 0;
+}
 .contact-container .contact-form .contact-message,
 .contact-container .contact-form .send-contact-form,
 .contact-container .contact-form .email_cont {

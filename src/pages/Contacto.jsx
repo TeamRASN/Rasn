@@ -51,7 +51,7 @@ function collaboratorForm() {
 			</div>
 			<div className="register-input-field col-12 col-sm-6 radio-province-group row">
 				<div className="col-12 col-xxl-6">
-					<input type="radio" id="amba" name="province" value="amba" checked />
+					<input type="radio" id="amba" name="province" value="amba" defaultChecked />
 					<label className="radio-province-label" htmlFor="amba">
 						Área Metropolitana de Buenos Aires
 					</label>
@@ -221,17 +221,19 @@ export default function Contacto(props) {
 	}
 
 	useEffect(() => {
-		const categoryParam = props.location.categoryProps;
 		let categoryCondition = document.getElementById("category-contact");
 		categoryCondition.addEventListener("change", () => {
 			setCategoryValue(categoryCondition.value);
 			cleanInputs();
 		});
 
+		let categoryParam = props.location.categoryProps;
+
 		if (categoryParam != null && categoryCondition !== undefined) {
-			if (categoryParam.name === "Colaboración Voluntaria") {
+			if (categoryParam === "Colaboración Voluntaria") {
 				setCategoryValue("Colaboración Voluntaria");
 				categoryCondition.value = "Colaboración Voluntaria";
+			} else {
 			}
 		}
 
@@ -255,7 +257,7 @@ export default function Contacto(props) {
 				setPaquete(othersForm);
 				break;
 		}
-	}, [categoryValue, props.location.categoryProps]);
+	}, [categoryValue, props, props.location.categoryProps]);
 
 	return (
 		<div>

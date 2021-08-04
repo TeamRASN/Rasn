@@ -5,26 +5,32 @@
 	position: absolute;
 	height: 100%;
 	width: 100%;
+	overflow: hidden;
+
+	.tsparticles-canvas-el {
+		height: 100vh !important;
+	}
 }
 
 /*FIN PARTICLES*/
 
 .jumpboton {
-	height: 100vh;
 	overflow: hidden;
 	background: rgb(255, 127, 0);
 	background: linear-gradient(86deg, rgba(244, 121, 0, 1) 0%, rgba(237, 143, 0, 1) 100%);
+	transition: all 400ms ease-out;
 
 	@include displayFlex(column, center, center);
 
 	.contenedor-img {
 		width: 100%;
 		height: inherit;
-
 		position: absolute;
 		background-image: url("../assets/banner.svg");
 		background-position: center;
 		background-size: cover;
+
+		@include displayFlex(column, flex-end, center);
 	}
 }
 
@@ -62,14 +68,22 @@
 	}
 }
 
+.cls-1 {
+	position: relative;
+	bottom: -1px;
+	fill: #f6fafd;
+	transition: all 250ms ease-in-out;
+}
+
 .bottome-wave {
-	background-image: url("../assets/wave.svg");
+	position: relative;
+	bottom: -1px;
+	/* background-image: url("../assets/wave.svg");
 	background-position: bottom center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 100%;
 	height: inherit;
-	z-index: 1;
+	z-index: 1; */
 }
 
 @media screen and (min-width: 1030px) {

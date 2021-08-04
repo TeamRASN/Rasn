@@ -24,16 +24,26 @@ import "./css/index.css";
 
 export default function App() {
 	// Autorización simple en renderizado
-	const [adminView, setAdminView] = useState(false);
-
-	const authorizeAdmin = () => {
-		setAdminView(true);
-	};
+	const [renderFooNav, setRenderFooNav] = useState(true);
+	const [headerHeight, setHeaderHeight] = useState(90);
 
 	return (
 		<Router basename="/Rasn">
-			{adminView ? null : <Navbar admin={() => authorizeAdmin()} />}
-			{adminView ? null : <Header />}
+			{renderFooNav ? (
+				<Navbar
+					adminLogin={() => {
+						setRenderFooNav(false);
+						setHeaderHeight(0);
+					}}
+					minHeader={() => {
+						setHeaderHeight(35);
+					}}
+					maxHeader={() => {
+						setHeaderHeight(90);
+					}}
+				/>
+			) : null}
+			<Header headerHeight={headerHeight} />
 			<Switch>
 				<Route path="/contacto" component={Contacto} />
 				<Route path="/faq" component={Faq} />
@@ -45,7 +55,7 @@ export default function App() {
 				<Route path="/admin/estadisticas" component={Admin} />
 				<Route path="/" exact component={Index} />
 			</Switch>
-			{adminView ? null : <Footer />}
+			{renderFooNav ? <Footer /> : null}
 		</Router>
 	);
 }
