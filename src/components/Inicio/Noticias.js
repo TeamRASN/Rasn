@@ -77,7 +77,7 @@ export default function Noticias() {
 	});
 
 	return (
-		<section className="noticias-container">
+		<section className="notices-container">
 			<div className="container">
 				<div className="col-12 heading-section">
 					<h2>Últimas noticias</h2>

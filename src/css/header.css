@@ -15,7 +15,7 @@
   overflow: hidden;
   background: #ff7f00;
   background: linear-gradient(86deg, #f47900 0%, #ed8f00 100%);
-  transition: all 400ms ease-out;
+  transition: all 250ms ease-out;
   display: flex;
   flex-direction: column;
   justify-content: center;

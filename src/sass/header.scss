@@ -18,7 +18,7 @@
 	overflow: hidden;
 	background: rgb(255, 127, 0);
 	background: linear-gradient(86deg, rgba(244, 121, 0, 1) 0%, rgba(237, 143, 0, 1) 100%);
-	transition: all 400ms ease-out;
+	transition: all 250ms ease-out;
 
 	@include displayFlex(column, center, center);
 

@@ -92,12 +92,12 @@ export default function Esfuerzos() {
 	});
 
 	return (
-		<div className="container notices-container">
+		<main className="container notices-container">
 			<div className="row">
 				{noticeCards.map(({ id, banner, title, description }) => (
 					<Notice key={id} banner={banner} title={title} description={description} />
 				))}
 			</div>
-		</div>
+		</main>
 	);
 }
