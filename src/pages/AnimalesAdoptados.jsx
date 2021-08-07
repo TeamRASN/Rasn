@@ -1,7 +1,7 @@
 import React from "react";
 
 //Componenetes
-import Adoptados from "../components/Mascotas/Adoptados";
+import Adoptados from "../components/mascotas/Adoptados";
 
 //Estilos
 import "../css/mascotas.css";
