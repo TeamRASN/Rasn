@@ -29,6 +29,7 @@
 		background-image: url("../assets/banner.svg");
 		background-position: center;
 		background-size: cover;
+		overflow: hidden;
 
 		@include displayFlex(column, flex-end, center);
 	}
