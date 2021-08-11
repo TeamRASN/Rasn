@@ -4,6 +4,7 @@ import { useHistory, useLocation } from "react-router-dom";
 // Componentes
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import { Formik, Field, Form } from 'formik';
 
 //Estilos
 import "../../../css/nuevo-registro.css";
@@ -112,12 +113,45 @@ function equipoForm() {
 function faqForm() {
 	return (
 		<div className="row" style={{ padding: 0 }}>
-			<div className="register-input-field col-12 col-sm-6">
-				<textarea className="input col-12 col-sm-6" name="pregunta" placeholder="Pregunta..."></textarea>
-			</div>
-			<div className="register-input-field col-12 col-sm-6">
-				<textarea className="input col-12 col-sm-6" name="respuesta" placeholder="Respuesta..."></textarea>
-			</div>
+			
+			<Formik
+
+			initialValues={{
+				pregunta: '',
+				respuesta: '',
+			}}
+			onSubmit={async (values) => {
+				await new Promise((r) => setTimeout(r, 500));
+				alert(JSON.stringify(values, null, 2));
+			}}
+			>
+			<Form method="post" className="row new-register-form">
+				<div className="register-input-field col-12 col-sm-6">
+					<Field
+						className="input col-12 col-sm-6" 
+						name="pregunta" 
+						placeholder="Pregunta..."
+						type="textarea" />
+				</div>
+				<div className="register-input-field col-12 col-sm-6">
+					<Field 
+						className="input col-12 col-sm-6" 
+						name="respuesta" 
+						placeholder="Respuesta..." 
+						type="textarea"/>
+				</div>
+				<button type="submit">Confirmar</button>
+				<div className="form-btn-container row" style={{ padding: 0 }}>
+						{/* Al presionar el botón vuelve a la página anterior */}
+						<div className="register-btn-field col-6 col-sm-3">
+							<div className="btn-danger">Cancelar</div>
+						</div>
+						<div className="register-btn-field col-6 col-sm-3">
+							<div className="btn-success">Confirmar</div>
+						</div>
+				</div>
+			</Form>
+			</Formik>
 		</div>
 	);
 }
@@ -227,18 +261,6 @@ export default function NuevoRegistro() {
 
 			<form method="post" className="row new-register-form">
 				{paquete}
-				<div className="form-btn-container row" style={{ padding: 0 }}>
-					{/* Al presionar el botón vuelve a la página anterior */}
-					<div
-						className="register-btn-field col-6 col-sm-3"
-						onClick={() => history.push(`/${location.pathname.split("/")[1]}`)}
-					>
-						<div className="btn-danger">Cancelar</div>
-					</div>
-					<div className="register-btn-field col-6 col-sm-3">
-						<div className="btn-success">Confirmar</div>
-					</div>
-				</div>
 			</form>
 		</div>
 	);

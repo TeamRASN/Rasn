@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 //Componentes
-import Persona from "../../../assets/Cat.jpg";
 
 export default function Integrante({ name, surname, image, rol }) {
 	return (
