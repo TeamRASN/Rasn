@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // Componentes
 import Navbar from "../components/Admin/Navbar";
-import Estadisticas from "../components/Admin/pages/Estadisticas";
-import Animales from "../components/Admin/pages/Animales";
-import Generales from "../components/Admin/pages/General";
-import Cuenta from "../components/Admin/pages/Cuenta";
-import NuevoRegistro from "../components/Admin/pages/NuevoRegistro";
+import Estadisticas from "../components/Admin/Pages/Estadisticas";
+import Animales from "../components/Admin/Pages/Animales";
+import Generales from "../components/Admin/Pages/General";
+import Cuenta from "../components/Admin/Pages/Cuenta";
+import NuevoRegistro from "../components/Admin/Pages/NuevoRegistro";
 
 //Estilos
 import "../css/admin-sections.css";

@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 //Componenetes
-import Rescatados from "../components/mascotas/Rescatados";
+import Rescatados from "../components/Mascotas/Rescatados";
 import Dog from "../assets/Dog.jpg";
 
 //Estilos

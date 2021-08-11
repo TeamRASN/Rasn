@@ -2,7 +2,7 @@ import React from "react";
 
 //Componentes
 import Carousel from "react-elastic-carousel";
-import Integrante from "./tarjetas/Integrante";
+import Integrante from "./Tarjetas/Integrante";
 
 //Estilos
 

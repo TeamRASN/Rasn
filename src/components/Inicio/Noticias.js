@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 //Componentes
-import Notice from "./tarjetas/NoticeCard";
+import Notice from "./Tarjetas/NoticeCard";
 
 //Estilos
 
