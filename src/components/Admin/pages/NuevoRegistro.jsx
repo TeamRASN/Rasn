@@ -84,29 +84,45 @@ function animalesForm() {
 
 function equipoForm() {
 	return (
-		<div className="row" style={{ padding: 0 }}>
-			<div className="register-input-field col-12 col-sm-6">
-				<input
-					className="input col-12 col-sm-6"
-					type="url"
-					name="imagen_mascota"
-					placeholder="Ingresar URL de la foto"
-				/>
-			</div>
-			<div className="register-input-field col-12 col-sm-6">
-				<input className="input col-12 col-sm-6" type="text" name="nombre" placeholder="Nombre" />
-			</div>
-			<div className="register-input-field col-12 col-sm-6">
-				<input className="input col-12 col-sm-6" type="text" name="apellido" placeholder="Apellido" />
-			</div>
-			<div className="register-input-field col-12 col-sm-6">
-				<input className="input col-12 col-sm-6" list="rol" name="rol" placeholder="Rol" />
-			</div>
-			<datalist id="rol">
-				<option value="Organizador" />
-				<option value="Voluntario" />
-			</datalist>
-		</div>
+		<div >
+			<Formik
+			initialValues={{
+				imagen_integrante: '',
+				nombre: '',
+				apellido: '',
+				rol: '',
+			}}
+			onSubmit={async (values) => {
+				alert(JSON.stringify(values, null, 2));
+			}}
+			name="main-form"
+			>
+				<Form className="row" style={{ padding: 0 }}>
+					<div className="register-input-field col-12 col-sm-6">
+						<Field
+							className="input col-12 col-sm-6"
+							type="url"
+							name="imagen_integrante"
+							placeholder="Ingresar URL de la foto"
+						/>
+					</div>
+					<div className="register-input-field col-12 col-sm-6">
+						<Field className="input col-12 col-sm-6" type="text" name="nombre" placeholder="Nombre" />
+					</div>
+					<div className="register-input-field col-12 col-sm-6">
+						<Field className="input col-12 col-sm-6" type="text" name="apellido" placeholder="Apellido" />
+					</div>
+					<div className="register-input-field col-12 col-sm-6">
+						<Field className="input col-12 col-sm-6" list="rol" name="rol" placeholder="Rol" />
+					</div>
+					<datalist id="rol">
+						<option value="Organizador" />
+						<option value="Voluntario" />
+					</datalist>
+					<button type="submit">Submit</button>
+				</Form>
+			</Formik>
+  		</div>
 	);
 }
 
@@ -259,9 +275,20 @@ export default function NuevoRegistro() {
 		<div>
 			<h1>{paqueteHeader}</h1>
 
-			<form method="post" className="row new-register-form">
-				{paquete}
-			</form>
+			<div method="post" className="row new-register-form">
+				<div className="form-btn-container row" style={{ padding: 0 }}>
+					{paquete}
+					<div
+						className="register-btn-field col-6 col-sm-3"
+						onClick={() => history.push(`/${location.pathname.split("/")[1]}`)}
+					>
+						<div className="btn-danger">Cancelar</div>
+					</div>
+					<div className="register-btn-field col-6 col-sm-3">
+						<div className="btn-success">Confirmar</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 }
