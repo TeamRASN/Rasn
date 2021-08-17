@@ -18,7 +18,15 @@ export default function Animales() {
 					<div className="general-sections">
 						<Switch>
 							<Route
-								path={["/equipo/nuevo-miembro", "/blogs/nuevo-post", "/faq/nueva-pregunta"]}
+								path={["/equipo/nuevo-miembro", "/faq/nueva-pregunta", "/blogs/nuevo-post"]}
+								component={NuevoRegistro}
+							/>
+							<Route
+								path={[
+									"/equipo/nuevo-miembro/:memberIndex",
+									"/faq/editar-pregunta",
+									"/blogs/editar-post",
+								]}
 								component={NuevoRegistro}
 							/>
 							<Route path="/faq" component={Faq} />

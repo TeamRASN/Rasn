@@ -24,6 +24,23 @@
   border: 1px solid #e86e1c;
   outline: 0;
 }
+.new-register-form .register-input-field .input-error {
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  color: red;
+}
+.new-register-form .register-input-field .preview-image {
+  display: none;
+  height: 100px;
+  margin-top: 20px;
+  border: 1px #e86e1c dashed;
+  border-radius: 5px;
+  background-origin: initial;
+  background-clip: initial;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 
 .register-btn-field {
   align-content: center;
@@ -67,6 +84,11 @@
 .ck-editor .ck-editor__main .ck-content {
   height: 50vh !important;
   overflow-y: scroll;
+}
+
+.invisible-btn {
+  border: none;
+  display: none;
 }
 
 /*# sourceMappingURL=nuevo-registro.css.map */

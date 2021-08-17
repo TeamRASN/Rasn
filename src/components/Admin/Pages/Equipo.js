@@ -78,7 +78,7 @@ export default function Equipo() {
 				</div>
 			</Link>
 			{memberCards.map(({ id, name, surname, image, rol }) => (
-				<Integrante name={name} surname={surname} image={image} rol={rol} key={id} />
+				<Integrante name={name} surname={surname} image={image} rol={rol} key={id} id={id} />
 			))}
 		</div>
 	);

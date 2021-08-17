@@ -23,8 +23,9 @@ import "./css/customBts.css";
 import "./css/index.css";
 
 export default function App() {
-	// Autorización simple en renderizado
+	// Estado para renderizar o no la barra de navegación y el footer
 	const [renderFooNav, setRenderFooNav] = useState(true);
+	// Estado que especifica el height del header
 	const [headerHeight, setHeaderHeight] = useState(90);
 
 	return (

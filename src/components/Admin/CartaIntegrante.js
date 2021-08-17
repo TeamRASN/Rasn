@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-export default function CartaIntegrante({ name, surname, image, rol }) {
+export default function CartaIntegrante({ name, surname, image, rol, id }) {
 	return (
 		<div className="item integrante new-card-container col-12 col-sm-6 col-md-4 col-lg-3">
-			<div className="new-member">
+			<Link className="new-member" to={`equipo/nuevo-miembro/${id}`} style={{ border: "none" }}>
 				<div className="testimony-wrap new-content text-center ">
 					<div className="integrante-delete-btn">
 						<i className="fas fa-times"></i>
@@ -21,7 +22,7 @@ export default function CartaIntegrante({ name, surname, image, rol }) {
 						</div>
 					</div>
 				</div>
-			</div>
+			</Link>
 		</div>
 	);
 }
