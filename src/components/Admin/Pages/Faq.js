@@ -10,18 +10,18 @@ import CartaFaq from "../CartaFaq";
 const faqCards = [
 	{
 		id: 1,
-		question: "¿Dónde mantenemos a las mascotas?",
-		answer: "Las mascotas se encuentran resguardadas en un refugio alquilado. Nuestro equipo de voluntarios se encarga de darles todos los cuidados necesarios, dando de su tiempo para visitar el refugio y asegurarse de que todo esté bien.",
+		pregunta: "¿Dónde mantenemos a las mascotas?",
+		respuesta: "Las mascotas se encuentran resguardadas en un refugio alquilado. Nuestro equipo de voluntarios se encarga de darles todos los cuidados necesarios, dando de su tiempo para visitar el refugio y asegurarse de que todo esté bien.",
 	},
 	{
 		id: 2,
-		question: "Quiero adoptar a una de las mascotas. ¿Qué debo hacer?",
-		answer: 'Si quieres adoptar a una de las mascotas, puedes contactarte con nosotros usando la opción "Contacto Directo" de este sitio web o enviándonos un mensaje a nuestras redes sociales, que también encontrarás en este sitio. Te responderemos a la brevedad para que tengas toda la información sobre la mascota.',
+		pregunta: "Quiero adoptar a una de las mascotas. ¿Qué debo hacer?",
+		respuesta: 'Si quieres adoptar a una de las mascotas, puedes contactarte con nosotros usando la opción "Contacto Directo" de este sitio web o enviándonos un mensaje a nuestras redes sociales, que también encontrarás en este sitio. Te responderemos a la brevedad para que tengas toda la información sobre la mascota.',
 	},
 	{
 		id: 3,
-		question: "Quiero ayudar como voluntario. ¿Qué debo hacer?",
-		answer: 'Si quieres formar parte de nuestro equipo, contáctate con nosotros usando la opción "Contacto Directo" de este sitio web o enviándonos un mensaje a nuestras redes sociales. Por favor infórmanos tu nombre y edad. Uno de los miembros de nuestro equipo se contactará con vos para acordar un horario en que puedas colaborar.',
+		pregunta: "Quiero ayudar como voluntario. ¿Qué debo hacer?",
+		respuesta: 'Si quieres formar parte de nuestro equipo, contáctate con nosotros usando la opción "Contacto Directo" de este sitio web o enviándonos un mensaje a nuestras redes sociales. Por favor infórmanos tu nombre y edad. Uno de los miembros de nuestro equipo se contactará con vos para acordar un horario en que puedas colaborar.',
 	},
 ];
 
@@ -38,8 +38,8 @@ export default function Equipo() {
 					</div>
 				</div>
 			</Link>
-			{faqCards.map(({ id, question, answer }) => (
-				<CartaFaq question={question} answer={answer} key={id} />
+			{faqCards.map(({ id, pregunta, respuesta }) => (
+				<CartaFaq pregunta={pregunta} respuesta={respuesta} key={id} id={id} />
 			))}
 		</div>
 	);

@@ -1,32 +1,33 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // Componentes
 import { faTimes, faDotCircle } from "@fortawesome/free-solid-svg-icons";
 
-export default function CartaFaq({ question, answer }) {
+export default function CartaFaq({ id, pregunta, respuesta }) {
 	return (
 		<div className="admin-animal-card col-12 col-md-6">
 			<div className="faq-space">
 				<div className="body-card">
 					<div className="info-card">
 						<div className="pregunta-faq-admin" title="Quiero ayudar como voluntario, ¿qué debo hacer?">
-							{question}
+							{pregunta}
 						</div>
 						<div className="respuesta-faq-admin">
-							<span>{answer}</span>
+							<span>{respuesta}</span>
 						</div>
 					</div>
 					<div className="crud-card">
-						<a href="/borrar" title="eliminar">
+						<a href="/borrar" className="btn-crud btn-delete" title="eliminar">
 							<FontAwesomeIcon icon={faTimes} />
 							<p className="deleteP">borrar</p>
 						</a>
-						<a href="/editar" title="editar">
+						<Link to={`faq/nueva-pregunta/${id}`} className="btn-crud btn-modify" title="editar">
 							<FontAwesomeIcon icon={faDotCircle} />
 							<p className="modifyP">modificar</p>
-						</a>
+						</Link>
 					</div>
 				</div>
 			</div>
@@ -35,6 +36,6 @@ export default function CartaFaq({ question, answer }) {
 }
 
 CartaFaq.propTypes = {
-	question: PropTypes.string,
-	answer: PropTypes.string,
+	pregunta: PropTypes.string,
+	respuesta: PropTypes.string,
 };

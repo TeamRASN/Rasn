@@ -217,10 +217,10 @@
   justify-content: space-between;
   align-items: center;
 }
-.admin-animal-card .desc-card .crud-card a,
-.admin-animal-card .faq-space .crud-card a,
-.add-new-register-row .desc-card .crud-card a,
-.add-new-register-row .faq-space .crud-card a {
+.admin-animal-card .desc-card .crud-card .btn-crud,
+.admin-animal-card .faq-space .crud-card .btn-crud,
+.add-new-register-row .desc-card .crud-card .btn-crud,
+.add-new-register-row .faq-space .crud-card .btn-crud {
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
@@ -233,10 +233,10 @@
   font-size: 15px;
   background-color: #fff;
 }
-.admin-animal-card .desc-card .crud-card a p,
-.admin-animal-card .faq-space .crud-card a p,
-.add-new-register-row .desc-card .crud-card a p,
-.add-new-register-row .faq-space .crud-card a p {
+.admin-animal-card .desc-card .crud-card .btn-crud p,
+.admin-animal-card .faq-space .crud-card .btn-crud p,
+.add-new-register-row .desc-card .crud-card .btn-crud p,
+.add-new-register-row .faq-space .crud-card .btn-crud p {
   transition: all 150ms ease-out;
   visibility: hidden;
   position: absolute;
@@ -244,58 +244,58 @@
   border-radius: 7.5px;
   margin-bottom: 0;
 }
-.admin-animal-card .desc-card .crud-card a[href$=borrar],
-.admin-animal-card .faq-space .crud-card a[href$=borrar],
-.add-new-register-row .desc-card .crud-card a[href$=borrar],
-.add-new-register-row .faq-space .crud-card a[href$=borrar] {
-  background-color: transparent;
-  border-radius: 50%;
-}
-.admin-animal-card .desc-card .crud-card a[href$=borrar]:hover > p,
-.admin-animal-card .faq-space .crud-card a[href$=borrar]:hover > p,
-.add-new-register-row .desc-card .crud-card a[href$=borrar]:hover > p,
-.add-new-register-row .faq-space .crud-card a[href$=borrar]:hover > p {
-  background-color: #c70a0a;
-}
-.admin-animal-card .desc-card .crud-card a[href$=editar],
-.admin-animal-card .faq-space .crud-card a[href$=editar],
-.add-new-register-row .desc-card .crud-card a[href$=editar],
-.add-new-register-row .faq-space .crud-card a[href$=editar] {
-  background-color: transparent;
-  border-radius: 50%;
-}
-.admin-animal-card .desc-card .crud-card a[href$=editar]:hover > p,
-.admin-animal-card .faq-space .crud-card a[href$=editar]:hover > p,
-.add-new-register-row .desc-card .crud-card a[href$=editar]:hover > p,
-.add-new-register-row .faq-space .crud-card a[href$=editar]:hover > p {
-  background-color: #eb8d00;
-}
-.admin-animal-card .desc-card .crud-card a .btn-props, .admin-animal-card .desc-card .crud-card a:hover > .modifyP, .admin-animal-card .desc-card .crud-card a:hover > .deleteP,
-.admin-animal-card .faq-space .crud-card a .btn-props,
-.admin-animal-card .faq-space .crud-card a:hover > .modifyP,
-.admin-animal-card .faq-space .crud-card a:hover > .deleteP,
-.add-new-register-row .desc-card .crud-card a .btn-props,
-.add-new-register-row .desc-card .crud-card a:hover > .modifyP,
-.add-new-register-row .desc-card .crud-card a:hover > .deleteP,
-.add-new-register-row .faq-space .crud-card a .btn-props,
-.add-new-register-row .faq-space .crud-card a:hover > .modifyP,
-.add-new-register-row .faq-space .crud-card a:hover > .deleteP {
+.admin-animal-card .desc-card .crud-card .btn-crud .btn-props, .admin-animal-card .desc-card .crud-card .btn-crud:hover > .modifyP, .admin-animal-card .desc-card .crud-card .btn-crud:hover > .deleteP,
+.admin-animal-card .faq-space .crud-card .btn-crud .btn-props,
+.admin-animal-card .faq-space .crud-card .btn-crud:hover > .modifyP,
+.admin-animal-card .faq-space .crud-card .btn-crud:hover > .deleteP,
+.add-new-register-row .desc-card .crud-card .btn-crud .btn-props,
+.add-new-register-row .desc-card .crud-card .btn-crud:hover > .modifyP,
+.add-new-register-row .desc-card .crud-card .btn-crud:hover > .deleteP,
+.add-new-register-row .faq-space .crud-card .btn-crud .btn-props,
+.add-new-register-row .faq-space .crud-card .btn-crud:hover > .modifyP,
+.add-new-register-row .faq-space .crud-card .btn-crud:hover > .deleteP {
   visibility: visible;
   color: #fff;
   opacity: 1;
   padding: 2.5px 10px;
 }
-.admin-animal-card .desc-card .crud-card a:hover > .deleteP,
-.admin-animal-card .faq-space .crud-card a:hover > .deleteP,
-.add-new-register-row .desc-card .crud-card a:hover > .deleteP,
-.add-new-register-row .faq-space .crud-card a:hover > .deleteP {
+.admin-animal-card .desc-card .crud-card .btn-crud:hover > .deleteP,
+.admin-animal-card .faq-space .crud-card .btn-crud:hover > .deleteP,
+.add-new-register-row .desc-card .crud-card .btn-crud:hover > .deleteP,
+.add-new-register-row .faq-space .crud-card .btn-crud:hover > .deleteP {
   transform: translateX(-45px);
 }
-.admin-animal-card .desc-card .crud-card a:hover > .modifyP,
-.admin-animal-card .faq-space .crud-card a:hover > .modifyP,
-.add-new-register-row .desc-card .crud-card a:hover > .modifyP,
-.add-new-register-row .faq-space .crud-card a:hover > .modifyP {
+.admin-animal-card .desc-card .crud-card .btn-crud:hover > .modifyP,
+.admin-animal-card .faq-space .crud-card .btn-crud:hover > .modifyP,
+.add-new-register-row .desc-card .crud-card .btn-crud:hover > .modifyP,
+.add-new-register-row .faq-space .crud-card .btn-crud:hover > .modifyP {
   transform: translateX(-56px);
+}
+.admin-animal-card .desc-card .crud-card .btn-delete,
+.admin-animal-card .faq-space .crud-card .btn-delete,
+.add-new-register-row .desc-card .crud-card .btn-delete,
+.add-new-register-row .faq-space .crud-card .btn-delete {
+  background-color: transparent;
+  border-radius: 50%;
+}
+.admin-animal-card .desc-card .crud-card .btn-delete:hover > p,
+.admin-animal-card .faq-space .crud-card .btn-delete:hover > p,
+.add-new-register-row .desc-card .crud-card .btn-delete:hover > p,
+.add-new-register-row .faq-space .crud-card .btn-delete:hover > p {
+  background-color: #c70a0a;
+}
+.admin-animal-card .desc-card .crud-card .btn-modify,
+.admin-animal-card .faq-space .crud-card .btn-modify,
+.add-new-register-row .desc-card .crud-card .btn-modify,
+.add-new-register-row .faq-space .crud-card .btn-modify {
+  background-color: transparent;
+  border-radius: 50%;
+}
+.admin-animal-card .desc-card .crud-card .btn-modify:hover > p,
+.admin-animal-card .faq-space .crud-card .btn-modify:hover > p,
+.add-new-register-row .desc-card .crud-card .btn-modify:hover > p,
+.add-new-register-row .faq-space .crud-card .btn-modify:hover > p {
+  background-color: #eb8d00;
 }
 
 @media screen and (max-width: 771px) {
@@ -629,8 +629,8 @@
   width: 100%;
   height: 20%;
 }
-.new-card-container .blog-card .blog-content .modify-container a,
-.add-new-register .blog-card .blog-content .modify-container a {
+.new-card-container .blog-card .blog-content .modify-container .btn-modify,
+.add-new-register .blog-card .blog-content .modify-container .btn-modify {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -645,8 +645,8 @@
   border: 1px solid transparent;
   transition: all 250ms ease-out;
 }
-.new-card-container .blog-card .blog-content .modify-container a:hover,
-.add-new-register .blog-card .blog-content .modify-container a:hover {
+.new-card-container .blog-card .blog-content .modify-container .btn-modify:hover,
+.add-new-register .blog-card .blog-content .modify-container .btn-modify:hover {
   background-color: transparent;
   color: #eb8d00;
   border: 1px solid #eb8d00;

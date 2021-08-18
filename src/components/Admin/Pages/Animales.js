@@ -55,7 +55,7 @@ export default function Animales() {
 				</div>
 			</Link>
 			{animalCards.map(({ id, image, name, status }) => (
-				<CartaAnimal name={name} image={image} status={status} key={id} />
+				<CartaAnimal name={name} image={image} status={status} key={id} id={id} />
 			))}
 		</div>
 	);

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-export default function CartaIntegrante({ name, surname, image, rol, id }) {
+export default function CartaIntegrante({ nombre, apellido, image, rol, id }) {
 	return (
 		<div className="item integrante new-card-container col-12 col-sm-6 col-md-4 col-lg-3">
 			<Link className="new-member" to={`equipo/nuevo-miembro/${id}`} style={{ border: "none" }}>
@@ -15,7 +15,7 @@ export default function CartaIntegrante({ name, surname, image, rol, id }) {
 							<div className="user-img" style={{ backgroundImage: `url(${image})` }}></div>
 							<div className="text">
 								<p className="name">
-									{surname}, {name}
+									{apellido}, {nombre}
 								</p>
 								<span className="position">{rol}</span>
 							</div>
@@ -28,8 +28,8 @@ export default function CartaIntegrante({ name, surname, image, rol, id }) {
 }
 
 CartaIntegrante.propTypes = {
-	name: PropTypes.string,
-	surname: PropTypes.string,
+	nombre: PropTypes.string,
+	apellido: PropTypes.string,
 	image: PropTypes.string,
 	rol: PropTypes.string,
 };
