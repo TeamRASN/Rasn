@@ -6,18 +6,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // Componentes
 import { faTimes, faDotCircle } from "@fortawesome/free-solid-svg-icons";
 
-export default function CartaAnimal({ id, image, name, status }) {
+export default function CartaAnimal({ id, imagen, nombre, estado }) {
 	return (
 		<div className="admin-animal-card col-12 col-md-6">
-			<div className="img-card" style={{ backgroundImage: `url(${image})` }}></div>
+			<div className="img-card" style={{ backgroundImage: `url(${imagen})` }}></div>
 			<div className="desc-card">
 				<div className="body-card">
 					<div className="info-card">
-						<div className="name-prop">{name}</div>
+						<div className="name-prop">{nombre}</div>
 						<div className="section-prop">
 							<div>
 								<span>Estado: </span>
-								<p>{status}</p>
+								<p>{estado}</p>
 							</div>
 						</div>
 					</div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
@@ -6,41 +6,28 @@ import { Link } from "react-router-dom";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import CartaAnimal from "../CartaAnimal";
 
-//Imagenes
-import Cat from "../../../assets/Cat.jpg";
-import Cat2 from "../../../assets/Cat2.jpg";
-import Dog from "../../../assets/perraco.jpg";
-import Dog2 from "../../../assets/Dog.jpg";
-
-//Objetos
-const animalCards = [
-	{
-		id: 1,
-		name: "Husky",
-		image: Dog,
-		status: "Rescatado",
-	},
-	{
-		id: 2,
-		name: "Lolo",
-		image: Cat,
-		status: "En adopción",
-	},
-	{
-		id: 3,
-		name: "Pepi",
-		image: Dog2,
-		status: "Adoptado",
-	},
-	{
-		id: 4,
-		name: "Lili",
-		image: Cat2,
-		status: "Rescatado",
-	},
-];
-
 export default function Animales() {
+	const [animalCards, setAnimalCards] = useState(null);
+	const getAnimales = () => {
+		fetch("http://127.0.0.1:3001/Rasn/admin/animales")
+		.then(response => response.json())
+		.then((animalCards) => {
+			// jsonData is parsed json object received from url
+			setAnimalCards(animalCards)
+		})
+		.catch((error) => {
+			// handle your errors here
+			//console.error(error)
+		})
+	} 
+	
+	useEffect(() => {
+		getAnimales();
+
+		return () => {
+		};
+	}, []);
+	
 	return (
 		<div className="graphs row">
 			<h1 className="col-12">Animales</h1>
@@ -54,9 +41,10 @@ export default function Animales() {
 					</div>
 				</div>
 			</Link>
-			{animalCards.map(({ id, image, name, status }) => (
-				<CartaAnimal name={name} image={image} status={status} key={id} id={id} />
-			))}
+			{console.log(animalCards)}
+			{/* {animalCards.map(({ _id, imagen, nombre, estado }) => (
+				<CartaAnimal nombre={nombre} imagen={imagen} estado={estado} key={_id} id={_id} />
+			))} */}
 		</div>
 	);
 }
