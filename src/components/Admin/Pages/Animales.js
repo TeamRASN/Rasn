@@ -6,28 +6,26 @@ import { Link } from "react-router-dom";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import CartaAnimal from "../CartaAnimal";
 
-export default function Animales() {
-	const [animalCards, setAnimalCards] = useState(null);
-	const getAnimales = () => {
-		fetch("http://127.0.0.1:3001/Rasn/admin/animales")
-		.then(response => response.json())
+const getAnimales = (setAnimalCards) => {
+	fetch("http://127.0.0.1:3001/Rasn/admin/animales")
+		.then((response) => response.json())
 		.then((animalCards) => {
-			// jsonData is parsed json object received from url
-			setAnimalCards(animalCards)
+			setAnimalCards(animalCards);
 		})
 		.catch((error) => {
-			// handle your errors here
 			//console.error(error)
-		})
-	} 
-	
-	useEffect(() => {
-		getAnimales();
+		});
+};
 
-		return () => {
-		};
+export default function Animales() {
+	const [animalCards, setAnimalCards] = useState([]);
+
+	useEffect(() => {
+		getAnimales(setAnimalCards);
+
+		return () => {};
 	}, []);
-	
+
 	return (
 		<div className="graphs row">
 			<h1 className="col-12">Animales</h1>
@@ -41,10 +39,9 @@ export default function Animales() {
 					</div>
 				</div>
 			</Link>
-			{console.log(animalCards)}
-			{/* {animalCards.map(({ _id, imagen, nombre, estado }) => (
+			{animalCards.map(({ _id, imagen, nombre, estado }) => (
 				<CartaAnimal nombre={nombre} imagen={imagen} estado={estado} key={_id} id={_id} />
-			))} */}
+			))}
 		</div>
 	);
 }
