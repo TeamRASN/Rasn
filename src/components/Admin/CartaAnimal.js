@@ -6,11 +6,23 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // Componentes
 import { faTimes, faDotCircle } from "@fortawesome/free-solid-svg-icons";
 
-export default function CartaAnimal({ id, nombre, color, sexo, peso, fechaNacimiento, raza, tamanio, imagen, estado }) {
+export default function CartaAnimal({
+	id,
+	nombre,
+	color,
+	sexo,
+	peso,
+	fechaNacimiento,
+	raza,
+	tamanio,
+	imagen,
+	estado,
+	actitud,
+}) {
 	const sendData = () => {
-        const form = document.getElementById("form-" + id);
-        form.submit();
-    };
+		const form = document.getElementById("form-" + id);
+		form.submit();
+	};
 
 	return (
 		<div className="admin-animal-card col-12 col-md-6">
@@ -44,11 +56,16 @@ export default function CartaAnimal({ id, nombre, color, sexo, peso, fechaNacimi
 							<input type="hidden" name="raza" value={raza} />
 							<input type="hidden" name="tamanio" value={tamanio} />
 							<input type="hidden" name="imagen" value={imagen} />
+							<input type="hidden" name="aptitud" value={actitud} />
 							<input type="hidden" name="estado" value={estado} />
 							<FontAwesomeIcon icon={faTimes} onClick={sendData} />
 							<p className="deleteP">borrar</p>
 						</form>
-						<Link to={`animales/nuevo-animal/${id}`} className="btn-crud btn-modify" title="editar">
+						<Link
+							to={`animales/nuevo-animal/?id:${id}?nombre:${nombre}?color:${color}?sexo:${sexo}?peso:${peso}?fechaNacimiento:${fechaNacimiento}?raza:${raza}?tamanio:${tamanio}?imagen:${imagen}?estado:${estado}?aptitud:${actitud}`}
+							className="btn-crud btn-modify"
+							title="editar"
+						>
 							<FontAwesomeIcon icon={faDotCircle} />
 							<p className="modifyP">modificar</p>
 						</Link>

@@ -40,21 +40,24 @@ export default function Animales() {
 					</div>
 				</div>
 			</Link>
-			{animalCards.map(({ _id, nombre, color, sexo, peso, fechaNacimiento, raza, tamanio, imagen, estado }) => (
-                <CartaAnimal
-                    key={_id}
-                    id={_id}
-                    nombre={nombre}
-                    color={color}
-                    sexo={sexo}
-                    peso={peso}
-                    fechaNacimiento={fechaNacimiento}
-                    raza={raza}
-                    tamanio={tamanio}
-                    imagen={imagen}
-                    estado={estado}
-                />
-            ))}
+			{animalCards.map(
+				({ _id, nombre, color, sexo, peso, fechaNacimiento, raza, tamanio, imagen, estado, actitud }) => (
+					<CartaAnimal
+						key={_id}
+						id={_id}
+						nombre={nombre}
+						color={color}
+						sexo={sexo}
+						peso={peso}
+						fechaNacimiento={fechaNacimiento}
+						raza={raza}
+						tamanio={tamanio}
+						imagen={imagen}
+						estado={estado}
+						actitud={actitud}
+					/>
+				)
+			)}
 		</div>
 	);
 }

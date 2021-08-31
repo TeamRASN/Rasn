@@ -12,57 +12,28 @@ import "../../../css/nuevo-registro.css";
 //Paquetes
 function animalesForm() {
 	let updateObject;
-	const pathname = window.location.pathname;
+	const pathname = window.location.search;
 	if (containsNumber(pathname)) {
-		const idObject = getId(pathname, "/");
+		const animalData = getData(pathname, "?");
 
-		//Objetos
-		const animalCards = [
-			{
-				id: 1,
-				nombre: "Husky",
-				color: "Blanco",
-				sexo: "F",
-				estado: "En adopción",
-				aptitud: "Juguetón",
-				peso: 10,
-				fechaNacimiento: "2018-01-13T03:00:00.000Z",
-				raza: "Pastor blanco",
-				tamanio: "Mediano",
-				imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Schweizer_Sch%C3%A4ferhund%2C_9_Monate.JPG/220px-Schweizer_Sch%C3%A4ferhund%2C_9_Monate.JPG",
-			},
-			{
-				id: 2,
-				nombre: "Lolo",
-				color: "Marrón",
-				sexo: "M",
-				peso: 13,
-				fechaNacimiento: "2015-12-22T03:00:00.000Z",
-				raza: "Labrador",
-				tamanio: "Mediano",
-				imagen: "https://image.freepik.com/foto-gratis/cachorro-labrador-retriever-5-meses-edad-sentado_191971-3941.jpg",
-				actitud: "Travieso",
-			},
-			{
-				id: 3,
-				nombre: "Lili",
-				color: "Negro",
-				sexo: "F",
-				peso: 6,
-				fechaNacimiento: "2020-01-01T03:00:00.000Z",
-				raza: "Poodle",
-				tamanio: "Pequeño",
-				imagen: "https://www.mercurynews.com/wp-content/uploads/2018/08/Poodle.jpg",
-				actitud: "Tranquilo",
-			},
-			{ id: 4, nombre: "Pepi", color: "Marrón", sexo: "M", peso: 8 },
-		];
+		let str = "{";
+		let tempStr;
 
-		//search the object who has the same id as the parameter
-		updateObject = animalCards.find((element) => {
-			// eslint-disable-next-line eqeqeq
-			return element.id == idObject;
+		animalData.forEach((e) => {
+			if (!e.includes("https")) {
+				str += `"${e.split(":")[0]}":"${e.split(":")[1]}",`;
+			} else {
+				let first = e.indexOf(":");
+				tempStr = `"${e.slice(0, first)}":"${e.slice(first + 1)}",`;
+				str += tempStr;
+			}
 		});
+
+		str = str.substring(0, str.length - 1);
+		str += "}";
+
+		updateObject = JSON.parse(decodeURIComponent(str));
+		console.log(updateObject);
 	} else {
 		updateObject = {
 			nombre: "",
@@ -644,10 +615,15 @@ function blogsForm() {
 	);
 }
 
-//search if a string includes a number
-const containsNumber = (str) => {
-	return /\d/.test(str);
+const containsNumber = (string) => {
+	return string.includes("?");
 };
+
+function getData(str, separator) {
+	let data = str.split(separator);
+	data.shift();
+	return data;
+}
 
 function getId(str, separator) {
 	let idObject = str.split(separator);
