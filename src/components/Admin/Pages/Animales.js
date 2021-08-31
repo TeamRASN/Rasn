@@ -10,6 +10,7 @@ const getAnimales = (setAnimalCards) => {
 	fetch("http://127.0.0.1:3001/Rasn/admin/animales")
 		.then((response) => response.json())
 		.then((animalCards) => {
+			console.log(animalCards);
 			setAnimalCards(animalCards);
 		})
 		.catch((error) => {

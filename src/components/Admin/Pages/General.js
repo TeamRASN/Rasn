@@ -27,8 +27,9 @@ export default function Animales() {
 									"/faq/editar-pregunta",
 									"/blogs/editar-post",
 								]}
-								component={NuevoRegistro}
-							/>
+							>
+								<NuevoRegistro />
+							</Route>
 							<Route path="/faq" component={Faq} />
 							<Route path="/blogs" component={Blog} />
 							<Route path="/equipo" component={Equipo} />

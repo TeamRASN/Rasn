@@ -7,6 +7,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes, faDotCircle } from "@fortawesome/free-solid-svg-icons";
 
 export default function CartaAnimal({ id, imagen, nombre, estado }) {
+	const sendData = () => {
+		const form = document.getElementById("form-" + id);
+		form.submit();
+	};
+
 	return (
 		<div className="admin-animal-card col-12 col-md-6">
 			<div className="img-card" style={{ backgroundImage: `url(${imagen})` }}></div>
@@ -22,10 +27,17 @@ export default function CartaAnimal({ id, imagen, nombre, estado }) {
 						</div>
 					</div>
 					<div className="crud-card">
-						<a href="/borrar" className="btn-crud btn-delete" title="eliminar">
-							<FontAwesomeIcon icon={faTimes} />
+						<form
+							method="post"
+							action="http://localhost:3001/Rasn/admin/animales/delete"
+							className="btn-crud btn-delete"
+							id={"form-" + id}
+							title="eliminar"
+						>
+							<input type="hidden" name="id" value={id} />
+							<FontAwesomeIcon icon={faTimes} onClick={sendData} />
 							<p className="deleteP">borrar</p>
-						</a>
+						</form>
 						<Link to={`animales/nuevo-animal/${id}`} className="btn-crud btn-modify" title="editar">
 							<FontAwesomeIcon icon={faDotCircle} />
 							<p className="modifyP">modificar</p>

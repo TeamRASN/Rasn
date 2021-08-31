@@ -31,15 +31,15 @@ app.route("/Rasn/admin/animales").get(function (req, res) {
 			.toArray(function (err, result) {
 				if (err) throw err;
 				console.log(req.id);
-				res.send(req.id);
+				res.send(result);
 				db.close();
 			});
 	});
 });
 
-router.post("/Rasn/admin/animales/delete", (req, res) => {
+app.post("/Rasn/admin/animales/delete", (req, res) => {
 	console.log(req.body);
-	});
+});
 
 /*app.route("/Rasn/admin/animales/delete").get(function (req, res) {
 	client.connect(function (err, db) {
@@ -55,8 +55,6 @@ router.post("/Rasn/admin/animales/delete", (req, res) => {
 			});
 	});
 });*/
-
-
 
 app.route("/Rasn/faq").get(function (req, res) {
 	client.connect(function (err, db) {
@@ -102,8 +100,6 @@ app.route("/Rasn/integrantes").get(function (req, res) {
 			});
 	});
 });
-
-
 
 app.listen(PORT, () => {
 	console.log(`Server listening on ${PORT}`);

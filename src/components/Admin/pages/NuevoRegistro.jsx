@@ -17,7 +17,46 @@ function animalesForm() {
 		const idObject = getId(pathname, "/");
 
 		//Objetos
-		const animalCards = [{id:1,nombre:"Husky",color:"Blanco",sexo:"F",estado:"En adopción",aptitud:"Juguetón",peso:10,fechaNacimiento:"2018-01-13T03:00:00.000Z",raza:"Pastor blanco",tamanio:"Mediano",imagen:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Schweizer_Sch%C3%A4ferhund%2C_9_Monate.JPG/220px-Schweizer_Sch%C3%A4ferhund%2C_9_Monate.JPG"},{id:2,nombre:"Lolo",color:"Marrón",sexo:"M",peso:13,fechaNacimiento:"2015-12-22T03:00:00.000Z",raza:"Labrador",tamanio:"Mediano",imagen:"https://image.freepik.com/foto-gratis/cachorro-labrador-retriever-5-meses-edad-sentado_191971-3941.jpg","actitud":"Travieso"},{id:3,nombre:"Lili",color:"Negro",sexo:"F",peso:6,fechaNacimiento:"2020-01-01T03:00:00.000Z",raza:"Poodle",tamanio:"Pequeño",imagen:"https://www.mercurynews.com/wp-content/uploads/2018/08/Poodle.jpg","actitud":"Tranquilo"},{id:4,nombre:"Pepi",color:"Marrón",sexo:"M",peso:8}]
+		const animalCards = [
+			{
+				id: 1,
+				nombre: "Husky",
+				color: "Blanco",
+				sexo: "F",
+				estado: "En adopción",
+				aptitud: "Juguetón",
+				peso: 10,
+				fechaNacimiento: "2018-01-13T03:00:00.000Z",
+				raza: "Pastor blanco",
+				tamanio: "Mediano",
+				imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Schweizer_Sch%C3%A4ferhund%2C_9_Monate.JPG/220px-Schweizer_Sch%C3%A4ferhund%2C_9_Monate.JPG",
+			},
+			{
+				id: 2,
+				nombre: "Lolo",
+				color: "Marrón",
+				sexo: "M",
+				peso: 13,
+				fechaNacimiento: "2015-12-22T03:00:00.000Z",
+				raza: "Labrador",
+				tamanio: "Mediano",
+				imagen: "https://image.freepik.com/foto-gratis/cachorro-labrador-retriever-5-meses-edad-sentado_191971-3941.jpg",
+				actitud: "Travieso",
+			},
+			{
+				id: 3,
+				nombre: "Lili",
+				color: "Negro",
+				sexo: "F",
+				peso: 6,
+				fechaNacimiento: "2020-01-01T03:00:00.000Z",
+				raza: "Poodle",
+				tamanio: "Pequeño",
+				imagen: "https://www.mercurynews.com/wp-content/uploads/2018/08/Poodle.jpg",
+				actitud: "Tranquilo",
+			},
+			{ id: 4, nombre: "Pepi", color: "Marrón", sexo: "M", peso: 8 },
+		];
 
 		//search the object who has the same id as the parameter
 		updateObject = animalCards.find((element) => {
@@ -36,7 +75,7 @@ function animalesForm() {
 			estado: "",
 			aptitud: "",
 			imagen: "",
-		}
+		};
 	}
 
 	function changePreviewImage(imagen) {
@@ -119,15 +158,33 @@ function animalesForm() {
 					<ErrorMessage className="input-error" name="raza" component="div" />
 				</div>
 				<div className="register-input-field col-12 col-sm-6">
-					<Field className="input col-12 col-sm-6" type="number" name="peso" placeholder="Peso en kilogramos" required />
+					<Field
+						className="input col-12 col-sm-6"
+						type="number"
+						name="peso"
+						placeholder="Peso en kilogramos"
+						required
+					/>
 					<ErrorMessage className="input-error" name="peso" component="div" />
 				</div>
 				<div className="register-input-field col-12 col-sm-6">
-					<Field className="input col-12 col-sm-6" type="text" name="color" placeholder="Color de pelaje" required />
+					<Field
+						className="input col-12 col-sm-6"
+						type="text"
+						name="color"
+						placeholder="Color de pelaje"
+						required
+					/>
 					<ErrorMessage className="input-error" name="color" component="div" />
 				</div>
 				<div className="register-input-field col-12 col-sm-6">
-					<Field className="input col-12 col-sm-6" list="tamaño" name="tamanio" placeholder="Tamaño" required />
+					<Field
+						className="input col-12 col-sm-6"
+						list="tamaño"
+						name="tamanio"
+						placeholder="Tamaño"
+						required
+					/>
 					<ErrorMessage className="input-error" name="tamanio" component="div" />
 				</div>
 				<datalist id="tamaño">
@@ -138,7 +195,13 @@ function animalesForm() {
 					<option value="Muy grande" />
 				</datalist>
 				<div className="register-input-field col-12 col-sm-6">
-					<Field className="input col-12 col-sm-6" list="estado" name="estado" placeholder="Estado" required />
+					<Field
+						className="input col-12 col-sm-6"
+						list="estado"
+						name="estado"
+						placeholder="Estado"
+						required
+					/>
 					<ErrorMessage className="input-error" name="estado" component="div" />
 				</div>
 				<datalist id="estado">
@@ -146,7 +209,13 @@ function animalesForm() {
 					<option value="Adoptado" />
 				</datalist>
 				<div className="register-input-field col-12 col-sm-6">
-					<Field className="input col-12 col-sm-6" type="text" name="aptitud" placeholder="Aptitud" required />
+					<Field
+						className="input col-12 col-sm-6"
+						type="text"
+						name="aptitud"
+						placeholder="Aptitud"
+						required
+					/>
 					<ErrorMessage className="input-error" name="aptitud" component="div" />
 				</div>
 				<button id="btn-submit-form" type="submit" className="invisible-btn"></button>
@@ -232,7 +301,7 @@ function equipoForm() {
 			nombre: "",
 			apellido: "",
 			rol: "",
-		}
+		};
 	}
 
 	function changePreviewImage(image) {
@@ -327,17 +396,20 @@ function faqForm() {
 			{
 				id: 1,
 				pregunta: "¿Dónde mantenemos a las mascotas?",
-				respuesta: "Las mascotas se encuentran resguardadas en un refugio alquilado. Nuestro equipo de voluntarios se encarga de darles todos los cuidados necesarios, dando de su tiempo para visitar el refugio y asegurarse de que todo esté bien.",
+				respuesta:
+					"Las mascotas se encuentran resguardadas en un refugio alquilado. Nuestro equipo de voluntarios se encarga de darles todos los cuidados necesarios, dando de su tiempo para visitar el refugio y asegurarse de que todo esté bien.",
 			},
 			{
 				id: 2,
 				pregunta: "Quiero adoptar a una de las mascotas. ¿Qué debo hacer?",
-				respuesta: 'Si quieres adoptar a una de las mascotas, puedes contactarte con nosotros usando la opción "Contacto Directo" de este sitio web o enviándonos un mensaje a nuestras redes sociales, que también encontrarás en este sitio. Te responderemos a la brevedad para que tengas toda la información sobre la mascota.',
+				respuesta:
+					'Si quieres adoptar a una de las mascotas, puedes contactarte con nosotros usando la opción "Contacto Directo" de este sitio web o enviándonos un mensaje a nuestras redes sociales, que también encontrarás en este sitio. Te responderemos a la brevedad para que tengas toda la información sobre la mascota.',
 			},
 			{
 				id: 3,
 				pregunta: "Quiero ayudar como voluntario. ¿Qué debo hacer?",
-				respuesta: 'Si quieres formar parte de nuestro equipo, contáctate con nosotros usando la opción "Contacto Directo" de este sitio web o enviándonos un mensaje a nuestras redes sociales. Por favor infórmanos tu nombre y edad. Uno de los miembros de nuestro equipo se contactará con vos para acordar un horario en que puedas colaborar.',
+				respuesta:
+					'Si quieres formar parte de nuestro equipo, contáctate con nosotros usando la opción "Contacto Directo" de este sitio web o enviándonos un mensaje a nuestras redes sociales. Por favor infórmanos tu nombre y edad. Uno de los miembros de nuestro equipo se contactará con vos para acordar un horario en que puedas colaborar.',
 			},
 		];
 
@@ -350,7 +422,7 @@ function faqForm() {
 		updateObject = {
 			pregunta: "",
 			respuesta: "",
-		}
+		};
 	}
 
 	return (
@@ -485,7 +557,7 @@ function blogsForm() {
 			contenido: "",
 			autor: "",
 			fechaCreado: formatedDate,
-		}
+		};
 	}
 
 	return (
@@ -531,13 +603,7 @@ function blogsForm() {
 					<div className="preview-image" id="preview-image"></div>
 				</div>
 				<div className="register-input-field col-12 col-sm-6">
-					<Field
-						className="input col-12 col-sm-6"
-						type="text"
-						name="titulo"
-						placeholder="Titulo"
-						required
-					/>
+					<Field className="input col-12 col-sm-6" type="text" name="titulo" placeholder="Titulo" required />
 					<ErrorMessage className="input-error" name="title" component="div" />
 				</div>
 				<div className="register-input-field col-12 col-sm-6">
