@@ -6,11 +6,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // Componentes
 import { faTimes, faDotCircle } from "@fortawesome/free-solid-svg-icons";
 
-export default function CartaAnimal({ id, imagen, nombre, estado }) {
+export default function CartaAnimal({ id, nombre, color, sexo, peso, fechaNacimiento, raza, tamanio, imagen, estado }) {
 	const sendData = () => {
-		const form = document.getElementById("form-" + id);
-		form.submit();
-	};
+        const form = document.getElementById("form-" + id);
+        form.submit();
+    };
 
 	return (
 		<div className="admin-animal-card col-12 col-md-6">
@@ -36,6 +36,15 @@ export default function CartaAnimal({ id, imagen, nombre, estado }) {
 							title="eliminar"
 						>
 							<input type="hidden" name="id" value={id} />
+							<input type="hidden" name="nombre" value={nombre} />
+							<input type="hidden" name="color" value={color} />
+							<input type="hidden" name="sexo" value={sexo} />
+							<input type="hidden" name="peso" value={peso} />
+							<input type="hidden" name="fechaNacimiento" value={fechaNacimiento} />
+							<input type="hidden" name="raza" value={raza} />
+							<input type="hidden" name="tamanio" value={tamanio} />
+							<input type="hidden" name="imagen" value={imagen} />
+							<input type="hidden" name="estado" value={estado} />
 							<FontAwesomeIcon icon={faTimes} onClick={sendData} />
 							<p className="deleteP">borrar</p>
 						</form>

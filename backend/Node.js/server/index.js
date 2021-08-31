@@ -43,6 +43,11 @@ app.route("/Rasn/admin/animales/delete").post(async function (req, res) {
 		await client.connect();
 		const db = client.db("proyectoRasn");
 		const collection = db.collection("animales");
+		const data = req.body;
+		const newData = {
+			...data
+		}
+		console.log(newData);
 		const result = await collection.deleteOne({ _id: new mongodb.ObjectId(req.body.id)});
 		//res.send(result);
 		if (result.deletedCount === 1) {
@@ -56,15 +61,20 @@ app.route("/Rasn/admin/animales/delete").post(async function (req, res) {
 	} finally {
 		await client.close();
 	}
+});
 
 app.route("/Rasn/admin/animales/nuevo-animal").post(async function (req, res) {
 	try {
 		await client.connect();
 		const db = client.db("proyectoRasn");
 		const collection = db.collection("animales");
-		const updatedData = req.body.updatedData;
+		const data = req.body;
+		const newData = [
+			...data
+		]
+		console.log(newData);
 		const result = await collection.replaceOne({ _id: new mongodb.ObjectId(req.body.id)},
-		updatedData);
+		newData);
 		//res.send(result);
 		if (result.deletedCount === 1) {
 			console.dir("Successfully deleted one document.");
@@ -77,34 +87,6 @@ app.route("/Rasn/admin/animales/nuevo-animal").post(async function (req, res) {
 	} finally {
 		await client.close();
 	}
-	/* client.connect(async function (err, db) {
-		if (err) throw err;
-		var dbo = db.db("proyectoRasn");
-
-		const collection = dbo.collection("animales");
-		const query = { _id: req.body.id };
-		const result = await collection.deleteOne(query);
-
-		if (result.deletedCount === 1) {
-			console.dir("Successfully deleted one document.");
-		} else {
-			console.log("No documents matched the query. Deleted 0 documents.");
-		}
-
-		dbo.collection("animales")
-			.deleteOne(function (err, result) {
-				{
-					_id: req.body.id;
-				}
-				if (err) throw err;
-
-				res.send(result);
-				db.close();
-			})
-			.then(console.log("Borrado el registro " + req.body.id))
-			.catch();
-		db.close();
-	}); */
 });
 
 /*app.route("/Rasn/admin/animales/delete").get(function (req, res) {
