@@ -37,8 +37,16 @@ app.route("/Rasn/admin/animales").get(function (req, res) {
 	});
 });
 
-app.post("/Rasn/admin/animales/delete", (req, res) => {
-	console.log(req.body);
+app.route("/Rasn/admin/animales/delete").post(function (req, res) {
+	client.connect(function (err, db) {
+		if (err) throw err;
+		var dbo = db.db("proyectoRasn");
+		dbo.collection("animales")
+		.deleteOne({_id:req.body.id})
+		.then(console.log("Borrado el registro "+req.body.id))
+		.catch()
+		db.close();
+	});
 });
 
 /*app.route("/Rasn/admin/animales/delete").get(function (req, res) {
