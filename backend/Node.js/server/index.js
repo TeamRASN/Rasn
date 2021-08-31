@@ -32,6 +32,51 @@ app.route("/Rasn/admin/animales").get(function (req, res) {
 	});
 });
 
+app.route("/Rasn/faq").get(function (req, res) {
+	client.connect(function (err, db) {
+		if (err) throw err;
+		var dbo = db.db("proyectoRasn");
+		dbo.collection("faq")
+			.find({})
+			.toArray(function (err, result) {
+				if (err) throw err;
+				console.log(result);
+				res.send(result);
+				db.close();
+			});
+	});
+});
+
+app.route("/Rasn/posts").get(function (req, res) {
+	client.connect(function (err, db) {
+		if (err) throw err;
+		var dbo = db.db("proyectoRasn");
+		dbo.collection("posts")
+			.find({})
+			.toArray(function (err, result) {
+				if (err) throw err;
+				console.log(result);
+				res.send(result);
+				db.close();
+			});
+	});
+});
+
+app.route("/Rasn/integrantes").get(function (req, res) {
+	client.connect(function (err, db) {
+		if (err) throw err;
+		var dbo = db.db("proyectoRasn");
+		dbo.collection("integrantes")
+			.find({})
+			.toArray(function (err, result) {
+				if (err) throw err;
+				console.log(result);
+				res.send(result);
+				db.close();
+			});
+	});
+});
+
 app.listen(PORT, () => {
 	console.log(`Server listening on ${PORT}`);
 });
