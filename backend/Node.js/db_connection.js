@@ -10,7 +10,7 @@ async function main() {
 	try {
 		await client.connect();
 	} catch (e) {
-		console.error(e);
+		//console.error(e);
 	} finally {
 		await client.close();
 	}

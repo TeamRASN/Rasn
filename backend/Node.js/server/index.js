@@ -37,16 +37,52 @@ app.route("/Rasn/admin/animales").get(function (req, res) {
 	});
 });
 
-app.route("/Rasn/admin/animales/delete").post(function (req, res) {
-	client.connect(function (err, db) {
+app.route("/Rasn/admin/animales/delete").post(async function (req, res) {
+	try {
+		await client.connect();
+		const db = client.db("proyectoRasn");
+		const collection = db.collection("animales");
+		const result = await collection.deleteOne({ _id: req.body.id });
+		//res.send(result);
+		if (result.deletedCount === 1) {
+			console.dir("Successfully deleted one document.");
+		} else {
+			console.log({ _id: req.body.id });
+			console.log("No documents matched the query. Deleted 0 documents.");
+		}
+	} catch (error) {
+		console.log(error);
+	} finally {
+		await client.close();
+	}
+	/* client.connect(async function (err, db) {
 		if (err) throw err;
 		var dbo = db.db("proyectoRasn");
+
+		const collection = dbo.collection("animales");
+		const query = { _id: req.body.id };
+		const result = await collection.deleteOne(query);
+
+		if (result.deletedCount === 1) {
+			console.dir("Successfully deleted one document.");
+		} else {
+			console.log("No documents matched the query. Deleted 0 documents.");
+		}
+
 		dbo.collection("animales")
-		.deleteOne({_id:req.body.id})
-		.then(console.log("Borrado el registro "+req.body.id))
-		.catch()
+			.deleteOne(function (err, result) {
+				{
+					_id: req.body.id;
+				}
+				if (err) throw err;
+
+				res.send(result);
+				db.close();
+			})
+			.then(console.log("Borrado el registro " + req.body.id))
+			.catch();
 		db.close();
-	});
+	}); */
 });
 
 /*app.route("/Rasn/admin/animales/delete").get(function (req, res) {

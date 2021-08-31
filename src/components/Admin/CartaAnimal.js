@@ -30,6 +30,7 @@ export default function CartaAnimal({ id, imagen, nombre, estado }) {
 						<form
 							method="post"
 							action="http://localhost:3001/Rasn/admin/animales/delete"
+							target="_blank"
 							className="btn-crud btn-delete"
 							id={"form-" + id}
 							title="eliminar"
