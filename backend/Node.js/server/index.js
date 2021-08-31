@@ -2,6 +2,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const mongodb = require("mongodb");
 const { MongoClient } = require("mongodb");
 const url = "mongodb+srv://superuser:EklZREvQdzjs0nwG@clusterrasn.qowzy.mongodb.net/myFirstDatabase";
 
@@ -42,12 +43,33 @@ app.route("/Rasn/admin/animales/delete").post(async function (req, res) {
 		await client.connect();
 		const db = client.db("proyectoRasn");
 		const collection = db.collection("animales");
-		const result = await collection.deleteOne({ _id: req.body.id });
+		const result = await collection.deleteOne({ _id: new mongodb.ObjectId(req.body.id)});
 		//res.send(result);
 		if (result.deletedCount === 1) {
 			console.dir("Successfully deleted one document.");
+			console.log({ _id: new mongodb.ObjectId(req.body.id)});
 		} else {
-			console.log({ _id: req.body.id });
+			console.log("No documents matched the query. Deleted 0 documents.");
+		}
+	} catch (error) {
+		console.log(error);
+	} finally {
+		await client.close();
+	}
+
+app.route("/Rasn/admin/animales/nuevo-animal").post(async function (req, res) {
+	try {
+		await client.connect();
+		const db = client.db("proyectoRasn");
+		const collection = db.collection("animales");
+		const updatedData = req.body.updatedData;
+		const result = await collection.replaceOne({ _id: new mongodb.ObjectId(req.body.id)},
+		updatedData);
+		//res.send(result);
+		if (result.deletedCount === 1) {
+			console.dir("Successfully deleted one document.");
+			console.log({ _id: new mongodb.ObjectId(req.body.id)});
+		} else {
 			console.log("No documents matched the query. Deleted 0 documents.");
 		}
 	} catch (error) {

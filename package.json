@@ -32,6 +32,7 @@
 	},
 	"scripts": {
 		"predeploy": "npm run build",
+		"start-node": "cd .\\backend\\Node.js && npm start",
 		"deploy": "gh-pages -d build",
 		"start": "react-scripts start",
 		"sass": "cd src && sass --watch sass:css",
