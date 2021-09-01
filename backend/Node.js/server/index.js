@@ -69,12 +69,9 @@ app.route("/Rasn/admin/animales/nuevo-animal").post(async function (req, res) {
 		const db = client.db("proyectoRasn");
 		const collection = db.collection("animales");
 		const data = req.body;
-		const newData = [
-			...data
-		]
-		console.log(newData);
-		const result = await collection.replaceOne({ _id: new mongodb.ObjectId(req.body.id)},
-		newData);
+		data.fechaNacimiento = new Date(data.fechaNacimiento);
+		console.log(data);
+		const result = await collection.insertOne(data);
 		//res.send(result);
 		if (result.deletedCount === 1) {
 			console.dir("Successfully deleted one document.");

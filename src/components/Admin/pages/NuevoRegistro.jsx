@@ -13,10 +13,12 @@ import "../../../css/nuevo-registro.css";
 //Paquetes
 function animalesForm() {
 	let updateObject;
+	let insertData = true;
 	const pathname = window.location.search;
 	if (containsQuestionMark(pathname)) {
+		insertData = false;	
 		const animalData = getData(pathname, "?");
-
+		
 		let str = "{";
 		let tempStr;
 		animalData.forEach((e) => {
@@ -30,7 +32,7 @@ function animalesForm() {
 		});
 		str = str.substring(0, str.length - 1);
 		str += "}";
-
+		
 		updateObject = JSON.parse(decodeURIComponent(str));
 		updateObject.peso = parseInt(updateObject.peso);
 	} else {
@@ -71,6 +73,14 @@ function animalesForm() {
 			}}
 			validate={(values) => {
 				const errors = {};
+				
+				if (values.sexo === "Macho"){
+					values.sexo = "M";
+				} else if (values.sexo === "Hembra"){
+					values.sexo = "F";
+				} else if(values.sexo !== "M" && values.sexo !== "F") {
+					errors.sexo = "Ingrese un caracter M o F"
+				};
 				if (values.imagen !== undefined) {
 					if (values.imagen.length > 0) {
 						changePreviewImage(values.imagen);
@@ -84,10 +94,16 @@ function animalesForm() {
 				return errors;
 			}}
 			onSubmit={async (values) => {
-				Axios.post("http://localhost:3001/Rasn/admin/animales/actualizar-animal", values).then((res) => {
-					console.log(res.data);
-				}).then(alert("Todo bien"));
-				
+				console.log(insertData)
+				if (insertData) {
+					Axios.post("http://localhost:3001/Rasn/admin/animales/nuevo-animal", values).then((res) => {
+						console.log(res.data);
+					}).then(alert("Registrado ingresado"));	
+				} else {
+					Axios.post("http://localhost:3001/Rasn/admin/animales/actualizar-animal", values).then((res) => {
+						console.log(res.data);
+					}).then(alert("Registro actualizado"));
+				}
 			}}
 		>
 			<Form className="row" style={{ padding: 0 }} id="mainForm">
