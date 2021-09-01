@@ -222,7 +222,6 @@
 .add-new-register-row .desc-card .crud-card .btn-crud,
 .add-new-register-row .faq-space .crud-card .btn-crud {
   display: flex;
-  flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
   color: #37383a;
@@ -232,44 +231,19 @@
   height: 25px;
   font-size: 15px;
   background-color: #fff;
+  cursor: pointer;
 }
-.admin-animal-card .desc-card .crud-card .btn-crud p,
-.admin-animal-card .faq-space .crud-card .btn-crud p,
-.add-new-register-row .desc-card .crud-card .btn-crud p,
-.add-new-register-row .faq-space .crud-card .btn-crud p {
-  transition: all 150ms ease-out;
-  visibility: hidden;
-  position: absolute;
-  opacity: 0;
-  border-radius: 7.5px;
-  margin-bottom: 0;
-}
-.admin-animal-card .desc-card .crud-card .btn-crud .btn-props, .admin-animal-card .desc-card .crud-card .btn-crud:hover > .modifyP, .admin-animal-card .desc-card .crud-card .btn-crud:hover > .deleteP,
-.admin-animal-card .faq-space .crud-card .btn-crud .btn-props,
-.admin-animal-card .faq-space .crud-card .btn-crud:hover > .modifyP,
-.admin-animal-card .faq-space .crud-card .btn-crud:hover > .deleteP,
-.add-new-register-row .desc-card .crud-card .btn-crud .btn-props,
-.add-new-register-row .desc-card .crud-card .btn-crud:hover > .modifyP,
-.add-new-register-row .desc-card .crud-card .btn-crud:hover > .deleteP,
-.add-new-register-row .faq-space .crud-card .btn-crud .btn-props,
-.add-new-register-row .faq-space .crud-card .btn-crud:hover > .modifyP,
-.add-new-register-row .faq-space .crud-card .btn-crud:hover > .deleteP {
-  visibility: visible;
-  color: #fff;
-  opacity: 1;
-  padding: 2.5px 10px;
-}
-.admin-animal-card .desc-card .crud-card .btn-crud:hover > .deleteP,
-.admin-animal-card .faq-space .crud-card .btn-crud:hover > .deleteP,
-.add-new-register-row .desc-card .crud-card .btn-crud:hover > .deleteP,
-.add-new-register-row .faq-space .crud-card .btn-crud:hover > .deleteP {
-  transform: translateX(-45px);
-}
-.admin-animal-card .desc-card .crud-card .btn-crud:hover > .modifyP,
-.admin-animal-card .faq-space .crud-card .btn-crud:hover > .modifyP,
-.add-new-register-row .desc-card .crud-card .btn-crud:hover > .modifyP,
-.add-new-register-row .faq-space .crud-card .btn-crud:hover > .modifyP {
-  transform: translateX(-56px);
+.admin-animal-card .desc-card .crud-card .btn-crud button,
+.admin-animal-card .faq-space .crud-card .btn-crud button,
+.add-new-register-row .desc-card .crud-card .btn-crud button,
+.add-new-register-row .faq-space .crud-card .btn-crud button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
 }
 .admin-animal-card .desc-card .crud-card .btn-delete,
 .admin-animal-card .faq-space .crud-card .btn-delete,
@@ -278,11 +252,17 @@
   background-color: transparent;
   border-radius: 50%;
 }
-.admin-animal-card .desc-card .crud-card .btn-delete:hover > p,
-.admin-animal-card .faq-space .crud-card .btn-delete:hover > p,
-.add-new-register-row .desc-card .crud-card .btn-delete:hover > p,
-.add-new-register-row .faq-space .crud-card .btn-delete:hover > p {
+.admin-animal-card .desc-card .crud-card .btn-delete:hover,
+.admin-animal-card .faq-space .crud-card .btn-delete:hover,
+.add-new-register-row .desc-card .crud-card .btn-delete:hover,
+.add-new-register-row .faq-space .crud-card .btn-delete:hover {
   background-color: #c70a0a;
+}
+.admin-animal-card .desc-card .crud-card .btn-delete:hover > button svg,
+.admin-animal-card .faq-space .crud-card .btn-delete:hover > button svg,
+.add-new-register-row .desc-card .crud-card .btn-delete:hover > button svg,
+.add-new-register-row .faq-space .crud-card .btn-delete:hover > button svg {
+  color: white;
 }
 .admin-animal-card .desc-card .crud-card .btn-modify,
 .admin-animal-card .faq-space .crud-card .btn-modify,
@@ -291,11 +271,17 @@
   background-color: transparent;
   border-radius: 50%;
 }
-.admin-animal-card .desc-card .crud-card .btn-modify:hover > p,
-.admin-animal-card .faq-space .crud-card .btn-modify:hover > p,
-.add-new-register-row .desc-card .crud-card .btn-modify:hover > p,
-.add-new-register-row .faq-space .crud-card .btn-modify:hover > p {
+.admin-animal-card .desc-card .crud-card .btn-modify:hover,
+.admin-animal-card .faq-space .crud-card .btn-modify:hover,
+.add-new-register-row .desc-card .crud-card .btn-modify:hover,
+.add-new-register-row .faq-space .crud-card .btn-modify:hover {
   background-color: #eb8d00;
+}
+.admin-animal-card .desc-card .crud-card .btn-modify:hover > svg,
+.admin-animal-card .faq-space .crud-card .btn-modify:hover > svg,
+.add-new-register-row .desc-card .crud-card .btn-modify:hover > svg,
+.add-new-register-row .faq-space .crud-card .btn-modify:hover > svg {
+  color: white;
 }
 
 @media screen and (max-width: 771px) {

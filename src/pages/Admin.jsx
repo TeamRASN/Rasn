@@ -14,21 +14,19 @@ import "../css/admin-sections.css";
 
 export default function Admin() {
 	return (
-		<main>
-			<Router basename="/Rasn/admin">
-				<Navbar />
-				<section className="admin">
-					<div className="admin-sections">
-						<Switch>
-							<Route path="/animales/nuevo-animal" component={NuevoRegistro} />
-							<Route path="/cuenta" component={Cuenta} />
-							<Route path="/general" component={Generales} />
-							<Route path="/animales" component={Animales} />
-							<Route path="/estadisticas" component={Estadisticas} />
-						</Switch>
-					</div>
-				</section>
-			</Router>
-		</main>
+		<Router basename="/Rasn/admin">
+			<Navbar />
+			<section className="admin">
+				<div className="admin-sections">
+					<Switch>
+						<Route path="/animales/nuevo-animal" component={NuevoRegistro} />
+						<Route path="/cuenta" component={Cuenta} />
+						<Route path="/general" component={Generales} />
+						<Route path="/animales" component={Animales} />
+						<Route path="/estadisticas" component={Estadisticas} />
+					</Switch>
+				</div>
+			</section>
+		</Router>
 	);
 }

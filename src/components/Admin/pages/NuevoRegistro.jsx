@@ -13,27 +13,25 @@ import "../../../css/nuevo-registro.css";
 function animalesForm() {
 	let updateObject;
 	const pathname = window.location.search;
-	if (containsNumber(pathname)) {
+	if (containsQuestionMark(pathname)) {
 		const animalData = getData(pathname, "?");
 
 		let str = "{";
 		let tempStr;
-
 		animalData.forEach((e) => {
 			if (!e.includes("https")) {
-				str += `"${e.split(":")[0]}":"${e.split(":")[1]}",`;
+				str += `"${e.split("=")[0]}":"${e.split("=")[1]}",`;
 			} else {
-				let first = e.indexOf(":");
+				let first = e.indexOf("=");
 				tempStr = `"${e.slice(0, first)}":"${e.slice(first + 1)}",`;
 				str += tempStr;
 			}
 		});
-
 		str = str.substring(0, str.length - 1);
 		str += "}";
 
 		updateObject = JSON.parse(decodeURIComponent(str));
-		console.log(updateObject);
+		updateObject.peso = parseInt(updateObject.peso);
 	} else {
 		updateObject = {
 			nombre: "",
@@ -44,7 +42,7 @@ function animalesForm() {
 			raza: "",
 			tamanio: "",
 			estado: "",
-			aptitud: "",
+			actitud: "",
 			imagen: "",
 		};
 	}
@@ -66,7 +64,7 @@ function animalesForm() {
 				raza: updateObject.raza,
 				tamanio: updateObject.tamanio,
 				estado: updateObject.estado,
-				aptitud: updateObject.aptitud,
+				actitud: updateObject.actitud,
 				imagen: updateObject.imagen,
 			}}
 			validate={(values) => {
@@ -183,11 +181,11 @@ function animalesForm() {
 					<Field
 						className="input col-12 col-sm-6"
 						type="text"
-						name="aptitud"
-						placeholder="Aptitud"
+						name="actitud"
+						placeholder="Actitud"
 						required
 					/>
-					<ErrorMessage className="input-error" name="aptitud" component="div" />
+					<ErrorMessage className="input-error" name="actitud" component="div" />
 				</div>
 				<button id="btn-submit-form" type="submit" className="invisible-btn"></button>
 			</Form>
@@ -198,7 +196,7 @@ function animalesForm() {
 function equipoForm() {
 	let updateObject;
 	const pathname = window.location.pathname;
-	if (containsNumber(pathname)) {
+	if (containsQuestionMark(pathname)) {
 		const idObject = getId(pathname, "/");
 
 		//Objetos
@@ -359,7 +357,7 @@ function equipoForm() {
 function faqForm() {
 	let updateObject;
 	const pathname = window.location.pathname;
-	if (containsNumber(pathname)) {
+	if (containsQuestionMark(pathname)) {
 		const idObject = getId(pathname, "/");
 
 		//Objetos
@@ -466,7 +464,7 @@ function blogsForm() {
 
 	let updateObject;
 	const pathname = window.location.pathname;
-	if (containsNumber(pathname)) {
+	if (containsQuestionMark(pathname)) {
 		const idObject = getId(pathname, "/");
 
 		//Objetos
@@ -615,7 +613,7 @@ function blogsForm() {
 	);
 }
 
-const containsNumber = (string) => {
+const containsQuestionMark = (string) => {
 	return string.includes("?");
 };
 
@@ -643,7 +641,7 @@ export default function NuevoRegistro() {
 	};
 
 	useEffect(() => {
-		if (containsNumber(location.pathname)) {
+		if (containsQuestionMark(location.search)) {
 			setPageType("Modificar");
 		}
 
@@ -679,7 +677,7 @@ export default function NuevoRegistro() {
 			default:
 				break;
 		}
-	}, [location.pathname, pageType]);
+	}, [location.pathname, location.search, pageType]);
 
 	return (
 		<div>

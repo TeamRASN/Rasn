@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Axios from "axios";
 
 // Componentes
 import { faTimes, faDotCircle } from "@fortawesome/free-solid-svg-icons";
@@ -18,10 +19,19 @@ export default function CartaAnimal({
 	imagen,
 	estado,
 	actitud,
+	deleteAnimal,
 }) {
-	const sendData = () => {
-		const form = document.getElementById("form-" + id);
-		form.submit();
+	const preventSubmit = (e) => {
+		e.preventDefault();
+		const confirmOperation = window.confirm(`Estás seguro que deseas eliminar el registro de ${nombre}?`);
+		if (confirmOperation) {
+			deleteAnimal(id);
+			Axios.post("http://localhost:3001/Rasn/admin/animales/delete", {
+				id: id,
+			}).then((res) => {
+				console.log(res.data);
+			});
+		}
 	};
 
 	return (
@@ -40,34 +50,24 @@ export default function CartaAnimal({
 					</div>
 					<div className="crud-card">
 						<form
-							method="post"
-							action="http://localhost:3001/Rasn/admin/animales/delete"
-							target="_blank"
+							onSubmit={(e) => {
+								preventSubmit(e);
+							}}
 							className="btn-crud btn-delete"
-							id={"form-" + id}
+							/* id={"form-" + id} */
 							title="eliminar"
 						>
-							<input type="hidden" name="id" value={id} />
-							<input type="hidden" name="nombre" value={nombre} />
-							<input type="hidden" name="color" value={color} />
-							<input type="hidden" name="sexo" value={sexo} />
-							<input type="hidden" name="peso" value={peso} />
-							<input type="hidden" name="fechaNacimiento" value={fechaNacimiento} />
-							<input type="hidden" name="raza" value={raza} />
-							<input type="hidden" name="tamanio" value={tamanio} />
-							<input type="hidden" name="imagen" value={imagen} />
-							<input type="hidden" name="aptitud" value={actitud} />
-							<input type="hidden" name="estado" value={estado} />
-							<FontAwesomeIcon icon={faTimes} onClick={sendData} />
-							<p className="deleteP">borrar</p>
+							{/* <input type="hidden" name="id" value={id} /> */}
+							<button type="submit">
+								<FontAwesomeIcon icon={faTimes} />
+							</button>
 						</form>
 						<Link
-							to={`animales/nuevo-animal/?id:${id}?nombre:${nombre}?color:${color}?sexo:${sexo}?peso:${peso}?fechaNacimiento:${fechaNacimiento}?raza:${raza}?tamanio:${tamanio}?imagen:${imagen}?estado:${estado}?aptitud:${actitud}`}
+							to={`animales/nuevo-animal/?id=${id}?nombre=${nombre}?color=${color}?sexo=${sexo}?peso=${peso}?fechaNacimiento=${fechaNacimiento}?raza=${raza}?tamanio=${tamanio}?imagen=${imagen}?estado=${estado}?actitud=${actitud}`}
 							className="btn-crud btn-modify"
 							title="editar"
 						>
 							<FontAwesomeIcon icon={faDotCircle} />
-							<p className="modifyP">modificar</p>
 						</Link>
 					</div>
 				</div>
