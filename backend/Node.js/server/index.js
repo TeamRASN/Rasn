@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const mongodb = require("mongodb");
 const { MongoClient } = require("mongodb");
-const url = "mongodb+srv://superuser:EklZREvQdzjs0nwG@clusterrasn.qowzy.mongodb.net/myFirstDatabase";
+const url = "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000";
 
 const PORT = process.env.PORT || 3001;
 
@@ -81,6 +81,31 @@ app.route("/Rasn/admin/animales/nuevo-animal").post(async function (req, res) {
 			console.log({ _id: new mongodb.ObjectId(req.body.id)});
 		} else {
 			console.log("No documents matched the query. Deleted 0 documents.");
+		}
+	} catch (error) {
+		console.log(error);
+	} finally {
+		await client.close();
+	}
+});
+
+app.route("/Rasn/admin/animales/actualizar-animal").post(async function (req, res) {
+	try {
+		await client.connect();
+		const db = client.db("proyectoRasn");
+		const collection = db.collection("animales");
+		const data = req.body;
+		const id = data.id;
+		data.fechaNacimiento = new Date(data.fechaNacimiento);
+		console.log(data);
+		const result = await collection.replaceOne({ _id: new mongodb.ObjectId(id)},
+		data);
+		//res.send(result);
+		if (result.updatedCount === 1) {
+			console.dir("Successfully updated one document.");
+			console.log({ _id: new mongodb.ObjectId(data.id)});
+		} else {
+			console.log("No documents matched the query. Updated 0 documents.");
 		}
 	} catch (error) {
 		console.log(error);

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
+import Axios from "axios";
 
 // Componentes
 import { CKEditor } from "@ckeditor/ckeditor5-react";
@@ -56,6 +57,7 @@ function animalesForm() {
 	return (
 		<Formik
 			initialValues={{
+				id: updateObject.id,
 				nombre: updateObject.nombre,
 				color: updateObject.color,
 				sexo: updateObject.sexo,
@@ -82,7 +84,10 @@ function animalesForm() {
 				return errors;
 			}}
 			onSubmit={async (values) => {
-				alert(JSON.stringify(values, null, 2));
+				Axios.post("http://localhost:3001/Rasn/admin/animales/actualizar-animal", values).then((res) => {
+					console.log(res.data);
+				}).then(alert("Todo bien"));
+				
 			}}
 		>
 			<Form className="row" style={{ padding: 0 }} id="mainForm">
