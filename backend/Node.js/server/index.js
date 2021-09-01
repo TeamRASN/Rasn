@@ -141,22 +141,30 @@ app.route("/Rasn/admin/faq").get(function (req, res) {
 	});
 });
 
-app.route("/Rasn/admin/faq/delete").get(function (req, res) {
-	client.connect(function (err, db) {
-		if (err) throw err;
-		var dbo = db.db("proyectoRasn");
-		dbo.collection("faq")
-			.find({})
-			.toArray(function (err, result) {
-				if (err) throw err;
-				console.log(result);
-				res.send(result);
-				db.close();
-			});
-	});
+app.route("/Rasn/admin/faq/delete").post(async function (req, res) {
+	try {
+		await client.connect();
+		const db = client.db("proyectoRasn");
+		const collection = db.collection("faq");
+		const data = req.body;
+		const newData = {
+			...data
+		}
+		console.log(newData);
+		const result = await collection.deleteOne({ _id: new mongodb.ObjectId(req.body.id)});
+		//res.send(result);
+		if (result.deletedCount === 1) {
+			console.dir("Successfully deleted one document.");
+			console.log({ _id: new mongodb.ObjectId(req.body.id)});
+		} else {
+			console.log("No documents matched the query. Deleted 0 documents.");
+		}
+	} catch (error) {
+		console.log(error);
+	} finally {
+		await client.close();
+	}
 });
-
-
 
 app.route("/Rasn/posts").get(function (req, res) {
 	client.connect(function (err, db) {

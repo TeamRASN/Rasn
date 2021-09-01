@@ -54,10 +54,8 @@ export default function CartaAnimal({
 								preventSubmit(e);
 							}}
 							className="btn-crud btn-delete"
-							/* id={"form-" + id} */
 							title="eliminar"
 						>
-							{/* <input type="hidden" name="id" value={id} /> */}
 							<button type="submit">
 								<FontAwesomeIcon icon={faTimes} />
 							</button>
