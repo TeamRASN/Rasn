@@ -73,11 +73,11 @@ app.route("/Rasn/admin/animales/nuevo-animal").post(async function (req, res) {
 		console.log(data);
 		const result = await collection.insertOne(data);
 		//res.send(result);
-		if (result.deletedCount === 1) {
-			console.dir("Successfully deleted one document.");
-			console.log({ _id: new mongodb.ObjectId(req.body.id)});
+		if (result.insertedId !== undefined) {
+			console.dir("Successfully added one document.");
+			console.log(result.insertedId);
 		} else {
-			console.log("No documents matched the query. Deleted 0 documents.");
+			console.log("not inserted");
 		}
 	} catch (error) {
 		console.log(error);
