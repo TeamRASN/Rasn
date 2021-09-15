@@ -194,6 +194,7 @@ app.route("/Rasn/admin/faq/actualizar-pregunta").post(async function (req, res) 
 		const collection = db.collection("faq");
 		const data = req.body;
 		const id = data.id;
+		delete data.id;
 		const result = await collection.replaceOne({ _id: new mongodb.ObjectId(id)},
 		data);
 		//res.send(result);
@@ -225,7 +226,7 @@ app.route("/Rasn/posts").get(function (req, res) {
 	});
 });
 
-app.route("/Rasn/integrantes").get(function (req, res) {
+app.route("/Rasn/admin/equipo").get(function (req, res) {
 	client.connect(function (err, db) {
 		if (err) throw err;
 		var dbo = db.db("proyectoRasn");
@@ -240,7 +241,7 @@ app.route("/Rasn/integrantes").get(function (req, res) {
 	});
 });
 
-app.route("/Rasn/admin/integrantes/eliminar").post(async function (req, res) {
+app.route("/Rasn/admin/equipo/eliminar-miembro").post(async function (req, res) {
 	try {
 		await client.connect();
 		const db = client.db("proyectoRasn");
@@ -265,11 +266,11 @@ app.route("/Rasn/admin/integrantes/eliminar").post(async function (req, res) {
 	}
 });
 
-app.route("/Rasn/admin/integrantes/nuevo-integrante").post(async function (req, res) {
+app.route("/Rasn/admin/equipo/nuevo-miembro").post(async function (req, res) {
 	try {
 		await client.connect();
 		const db = client.db("proyectoRasn");
-		const collection = db.collection("inter");
+		const collection = db.collection("integrantes");
 		const data = req.body;
 		const result = await collection.insertOne(data);
 		//res.send(result);
@@ -286,13 +287,14 @@ app.route("/Rasn/admin/integrantes/nuevo-integrante").post(async function (req, 
 	}
 });
 
-app.route("/Rasn/admin/integrantes/actualizar-integrante").post(async function (req, res) {
+app.route("/Rasn/admin/equipo/actualizar-miembro").post(async function (req, res) {
 	try {
 		await client.connect();
 		const db = client.db("proyectoRasn");
-		const collection = db.collection("faq");
+		const collection = db.collection("integrantes");
 		const data = req.body;
 		const id = data.id;
+		console.log(data.apellido)
 		const result = await collection.replaceOne({ _id: new mongodb.ObjectId(id)},
 		data);
 		//res.send(result);

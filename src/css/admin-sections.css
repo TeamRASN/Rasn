@@ -364,6 +364,7 @@
   overflow: auto;
 }
 .general .general-sections .row {
+  overflow: hidden;
   margin: 0;
 }
 
@@ -436,6 +437,7 @@
   align-items: center;
   width: 100% !important;
   height: 100%;
+  text-decoration: none;
   border-radius: 5px;
   box-shadow: 0px 0px 10px 0px #ccd9e279;
 }
@@ -477,24 +479,34 @@
   width: 100%;
   height: 10%;
 }
-.new-card-container .new-member .new-content .integrante-delete-btn i,
-.new-card-container .new-register .new-content .integrante-delete-btn i,
-.add-new-register .new-member .new-content .integrante-delete-btn i,
-.add-new-register .new-register .new-content .integrante-delete-btn i {
+.new-card-container .new-member .new-content .integrante-delete-btn button,
+.new-card-container .new-register .new-content .integrante-delete-btn button,
+.add-new-register .new-member .new-content .integrante-delete-btn button,
+.add-new-register .new-register .new-content .integrante-delete-btn button {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 13px;
-  margin-right: 7.5px;
-  transition: all 0.2s ease;
-  height: 100%;
-  width: 30px;
-  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+  width: 25px;
+  height: 27px;
+  margin-top: 15px;
+  margin-right: 9.5px;
+  border-radius: 50px;
 }
-.new-card-container .new-member .new-content .integrante-delete-btn i:hover,
-.new-card-container .new-register .new-content .integrante-delete-btn i:hover,
-.add-new-register .new-member .new-content .integrante-delete-btn i:hover,
-.add-new-register .new-register .new-content .integrante-delete-btn i:hover {
+.new-card-container .new-member .new-content .integrante-delete-btn button svg,
+.new-card-container .new-register .new-content .integrante-delete-btn button svg,
+.add-new-register .new-member .new-content .integrante-delete-btn button svg,
+.add-new-register .new-register .new-content .integrante-delete-btn button svg {
+  transition: all 0.2s ease;
+  height: auto;
+  width: 10px;
+  margin: 0px;
+}
+.new-card-container .new-member .new-content .integrante-delete-btn button:hover,
+.new-card-container .new-register .new-content .integrante-delete-btn button:hover,
+.add-new-register .new-member .new-content .integrante-delete-btn button:hover,
+.add-new-register .new-register .new-content .integrante-delete-btn button:hover {
   color: #3d4348;
   background-color: #3f474d2a;
 }

@@ -98,7 +98,7 @@ function animalesForm() {
 				if (insertData) {
 					Axios.post("http://localhost:3001/Rasn/admin/animales/nuevo-animal", values).then((res) => {
 						console.log(res.data);
-					}).then(alert("Registrado ingresado"));	
+					}).then(alert("Registro ingresado"));	
 				} else {
 					Axios.post("http://localhost:3001/Rasn/admin/animales/actualizar-animal", values).then((res) => {
 						console.log(res.data);
@@ -216,106 +216,61 @@ function animalesForm() {
 
 function equipoForm() {
 	let updateObject;
-	const pathname = window.location.pathname;
+	let insertData = true;
+	const pathname = window.location.search;
 	if (containsQuestionMark(pathname)) {
-		const idObject = getId(pathname, "/");
-
-		//Objetos
-		const memberCards = [
-			{
-				id: 1,
-				nombre: "Micaela",
-				apellido: "Darrel",
-				image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80",
-				rol: "Voluntaria",
-			},
-			{
-				id: 2,
-				nombre: "Hernan",
-				apellido: "Vargas",
-				image: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
-				rol: "Voluntario",
-			},
-			{
-				id: 3,
-				nombre: "Paola",
-				apellido: "Thomson",
-				image: "https://images.unsplash.com/photo-1491349174775-aaafddd81942?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80",
-				rol: "Organizadora",
-			},
-			{
-				id: 4,
-				nombre: "Miguel",
-				apellido: "Fernandez",
-				image: "https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80",
-				rol: "Voluntario",
-			},
-			{
-				id: 5,
-				nombre: "Carolina",
-				apellido: "Gomez",
-				image: "https://images.unsplash.com/photo-1554384645-13eab165c24b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80",
-				rol: "Organizadora",
-			},
-			{
-				id: 6,
-				nombre: "Lucas",
-				apellido: "Essandy",
-				image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80",
-				rol: "Voluntario",
-			},
-			{
-				id: 7,
-				nombre: "Uriel",
-				apellido: "Franco",
-				image: "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=335&q=80",
-				rol: "Voluntario",
-			},
-			{
-				id: 8,
-				nombre: "Tomas",
-				apellido: "Birgo",
-				image: "https://images.unsplash.com/photo-1541647376583-8934aaf3448a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80",
-				rol: "Voluntario",
-			},
-		];
-
-		//search the object who has the same id as the parameter
-		updateObject = memberCards.find((element) => {
-			// eslint-disable-next-line eqeqeq
-			return element.id == idObject;
+		insertData = false;	
+		const memberCards = getData(pathname, "?");
+		
+		let str = "{";
+		let tempStr;
+		memberCards.forEach((e) => {
+			if (!e.includes("https")) {
+				str += `"${e.split("=")[0]}":"${e.split("=")[1]}",`;
+			} else {
+				let first = e.indexOf("=");
+				tempStr = `"${e.slice(0, first)}":"${e.slice(first + 1)}",`;
+				str += tempStr;
+			}
 		});
+		str = str.substring(0, str.length - 1);
+		str += "}";
+		
+		updateObject = JSON.parse(decodeURIComponent(str));
+		updateObject.peso = parseInt(updateObject.peso);
 	} else {
 		updateObject = {
-			image: "",
+			id: "",
+			imagen: "",
 			nombre: "",
 			apellido: "",
 			rol: "",
 		};
 	}
-
-	function changePreviewImage(image) {
+		
+	function changePreviewImage(imagen) {
 		const previewImage = document.getElementById("preview-image");
-		previewImage.style.backgroundImage = `url(${image})`;
+		previewImage.style.backgroundImage = `url(${imagen})`;
 		previewImage.style.display = "block";
 	}
 
 	return (
 		<Formik
 			initialValues={{
-				image: updateObject.image,
+				id: updateObject.id,
+				imagen: updateObject.imagen,
 				nombre: updateObject.nombre,
 				apellido: updateObject.apellido,
 				rol: updateObject.rol,
 			}}
 			validate={(values) => {
 				const errors = {};
-				if (values.image.length > 0) {
-					changePreviewImage(values.image);
+				if (values.imagen.length > 0) {
+					changePreviewImage(values.imagen);
 				} else {
 					const previewImage = document.getElementById("preview-image");
 					previewImage.style.display = "none";
-					errors.image = "Ingrese una dirección URL válida";
+					errors.imagen = "Ingrese una dirección URL válida";
 				}
 				if (values.nombre !== undefined) {
 					if (values.nombre.length > 20 || values.nombre.length < 3) {
@@ -332,7 +287,16 @@ function equipoForm() {
 				return errors;
 			}}
 			onSubmit={async (values) => {
-				alert(JSON.stringify(values, null, 2));
+				console.log(insertData)
+				if (insertData) {
+					Axios.post("http://localhost:3001/Rasn/admin/equipo/nuevo-miembro", values).then((res) => {
+						console.log(res.data);
+					}).then(alert("Registro ingresado"));	
+				} else {
+					Axios.post("http://localhost:3001/Rasn/admin/equipo/actualizar-miembro", values).then((res) => {
+						console.log(res.data);
+					}).then(alert("Registro actualizado"));
+				}
 			}}
 		>
 			<Form className="row" style={{ padding: 0 }} id="mainForm">
@@ -340,12 +304,12 @@ function equipoForm() {
 					<Field
 						className="input col-12 col-sm-6"
 						type="url"
-						name="image"
+						name="imagen"
 						placeholder="Ingresar URL de la foto"
-						id="image"
+						id="imagen"
 						required
 					/>
-					<ErrorMessage className="input-error" name="image" component="div" />
+					<ErrorMessage className="input-error" name="imagen" component="div" />
 					<div className="preview-image" id="preview-image"></div>
 				</div>
 				<div className="register-input-field col-12 col-sm-6">
@@ -377,47 +341,40 @@ function equipoForm() {
 
 function faqForm() {
 	let updateObject;
-	const pathname = window.location.pathname;
+	let insertData = true;
+	const pathname = window.location.search;
 	if (containsQuestionMark(pathname)) {
-		const idObject = getId(pathname, "/");
-
-		//Objetos
-		const faqCards = [
-			{
-				id: 1,
-				pregunta: "¿Dónde mantenemos a las mascotas?",
-				respuesta:
-					"Las mascotas se encuentran resguardadas en un refugio alquilado. Nuestro equipo de voluntarios se encarga de darles todos los cuidados necesarios, dando de su tiempo para visitar el refugio y asegurarse de que todo esté bien.",
-			},
-			{
-				id: 2,
-				pregunta: "Quiero adoptar a una de las mascotas. ¿Qué debo hacer?",
-				respuesta:
-					'Si quieres adoptar a una de las mascotas, puedes contactarte con nosotros usando la opción "Contacto Directo" de este sitio web o enviándonos un mensaje a nuestras redes sociales, que también encontrarás en este sitio. Te responderemos a la brevedad para que tengas toda la información sobre la mascota.',
-			},
-			{
-				id: 3,
-				pregunta: "Quiero ayudar como voluntario. ¿Qué debo hacer?",
-				respuesta:
-					'Si quieres formar parte de nuestro equipo, contáctate con nosotros usando la opción "Contacto Directo" de este sitio web o enviándonos un mensaje a nuestras redes sociales. Por favor infórmanos tu nombre y edad. Uno de los miembros de nuestro equipo se contactará con vos para acordar un horario en que puedas colaborar.',
-			},
-		];
-
-		//search the object who has the same id as the parameter
-		updateObject = faqCards.find((element) => {
-			// eslint-disable-next-line eqeqeq
-			return element.id == idObject;
+		insertData = false;	
+		const faqCards = getData(pathname, "?");
+		
+		let str = "{";
+		let tempStr;
+		faqCards.forEach((e) => {
+			if (!e.includes("https")) {
+				str += `"${e.split("=")[0]}":"${e.split("=")[1]}",`;
+			} else {
+				let first = e.indexOf("=");
+				tempStr = `"${e.slice(0, first)}":"${e.slice(first + 1)}",`;
+				str += tempStr;
+			}
 		});
+		str = str.substring(0, str.length - 1);
+		str += "}";
+		
+		updateObject = JSON.parse(decodeURIComponent(str));
+		updateObject.peso = parseInt(updateObject.peso);
 	} else {
 		updateObject = {
+			id: "",
 			pregunta: "",
 			respuesta: "",
 		};
 	}
-
+	
 	return (
 		<Formik
 			initialValues={{
+				id: updateObject.id,
 				pregunta: updateObject.pregunta,
 				respuesta: updateObject.respuesta,
 			}}
@@ -431,8 +388,23 @@ function faqForm() {
 				}
 				return errors;
 			}}
-			onSubmit={async (values) => {
-				alert(JSON.stringify(values, null, 2));
+			onSubmit={async (values, updateObject) => {
+				console.log(insertData)
+				if (insertData) {
+					Axios.post("http://localhost:3001/Rasn/admin/faq/nueva-pregunta", values).then((res) => {
+						console.log(res.data);
+					}).then(alert("Registro ingresado"));	
+				} else {
+					console.log(updateObject)
+					console.log(values.id)
+					if (updateObject.pregunta !== values.pregunta && updateObject.pregunta !== values.pregunta) {
+						Axios.post("http://localhost:3001/Rasn/admin/faq/actualizar-pregunta", values).then((res) => {
+							console.log(res.data);
+						}).then(alert("Registro actualizado"));
+					} else {
+						alert("No hay cambios en los registros")
+					}
+				}
 			}}
 		>
 			<Form className="row" style={{ padding: 0 }} id="mainForm">
@@ -475,9 +447,9 @@ function blogsForm() {
 		formatedDate = `${year}-${month}-${day}`;
 	}
 
-	function changePreviewImage(image) {
+	function changePreviewImage(imagen) {
 		const previewImage = document.getElementById("preview-image");
-		previewImage.style.backgroundImage = `url(${image})`;
+		previewImage.style.backgroundImage = `url(${imagen})`;
 		previewImage.style.display = "block";
 	}
 
@@ -563,7 +535,7 @@ function blogsForm() {
 			validate={(values) => {
 				const errors = {};
 				if (values.imagen.length > 0) {
-					changePreviewImage(values.image);
+					changePreviewImage(values.imagen);
 				} else {
 					errors.imagen = "Ingrese una dirección URL válida";
 				}
