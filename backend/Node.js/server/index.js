@@ -166,6 +166,50 @@ app.route("/Rasn/admin/faq/delete").post(async function (req, res) {
 	}
 });
 
+app.route("/Rasn/admin/faq/nueva-pregunta").post(async function (req, res) {
+	try {
+		await client.connect();
+		const db = client.db("proyectoRasn");
+		const collection = db.collection("faq");
+		const data = req.body;
+		const result = await collection.insertOne(data);
+		//res.send(result);
+		if (result.insertedId !== undefined) {
+			console.dir("Successfully added one document.");
+			console.log(result.insertedId);
+		} else {
+			console.log("not inserted");
+		}
+	} catch (error) {
+		console.log(error);
+	} finally {
+		await client.close();
+	}
+});
+
+app.route("/Rasn/admin/faq/actualizar-pregunta").post(async function (req, res) {
+	try {
+		await client.connect();
+		const db = client.db("proyectoRasn");
+		const collection = db.collection("faq");
+		const data = req.body;
+		const id = data.id;
+		const result = await collection.replaceOne({ _id: new mongodb.ObjectId(id)},
+		data);
+		//res.send(result);
+		if (result.updatedCount === 1) {
+			console.dir("Successfully updated one document.");
+			console.log({ _id: new mongodb.ObjectId(data.id)});
+		} else {
+			console.log("No documents matched the query. Updated 0 documents.");
+		}
+	} catch (error) {
+		console.log(error);
+	} finally {
+		await client.close();
+	}
+});
+
 app.route("/Rasn/posts").get(function (req, res) {
 	client.connect(function (err, db) {
 		if (err) throw err;
