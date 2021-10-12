@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState} from "react";
+import { Link, useHistory } from "react-router-dom";
+import Axios from 'axios';
 
 // Componentes
+import { Formik, Field, Form, ErrorMessage } from 'formik';
 import Arrow from "../assets/iconos/login-arrow.svg";
 import DogIcon from "../assets/iconos/dog.svg";
 import ManteinmentIcon from "../assets/iconos/manteinment.svg";
@@ -10,9 +12,9 @@ import WritingIcon from "../assets/iconos/writing.svg";
 
 // Estilos
 import "../css/login.css";
-import { useState } from "react";
-
 export default function Login() {
+	const history = useHistory();
+	const sendLogin = (e) =>{ e.preventDefault(); };
 	//* Estado correspondiente al tamaño de la lista de la animación
 	const [iconListWidth, setIconListWidth] = useState(0);
 
@@ -21,7 +23,7 @@ export default function Login() {
 		const listIcons = document.getElementById("icon-list");
 		setIconListWidth(listIcons.clientWidth);
 	};
-
+	
 	useEffect(() => {
 		//* changeIconListWidth() Se encarga de aplicar la animacióon slideshow a la lista de iconos
 		changeIconListWidth();
@@ -36,6 +38,7 @@ export default function Login() {
 		iconos.forEach((e) => {
 			e.style.margin = `0px ${realWidth}px`;
 		});
+
 
 		//? Aplica al contenedor una animación con keyframes para que se mueva de izquierda a derecha alternando entre cada extremo
 		const listIcons = document.getElementById("icon-list");
@@ -81,7 +84,6 @@ export default function Login() {
 			window.removeEventListener("resize", changeIconListWidth);
 		};
 	}, [iconListWidth]);
-
 	return (
 		<div className="login-page">
 			<div className="login-content">
@@ -102,6 +104,92 @@ export default function Login() {
 							</div>
 							<img className="arrow-separator" src={Arrow} alt="" />
 						</div>
+						<Formik
+				initialValues={{ email: '', password: '' }}
+				validate={(values) => {
+					const errors = {};
+					//? Validación de correo electrónico.
+					if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
+						errors.email = 'Correo electrónico inválido';
+					}
+					return errors;
+				}}
+				onSubmit={(values, { setSubmitting }) => {
+					setSubmitting(false);
+					alert("A");
+					/* Axios.post('http://localhost:3001/Frontend_Comunicados_ET32/login', values).then((res) => {
+						console.log();
+						if (res.data.status === 'success') {
+							res.data.email = values.email;
+							localStorage.setItem('user-token', JSON.stringify(res.data.sessionID, res.data.email));
+							localStorage.setItem('user-email', JSON.stringify(res.data.email));
+							history.push('/home');
+						} else {
+							const messageContainer = document.getElementById('message-container');
+							messageContainer.innerText = res.data;
+							setTimeout(() => {
+								messageContainer.innerText = '';
+							}, 2500);
+						}
+					}); */
+				}}
+			>
+				<Form className="login-form">
+					<div>
+						<div className="form-input-container">
+							<Field
+								className="login-form-input"
+								style={{ marginTop: '0px' }}
+								type="email"
+								name="email"
+								placeholder="Correo Electronico"
+								required
+							/>
+							<ErrorMessage className="input-error" name="email" component="div" />
+						</div>
+						<div className="form-input-container">
+							<div className="form-password-container login-form-input">
+								<Field
+									className="form-password-input"
+									/* type={seePassword ? 'text' : 'password'} */
+									name="password"
+									placeholder="Contraseña"
+									required
+								/>
+								{/* <Icon
+									className="form-eye-icon"
+									icon={seePassword ? 'eye-slash' : 'eye'}
+									onClick={showPassword}
+								/> */}
+							</div>
+							<ErrorMessage className="input-error" name="password" component="div" />
+						</div>
+						<div className="session-validate-message" id="message-container"></div>
+						<button type="submit" className="enter-btn">
+							Ingresar
+						</button>
+						<div className="form-forgot-keep-container">
+							<div className="form-keep-login">
+								<input type="checkbox" name="keep-login"></input>
+								<label className="form-keep-login-label" htmlFor="keep-login">
+									Mantener sesión iniciada
+								</label>
+							</div>
+							<span className="form-forgot-password" /* onClick={() => changeForm('RecoverPassword')} */>
+								¿Olvidaste tu contraseña?
+							</span>
+						</div>
+						<div className="login-form-divisor" style={{ marginBottom: '0px', marginTop: '0px' }}>
+							<div className="divisor-text">
+								<p className="form-register-text">
+									¿Aún no tenés una cuenta?{' '}
+									{/* <span onClick={() => changeForm('Register')}>Registrate</span> */}
+								</p>
+							</div>
+						</div>
+					</div>
+				</Form>
+			</Formik>{/* 
 						<div className="inputs-container">
 							<form method="post" className="row new-register-form login-form">
 								<div className="register-input-field col-12">
@@ -116,7 +204,7 @@ export default function Login() {
 								<div className="register-input-field col-12">
 									<input
 										className="input"
-										type="text"
+										type="password"
 										name="contraseña"
 										placeholder="Contraseña"
 										required
@@ -127,7 +215,11 @@ export default function Login() {
 									Recordarme en este dispositivo
 								</label>
 								<div className="submit-btn">
-									<Link to="/admin/estadisticas">Iniciar Sesión</Link>
+								
+							
+							
+							<Link to="/admin/estadisticas" onClick ={sendLogin} >Iniciar Sesión</Link>
+
 								</div>
 								<div className="cancel-btn">
 									<a href="/Rasn">Volver</a>
@@ -139,9 +231,9 @@ export default function Login() {
 									</span>
 								</p>
 							</form>
-						</div>
+						</div>*/}
 					</div>
-				</div>
+				</div> 
 			</div>
 		</div>
 	);
