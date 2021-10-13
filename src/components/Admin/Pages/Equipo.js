@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 
 // Componentes
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import Integrante from "../CartaIntegrante";
-import LoadingSpinner from "../LoadingSpinner";
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import Integrante from '../CartaIntegrante';
+import LoadingSpinner from '../LoadingSpinner';
 
 const getIntegrantes = (setMemberCards, setLoadedData, firstFetch, setFirstFetch) => {
 	if (firstFetch) {
-		fetch("http://127.0.0.1:3001/Rasn/admin/equipo")
+		fetch('http://127.0.0.1:3001/Rasn/admin/equipo')
 			.then((response) => response.json())
 			.then((memberCards) => {
 				setMemberCards(memberCards);
@@ -31,10 +31,9 @@ export default function Equipo() {
 		const newMemberCards = memberCards.filter((memberCard) => memberCard._id !== id);
 		setMemberCards(newMemberCards);
 	};
-	
+
 	useEffect(() => {
 		getIntegrantes(setMemberCards, setLoadedData, firstFetch, setFirstFetch);
-		console.log(memberCards)
 		return () => {};
 	}, [firstFetch, memberCards]);
 
@@ -50,7 +49,15 @@ export default function Equipo() {
 			</Link>
 			{loadedData ? (
 				memberCards.map(({ _id, nombre, apellido, imagen, rol }) => (
-					<Integrante nombre={nombre} apellido={apellido} imagen={imagen} rol={rol} key={_id} id={_id} deleteMember={(id) => deleteMember(id)}/>
+					<Integrante
+						nombre={nombre}
+						apellido={apellido}
+						imagen={imagen}
+						rol={rol}
+						key={_id}
+						id={_id}
+						deleteMember={(id) => deleteMember(id)}
+					/>
 				))
 			) : (
 				<LoadingSpinner />

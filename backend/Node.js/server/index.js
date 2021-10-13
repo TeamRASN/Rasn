@@ -1,14 +1,14 @@
 /* eslint-disable no-unused-vars */
-const express = require("express");
-const bodyParser = require("body-parser");
-const cors = require("cors");
-const mongodb = require("mongodb");
-const { MongoClient } = require("mongodb");
-const url = "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000";
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const mongodb = require('mongodb');
+const { MongoClient } = require('mongodb');
+const url = 'mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000';
 
 const PORT = process.env.PORT || 3001;
 
-let str = "";
+let str = '';
 let client = new MongoClient(url);
 
 const app = express();
@@ -19,15 +19,15 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-app.get("/api", (req, res) => {
-	res.json({ message: "Hello from server!" });
+app.get('/api', (req, res) => {
+	res.json({ message: 'Hello from server!' });
 });
 
-app.route("/Rasn/admin/animales").get(function (req, res) {
+app.route('/Rasn/admin/animales').get(function (req, res) {
 	client.connect(function (err, db) {
 		if (err) throw err;
-		var dbo = db.db("proyectoRasn");
-		dbo.collection("animales")
+		var dbo = db.db('proyectoRasn');
+		dbo.collection('animales')
 			.find({})
 			.toArray(function (err, result) {
 				if (err) throw err;
@@ -38,23 +38,23 @@ app.route("/Rasn/admin/animales").get(function (req, res) {
 	});
 });
 
-app.route("/Rasn/admin/animales/delete").post(async function (req, res) {
+app.route('/Rasn/admin/animales/delete').post(async function (req, res) {
 	try {
 		await client.connect();
-		const db = client.db("proyectoRasn");
-		const collection = db.collection("animales");
+		const db = client.db('proyectoRasn');
+		const collection = db.collection('animales');
 		const data = req.body;
 		const newData = {
-			...data
-		}
+			...data,
+		};
 		console.log(newData);
-		const result = await collection.deleteOne({ _id: new mongodb.ObjectId(req.body.id)});
+		const result = await collection.deleteOne({ _id: new mongodb.ObjectId(req.body.id) });
 		//res.send(result);
 		if (result.deletedCount === 1) {
-			console.dir("Successfully deleted one document.");
-			console.log({ _id: new mongodb.ObjectId(req.body.id)});
+			console.dir('Successfully deleted one document.');
+			console.log({ _id: new mongodb.ObjectId(req.body.id) });
 		} else {
-			console.log("No documents matched the query. Deleted 0 documents.");
+			console.log('No documents matched the query. Deleted 0 documents.');
 		}
 	} catch (error) {
 		console.log(error);
@@ -63,21 +63,21 @@ app.route("/Rasn/admin/animales/delete").post(async function (req, res) {
 	}
 });
 
-app.route("/Rasn/admin/animales/nuevo-animal").post(async function (req, res) {
+app.route('/Rasn/admin/animales/nuevo-animal').post(async function (req, res) {
 	try {
 		await client.connect();
-		const db = client.db("proyectoRasn");
-		const collection = db.collection("animales");
+		const db = client.db('proyectoRasn');
+		const collection = db.collection('animales');
 		const data = req.body;
 		data.fechaNacimiento = new Date(data.fechaNacimiento);
 		console.log(data);
 		const result = await collection.insertOne(data);
 		//res.send(result);
 		if (result.insertedId !== undefined) {
-			console.dir("Successfully added one document.");
+			console.dir('Successfully added one document.');
 			console.log(result.insertedId);
 		} else {
-			console.log("not inserted");
+			console.log('not inserted');
 		}
 	} catch (error) {
 		console.log(error);
@@ -86,23 +86,22 @@ app.route("/Rasn/admin/animales/nuevo-animal").post(async function (req, res) {
 	}
 });
 
-app.route("/Rasn/admin/animales/actualizar-animal").post(async function (req, res) {
+app.route('/Rasn/admin/animales/actualizar-animal').post(async function (req, res) {
 	try {
 		await client.connect();
-		const db = client.db("proyectoRasn");
-		const collection = db.collection("animales");
+		const db = client.db('proyectoRasn');
+		const collection = db.collection('animales');
 		const data = req.body;
 		const id = data.id;
 		data.fechaNacimiento = new Date(data.fechaNacimiento);
 		console.log(data);
-		const result = await collection.replaceOne({ _id: new mongodb.ObjectId(id)},
-		data);
+		const result = await collection.replaceOne({ _id: new mongodb.ObjectId(id) }, data);
 		//res.send(result);
 		if (result.updatedCount === 1) {
-			console.dir("Successfully updated one document.");
-			console.log({ _id: new mongodb.ObjectId(data.id)});
+			console.dir('Successfully updated one document.');
+			console.log({ _id: new mongodb.ObjectId(data.id) });
 		} else {
-			console.log("No documents matched the query. Updated 0 documents.");
+			console.log('No documents matched the query. Updated 0 documents.');
 		}
 	} catch (error) {
 		console.log(error);
@@ -126,11 +125,11 @@ app.route("/Rasn/admin/animales/actualizar-animal").post(async function (req, re
 	});
 });*/
 
-app.route("/Rasn/admin/faq").get(function (req, res) {
+app.route('/Rasn/admin/faq').get(function (req, res) {
 	client.connect(function (err, db) {
 		if (err) throw err;
-		var dbo = db.db("proyectoRasn");
-		dbo.collection("faq")
+		var dbo = db.db('proyectoRasn');
+		dbo.collection('faq')
 			.find({})
 			.toArray(function (err, result) {
 				if (err) throw err;
@@ -141,23 +140,23 @@ app.route("/Rasn/admin/faq").get(function (req, res) {
 	});
 });
 
-app.route("/Rasn/admin/faq/delete").post(async function (req, res) {
+app.route('/Rasn/admin/faq/delete').post(async function (req, res) {
 	try {
 		await client.connect();
-		const db = client.db("proyectoRasn");
-		const collection = db.collection("faq");
+		const db = client.db('proyectoRasn');
+		const collection = db.collection('faq');
 		const data = req.body;
 		const newData = {
-			...data
-		}
+			...data,
+		};
 		console.log(newData);
-		const result = await collection.deleteOne({ _id: new mongodb.ObjectId(req.body.id)});
+		const result = await collection.deleteOne({ _id: new mongodb.ObjectId(req.body.id) });
 		//res.send(result);
 		if (result.deletedCount === 1) {
-			console.dir("Successfully deleted one document.");
-			console.log({ _id: new mongodb.ObjectId(req.body.id)});
+			console.dir('Successfully deleted one document.');
+			console.log({ _id: new mongodb.ObjectId(req.body.id) });
 		} else {
-			console.log("No documents matched the query. Deleted 0 documents.");
+			console.log('No documents matched the query. Deleted 0 documents.');
 		}
 	} catch (error) {
 		console.log(error);
@@ -166,19 +165,19 @@ app.route("/Rasn/admin/faq/delete").post(async function (req, res) {
 	}
 });
 
-app.route("/Rasn/admin/faq/nueva-pregunta").post(async function (req, res) {
+app.route('/Rasn/admin/faq/nueva-pregunta').post(async function (req, res) {
 	try {
 		await client.connect();
-		const db = client.db("proyectoRasn");
-		const collection = db.collection("faq");
+		const db = client.db('proyectoRasn');
+		const collection = db.collection('faq');
 		const data = req.body;
 		const result = await collection.insertOne(data);
 		//res.send(result);
 		if (result.insertedId !== undefined) {
-			console.dir("Successfully added one document.");
+			console.dir('Successfully added one document.');
 			console.log(result.insertedId);
 		} else {
-			console.log("not inserted");
+			console.log('not inserted');
 		}
 	} catch (error) {
 		console.log(error);
@@ -187,22 +186,21 @@ app.route("/Rasn/admin/faq/nueva-pregunta").post(async function (req, res) {
 	}
 });
 
-app.route("/Rasn/admin/faq/actualizar-pregunta").post(async function (req, res) {
+app.route('/Rasn/admin/faq/actualizar-pregunta').post(async function (req, res) {
 	try {
 		await client.connect();
-		const db = client.db("proyectoRasn");
-		const collection = db.collection("faq");
+		const db = client.db('proyectoRasn');
+		const collection = db.collection('faq');
 		const data = req.body;
 		const id = data.id;
 		delete data.id;
-		const result = await collection.replaceOne({ _id: new mongodb.ObjectId(id)},
-		data);
+		const result = await collection.replaceOne({ _id: new mongodb.ObjectId(id) }, data);
 		//res.send(result);
 		if (result.updatedCount === 1) {
-			console.dir("Successfully updated one document.");
-			console.log({ _id: new mongodb.ObjectId(data.id)});
+			console.dir('Successfully updated one document.');
+			console.log({ _id: new mongodb.ObjectId(data.id) });
 		} else {
-			console.log("No documents matched the query. Updated 0 documents.");
+			console.log('No documents matched the query. Updated 0 documents.');
 		}
 	} catch (error) {
 		console.log(error);
@@ -211,38 +209,37 @@ app.route("/Rasn/admin/faq/actualizar-pregunta").post(async function (req, res) 
 	}
 });
 
-app.route("/Rasn/blogs").get(function (req, res) {
+app.route('/Rasn/blogs').get(function (req, res) {
 	client.connect(function (err, db) {
 		if (err) throw err;
-		var dbo = db.db("proyectoRasn");
-		dbo.collection("posts")
+		var dbo = db.db('proyectoRasn');
+		dbo.collection('posts')
 			.find({})
 			.toArray(function (err, result) {
 				if (err) throw err;
-				console.log(result);
 				res.send(result);
 				db.close();
 			});
 	});
 });
 
-app.route("/Rasn/admin/blogs/delete-blog").post(async function (req, res) {
+app.route('/Rasn/admin/blogs/delete-blog').post(async function (req, res) {
 	try {
 		await client.connect();
-		const db = client.db("proyectoRasn");
-		const collection = db.collection("posts");
+		const db = client.db('proyectoRasn');
+		const collection = db.collection('posts');
 		const data = req.body;
 		const newData = {
-			...data
-		}
+			...data,
+		};
 		console.log(newData);
-		const result = await collection.deleteOne({ _id: new mongodb.ObjectId(req.body.id)});
+		const result = await collection.deleteOne({ _id: new mongodb.ObjectId(req.body.id) });
 		//res.send(result);
 		if (result.deletedCount === 1) {
-			console.dir("Successfully deleted one document.");
-			console.log({ _id: new mongodb.ObjectId(req.body.id)});
+			console.dir('Successfully deleted one document.');
+			console.log({ _id: new mongodb.ObjectId(req.body.id) });
 		} else {
-			console.log("No documents matched the query. Deleted 0 documents.");
+			console.log('No documents matched the query. Deleted 0 documents.');
 		}
 	} catch (error) {
 		console.log(error);
@@ -251,43 +248,21 @@ app.route("/Rasn/admin/blogs/delete-blog").post(async function (req, res) {
 	}
 });
 
-app.route("/Rasn/admin/blogs/nuevo-blog").post(async function (req, res) {
+app.route('/Rasn/admin/blogs/nuevo-blog').post(async function (req, res) {
 	try {
 		await client.connect();
-		const db = client.db("proyectoRasn");
-		const collection = db.collection("posts");
+		const db = client.db('proyectoRasn');
+		const collection = db.collection('posts');
 		const data = req.body;
-		const result = await collection.insertOne(data);
-		//res.send(result);
-		if (result.insertedId !== undefined) {
-			console.dir("Successfully added one document.");
-			console.log(result.insertedId);
-		} else {
-			console.log("not inserted");
-		}
-	} catch (error) {
-		console.log(error);
-	} finally {
-		await client.close();
-	}
-});
-
-app.route("/Rasn/admin/faq/actualizar-blog").post(async function (req, res) {
-	try {
-		await client.connect();
-		const db = client.db("proyectoRasn");
-		const collection = db.collection("posts");
-		const data = req.body;
-		const id = data.id;
 		delete data.id;
-		const result = await collection.replaceOne({ _id: new mongodb.ObjectId(id)},
-		data);
+		data.fecha = new Date(data.fecha);
+		const result = await collection.insertOne(data);
 		//res.send(result);
-		if (result.updatedCount === 1) {
-			console.dir("Successfully updated one document.");
-			console.log({ _id: new mongodb.ObjectId(data.id)});
+		if (result.insertedId !== undefined) {
+			console.dir('Successfully added one document.');
+			console.log(result.insertedId);
 		} else {
-			console.log("No documents matched the query. Updated 0 documents.");
+			console.log('not inserted');
 		}
 	} catch (error) {
 		console.log(error);
@@ -296,12 +271,36 @@ app.route("/Rasn/admin/faq/actualizar-blog").post(async function (req, res) {
 	}
 });
 
+app.route('/Rasn/admin/blogs/actualizar-blog').post(async function (req, res) {
+	try {
+		await client.connect();
+		const db = client.db('proyectoRasn');
+		const collection = db.collection('posts');
+		const data = req.body;
+		const id = data.id;
+		data.fecha = new Date(data.fecha);
+		delete data.id;
+		console.log(data);
+		const result = await collection.replaceOne({ _id: new mongodb.ObjectId(id) }, data);
+		//res.send(result);
+		if (result.updatedCount === 1) {
+			console.dir('Successfully updated one document.');
+			console.log({ _id: new mongodb.ObjectId(data.id) });
+		} else {
+			console.log('No documents matched the query. Updated 0 documents.');
+		}
+	} catch (error) {
+		console.log(error);
+	} finally {
+		await client.close();
+	}
+});
 
-app.route("/Rasn/admin/equipo").get(function (req, res) {
+app.route('/Rasn/admin/equipo').get(function (req, res) {
 	client.connect(function (err, db) {
 		if (err) throw err;
-		var dbo = db.db("proyectoRasn");
-		dbo.collection("integrantes")
+		var dbo = db.db('proyectoRasn');
+		dbo.collection('integrantes')
 			.find({})
 			.toArray(function (err, result) {
 				if (err) throw err;
@@ -312,23 +311,23 @@ app.route("/Rasn/admin/equipo").get(function (req, res) {
 	});
 });
 
-app.route("/Rasn/admin/equipo/eliminar-miembro").post(async function (req, res) {
+app.route('/Rasn/admin/equipo/eliminar-miembro').post(async function (req, res) {
 	try {
 		await client.connect();
-		const db = client.db("proyectoRasn");
-		const collection = db.collection("integrantes");
+		const db = client.db('proyectoRasn');
+		const collection = db.collection('integrantes');
 		const data = req.body;
 		const newData = {
-			...data
-		}
+			...data,
+		};
 		console.log(newData);
-		const result = await collection.deleteOne({ _id: new mongodb.ObjectId(req.body.id)});
+		const result = await collection.deleteOne({ _id: new mongodb.ObjectId(req.body.id) });
 		//res.send(result);
 		if (result.deletedCount === 1) {
-			console.dir("Successfully deleted one document.");
-			console.log({ _id: new mongodb.ObjectId(req.body.id)});
+			console.dir('Successfully deleted one document.');
+			console.log({ _id: new mongodb.ObjectId(req.body.id) });
 		} else {
-			console.log("No documents matched the query. Deleted 0 documents.");
+			console.log('No documents matched the query. Deleted 0 documents.');
 		}
 	} catch (error) {
 		console.log(error);
@@ -337,19 +336,19 @@ app.route("/Rasn/admin/equipo/eliminar-miembro").post(async function (req, res) 
 	}
 });
 
-app.route("/Rasn/admin/equipo/nuevo-miembro").post(async function (req, res) {
+app.route('/Rasn/admin/equipo/nuevo-miembro').post(async function (req, res) {
 	try {
 		await client.connect();
-		const db = client.db("proyectoRasn");
-		const collection = db.collection("integrantes");
+		const db = client.db('proyectoRasn');
+		const collection = db.collection('integrantes');
 		const data = req.body;
 		const result = await collection.insertOne(data);
 		//res.send(result);
 		if (result.insertedId !== undefined) {
-			console.dir("Successfully added one document.");
+			console.dir('Successfully added one document.');
 			console.log(result.insertedId);
 		} else {
-			console.log("not inserted");
+			console.log('not inserted');
 		}
 	} catch (error) {
 		console.log(error);
@@ -358,22 +357,21 @@ app.route("/Rasn/admin/equipo/nuevo-miembro").post(async function (req, res) {
 	}
 });
 
-app.route("/Rasn/admin/equipo/actualizar-miembro").post(async function (req, res) {
+app.route('/Rasn/admin/equipo/actualizar-miembro').post(async function (req, res) {
 	try {
 		await client.connect();
-		const db = client.db("proyectoRasn");
-		const collection = db.collection("integrantes");
+		const db = client.db('proyectoRasn');
+		const collection = db.collection('integrantes');
 		const data = req.body;
 		const id = data.id;
-		console.log(data.apellido)
-		const result = await collection.replaceOne({ _id: new mongodb.ObjectId(id)},
-		data);
+		console.log(data.apellido);
+		const result = await collection.replaceOne({ _id: new mongodb.ObjectId(id) }, data);
 		//res.send(result);
 		if (result.updatedCount === 1) {
-			console.dir("Successfully updated one document.");
-			console.log({ _id: new mongodb.ObjectId(data.id)});
+			console.dir('Successfully updated one document.');
+			console.log({ _id: new mongodb.ObjectId(data.id) });
 		} else {
-			console.log("No documents matched the query. Updated 0 documents.");
+			console.log('No documents matched the query. Updated 0 documents.');
 		}
 	} catch (error) {
 		console.log(error);

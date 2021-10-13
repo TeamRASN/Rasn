@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { useHistory, useLocation } from "react-router-dom";
-import Axios from "axios";
+import React, { useEffect, useState } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
+import Axios from 'axios';
 
 // Componentes
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import { Formik, Field, Form, ErrorMessage } from "formik";
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { Formik, Field, Form, ErrorMessage } from 'formik';
 
 //Estilos
-import "../../../css/nuevo-registro.css";
+import '../../../css/nuevo-registro.css';
 
 //Paquetes
 function animalesForm() {
@@ -16,44 +16,44 @@ function animalesForm() {
 	let insertData = true;
 	const pathname = window.location.search;
 	if (containsQuestionMark(pathname)) {
-		insertData = false;	
-		const animalData = getData(pathname, "?");
-		
-		let str = "{";
+		insertData = false;
+		const animalData = getData(pathname, '?');
+
+		let str = '{';
 		let tempStr;
 		animalData.forEach((e) => {
-			if (!e.includes("https")) {
-				str += `"${e.split("=")[0]}":"${e.split("=")[1]}",`;
+			if (!e.includes('https')) {
+				str += `"${e.split('=')[0]}":"${e.split('=')[1]}",`;
 			} else {
-				let first = e.indexOf("=");
+				let first = e.indexOf('=');
 				tempStr = `"${e.slice(0, first)}":"${e.slice(first + 1)}",`;
 				str += tempStr;
 			}
 		});
 		str = str.substring(0, str.length - 1);
-		str += "}";
-		
+		str += '}';
+
 		updateObject = JSON.parse(decodeURIComponent(str));
 		updateObject.peso = parseInt(updateObject.peso);
 	} else {
 		updateObject = {
-			nombre: "",
-			color: "",
-			sexo: "",
-			peso: "",
-			fechaNacimiento: "",
-			raza: "",
-			tamanio: "",
-			estado: "",
-			actitud: "",
-			imagen: "",
+			nombre: '',
+			color: '',
+			sexo: '',
+			peso: '',
+			fechaNacimiento: '',
+			raza: '',
+			tamanio: '',
+			estado: '',
+			actitud: '',
+			imagen: '',
 		};
 	}
 
 	function changePreviewImage(imagen) {
-		const previewImage = document.getElementById("preview-image");
+		const previewImage = document.getElementById('preview-image');
 		previewImage.style.backgroundImage = `url(${imagen})`;
-		previewImage.style.display = "block";
+		previewImage.style.display = 'block';
 	}
 
 	return (
@@ -73,36 +73,40 @@ function animalesForm() {
 			}}
 			validate={(values) => {
 				const errors = {};
-				
-				if (values.sexo === "Macho"){
-					values.sexo = "M";
-				} else if (values.sexo === "Hembra"){
-					values.sexo = "F";
-				} else if(values.sexo !== "M" && values.sexo !== "F") {
-					errors.sexo = "Ingrese un caracter M o F"
-				};
+
+				if (values.sexo === 'Macho') {
+					values.sexo = 'M';
+				} else if (values.sexo === 'Hembra') {
+					values.sexo = 'F';
+				} else if (values.sexo !== 'M' && values.sexo !== 'F') {
+					errors.sexo = 'Ingrese un caracter M o F';
+				}
 				if (values.imagen !== undefined) {
 					if (values.imagen.length > 0) {
 						changePreviewImage(values.imagen);
 					} else {
-						const previewImage = document.getElementById("preview-image");
-						previewImage.style.display = "none";
-						errors.image = "Ingrese una dirección URL válida";
+						const previewImage = document.getElementById('preview-image');
+						previewImage.style.display = 'none';
+						errors.image = 'Ingrese una dirección URL válida';
 					}
 				}
 
 				return errors;
 			}}
 			onSubmit={async (values) => {
-				console.log(insertData)
+				console.log(insertData);
 				if (insertData) {
-					Axios.post("http://localhost:3001/Rasn/admin/animales/nuevo-animal", values).then((res) => {
-						console.log(res.data);
-					}).then(alert("Registro ingresado"));	
+					Axios.post('http://localhost:3001/Rasn/admin/animales/nuevo-animal', values)
+						.then((res) => {
+							console.log(res.data);
+						})
+						.then(alert('Registro ingresado'));
 				} else {
-					Axios.post("http://localhost:3001/Rasn/admin/animales/actualizar-animal", values).then((res) => {
-						console.log(res.data);
-					}).then(alert("Registro actualizado"));
+					Axios.post('http://localhost:3001/Rasn/admin/animales/actualizar-animal', values)
+						.then((res) => {
+							console.log(res.data);
+						})
+						.then(alert('Registro actualizado'));
 				}
 			}}
 		>
@@ -127,7 +131,7 @@ function animalesForm() {
 						className="input col-12 col-sm-6"
 						type="text"
 						onFocus={(e) => {
-							e.currentTarget.type = "date";
+							e.currentTarget.type = 'date';
 							e.currentTarget.focus();
 						}}
 						name="fechaNacimiento"
@@ -219,39 +223,39 @@ function equipoForm() {
 	let insertData = true;
 	const pathname = window.location.search;
 	if (containsQuestionMark(pathname)) {
-		insertData = false;	
-		const memberCards = getData(pathname, "?");
-		
-		let str = "{";
+		insertData = false;
+		const memberCards = getData(pathname, '?');
+
+		let str = '{';
 		let tempStr;
 		memberCards.forEach((e) => {
-			if (!e.includes("https")) {
-				str += `"${e.split("=")[0]}":"${e.split("=")[1]}",`;
+			if (!e.includes('https')) {
+				str += `"${e.split('=')[0]}":"${e.split('=')[1]}",`;
 			} else {
-				let first = e.indexOf("=");
+				let first = e.indexOf('=');
 				tempStr = `"${e.slice(0, first)}":"${e.slice(first + 1)}",`;
 				str += tempStr;
 			}
 		});
 		str = str.substring(0, str.length - 1);
-		str += "}";
-		
+		str += '}';
+
 		updateObject = JSON.parse(decodeURIComponent(str));
 		updateObject.peso = parseInt(updateObject.peso);
 	} else {
 		updateObject = {
-			id: "",
-			imagen: "",
-			nombre: "",
-			apellido: "",
-			rol: "",
+			id: '',
+			imagen: '',
+			nombre: '',
+			apellido: '',
+			rol: '',
 		};
 	}
-		
+
 	function changePreviewImage(imagen) {
-		const previewImage = document.getElementById("preview-image");
+		const previewImage = document.getElementById('preview-image');
 		previewImage.style.backgroundImage = `url(${imagen})`;
-		previewImage.style.display = "block";
+		previewImage.style.display = 'block';
 	}
 
 	return (
@@ -268,34 +272,38 @@ function equipoForm() {
 				if (values.imagen.length > 0) {
 					changePreviewImage(values.imagen);
 				} else {
-					const previewImage = document.getElementById("preview-image");
-					previewImage.style.display = "none";
-					errors.imagen = "Ingrese una dirección URL válida";
+					const previewImage = document.getElementById('preview-image');
+					previewImage.style.display = 'none';
+					errors.imagen = 'Ingrese una dirección URL válida';
 				}
 				if (values.nombre !== undefined) {
 					if (values.nombre.length > 20 || values.nombre.length < 3) {
-						errors.nombre = "Escriba un nombre entre 3 y 20 caracteres.";
+						errors.nombre = 'Escriba un nombre entre 3 y 20 caracteres.';
 					}
 				}
 
 				if (values.apellido !== undefined) {
 					if (values.apellido.length > 15 || values.apellido.length < 4) {
-						errors.apellido = "Escriba un apellido entre 4 y 15 caracteres.";
+						errors.apellido = 'Escriba un apellido entre 4 y 15 caracteres.';
 					}
 				}
 
 				return errors;
 			}}
 			onSubmit={async (values) => {
-				console.log(insertData)
+				console.log(insertData);
 				if (insertData) {
-					Axios.post("http://localhost:3001/Rasn/admin/equipo/nuevo-miembro", values).then((res) => {
-						console.log(res.data);
-					}).then(alert("Registro ingresado"));	
+					Axios.post('http://localhost:3001/Rasn/admin/equipo/nuevo-miembro', values)
+						.then((res) => {
+							console.log(res.data);
+						})
+						.then(alert('Registro ingresado'));
 				} else {
-					Axios.post("http://localhost:3001/Rasn/admin/equipo/actualizar-miembro", values).then((res) => {
-						console.log(res.data);
-					}).then(alert("Registro actualizado"));
+					Axios.post('http://localhost:3001/Rasn/admin/equipo/actualizar-miembro', values)
+						.then((res) => {
+							console.log(res.data);
+						})
+						.then(alert('Registro actualizado'));
 				}
 			}}
 		>
@@ -344,33 +352,33 @@ function faqForm() {
 	let insertData = true;
 	const pathname = window.location.search;
 	if (containsQuestionMark(pathname)) {
-		insertData = false;	
-		const faqCards = getData(pathname, "?");
-		
-		let str = "{";
+		insertData = false;
+		const faqCards = getData(pathname, '?');
+
+		let str = '{';
 		let tempStr;
 		faqCards.forEach((e) => {
-			if (!e.includes("https")) {
-				str += `"${e.split("=")[0]}":"${e.split("=")[1]}",`;
+			if (!e.includes('https')) {
+				str += `"${e.split('=')[0]}":"${e.split('=')[1]}",`;
 			} else {
-				let first = e.indexOf("=");
+				let first = e.indexOf('=');
 				tempStr = `"${e.slice(0, first)}":"${e.slice(first + 1)}",`;
 				str += tempStr;
 			}
 		});
 		str = str.substring(0, str.length - 1);
-		str += "}";
-		
+		str += '}';
+
 		updateObject = JSON.parse(decodeURIComponent(str));
 		updateObject.peso = parseInt(updateObject.peso);
 	} else {
 		updateObject = {
-			id: "",
-			pregunta: "",
-			respuesta: "",
+			id: '',
+			pregunta: '',
+			respuesta: '',
 		};
 	}
-	
+
 	return (
 		<Formik
 			initialValues={{
@@ -381,28 +389,31 @@ function faqForm() {
 			validate={(values) => {
 				const errors = {};
 				if (values.pregunta.length > 150) {
-					errors.pregunta = "Formule una pregunta con menos de 150 caracteres";
+					errors.pregunta = 'Formule una pregunta con menos de 150 caracteres';
 				}
 				if (values.respuesta.length > 300) {
-					errors.pregunta = "Redacte una respuesta con menos de 300 caracteres";
+					errors.pregunta = 'Redacte una respuesta con menos de 300 caracteres';
 				}
 				return errors;
 			}}
 			onSubmit={async (values, updateObject) => {
-				console.log(insertData)
 				if (insertData) {
-					Axios.post("http://localhost:3001/Rasn/admin/faq/nueva-pregunta", values).then((res) => {
-						console.log(res.data);
-					}).then(alert("Registro ingresado"));	
-				} else {
-					console.log(updateObject)
-					console.log(values.id)
-					if (updateObject.pregunta !== values.pregunta && updateObject.pregunta !== values.pregunta) {
-						Axios.post("http://localhost:3001/Rasn/admin/faq/actualizar-pregunta", values).then((res) => {
+					Axios.post('http://localhost:3001/Rasn/admin/faq/nueva-pregunta', values)
+						.then((res) => {
 							console.log(res.data);
-						}).then(alert("Registro actualizado"));
+						})
+						.then(alert('Registro ingresado'));
+				} else {
+					console.log(updateObject);
+					console.log(values.id);
+					if (updateObject.pregunta !== values.pregunta && updateObject.pregunta !== values.pregunta) {
+						Axios.post('http://localhost:3001/Rasn/admin/faq/actualizar-pregunta', values)
+							.then((res) => {
+								console.log(res.data);
+							})
+							.then(alert('Registro actualizado'));
 					} else {
-						alert("No hay cambios en los registros")
+						alert('No hay cambios en los registros');
 					}
 				}
 			}}
@@ -448,108 +459,88 @@ function blogsForm() {
 	}
 
 	function changePreviewImage(imagen) {
-		const previewImage = document.getElementById("preview-image");
+		const previewImage = document.getElementById('preview-image');
 		previewImage.style.backgroundImage = `url(${imagen})`;
-		previewImage.style.display = "block";
+		previewImage.style.display = 'block';
 	}
 
 	let noticeContent;
-
 	let updateObject;
-	const pathname = window.location.pathname;
+	let insertData = true;
+	const pathname = window.location.search;
 	if (containsQuestionMark(pathname)) {
-		const idObject = getId(pathname, "/");
+		insertData = false;
+		const faqCards = getData(pathname, '?');
 
-		//Objetos
-		const blogCards = [
-			{
-				id: 1,
-				titulo: "Insectpark, el museo donde “entras pensando que los bichos son pequeños y negros y sales fascinado”",
-				imagen: "https://imagenes.elpais.com/resizer/Bm-oXzBuQJPxtzqOAMNuW24XnKk=/1960x0/cloudfront-eu-central-1.images.arcpublishing.com/prisa/NILZMYSRSBEMFCPFTC6JRG6ZYU.jpg",
-				descripcion:
-					"A las puertas del Parque Nacional de Guadarrama se alza un curioso y didáctico museo dedicado a los insectos, con ejemplares vivos que se pueden tocar y otros naturalizados",
-			},
-			{
-				id: 2,
-				titulo: "Los pangolines son «el mamífero más traficado del mundo». Este hombre quiere salvarlos",
-				imagen: "https://cnnespanol.cnn.com/wp-content/uploads/2021/06/pangolin-2.jpg",
-				descripcion:
-					"(CNN) — Los pangolines —mamíferos cuadrúpedos con garras parecidas a las de los perezosos, hocico de oso hormiguero y una armadura de escamas en forma de diamante— se consideran el mamífero más traficado del mundo. Algunas especies están al borde de la extinción.",
-			},
-			{
-				id: 3,
-				titulo: "Cientos de ganaderos claman contra el lobo en Madrid",
-				imagen: "https://imagenes.elpais.com/resizer/vOclpwIkLajB1m6O9kOnV7sNddE=/1960x0/cloudfront-eu-central-1.images.arcpublishing.com/prisa/YJVJGULKTZFCFGWP5BQ3VQ24CI.JPG",
-				descripcion:
-					"La manifestación ha reunido a unas 400 personas ante el Ministerio para la Transición Ecológica para pedir a Teresa Ribera que pare la orden ministerial que impedirá cazar al cánido",
-			},
-			{
-				id: 4,
-				titulo: "'Gunda', un evangelio vegano",
-				imagen: "https://estaticos-cdn.elperiodico.com/clip/f1eb3fe5-776c-4581-92d6-4edbccf3b907_alta-libre-aspect-ratio_default_0.jpg",
-				descripcion:
-					"Un documental de Victor Kossakovsky se acerca con una mirada inédita y muchos gruñidos a la aciaga vida de los animales de granja",
-			},
-			{
-				id: 5,
-				titulo: "Decenas de personas exigen en Barcelona la liberación de animales de Vivotecnia",
-				imagen: "https://estaticos-cdn.elperiodico.com/clip/9c5217ce-3532-4185-85d9-75c9923ed6bf_alta-libre-aspect-ratio_default_0.jpg",
-				descripcion:
-					"Gobierno, fiscalía y policía han abierto una investigación contra este laboratorio de experimentación con animales en Madrid",
-			},
-			{
-				id: 6,
-				titulo: "La Fiscalía abre diligencias por el presunto maltrato animal en el laboratorio Vivotecnia",
-				imagen: "https://estaticos-cdn.elperiodico.com/clip/979c971d-13d5-4f91-9e41-1ebcb95f94e9_alta-libre-aspect-ratio_default_0.jpg",
-				descripcion:
-					"La Fiscalía de Medio Ambiente ha abierto diligencias para investigar el presunto caso de maltrato animal en el laboratorio Vivotecnia, situado en Tres Cantos, tras la difusión de un vídeo que muestra cómo el personal presuntamente maltrata y humilla a los animales, han confirmado fuentes fiscales.",
-			},
-		];
-
-		//search the object who has the same id as the parameter
-		updateObject = blogCards.find((element) => {
-			// eslint-disable-next-line eqeqeq
-			return element.id == idObject;
+		let str = '{';
+		let tempStr;
+		faqCards.forEach((e) => {
+			if (!e.includes('https')) {
+				str += `"${e.split('=')[0]}":"${e.split('=')[1]}",`;
+			} else {
+				let first = e.indexOf('=');
+				tempStr = `"${e.slice(0, first)}":"${e.slice(first + 1)}",`;
+				str += tempStr;
+			}
 		});
+		str = str.substring(0, str.length - 1);
+		str += '}';
+
+		updateObject = JSON.parse(decodeURIComponent(str));
 	} else {
 		updateObject = {
-			imagen: "",
-			titulo: "",
-			descripcion: "",
-			contenido: "",
-			autor: "",
-			fechaCreado: formatedDate,
+			id: '',
+			imagen: '',
+			titulo: '',
+			descripcion: '',
+			texto: '',
+			autor: '',
+			fecha: formatedDate,
 		};
 	}
 
 	return (
 		<Formik
 			initialValues={{
+				id: updateObject.id,
 				imagen: updateObject.imagen,
 				titulo: updateObject.titulo,
 				descripcion: updateObject.descripcion,
-				contenido: updateObject.contenido,
+				texto: updateObject.texto,
 				autor: updateObject.autor,
-				fechaCreado: updateObject.fechaCreado,
+				fecha: updateObject.fecha,
 			}}
 			validate={(values) => {
 				const errors = {};
 				if (values.imagen.length > 0) {
 					changePreviewImage(values.imagen);
 				} else {
-					errors.imagen = "Ingrese una dirección URL válida";
+					errors.imagen = 'Ingrese una dirección URL válida';
 				}
 				if (values.titulo.length > 100) {
-					errors.titulo = "La cantidad de caracteres del título no debe superar los 100.";
+					errors.titulo = 'La cantidad de caracteres del título no debe superar los 100.';
 				}
 				if (values.descripcion.length > 400) {
-					errors.titulo = "La cantidad de caracteres de la descripción no debe superar los 400.";
+					errors.titulo = 'La cantidad de caracteres de la descripción no debe superar los 400.';
 				}
 				return errors;
 			}}
 			onSubmit={async (values) => {
-				values.contenido = noticeContent;
-				alert(JSON.stringify(values, null, 2));
+				values.texto = noticeContent;
+				console.log(values);
+				if (insertData) {
+					Axios.post('http://localhost:3001/Rasn/admin/blogs/nuevo-blog', values)
+						.then((res) => {
+							console.log(res.data);
+						})
+						.then(alert('Registro ingresado'));
+				} else {
+					Axios.post('http://localhost:3001/Rasn/admin/blogs/actualizar-blog', values)
+						.then((res) => {
+							console.log(res.data);
+						})
+						.then(alert('Registro actualizado'));
+				}
 			}}
 		>
 			<Form className="row" style={{ padding: 0 }} id="mainForm">
@@ -586,18 +577,19 @@ function blogsForm() {
 					<Field
 						className="input col-12 col-sm-6"
 						type="date"
-						name="fechaCreado"
-						value={formatedDate}
+						name="fecha"
+						value={updateObject.fecha}
 						disabled
 					/>
 				</div>
 				<CKEditor
-					style={{ width: "100%" }}
+					style={{ width: '100%' }}
 					editor={ClassicEditor}
+					data={updateObject.texto}
 					onChange={(event, editor) => {
 						const data = editor.getData();
+
 						noticeContent = data;
-						//console.log({ data });
 					}}
 				/>
 				<button id="btn-submit-form" type="submit" className="invisible-btn"></button>
@@ -607,7 +599,7 @@ function blogsForm() {
 }
 
 const containsQuestionMark = (string) => {
-	return string.includes("?");
+	return string.includes('?');
 };
 
 function getData(str, separator) {
@@ -624,48 +616,48 @@ function getId(str, separator) {
 export default function NuevoRegistro() {
 	const [paquete, setPaquete] = useState(null);
 	const [paqueteHeader, setPaqueteHeader] = useState(null);
-	const [pageType, setPageType] = useState("Ingresar");
+	const [pageType, setPageType] = useState('Ingresar');
 	let location = useLocation();
 	const history = useHistory();
 
 	const sendForm = () => {
-		let mainForm = document.getElementById("btn-submit-form");
+		let mainForm = document.getElementById('btn-submit-form');
 		mainForm.click();
 	};
 
 	useEffect(() => {
 		if (containsQuestionMark(location.search)) {
-			setPageType("Modificar");
+			setPageType('Modificar');
 		}
 
 		let tempUrl;
-		if (location.pathname.includes("/equipo/nuevo-miembro")) {
-			tempUrl = "/equipo/nuevo-miembro";
-		} else if (location.pathname.includes("/faq/nueva-pregunta")) {
-			tempUrl = "/faq/nueva-pregunta";
-		} else if (location.pathname.includes("/blogs/nuevo-post")) {
-			tempUrl = "/blogs/nuevo-post";
-		} else if (location.pathname.includes("/animales/nuevo-animal")) {
-			tempUrl = "/animales/nuevo-animal";
+		if (location.pathname.includes('/equipo/nuevo-miembro')) {
+			tempUrl = '/equipo/nuevo-miembro';
+		} else if (location.pathname.includes('/faq/nueva-pregunta')) {
+			tempUrl = '/faq/nueva-pregunta';
+		} else if (location.pathname.includes('/blogs/nuevo-post')) {
+			tempUrl = '/blogs/nuevo-post';
+		} else if (location.pathname.includes('/animales/nuevo-animal')) {
+			tempUrl = '/animales/nuevo-animal';
 		}
 
 		//* Asigna el paquete de inputs correspondiente a la ventana
 		switch (tempUrl) {
-			case "/equipo/nuevo-miembro":
+			case '/equipo/nuevo-miembro':
 				setPaquete(equipoForm());
-				setPaqueteHeader("integrante");
+				setPaqueteHeader('integrante');
 				break;
-			case "/faq/nueva-pregunta":
+			case '/faq/nueva-pregunta':
 				setPaquete(faqForm());
-				setPaqueteHeader("pregunta y respuesta");
+				setPaqueteHeader('pregunta y respuesta');
 				break;
-			case "/blogs/nuevo-post":
+			case '/blogs/nuevo-post':
 				setPaquete(blogsForm());
-				setPaqueteHeader("blog");
+				setPaqueteHeader('blog');
 				break;
-			case "/animales/nuevo-animal":
+			case '/animales/nuevo-animal':
 				setPaquete(animalesForm());
-				setPaqueteHeader("animal");
+				setPaqueteHeader('animal');
 				break;
 			default:
 				break;
@@ -685,7 +677,7 @@ export default function NuevoRegistro() {
 					{paquete}
 					<div
 						className="register-btn-field col-6 col-sm-3"
-						onClick={() => history.push(`/${location.pathname.split("/")[1]}`)}
+						onClick={() => history.push(`/${location.pathname.split('/')[1]}`)}
 					>
 						<div className="btn-danger">Cancelar</div>
 					</div>

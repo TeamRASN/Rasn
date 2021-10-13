@@ -1,5 +1,5 @@
-@import "fonts";
-@import "mixins";
+@import 'fonts';
+@import 'mixins';
 
 $delete-color: #c70a0a;
 $modify-color: #eb8d00;
@@ -257,12 +257,12 @@ $radius: 12px;
 			}
 
 			//Cambios de los iconos
-			&[href$="borrar"]:hover {
+			&[href$='borrar']:hover {
 				background-color: $delete-color !important;
 				color: #fdfdfd;
 			}
 
-			&[href$="editar"]:hover {
+			&[href$='editar']:hover {
 				background-color: $modify-color !important;
 				color: #fdfdfd;
 			}
@@ -437,7 +437,7 @@ $radius: 12px;
 					margin-top: 15px;
 					margin-right: 9.5px;
 					border-radius: 50px;
-					
+
 					svg {
 						transition: all 0.2s ease;
 						height: auto;
@@ -502,6 +502,8 @@ $radius: 12px;
 				top: 0px;
 				border-bottom-left-radius: 50%;
 				transition: all 150ms ease-in-out;
+				background-color: transparent;
+				border: none;
 
 				&:hover {
 					color: rgb(46, 46, 46);

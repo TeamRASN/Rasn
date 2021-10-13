@@ -575,6 +575,8 @@
   top: 0px;
   border-bottom-left-radius: 50%;
   transition: all 150ms ease-in-out;
+  background-color: transparent;
+  border: none;
 }
 .new-card-container .blog-card .img-container .delete-btn:hover,
 .add-new-register .blog-card .img-container .delete-btn:hover {
