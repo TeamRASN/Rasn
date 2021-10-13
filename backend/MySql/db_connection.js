@@ -5,7 +5,7 @@ function newPool() {
     host     : 'localhost',
     user     : 'root',
     password : '',
-    database : 'rasn-mysql'
+    database : 'rasn_mysql'
   });
   return pool;
 }

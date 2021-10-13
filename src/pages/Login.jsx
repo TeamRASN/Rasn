@@ -12,22 +12,60 @@ import StatsIcon from '../assets/iconos/stats.svg';
 import WritingIcon from '../assets/iconos/writing.svg';
 
 // Estilos
-import '../css/login.css';
+import "../css/login.css";
+import { wait } from "@testing-library/dom";
 export default function Login() {
 	const history = useHistory();
-	const sendLogin = (e) => {
-		e.preventDefault();
-	};
+	const sendLogin = (e) =>{ e.preventDefault(); };
+
+	//* Estado para determinar la primera cargar del sitio
+	const [firstLoad, setFirstLoad] = useState(true);
 	//* Estado correspondiente al tamaño de la lista de la animación
 	const [iconListWidth, setIconListWidth] = useState(0);
+
+	let validateSession = ()=> new Promise((resolve, reject)=>{
+		let sessionData = {
+			sessionEmail: localStorage.getItem('user-email'),
+			sessionID: localStorage.getItem('user-token')
+		}
+		Axios.post('http://localhost:3001/Rasn/validateSession', sessionData).then((res) => {
+			if (Object.values(res.data[0])[0] === '1') {
+				resolve(1);
+			}else{
+				reject(0);
+			}
+		
+		});
+	});
 
 	//? Cambia el estado de iconListWidth por el tamaño del ancho de la lista que contiene los iconos de la animación
 	const changeIconListWidth = () => {
 		const listIcons = document.getElementById('icon-list');
 		setIconListWidth(listIcons.clientWidth);
 	};
-
+	
+	
 	useEffect(() => {
+		let contador = 0;
+		//? En caso de encontrar una sesión activa envía al usuario al dashboard
+
+
+		if (firstLoad) {	
+			console.log("hola");
+			if(localStorage.getItem('user-token') !== null && contador === 0){
+				
+				validateSession().then((valor) => {
+					console.log("EL VALOR ES: "+valor);		
+					if (valor == 1){
+						contador++;						
+						history.push('/admin/estadisticas');
+					}
+				});
+				/* let valor = await validateSession(); */
+			};
+			setFirstLoad(false)
+		}
+
 		//* changeIconListWidth() Se encarga de aplicar la animacióon slideshow a la lista de iconos
 		changeIconListWidth();
 
@@ -82,11 +120,13 @@ export default function Login() {
 		);
 
 		return () => {
+
 			//Remueve el evento al desmontar la función
 			window.removeEventListener('resize', changeIconListWidth);
 		};
 	}, [iconListWidth]);
 	return (
+	
 		<div className="login-page">
 			<Link to="/admin/estadisticas">Iniciar Sesión</Link>
 			<div className="login-content">
@@ -108,58 +148,63 @@ export default function Login() {
 							<img className="arrow-separator" src={Arrow} alt="" />
 						</div>
 						<Formik
-							initialValues={{ email: '', password: '' }}
-							validate={(values) => {
-								const errors = {};
-								//? Validación de correo electrónico.
-								if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-									errors.email = 'Correo electrónico inválido';
-								}
-								return errors;
-							}}
-							onSubmit={(values, { setSubmitting }) => {
-								setSubmitting(false);
-								alert('A');
-								/* Axios.post('http://localhost:3001/Frontend_Comunicados_ET32/login', values).then((res) => {
-						console.log();
-						if (res.data.status === 'success') {
-							res.data.email = values.email;
-							localStorage.setItem('user-token', JSON.stringify(res.data.sessionID, res.data.email));
-							localStorage.setItem('user-email', JSON.stringify(res.data.email));
-							history.push('/home');
-						} else {
-							const messageContainer = document.getElementById('message-container');
-							messageContainer.innerText = res.data;
-							setTimeout(() => {
-								messageContainer.innerText = '';
-							}, 2500);
-						}
-					}); */
-							}}
-						>
-							<Form className="login-form">
-								<div>
-									<div className="form-input-container">
-										<Field
-											className="login-form-input"
-											style={{ marginTop: '0px' }}
-											type="email"
-											name="email"
-											placeholder="Correo Electronico"
-											required
-										/>
-										<ErrorMessage className="input-error" name="email" component="div" />
-									</div>
-									<div className="form-input-container">
-										<div className="form-password-container login-form-input">
-											<Field
-												className="form-password-input"
-												/* type={seePassword ? 'text' : 'password'} */
-												name="password"
-												placeholder="Contraseña"
-												required
-											/>
-											{/* <Icon
+				initialValues={{ email: '', password: '' }}
+				validate={(values) => {
+					const errors = {};
+					//? Validación de correo electrónico.
+					if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
+						errors.email = 'Correo electrónico inválido';
+					}
+					return errors;
+				}}
+				
+				onSubmit={(values, { setSubmitting }) => {
+					setSubmitting(false);
+					let miPrimeraPromise = () => new Promise((resolve, reject)=>{
+						Axios.post('http://localhost:3001/Rasn/loginUser', values).then((res) => {
+							console.log(res.data)
+							if (res.data.status === 'success') {
+								res.data.email = values.email;
+								localStorage.setItem('user-token', JSON.stringify(res.data.sessionID, res.data.email));
+								localStorage.setItem('user-email', JSON.stringify(res.data.email));
+								history.push('/admin/estadisticas');
+								resolve(res.data);
+							} else {
+								const messageContainer = document.getElementById('message-container');
+								messageContainer.innerText = res.data;
+								setTimeout(() => {
+									messageContainer.innerText = '';
+								}, 2500);
+							}
+							
+						}); 
+					})
+					miPrimeraPromise().then(() => validateSession());
+				}}
+					>
+				<Form className="login-form">
+					<div>
+						<div className="form-input-container">
+							<Field
+								className="login-form-input"
+								style={{ marginTop: '0px' }}
+								type="email"
+								name="email"
+								placeholder="Correo Electronico"
+								required
+							/>
+							<ErrorMessage className="input-error" name="email" component="div" />
+						</div>
+						<div className="form-input-container">
+							<div className="form-password-container login-form-input">
+								<Field
+									className="form-password-input"
+									/* type={seePassword ? 'text' : 'password'} */
+									name="password"
+									placeholder="Contraseña"
+									required
+								/>
+								{/* <Icon
 									className="form-eye-icon"
 									icon={seePassword ? 'eye-slash' : 'eye'}
 									onClick={showPassword}

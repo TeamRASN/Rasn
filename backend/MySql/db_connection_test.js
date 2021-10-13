@@ -68,7 +68,7 @@ app.route('/Rasn/login').post(function (req, res) {
 	}
 });
 
-app.route('/Frontend_Comunicados_ET32/recoverPassword').post(function (req, res) {
+app.route('/Rasn/recoverPassword').post(function (req, res) {
 	const data = req.body;
 	let sqlRecovery = `select pass_recovery('${data.documento}', '${data.email}')`;
 	let sqlTokenId = `SELECT recovery_token FROM personas where email = "${data.email}";`;
@@ -102,7 +102,7 @@ app.route('/Frontend_Comunicados_ET32/recoverPassword').post(function (req, res)
 							sendEmail(
 								{
 									name: userName,
-									link: `localhost:3001/Frontend_Comunicados_ET32/recoverPassword?change-password=${recoveryToken}`,
+									link: `localhost:3001/Rasn/recoverPassword?change-password=${recoveryToken}`,
 								},
 								'./test.handlebars',
 								data.email
@@ -137,7 +137,7 @@ let getName = (email) =>
 let dynamicToken = (email, recoveryToken) =>
 	new Promise(function (resolve, reject) {
 		let sql = `select token_recovery('${email}', '${recoveryToken}', 'password', 'password')`;
-		app.route(`/Frontend_Comunicados_ET32/recoverPassword/${recoveryToken}`).get(function (req, res) {
+		app.route(`/Rasn/recoverPassword/${recoveryToken}`).get(function (req, res) {
 			try {
 				pool.getConnection(function (err, connection) {
 					if (err) throw err;
@@ -154,7 +154,7 @@ let dynamicToken = (email, recoveryToken) =>
 		resolve(sql);
 	});
 
-app.route('/Frontend_Comunicados_ET32/validateSession').post(function (req, res) {
+app.route('/Rasn/validateSession').post(function (req, res) {
 	let data = req.body;
 	let sql = `SELECT refresh_session(${data.sessionID}, ${data.sessionEmail})`;
 	try {
@@ -164,9 +164,9 @@ app.route('/Frontend_Comunicados_ET32/validateSession').post(function (req, res)
 				if (err) throw err;
 				let refreshAccepted = Object.values(JSON.parse(JSON.stringify(result[0])));
 				if (refreshAccepted == 1) {
-					console.log('test');
+				 	console.log('test'); 
 					req.session.touch();
-					res.send('HECHO');
+					res.json(result);
 				}
 				console.log(result);
 			});
@@ -176,7 +176,7 @@ app.route('/Frontend_Comunicados_ET32/validateSession').post(function (req, res)
 	}
 });
 
-app.route('/Frontend_Comunicados_ET32/login').post(async function (req, res) {
+ app.route('/Rasn/loginUser').post(async function (req, res) {
 	const data = req.body;
 	req.session.cookie.email = data.email;
 	let sql = `SELECT login_user_node_session("${data.email}", "${data.password}")`;
@@ -212,7 +212,7 @@ app.route('/Frontend_Comunicados_ET32/login').post(async function (req, res) {
 	} catch (error) {
 		console.log(error);
 	}
-});
+}); 
 
 app.listen(port, () => {
 	console.log(`Example app listening on port ${port}!`);
