@@ -457,17 +457,17 @@
   transition: all 200ms ease-out;
   border-radius: 5px;
 }
-.new-card-container .new-member .new-content svg,
-.new-card-container .new-register .new-content svg,
-.add-new-register .new-member .new-content svg,
-.add-new-register .new-register .new-content svg {
-  margin-right: 7.5px;
-}
 .new-card-container .new-member .new-content:hover,
 .new-card-container .new-register .new-content:hover,
 .add-new-register .new-member .new-content:hover,
 .add-new-register .new-register .new-content:hover {
   background-color: #dee5eb;
+}
+.new-card-container .new-member .new-content svg,
+.new-card-container .new-register .new-content svg,
+.add-new-register .new-member .new-content svg,
+.add-new-register .new-register .new-content svg {
+  margin-right: 7.5px;
 }
 .new-card-container .new-member .new-content .integrante-delete-btn,
 .new-card-container .new-register .new-content .integrante-delete-btn,
@@ -493,12 +493,12 @@
   margin-top: 15px;
   margin-right: 9.5px;
   border-radius: 50px;
+  transition: all 0.2s ease;
 }
 .new-card-container .new-member .new-content .integrante-delete-btn button svg,
 .new-card-container .new-register .new-content .integrante-delete-btn button svg,
 .add-new-register .new-member .new-content .integrante-delete-btn button svg,
 .add-new-register .new-register .new-content .integrante-delete-btn button svg {
-  transition: all 0.2s ease;
   height: auto;
   width: 10px;
   margin: 0px;
@@ -518,6 +518,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  width: 100%;
   height: 90%;
 }
 .new-card-container .new-member .new-content .member-card-container .member-card-content,

@@ -446,17 +446,28 @@ function faqForm() {
 }
 
 function blogsForm() {
-	let date = new Date();
+	const formatDate = (arg = null) => {
+		let date;
+		if (arg) {
+			date = new Date(arg);
+		} else {
+			date = new Date();
+		}
+		console.log(date);
 
-	let day = date.getDate();
-	let month = date.getMonth() + 1;
-	let year = date.getFullYear();
-	let formatedDate;
-	if (month < 10) {
-		formatedDate = `${year}-0${month}-${day}`;
-	} else {
-		formatedDate = `${year}-${month}-${day}`;
-	}
+		let day = date.getDate();
+		let month = date.getMonth() + 1;
+		let year = date.getFullYear();
+		let formatedDate;
+		if (month < 10) {
+			formatedDate = `${year}-0${month}-${day}`;
+		} else {
+			formatedDate = `${year}-${month}-${day}`;
+		}
+
+		console.log(formatedDate);
+		return formatedDate;
+	};
 
 	function changePreviewImage(imagen) {
 		const previewImage = document.getElementById('preview-image');
@@ -466,6 +477,7 @@ function blogsForm() {
 
 	let noticeContent;
 	let updateObject;
+	let formatedDate;
 	let insertData = true;
 	const pathname = window.location.search;
 	if (containsQuestionMark(pathname)) {
@@ -487,7 +499,10 @@ function blogsForm() {
 		str += '}';
 
 		updateObject = JSON.parse(decodeURIComponent(str));
+		formatedDate = formatDate(updateObject.fecha);
+		console.log(updateObject);
 	} else {
+		formatedDate = formatDate();
 		updateObject = {
 			id: '',
 			imagen: '',
@@ -497,6 +512,7 @@ function blogsForm() {
 			autor: '',
 			fecha: formatedDate,
 		};
+		console.log(updateObject);
 	}
 
 	return (
@@ -526,8 +542,9 @@ function blogsForm() {
 				return errors;
 			}}
 			onSubmit={async (values) => {
+				console.log(values.fecha);
 				values.texto = noticeContent;
-				console.log(values);
+
 				if (insertData) {
 					Axios.post('http://localhost:3001/Rasn/admin/blogs/nuevo-blog', values)
 						.then((res) => {
@@ -535,6 +552,7 @@ function blogsForm() {
 						})
 						.then(alert('Registro ingresado'));
 				} else {
+					values.fecha = updateObject.fecha;
 					Axios.post('http://localhost:3001/Rasn/admin/blogs/actualizar-blog', values)
 						.then((res) => {
 							console.log(res.data);
@@ -574,13 +592,7 @@ function blogsForm() {
 					<ErrorMessage className="input-error" name="autor" component="div" />
 				</div>
 				<div className="register-input-field col-12 col-sm-6">
-					<Field
-						className="input col-12 col-sm-6"
-						type="date"
-						name="fecha"
-						value={updateObject.fecha}
-						disabled
-					/>
+					<Field className="input col-12 col-sm-6" type="date" name="fecha" value={formatedDate} disabled />
 				</div>
 				<CKEditor
 					style={{ width: '100%' }}
@@ -588,7 +600,6 @@ function blogsForm() {
 					data={updateObject.texto}
 					onChange={(event, editor) => {
 						const data = editor.getData();
-
 						noticeContent = data;
 					}}
 				/>
@@ -679,7 +690,7 @@ export default function NuevoRegistro() {
 						className="register-btn-field col-6 col-sm-3"
 						onClick={() => history.push(`/${location.pathname.split('/')[1]}`)}
 					>
-						<div className="btn-danger">Cancelar</div>
+						<div className="btn-danger">Volver</div>
 					</div>
 					<div className="register-btn-field col-6 col-sm-3">
 						<div className="btn-success" onClick={sendForm}>

@@ -415,12 +415,12 @@ $radius: 12px;
 			transition: all 200ms ease-out;
 			border-radius: 5px;
 
-			svg {
-				margin-right: 7.5px;
-			}
-
 			&:hover {
 				background-color: #dee5eb;
+			}
+
+			svg {
+				margin-right: 7.5px;
 			}
 
 			.integrante-delete-btn {
@@ -437,9 +437,9 @@ $radius: 12px;
 					margin-top: 15px;
 					margin-right: 9.5px;
 					border-radius: 50px;
+					transition: all 0.2s ease;
 
 					svg {
-						transition: all 0.2s ease;
 						height: auto;
 						width: 10px;
 						margin: 0px;
@@ -453,6 +453,7 @@ $radius: 12px;
 
 			.member-card-container {
 				@include displayFlex(column, flex-start, center);
+				width: 100%;
 				height: 90%;
 
 				.member-card-content {
