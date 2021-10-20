@@ -12,7 +12,7 @@
 			background-color: #fefefe79;
 			border: 1px solid #cccccc4f;
 			border-radius: 5px;
-			font-family: "Sen", sans-serif;
+			font-family: 'Sen', sans-serif;
 			color: black;
 			text-decoration: none;
 			text-align: left;
@@ -56,6 +56,7 @@
 }
 
 .btn-danger,
+.btn-clean,
 .btn-success {
 	border: 1px solid #ffffff15;
 	background-color: #eeeeee !important;
@@ -71,6 +72,14 @@
 		border-right: #15b86a 15px solid !important;
 	}
 }
+
+.btn-clean {
+	border: 0;
+	&:hover {
+		border-right: #15a0b8 15px solid !important;
+	}
+}
+
 .btn-danger {
 	border: 0;
 	&:hover {

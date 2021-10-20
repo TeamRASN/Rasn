@@ -51,6 +51,7 @@
 }
 
 .btn-danger,
+.btn-clean,
 .btn-success {
   border: 1px solid #ffffff15;
   background-color: #eeeeee !important;
@@ -65,6 +66,13 @@
 }
 .btn-success:hover {
   border-right: #15b86a 15px solid !important;
+}
+
+.btn-clean {
+  border: 0;
+}
+.btn-clean:hover {
+  border-right: #15a0b8 15px solid !important;
 }
 
 .btn-danger {

@@ -4,7 +4,9 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongodb = require('mongodb');
 const { MongoClient } = require('mongodb');
-const url = 'mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000';
+const url =
+	'mongodb+srv://superuser:EklZREvQdzjs0nwG@clusterrasn.qowzy.mongodb.net/myFirstDatabase?authSource=admin&replicaSet=atlas-124tki-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true';
+/* const url = 'mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000'; */
 
 const PORT = process.env.PORT || 3001;
 

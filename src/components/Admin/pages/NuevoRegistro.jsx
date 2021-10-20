@@ -213,6 +213,7 @@ function animalesForm() {
 					<ErrorMessage className="input-error" name="actitud" component="div" />
 				</div>
 				<button id="btn-submit-form" type="submit" className="invisible-btn"></button>
+				<button id="btn-submit-form" type="submit" className="invisible-btn"></button>
 			</Form>
 		</Formik>
 	);
@@ -636,6 +637,11 @@ export default function NuevoRegistro() {
 		mainForm.click();
 	};
 
+	const cleanForm = () => {
+		let mainForm = document.getElementById('mainForm');
+		mainForm.reset();
+	};
+
 	useEffect(() => {
 		if (containsQuestionMark(location.search)) {
 			setPageType('Modificar');
@@ -691,6 +697,9 @@ export default function NuevoRegistro() {
 						onClick={() => history.push(`/${location.pathname.split('/')[1]}`)}
 					>
 						<div className="btn-danger">Volver</div>
+					</div>
+					<div className="register-btn-field col-6 col-sm-3" onClick={cleanForm}>
+						<div className="btn-clean">Limpiar campos</div>
 					</div>
 					<div className="register-btn-field col-6 col-sm-3">
 						<div className="btn-success" onClick={sendForm}>
