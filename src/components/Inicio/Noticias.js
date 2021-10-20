@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 
 //Componentes
@@ -63,7 +64,7 @@ export default function Noticias() {
 				}
 			});
 		});
-	}, [firstFetch]);
+	}, [blogCards, firstFetch]);
 
 	return (
 		<section className="notices-container">
