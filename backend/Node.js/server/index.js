@@ -112,21 +112,6 @@ app.route('/Rasn/admin/animales/actualizar-animal').post(async function (req, re
 	}
 });
 
-/*app.route("/Rasn/admin/animales/delete").get(function (req, res) {
-	client.connect(function (err, db) {
-		if (err) throw err;
-		var dbo = db.db("proyectoRasn");
-		dbo.collection("animales")
-			.find({})
-			.toArray(function (err, result) {
-				if (err) throw err;
-				console.log(req.params);
-				res.send(req.params);
-				db.close();
-			});
-	});
-});*/
-
 app.route('/Rasn/admin/faq').get(function (req, res) {
 	client.connect(function (err, db) {
 		if (err) throw err;

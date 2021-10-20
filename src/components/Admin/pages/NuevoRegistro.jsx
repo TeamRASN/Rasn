@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import Axios from 'axios';
@@ -499,6 +500,7 @@ function blogsForm() {
 		str = str.substring(0, str.length - 1);
 		str += '}';
 
+		console.log(str);
 		updateObject = JSON.parse(decodeURIComponent(str));
 		formatedDate = formatDate(updateObject.fecha);
 		console.log(updateObject);
