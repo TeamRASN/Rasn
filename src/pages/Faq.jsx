@@ -1,80 +1,54 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from 'react';
 
 // Componentes
-import FaqCard from "../components/faq/faqCard";
+import FaqCard from '../components/faq/faqCard';
 
 // Estilos
-import "../css/faq.css";
+import '../css/faq.css';
 
-// Objetos
-const faqCards = [
-	{
-		id: 1,
-		pregunta: "¿Dónde mantenemos a las mascotas?",
-		respuesta:
-			"Las mascotas se encuentran resguardadas en un refugio alquilado. Nuestro equipo de voluntarios se encarga de darles todos los cuidados necesarios, dando de su tiempo para visitar el refugio y asegurarse de que todo esté bien.",
-	},
-	{
-		id: 2,
-		pregunta: "Quiero adoptar a una de las mascotas. ¿Qué debo hacer?",
-		respuesta:
-			'Si quieres adoptar a una de las mascotas, puedes contactarte con nosotros usando la opción "Contacto Directo" de este sitio web o enviándonos un mensaje a nuestras redes sociales, que también encontrarás en este sitio. Te responderemos a la brevedad para que tengas toda la información sobre la mascota.',
-	},
-	{
-		id: 3,
-		pregunta: "Quiero ayudar como voluntario. ¿Qué debo hacer?",
-		respuesta:
-			'Si quieres formar parte de nuestro equipo, contáctate con nosotros usando la opción "Contacto Directo" de este sitio web o enviándonos un mensaje a nuestras redes sociales. Por favor infórmanos tu nombre y edad. Uno de los miembros de nuestro equipo se contactará con vos para acordar un horario en que puedas colaborar.',
-	},
-	{
-		id: 4,
-		pregunta: "¿Cómo logramos financiar el refugio?",
-		respuesta:
-			"Las mascotas se encuentran resguardadas en un refugio alquilado. Nuestro equipo de voluntarios se encarga de darles todos los cuidados necesarios, dando de su tiempo para visitar el refugio y asegurarse de que todo esté bien.",
-	},
-	{
-		id: 5,
-		pregunta: "Tengo errores al contactarme con los organizadores.",
-		respuesta:
-			'Si quieres adoptar a una de las mascotas, puedes contactarte con nosotros usando la opción "Contacto Directo" de este sitio web o enviándonos un mensaje a nuestras redes sociales, que también encontrarás en este sitio. Te responderemos a la brevedad para que tengas toda la información sobre la mascota.',
-	},
-	{
-		id: 6,
-		pregunta: "¿Qué hacemos con los animales ya adoptados?",
-		respuesta:
-			'Si quieres formar parte de nuestro equipo, contáctate con nosotros usando la opción "Contacto Directo" de este sitio web o enviándonos un mensaje a nuestras redes sociales. Por favor infórmanos tu nombre y edad. Uno de los miembros de nuestro equipo se contactará con vos para acordar un horario en que puedas colaborar.',
-	},
-	{
-		id: 7,
-		pregunta: "¿Qué hacemos con los animales ya adoptados?",
-		respuesta:
-			'Si quieres formar parte de nuestro equipo, contáctate con nosotros usando la opción "Contacto Directo" de este sitio web o enviándonos un mensaje a nuestras redes sociales. Por favor infórmanos tu nombre y edad. Uno de los miembros de nuestro equipo se contactará con vos para acordar un horario en que puedas colaborar.',
-	},
-];
+const getFaqs = (setFaqCards, setLoadedData, firstFetch, setFirstFetch) => {
+	if (firstFetch) {
+		fetch('http://127.0.0.1:3001/Rasn/admin/faq')
+			.then((response) => response.json())
+			.then((faqCards) => {
+				setFaqCards(faqCards);
+				setLoadedData(true);
+				setFirstFetch(false);
+			})
+			.catch((error) => {
+				//console.error(error)
+			});
+	}
+};
 
 export default function Faq() {
+	const [faqCards, setFaqCards] = useState([]);
+	const [firstFetch, setFirstFetch] = useState(true);
+	const [loadedData, setLoadedData] = useState(false);
+
 	useEffect(() => {
-		const preguntas = document.querySelectorAll(".faq-card");
+		getFaqs(setFaqCards, setLoadedData, firstFetch, setFirstFetch);
+		const preguntas = document.querySelectorAll('.faq-card');
 
 		preguntas.forEach((pregunta) => {
 			//* Espera el evento click a cada una de las preguntas para añadir o eliminar las clases que permiten la expansión de la respuesta
-			pregunta.addEventListener("click", (e) => {
-				e.currentTarget.classList.toggle("show");
-				e.currentTarget.classList.toggle("hidden");
+			pregunta.addEventListener('click', (e) => {
+				e.currentTarget.classList.toggle('show');
+				e.currentTarget.classList.toggle('hidden');
 
 				//* Obtiene la altura de la respuesta y se la aplica o remueve como estilo al contenedor de la respuesta
-				pregunta.querySelectorAll(".respuesta").forEach((e) => {
+				pregunta.querySelectorAll('.respuesta').forEach((e) => {
 					const realHeight = e.scrollHeight;
 
 					if (!e.style.maxHeight) {
-						e.style.maxHeight = realHeight + "px";
+						e.style.maxHeight = realHeight + 'px';
 					} else {
 						e.style.maxHeight = null;
 					}
 				});
 			});
 		});
-	});
+	}, [firstFetch]);
 
 	//? Variables para la separación de preguntas
 	const halfContent = Math.round(faqCards.length / 2);
@@ -101,8 +75,8 @@ export default function Faq() {
 					))}
 				</div>
 				<div className="col-12 col-sm-6">
-					{faqCardsSecond.map(({ id, pregunta, respuesta }) => (
-						<FaqCard pregunta={pregunta} respuesta={respuesta} key={id} />
+					{faqCardsSecond.map(({ _id, pregunta, respuesta }) => (
+						<FaqCard key={_id} pregunta={pregunta} respuesta={respuesta} />
 					))}
 				</div>
 			</div>
