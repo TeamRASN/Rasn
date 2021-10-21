@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 
 //Componenetes
@@ -11,21 +11,25 @@ export default function AnimalesRescatados() {
 	const [showPopup, setShowPopup] = useState(false);
 	const [modalData, setModalData] = useState({});
 
-	const changePopup = (data) => {
+	const changePopup = (status, data) => {
+		setShowPopup(status);
+		setModalData(data);
+
+		/* if (popup) {
+		} */
+	};
+
+	useEffect(() => {
 		const overlay = document.getElementById('overlay');
 		const popup = document.getElementById('popup');
 		const bodyTag = document.getElementsByTagName('body')[0];
-		setShowPopup(!showPopup);
-		setModalData(data);
 
-		if (popup) {
-			if (showPopup) {
-				overlay.classList.add('active');
-				popup.classList.add('active');
-			} else {
-				overlay.classList.remove('active');
-				popup.classList.remove('active');
-			}
+		if (modalData !== undefined && showPopup) {
+			overlay.classList.add('active');
+			popup.classList.add('active');
+		} else {
+			overlay.classList.remove('active');
+			popup.classList.remove('active');
 		}
 
 		//!Remover los hidden al resize de de la pantalla
@@ -34,7 +38,7 @@ export default function AnimalesRescatados() {
 		} else {
 			bodyTag.style.overflowY = null; //remover los hidden al resize de la pantalla
 		}
-	};
+	}, [modalData, showPopup]);
 
 	const formatDate = (arg) => {
 		let date = new Date(arg);
@@ -56,10 +60,10 @@ export default function AnimalesRescatados() {
 	return (
 		<main className="mascotas-page">
 			<div className="container">
-				<Rescatados changePopup={(data) => changePopup(data)} />
+				<Rescatados changePopup={(status, data) => changePopup(status, data)} />
 			</div>
 
-			<div className="overlay" id="overlay" onClick={() => changePopup()}>
+			<div className="overlay" id="overlay" onClick={() => changePopup(false, undefined)}>
 				<div className="popup" id="popup">
 					{modalData !== undefined && (
 						<>
@@ -101,7 +105,11 @@ export default function AnimalesRescatados() {
 									<a className="btn-adoptar" href="/mascotas/adoptar">
 										Adoptar
 									</a>
-									<div id="btn-cerrar-popup" className="btn-cerrar-popup" onClick={changePopup}>
+									<div
+										id="btn-cerrar-popup"
+										className="btn-cerrar-popup"
+										onClick={() => changePopup(false, undefined)}
+									>
 										<i className="fas fa-times"></i>
 									</div>
 								</div>

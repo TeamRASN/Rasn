@@ -38,7 +38,7 @@ export default function Card({
 					<div
 						className="card_box"
 						onClick={() => {
-							changePopup(data);
+							changePopup(true, data);
 						}}
 					>
 						<div className="img-responsive">

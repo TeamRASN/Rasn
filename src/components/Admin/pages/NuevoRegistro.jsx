@@ -96,6 +96,7 @@ function animalesForm() {
 			}}
 			onSubmit={async (values) => {
 				console.log(insertData);
+				alert(JSON.stringify(values, null, 2));
 				if (insertData) {
 					Axios.post('http://localhost:3001/Rasn/admin/animales/nuevo-animal', values)
 						.then((res) => {
