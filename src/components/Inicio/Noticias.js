@@ -27,8 +27,11 @@ export default function Noticias() {
 	const [loadedData, setLoadedData] = useState(false);
 
 	useEffect(() => {
-		getBlogs(setBlogCards, setLoadedData, firstFetch, setFirstFetch);
-		setBlogCards(blogCards.slice(blogCards.length - 4, blogCards.length));
+		if (firstFetch) {
+			getBlogs(setBlogCards, setLoadedData, firstFetch, setFirstFetch);
+			setBlogCards(blogCards.slice(blogCards.length - 4, blogCards.length));
+			setFirstFetch(false);
+		}
 		const contenedores = document.querySelectorAll('.carta-content');
 
 		//* Obtiene la altura de los contenedores
