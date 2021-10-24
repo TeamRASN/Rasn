@@ -31,7 +31,7 @@ export default function Cards({ changePopup }) {
 	}, [firstFetch]);
 
 	return (
-		<div className="row animals-box-top animals-top">
+		<div className="row animals-section">
 			{animalCards.map(
 				({ _id, nombre, color, sexo, peso, fechaNacimiento, raza, tamanio, imagen, actitud, estado }) => (
 					<Card

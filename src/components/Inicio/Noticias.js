@@ -11,7 +11,7 @@ const getBlogs = (setBlogsCards, setLoadedData, firstFetch, setFirstFetch) => {
 		fetch('http://127.0.0.1:3001/Rasn/blogs')
 			.then((response) => response.json())
 			.then((blogCards) => {
-				setBlogsCards(blogCards);
+				setBlogsCards(blogCards.slice(blogCards.length - 4, blogCards.length));
 				setLoadedData(true);
 				setFirstFetch(false);
 			})
@@ -27,11 +27,6 @@ export default function Noticias() {
 	const [loadedData, setLoadedData] = useState(false);
 
 	useEffect(() => {
-		if (firstFetch) {
-			getBlogs(setBlogCards, setLoadedData, firstFetch, setFirstFetch);
-			setBlogCards(blogCards.slice(blogCards.length - 4, blogCards.length));
-			setFirstFetch(false);
-		}
 		const contenedores = document.querySelectorAll('.carta-content');
 
 		//* Obtiene la altura de los contenedores
