@@ -1,13 +1,13 @@
-import React from "react";
-import { useEffect, useState } from "react";
 // eslint-disable-next-line no-unused-vars
-import { Link, useLocation } from "react-router-dom";
+import React from 'react';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 //Componentes
-import Logo from "../assets/logo.svg";
+import Logo from '../assets/logo.svg';
 
 //Estilos
-import "../css/navbar.css";
+import '../css/navbar.css';
 
 export default function Navbar(props) {
 	const [responsiveNav, setResponsiveNav] = useState(false);
@@ -22,78 +22,78 @@ export default function Navbar(props) {
 	};
 
 	useEffect(() => {
-		window.addEventListener("resize", changeDisplay);
+		window.addEventListener('resize', changeDisplay);
 
-		let secondnav = document.getElementById("involucrate-submenu");
+		let secondnav = document.getElementById('involucrate-submenu');
 		if (displayWidth < 700) {
-			secondnav.classList.remove("show_secondary_list");
+			secondnav.classList.remove('show_secondary_list');
 		} else {
 			setResponsiveNav(false);
 			setResponsiveOverflow(false);
-			document.getElementById("responsive-mask").classList.remove("toggle_responsive_mask");
-			secondnav.classList.remove("responsive_secondary_list");
+			document.getElementById('responsive-mask').classList.remove('toggle_responsive_mask');
+			secondnav.classList.remove('responsive_secondary_list');
 		}
 
 		return () => {
 			//Remueve el evento al desmontar la función
-			window.removeEventListener("resize", changeDisplay);
+			window.removeEventListener('resize', changeDisplay);
 		};
 	}, [displayWidth]);
 
 	const showResponsiveNav = () => {
 		setResponsiveNav(!responsiveNav);
 		setResponsiveOverflow(!responsiveOverflow);
-		const navbar = document.getElementById("navbar");
+		const navbar = document.getElementById('navbar');
 
-		if (!navbar.classList.contains("navbar-toggle") && !responsiveNav) {
-			navbar.classList.toggle("navbar-toggle");
+		if (!navbar.classList.contains('navbar-toggle') && !responsiveNav) {
+			navbar.classList.toggle('navbar-toggle');
 		}
 
 		if (responsiveNav) {
-			navbar.classList.toggle("navbar-toggle");
+			navbar.classList.toggle('navbar-toggle');
 		}
 
 		if (responsiveNav === false) {
-			document.getElementById("responsive-mask").classList.add("toggle_responsive_mask");
+			document.getElementById('responsive-mask').classList.add('toggle_responsive_mask');
 		} else {
-			document.getElementById("responsive-mask").classList.remove("toggle_responsive_mask");
+			document.getElementById('responsive-mask').classList.remove('toggle_responsive_mask');
 		}
 	};
 
 	const responsiveNavState = () => {
 		return {
-			transform: responsiveNav ? null : "translateX(-105%)",
+			transform: responsiveNav ? null : 'translateX(-105%)',
 		};
 	};
 
 	//!Remover los hidden al resize de de la pantalla
-	const bodyTag = document.getElementsByTagName("body")[0];
-	if (document.getElementById("responsive-mask").classList.contains("toggle_responsive_mask")) {
-		bodyTag.style.overflowY = "hidden";
+	const bodyTag = document.getElementsByTagName('body')[0];
+	if (document.getElementById('responsive-mask').classList.contains('toggle_responsive_mask')) {
+		bodyTag.style.overflowY = 'hidden';
 	} else {
 		bodyTag.style.overflowY = null; //remover los hidden al resize de de la pantalla
 	}
 
-	window.addEventListener("scroll", function () {
-		const navbar = document.getElementById("navbar");
+	window.addEventListener('scroll', function () {
+		const navbar = document.getElementById('navbar');
 
 		if (navbar !== null) {
-			navbar.classList.toggle("navbar-toggle", window.scrollY > 0);
+			navbar.classList.toggle('navbar-toggle', window.scrollY > 0);
 		}
 	});
 
-	document.getElementById("responsive-mask").addEventListener("click", function () {
+	document.getElementById('responsive-mask').addEventListener('click', function () {
 		setResponsiveNav(false);
 		setResponsiveOverflow(false);
-		document.getElementById("responsive-mask").classList.remove("toggle_responsive_mask");
-		document.getElementById("navbar").classList.toggle("navbar-toggle");
+		document.getElementById('responsive-mask').classList.remove('toggle_responsive_mask');
+		document.getElementById('navbar').classList.toggle('navbar-toggle');
 	});
 
 	function reload() {
 		setResponsiveNav(false);
 		setResponsiveOverflow(false);
-		document.getElementById("responsive-mask").classList.remove("toggle_responsive_mask");
-		document.getElementById("navbar").classList.toggle("navbar-toggle");
+		document.getElementById('responsive-mask').classList.remove('toggle_responsive_mask');
+		document.getElementById('navbar').classList.toggle('navbar-toggle');
 		window.scrollTo(0, 0);
 	}
 
@@ -130,38 +130,16 @@ export default function Navbar(props) {
 					</Link>
 				</li>
 				<li>
-					<div id="animales-li" className="nav-element">
-						<i id="menu-arrow" className="fab-icon fa fa-chevron-down" aria-hidden="true"></i>
+					<Link
+						to="/animales"
+						className="nav-element"
+						onClick={() => {
+							props.minHeader();
+							reload();
+						}}
+					>
 						Animales
-						<ul id="animales-submenu">
-							<li>
-								<Link
-									to="/rescatados"
-									className="submenu-element"
-									onClick={() => {
-										props.minHeader();
-										reload();
-									}}
-								>
-									<i className="fas fa-paw"></i>
-									Rescatados
-								</Link>
-							</li>
-							<li>
-								<Link
-									to="/adoptados"
-									className="submenu-element"
-									onClick={() => {
-										props.minHeader();
-										reload();
-									}}
-								>
-									<i className="fas fa-medal"></i>
-									Logros
-								</Link>
-							</li>
-						</ul>
-					</div>
+					</Link>
 				</li>
 				<li>
 					<div id="contacto-li" className="nav-element">
@@ -171,8 +149,8 @@ export default function Navbar(props) {
 							<li>
 								<Link
 									to={{
-										pathname: "/contacto",
-										categoryProps: "Category",
+										pathname: '/contacto',
+										categoryProps: 'Category',
 									}}
 									className="submenu-element"
 									onClick={() => {
@@ -234,8 +212,8 @@ export default function Navbar(props) {
 							<li>
 								<Link
 									to={{
-										pathname: "/contacto",
-										categoryProps: "Colaboración Voluntaria",
+										pathname: '/contacto',
+										categoryProps: 'Colaboración Voluntaria',
 									}}
 									className="submenu-element"
 									onClick={() => {
