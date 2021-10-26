@@ -5,15 +5,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Axios from 'axios';
 
 // Componentes
+
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 export default function CartaIntegrante({ nombre, apellido, imagen, rol, id, deleteMember }) {
 	const preventSubmit = (e) => {
 		e.preventDefault();
-		const confirmOperation = window.confirm(`Estás seguro que deseas eliminar esta pregunta?`);
+		const confirmOperation = window.confirm(`Estás seguro que deseas eliminar este integrante??`);
 		if (confirmOperation) {
 			deleteMember(id);
-			Axios.post('http://localhost:3001/Rasn/admin/faq/delete', {
+			Axios.post('http://localhost:3001/Rasn/admin/equipo/eliminar-miembro', {
 				id: id,
 			}).then((res) => {
 				console.log(res.data);

@@ -26,6 +26,7 @@ app.get('/api', (req, res) => {
 });
 
 app.route('/Rasn/admin/animales').get(function (req, res) {
+	let client = new MongoClient(url);
 	client.connect(function (err, db) {
 		if (err) throw err;
 		var dbo = db.db('proyectoRasn');
@@ -41,6 +42,7 @@ app.route('/Rasn/admin/animales').get(function (req, res) {
 });
 
 app.route('/Rasn/admin/animales/delete').post(async function (req, res) {
+	let client = new MongoClient(url);
 	try {
 		await client.connect();
 		const db = client.db('proyectoRasn');
@@ -66,12 +68,13 @@ app.route('/Rasn/admin/animales/delete').post(async function (req, res) {
 });
 
 app.route('/Rasn/admin/animales/nuevo-animal').post(async function (req, res) {
+	let client = new MongoClient(url);
 	try {
 		await client.connect();
 		const db = client.db('proyectoRasn');
 		const collection = db.collection('animales');
 		const data = req.body;
-		data.fechaNacimiento = new Date(data.fechaNacimiento);
+        data.fechaNacimiento = new Date(data.fechaNacimiento);
 		console.log(data);
 		const result = await collection.insertOne(data);
 		//res.send(result);
@@ -89,6 +92,7 @@ app.route('/Rasn/admin/animales/nuevo-animal').post(async function (req, res) {
 });
 
 app.route('/Rasn/admin/animales/actualizar-animal').post(async function (req, res) {
+	let client = new MongoClient(url);
 	try {
 		await client.connect();
 		const db = client.db('proyectoRasn');
@@ -113,6 +117,7 @@ app.route('/Rasn/admin/animales/actualizar-animal').post(async function (req, re
 });
 
 app.route('/Rasn/admin/faq').get(function (req, res) {
+	let client = new MongoClient(url);
 	client.connect(function (err, db) {
 		if (err) throw err;
 		var dbo = db.db('proyectoRasn');
@@ -128,6 +133,7 @@ app.route('/Rasn/admin/faq').get(function (req, res) {
 });
 
 app.route('/Rasn/admin/faq/delete').post(async function (req, res) {
+	let client = new MongoClient(url);
 	try {
 		await client.connect();
 		const db = client.db('proyectoRasn');
@@ -153,6 +159,7 @@ app.route('/Rasn/admin/faq/delete').post(async function (req, res) {
 });
 
 app.route('/Rasn/admin/faq/nueva-pregunta').post(async function (req, res) {
+	let client = new MongoClient(url);
 	try {
 		await client.connect();
 		const db = client.db('proyectoRasn');
@@ -174,6 +181,7 @@ app.route('/Rasn/admin/faq/nueva-pregunta').post(async function (req, res) {
 });
 
 app.route('/Rasn/admin/faq/actualizar-pregunta').post(async function (req, res) {
+	let client = new MongoClient(url);
 	try {
 		await client.connect();
 		const db = client.db('proyectoRasn');
@@ -197,6 +205,7 @@ app.route('/Rasn/admin/faq/actualizar-pregunta').post(async function (req, res) 
 });
 
 app.route('/Rasn/blogs').get(function (req, res) {
+	let client = new MongoClient(url);
 	client.connect(function (err, db) {
 		if (err) throw err;
 		var dbo = db.db('proyectoRasn');
@@ -211,6 +220,7 @@ app.route('/Rasn/blogs').get(function (req, res) {
 });
 
 app.route('/Rasn/admin/blogs/delete-blog').post(async function (req, res) {
+	let client = new MongoClient(url);
 	try {
 		await client.connect();
 		const db = client.db('proyectoRasn');
@@ -236,6 +246,7 @@ app.route('/Rasn/admin/blogs/delete-blog').post(async function (req, res) {
 });
 
 app.route('/Rasn/admin/blogs/nuevo-blog').post(async function (req, res) {
+	let client = new MongoClient(url);
 	try {
 		await client.connect();
 		const db = client.db('proyectoRasn');
@@ -259,6 +270,7 @@ app.route('/Rasn/admin/blogs/nuevo-blog').post(async function (req, res) {
 });
 
 app.route('/Rasn/admin/blogs/actualizar-blog').post(async function (req, res) {
+	let client = new MongoClient(url);
 	try {
 		await client.connect();
 		const db = client.db('proyectoRasn');
@@ -284,6 +296,7 @@ app.route('/Rasn/admin/blogs/actualizar-blog').post(async function (req, res) {
 });
 
 app.route('/Rasn/admin/equipo').get(function (req, res) {
+	let client = new MongoClient(url);
 	client.connect(function (err, db) {
 		if (err) throw err;
 		var dbo = db.db('proyectoRasn');
@@ -299,6 +312,7 @@ app.route('/Rasn/admin/equipo').get(function (req, res) {
 });
 
 app.route('/Rasn/admin/equipo/eliminar-miembro').post(async function (req, res) {
+	let client = new MongoClient(url);
 	try {
 		await client.connect();
 		const db = client.db('proyectoRasn');
@@ -309,6 +323,7 @@ app.route('/Rasn/admin/equipo/eliminar-miembro').post(async function (req, res) 
 		};
 		console.log(newData);
 		const result = await collection.deleteOne({ _id: new mongodb.ObjectId(req.body.id) });
+		console.log(result.deletedCount);
 		//res.send(result);
 		if (result.deletedCount === 1) {
 			console.dir('Successfully deleted one document.');
@@ -324,6 +339,7 @@ app.route('/Rasn/admin/equipo/eliminar-miembro').post(async function (req, res) 
 });
 
 app.route('/Rasn/admin/equipo/nuevo-miembro').post(async function (req, res) {
+	let client = new MongoClient(url);
 	try {
 		await client.connect();
 		const db = client.db('proyectoRasn');
@@ -345,6 +361,7 @@ app.route('/Rasn/admin/equipo/nuevo-miembro').post(async function (req, res) {
 });
 
 app.route('/Rasn/admin/equipo/actualizar-miembro').post(async function (req, res) {
+	let client = new MongoClient(url);
 	try {
 		await client.connect();
 		const db = client.db('proyectoRasn');
