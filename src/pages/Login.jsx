@@ -16,9 +16,9 @@ import '../css/login.css';
 
 export default function Login() {
 	const history = useHistory();
-	const submitForm = (e) => {
-		e.preventDefault();
-		document.getElementById('actual-form').submit();
+	const submitForm = () => {
+		const submitBtn = document.getElementById('login-submit-btn');
+		submitBtn.click();
 	};
 
 	//* Estado para determinar la primera cargar del sitio
@@ -159,7 +159,7 @@ export default function Login() {
 									setSubmitting(false);
 									let miPrimeraPromise = () =>
 										new Promise((resolve, reject) => {
-											Axios.post('http://localhost:3001/Rasn/loginUser', values).then((res) => {
+											Axios.post('http://localhost:3001/Rasn/login', values).then((res) => {
 												console.log(res.data);
 												if (res.data.status === 'success') {
 													res.data.email = values.email;
@@ -212,7 +212,8 @@ export default function Login() {
 									</div>
 									<div className="session-validate-message" id="message-container"></div>
 									<div className="submit-btn" onClick={submitForm}>
-										<a href=".">Iniciar Sesión</a>
+									Iniciar Sesión
+									
 										{/* <Link to="/admin/estadisticas">Iniciar Sesión</Link> */}
 									</div>
 									<button type="submit" style={{ display: 'none' }}></button>
@@ -226,6 +227,7 @@ export default function Login() {
 											¿Olvidaste tu contraseña?
 										</span>
 									</div>
+									<button type="submit" id="login-submit-btn" className="invisible-btn"></button>
 									<p className="register-advice">
 										¿AÚN NO TENÉS TU CUENTA ADMINISTRATIVA?
 										<span /* onClick={() => changeForm('Register')} */>SOLICITÁ UNA</span>

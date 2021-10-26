@@ -331,11 +331,11 @@ export default function AdoptarAnimal() {
 				}}
 				onSubmit={async (values) => {
 					alert(JSON.stringify(values, null, 2));
-					/* Axios.post('http://localhost:3001/Rasn/admin/faq/nueva-pregunta', values)
+					 Axios.post('http://localhost:3001/Rasn/admin/faq/nueva-pregunta', values)
 							.then((res) => {
 								console.log(res.data);
 							})
-							.then(alert('Registro ingresado')); */
+							.then(alert('Registro ingresado')); 
 				}}
 			>
 				{({ errors, validateForm }) => (
