@@ -1,66 +1,9 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import Card from './Card';
 
-//Componenetes
-import Mia from '../../assets/Mia.jpg';
-import Dog from '../../assets/Dog.jpg';
-import Dog2 from '../../assets/organizacion.jpg';
-
 //Estilos
 import '../../css/mascotas.css';
-
-const cards = [
-	{
-		id: 1,
-		name: 'Mia',
-		image: Mia,
-	},
-	{
-		id: 2,
-		name: 'Carlos',
-		image: Dog,
-	},
-	{
-		id: 3,
-		name: 'Mia',
-		image: Mia,
-	},
-	{
-		id: 4,
-		name: 'Sushee',
-		image: Dog2,
-	},
-	{
-		id: 5,
-		name: 'Coqui',
-		image: Dog,
-	},
-	{
-		id: 6,
-		name: 'Mia',
-		image: Mia,
-	},
-	{
-		id: 7,
-		name: 'Carlos',
-		image: Dog,
-	},
-	{
-		id: 8,
-		name: 'Mia',
-		image: Mia,
-	},
-	{
-		id: 9,
-		name: 'Sushee',
-		image: Dog2,
-	},
-	{
-		id: 10,
-		name: 'Coqui',
-		image: Dog,
-	},
-];
 
 const getAnimales = (setAnimalCards, setLoadedData, firstFetch, setFirstFetch) => {
 	if (firstFetch) {
@@ -88,7 +31,7 @@ export default function Cards({ changePopup }) {
 	}, [firstFetch]);
 
 	return (
-		<div className="row animals-box-top animals-top">
+		<div className="row animals-section">
 			{animalCards.map(
 				({ _id, nombre, color, sexo, peso, fechaNacimiento, raza, tamanio, imagen, actitud, estado }) => (
 					<Card

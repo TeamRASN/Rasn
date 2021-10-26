@@ -1,4 +1,4 @@
-@import "_mixins";
+@import '_mixins';
 
 .faq-page {
 	@include displayFlex(column, center, center);
@@ -19,6 +19,7 @@
 
 	.faq-cards-container {
 		@include displayFlex(row, space-between, flex-start);
+		min-height: 240px;
 		margin-top: 30px !important;
 		margin-bottom: 60px;
 		--bs-gutter-x: 0rem !important;

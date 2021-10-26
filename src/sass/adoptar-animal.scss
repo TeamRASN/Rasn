@@ -1,0 +1,106 @@
+@import '_mixins';
+
+$form-button-color: #fff;
+
+.adopt-container {
+	width: 100%;
+	height: fit-content;
+
+	.adopt-form-progress-bar {
+		@include displayFlex(row, space-evenly, center);
+		width: 100%;
+		height: 50px;
+
+		margin-bottom: 25px;
+
+		.step-marker-container {
+			@include displayFlex(null, center, center);
+			width: 35px;
+			height: 35px;
+			font-weight: 500;
+
+			background-color: transparent;
+			border: 1px solid #9031fd;
+			color: #9031fd;
+			transition: all 70ms ease-in-out;
+			border-radius: 5px;
+		}
+
+		.step-marker-container-active {
+			background-color: #f8b31c !important;
+			border: 1px solid #f8b31c !important;
+			color: #fff !important;
+		}
+
+		.step-marker-container-completed {
+			background-color: #9031fd !important;
+			border: 1px solid #9031fd !important;
+			color: #fff !important;
+		}
+	}
+
+	.adopt-form {
+		@include displayFlex(column, space-between, flex-end);
+		height: calc(100% - 175px);
+		margin: 20px 0px 0px 0px;
+
+		@media screen and (max-width: 598px) {
+			padding: 10px;
+		}
+		.subform-fields {
+			padding: 0;
+			width: 100%;
+
+			.first-step-form {
+			}
+		}
+
+		.adopt-form-btn-container {
+			@include displayFlex(row, flex-end, center);
+			width: 100%;
+			margin: 50px 0px 100px 0px;
+
+			@media screen and (max-width: 598px) {
+				@include displayFlex(column-reverse, flex-end, center);
+				margin: 30px 0px 50px 0px;
+			}
+
+			.back-form-btn {
+				@extend .adopt-form-btn-template;
+				background-color: #f3ab0f;
+				margin-right: 20px;
+
+				@media screen and (max-width: 598px) {
+					margin-right: 0px;
+				}
+				&:hover {
+					background-color: #f8b31c;
+				}
+			}
+
+			.next-form-btn {
+				@extend .adopt-form-btn-template;
+				background-color: #9031fd;
+
+				@media screen and (max-width: 598px) {
+					margin-bottom: 20px;
+				}
+				&:hover {
+					background-color: #973bff;
+				}
+			}
+		}
+	}
+}
+
+.adopt-form-btn-template {
+	@include displayFlex(row, center, center);
+	height: 40px;
+	color: #fff;
+	cursor: pointer;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+	border-radius: 5px;
+	border: none;
+	transition: all 100ms ease-in;
+}

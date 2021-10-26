@@ -4,6 +4,13 @@ $radius: 0.3rem;
 
 .mascotas-page {
 	margin-bottom: 50px;
+
+	.container {
+		.animals-section {
+			margin-top: 50px;
+			min-height: 300px;
+		}
+	}
 }
 
 /*------------------------------------------------------------------------------------------*/

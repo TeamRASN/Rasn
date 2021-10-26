@@ -10766,7 +10766,7 @@ body {
 }
 .login-page .login-content > .container .login-card-container .image-login-container {
   width: 100%;
-  height: 45%;
+  height: 35%;
   background-color: #8be0ff;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -10787,7 +10787,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 10px;
   transition: all ease-in-out;
 }
 .login-page .login-content > .container .login-card-container .image-login-container .illustration-container .animated-image .animation-icon {
@@ -10800,14 +10800,18 @@ body {
   filter: drop-shadow(0px -2px 2px rgba(100, 100, 100, 0.068));
 }
 .login-page .login-content > .container .login-card-container .inputs-container {
-  height: 55%;
+  height: 65%;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0px -2px 2px rgba(100, 100, 100, 0.068);
 }
 .login-page .login-content > .container .login-card-container .inputs-container .login-form {
-  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
   padding: 0px 40px;
   margin: 0;
 }
@@ -10852,7 +10856,7 @@ body {
   background-color: #fd9731;
 }
 .login-page .login-content > .container .login-card-container .inputs-container .login-form .submit-btn a:hover {
-  background-color: #432e2e;
+  background-color: #ffa246;
 }
 .login-page .login-content > .container .login-card-container .inputs-container .login-form .cancel-btn a {
   background-color: #008ffb;
@@ -10871,15 +10875,14 @@ body {
 .login-page .login-content > .container .login-card-container .inputs-container .login-form .register-advice span {
   white-space: nowrap;
   margin-left: 3px;
-}
-.login-page .login-content > .container .login-card-container .inputs-container .login-form .register-advice span a {
   text-decoration: none;
   font-weight: 800;
-  color: #fd9731;
+  color: #432e2e;
+  cursor: pointer;
   transition: all 150ms ease-in-out;
 }
-.login-page .login-content > .container .login-card-container .inputs-container .login-form .register-advice span a:hover {
-  color: #432e2e;
+.login-page .login-content > .container .login-card-container .inputs-container .login-form .register-advice span:hover {
+  color: #fd9731;
 }
 
 @media screen and (max-height: 750px) {

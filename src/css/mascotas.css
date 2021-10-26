@@ -2,6 +2,10 @@
 .mascotas-page {
   margin-bottom: 50px;
 }
+.mascotas-page .container .animals-section {
+  margin-top: 50px;
+  min-height: 300px;
+}
 
 /*------------------------------------------------------------------------------------------*/
 /*--------------------------------- CONTENEDOR DE ANIMALES ---------------------------------*/

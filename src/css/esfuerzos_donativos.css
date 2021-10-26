@@ -50,6 +50,9 @@
 .notices-container {
   margin-bottom: 50px;
 }
+.notices-container .row {
+  min-height: 350px;
+}
 .notices-container .row .notice-card {
   padding: 1rem;
 }
