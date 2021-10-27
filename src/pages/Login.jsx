@@ -212,26 +212,17 @@ export default function Login() {
 									</div>
 									<div className="session-validate-message" id="message-container"></div>
 									<div className="submit-btn" onClick={submitForm}>
-									Iniciar Sesión
-									
-										{/* <Link to="/admin/estadisticas">Iniciar Sesión</Link> */}
+										<div>Iniciar Sesión</div>
 									</div>
-									<button type="submit" style={{ display: 'none' }}></button>
 									<div className="cancel-btn">
 										<a href="/Rasn">Volver</a>
 									</div>
-									<div className="form-forgot-keep-container">
-										<span
-											className="form-forgot-password" /* onClick={() => changeForm('RecoverPassword')} */
-										>
-											¿Olvidaste tu contraseña?
-										</span>
-									</div>
+									<button type="submit" style={{ display: 'none' }}></button>
 									<button type="submit" id="login-submit-btn" className="invisible-btn"></button>
-									<p className="register-advice">
+									{/* <p className="register-advice">
 										¿AÚN NO TENÉS TU CUENTA ADMINISTRATIVA?
-										<span /* onClick={() => changeForm('Register')} */>SOLICITÁ UNA</span>
-									</p>
+										<span onClick={() => changeForm('Register')}>SOLICITÁ UNA</span>
+									</p> */}
 								</Form>
 							</Formik>
 						</div>

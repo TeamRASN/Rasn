@@ -27,6 +27,7 @@ export default function Noticias() {
 	const [loadedData, setLoadedData] = useState(false);
 
 	useEffect(() => {
+		getBlogs(setBlogCards, setLoadedData, firstFetch, setFirstFetch);
 		const contenedores = document.querySelectorAll('.carta-content');
 
 		//* Obtiene la altura de los contenedores

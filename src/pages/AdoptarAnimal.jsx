@@ -231,6 +231,9 @@ export default function AdoptarAnimal() {
 			}
 			if (!values.edad) {
 				errors.edad = 'Este campo es obligatorio';
+				// else if values is not a number
+			} else if (isNaN(values.edad)) {
+				errors.edad = 'Este campo debe ser un número';
 			}
 			if (!values.pregunta1) {
 				errors.pregunta1 = 'Este campo es obligatorio';
@@ -330,12 +333,31 @@ export default function AdoptarAnimal() {
 					return errors;
 				}}
 				onSubmit={async (values) => {
-					alert(JSON.stringify(values, null, 2));
-					 Axios.post('http://localhost:3001/Rasn/admin/faq/nueva-pregunta', values)
+					// validate values doesnt have any variable empty
+					if (
+						values.nombre &&
+						values.apellido &&
+						values.telefono &&
+						values.email &&
+						values.residencia &&
+						values.direccion &&
+						values.ocupacion &&
+						values.edad &&
+						values.pregunta1 &&
+						values.pregunta2 &&
+						values.pregunta3 &&
+						values.pregunta4 &&
+						values.pregunta5 &&
+						values.pregunta6 &&
+						values.pregunta7
+					) {
+						alert(JSON.stringify(values, null, 2));
+						Axios.post('http://localhost:3001/Rasn/admin/faq/nueva-pregunta', values)
 							.then((res) => {
 								console.log(res.data);
 							})
-							.then(alert('Registro ingresado')); 
+							.then(alert('Registro ingresado'));
+					}
 				}}
 			>
 				{({ errors, validateForm }) => (

@@ -49,8 +49,6 @@ export default function Animales() {
 		} else {
 			formatedDate = `${year}-${month}-${day}`;
 		}
-
-		console.log(formatedDate);
 		return formatedDate;
 	};
 

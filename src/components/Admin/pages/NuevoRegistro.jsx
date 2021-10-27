@@ -95,8 +95,6 @@ function animalesForm() {
 				return errors;
 			}}
 			onSubmit={async (values) => {
-				console.log(insertData);
-				alert(JSON.stringify(values, null, 2));
 				if (insertData) {
 					Axios.post('http://localhost:3001/Rasn/admin/animales/nuevo-animal', values)
 						.then((res) => {
@@ -294,7 +292,6 @@ function equipoForm() {
 				return errors;
 			}}
 			onSubmit={async (values) => {
-				console.log(insertData);
 				if (insertData) {
 					Axios.post('http://localhost:3001/Rasn/admin/equipo/nuevo-miembro', values)
 						.then((res) => {
@@ -407,8 +404,6 @@ function faqForm() {
 						})
 						.then(alert('Registro ingresado'));
 				} else {
-					console.log(updateObject);
-					console.log(values.id);
 					if (updateObject.pregunta !== values.pregunta && updateObject.pregunta !== values.pregunta) {
 						Axios.post('http://localhost:3001/Rasn/admin/faq/actualizar-pregunta', values)
 							.then((res) => {
@@ -501,10 +496,8 @@ function blogsForm() {
 		str = str.substring(0, str.length - 1);
 		str += '}';
 
-		console.log(str);
 		updateObject = JSON.parse(decodeURIComponent(str));
 		formatedDate = formatDate(updateObject.fecha);
-		console.log(updateObject);
 	} else {
 		formatedDate = formatDate();
 		updateObject = {
@@ -516,7 +509,6 @@ function blogsForm() {
 			autor: '',
 			fecha: formatedDate,
 		};
-		console.log(updateObject);
 	}
 
 	return (
@@ -546,9 +538,7 @@ function blogsForm() {
 				return errors;
 			}}
 			onSubmit={async (values) => {
-				console.log(values.fecha);
 				values.texto = noticeContent;
-
 				if (insertData) {
 					Axios.post('http://localhost:3001/Rasn/admin/blogs/nuevo-blog', values)
 						.then((res) => {

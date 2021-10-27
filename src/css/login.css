@@ -10809,10 +10809,10 @@ body {
 .login-page .login-content > .container .login-card-container .inputs-container .login-form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   height: 100%;
-  padding: 0px 40px;
+  padding: 20px 40px;
   margin: 0;
 }
 .login-page .login-content > .container .login-card-container .inputs-container .login-form .register-input-field {
@@ -10839,7 +10839,10 @@ body {
   padding: 10px;
   padding-bottom: 0px;
 }
-.login-page .login-content > .container .login-card-container .inputs-container .login-form .exepctional-btn a, .login-page .login-content > .container .login-card-container .inputs-container .login-form .cancel-btn a, .login-page .login-content > .container .login-card-container .inputs-container .login-form .submit-btn a {
+.login-page .login-content > .container .login-card-container .inputs-container .login-form .exepctional-btn a, .login-page .login-content > .container .login-card-container .inputs-container .login-form .cancel-btn a, .login-page .login-content > .container .login-card-container .inputs-container .login-form .submit-btn a,
+.login-page .login-content > .container .login-card-container .inputs-container .login-form .exepctional-btn div,
+.login-page .login-content > .container .login-card-container .inputs-container .login-form .cancel-btn div,
+.login-page .login-content > .container .login-card-container .inputs-container .login-form .submit-btn div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10849,13 +10852,18 @@ body {
   text-decoration: none;
   transition: all 150ms ease-in-out;
 }
-.login-page .login-content > .container .login-card-container .inputs-container .login-form .exepctional-btn a:hover, .login-page .login-content > .container .login-card-container .inputs-container .login-form .cancel-btn a:hover, .login-page .login-content > .container .login-card-container .inputs-container .login-form .submit-btn a:hover {
+.login-page .login-content > .container .login-card-container .inputs-container .login-form .exepctional-btn a:hover, .login-page .login-content > .container .login-card-container .inputs-container .login-form .cancel-btn a:hover, .login-page .login-content > .container .login-card-container .inputs-container .login-form .submit-btn a:hover,
+.login-page .login-content > .container .login-card-container .inputs-container .login-form .exepctional-btn div:hover,
+.login-page .login-content > .container .login-card-container .inputs-container .login-form .cancel-btn div:hover,
+.login-page .login-content > .container .login-card-container .inputs-container .login-form .submit-btn div:hover {
   color: #fff;
 }
-.login-page .login-content > .container .login-card-container .inputs-container .login-form .submit-btn a {
+.login-page .login-content > .container .login-card-container .inputs-container .login-form .submit-btn div {
   background-color: #fd9731;
+  color: #fff;
+  cursor: pointer;
 }
-.login-page .login-content > .container .login-card-container .inputs-container .login-form .submit-btn a:hover {
+.login-page .login-content > .container .login-card-container .inputs-container .login-form .submit-btn div:hover {
   background-color: #ffa246;
 }
 .login-page .login-content > .container .login-card-container .inputs-container .login-form .cancel-btn a {

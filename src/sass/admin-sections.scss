@@ -115,6 +115,7 @@ $radius: 12px;
 
 	height: 80px !important;
 	margin: 10px 0px 10px 0px !important;
+	text-decoration: none;
 
 	.img-card {
 		border-radius: 5px;
@@ -400,7 +401,6 @@ $radius: 12px;
 		@include displayFlex(row, flex-start, center);
 		width: 100% !important;
 		height: 100%;
-		text-decoration: none;
 		border-radius: 5px;
 		box-shadow: 0px 0px 10px 0px #ccd9e279;
 
@@ -419,12 +419,17 @@ $radius: 12px;
 				background-color: #dee5eb;
 			}
 
+			&:hover > .integrante-delete-btn {
+				opacity: 1;
+			}
+
 			svg {
 				margin-right: 7.5px;
 			}
 
 			.integrante-delete-btn {
 				@include displayFlex(null, flex-end, center);
+				opacity: 0;
 				width: 100%;
 				height: 10%;
 
@@ -443,9 +448,10 @@ $radius: 12px;
 						height: auto;
 						width: 10px;
 						margin: 0px;
-					}
-					&:hover {
 						color: #3d4348;
+					}
+
+					&:hover {
 						background-color: #3f474d2a;
 					}
 				}
@@ -453,6 +459,7 @@ $radius: 12px;
 
 			.member-card-container {
 				@include displayFlex(column, flex-start, center);
+				text-decoration: none;
 				width: 100%;
 				height: 90%;
 

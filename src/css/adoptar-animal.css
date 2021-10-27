@@ -50,6 +50,8 @@
 .adopt-container .adopt-form .subform-fields {
   padding: 0;
   width: 100%;
+  /* .first-step-form {
+  } */
 }
 .adopt-container .adopt-form .adopt-form-btn-container {
   display: flex;

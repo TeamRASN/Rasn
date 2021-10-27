@@ -132,6 +132,7 @@
   align-items: center;
   height: 80px !important;
   margin: 10px 0px 10px 0px !important;
+  text-decoration: none;
 }
 .admin-animal-card .img-card,
 .add-new-register-row .img-card {
@@ -437,7 +438,6 @@
   align-items: center;
   width: 100% !important;
   height: 100%;
-  text-decoration: none;
   border-radius: 5px;
   box-shadow: 0px 0px 10px 0px #ccd9e279;
 }
@@ -463,6 +463,12 @@
 .add-new-register .new-register .new-content:hover {
   background-color: #dee5eb;
 }
+.new-card-container .new-member .new-content:hover > .integrante-delete-btn,
+.new-card-container .new-register .new-content:hover > .integrante-delete-btn,
+.add-new-register .new-member .new-content:hover > .integrante-delete-btn,
+.add-new-register .new-register .new-content:hover > .integrante-delete-btn {
+  opacity: 1;
+}
 .new-card-container .new-member .new-content svg,
 .new-card-container .new-register .new-content svg,
 .add-new-register .new-member .new-content svg,
@@ -476,6 +482,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  opacity: 0;
   width: 100%;
   height: 10%;
 }
@@ -502,12 +509,12 @@
   height: auto;
   width: 10px;
   margin: 0px;
+  color: #3d4348;
 }
 .new-card-container .new-member .new-content .integrante-delete-btn button:hover,
 .new-card-container .new-register .new-content .integrante-delete-btn button:hover,
 .add-new-register .new-member .new-content .integrante-delete-btn button:hover,
 .add-new-register .new-register .new-content .integrante-delete-btn button:hover {
-  color: #3d4348;
   background-color: #3f474d2a;
 }
 .new-card-container .new-member .new-content .member-card-container,
@@ -518,6 +525,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  text-decoration: none;
   width: 100%;
   height: 90%;
 }
